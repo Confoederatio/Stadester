@@ -9,5 +9,11 @@
     
     //Load .csv datasets
     loadChandlerModelskiCSVs();
+
+    //Apply manual fixes to population datasets
+    fixChandlerModelskiPopulations();
+
+    //[WIP] - Debugging
+    printErroneousChandlerModelskiPopulations();
   };
 } 
