@@ -22,6 +22,7 @@
 
     //Apply manual fixes to population datasets
     fixChandlerModelskiPopulations();
+    processPopulstatData();
 
     //[WIP] - Debugging
     printErroneousChandlerModelskiPopulations();

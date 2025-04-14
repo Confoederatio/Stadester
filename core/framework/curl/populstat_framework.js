@@ -1,5 +1,8 @@
 //Initialise functions
 {
+  /**
+   * geolocateAllPopulstatCities() - Geolocates all cities in the populstat object using Google Maps/Puppeteer.
+   */
   global.geolocateAllPopulstatCities = async function () {
     //Declare local instance variables
     var all_countries = Object.keys(main.curl.populstat);
@@ -13,6 +16,12 @@
     }
   };
 
+  /**
+   * geolocatePopulstatCountryCities() - Geolocates all cities for a given country using Google Maps/Puppeteer. Returns the Populstat country object.
+   * @param {String} arg0_country_key
+   *  
+   * @returns {Object}
+   */
   global.geolocatePopulstatCountryCities = async function (arg0_country_key) {
     //Convert from parameters
     var country_key = arg0_country_key;
@@ -73,6 +82,14 @@
     return country_obj;
   };
 
+  /**
+   * getAllLinksRecursively() - Fetches all links recursively on a given URL. Excludes section tags.
+   * @param {String} arg0_url - The URL to fetch links from.
+   * @param {Object} [arg1_options] 
+   *  @param {String} [arg1_options.base_url] - The base URL to use for fetching links.
+   * 
+   * @returns {Array<String>}
+   */
   global.getAllLinksRecursively = async function (arg0_url, arg1_options) {
     //Convert from parameters
     var url = arg0_url;
@@ -91,6 +108,9 @@
     return all_urls;
   };
 
+  /**
+   * getAllPopulstatLinks() - Fetches all pages from the Populstat website.
+   */
   global.getAllPopulstatLinks = function () {
     getAllLinksRecursively("http://populstat.info/", { 
       depth: 5,
@@ -101,6 +121,11 @@
     });
   };
 
+  /**
+   * getAllPopulstatTownData() - Fetches all town/city data from the Populstat website.
+   * 
+   * @returns {Object}
+   */
   global.getAllPopulstatTownData = async function () {
     //Declare local instance variables
     var all_populstat_town_links = getAllPopulstatTownLinks();
@@ -121,6 +146,12 @@
     return return_obj;
   };
 
+  /**
+   * getAllPopulstatTownLinks() - Returns all Populstat links that end with "t.htm" or "t.html".
+   * @param {Array<String>} arg0_populstat_links
+   * 
+   * @returns {Array<String>}
+   */
   global.getAllPopulstatTownLinks = function (arg0_populstat_links) {
     //Convert from parameters
     var populstat_links = (arg0_populstat_links) ? 
@@ -143,6 +174,12 @@
     return all_town_links;
   };
 
+  /**
+   * getPopulstatTownData() - Fetches the population data for a given town/city data table on Populstat. Returns the JSON object of the cleaned population data.
+   * @param {String} arg0_url - The URL to fetch the population data from.
+   * 
+   * @returns {Object}
+   */
   global.getPopulstatTownData = async function (arg0_url) {
     //Convert from parameters
     var url = arg0_url;
@@ -249,6 +286,14 @@
     geolocateAllPopulstatCities();
   };
 
+  /**
+   * internalHelperGetAllLinksRecursively() - Fetches all links recursively on a given URL. Excludes section tags.
+   * @param {String} arg0_url - The URL to fetch links from.
+   * @param {Object} [arg1_options] 
+   *  @param {String} [arg1_options.base_url] - The base URL to use for fetching links.
+   * 
+   * @returns {Array<String>}
+   */
   global.internalHelperGetAllLinksRecursively = async function (arg0_url, arg1_options) {
     //Declare local instance variables
     var url = arg0_url;
@@ -307,6 +352,11 @@
     }
   };
 
+  /**
+   * loadPopulstatData() - Loads Populstat data from ./input/populstat_cities/populstat_cities.json.
+   * 
+   * @returns {Object}
+   */
   global.loadPopulstatData = function () {
     //Declare local instance variables
     var populstat_obj = FileManager.loadFileAsJSON(config.defines.common.input_file_paths.populstat_cities);
@@ -430,6 +480,9 @@
     return remove_coords_keys;
   };
 
+  /**
+   * savePopulstatData() - Saves the populstat object to ./input/populstat_cities/populstat_cities.json.
+   */
   global.savePopulstatData = function () {
     FileManager.saveFileAsJSON(config.defines.common.input_file_paths.populstat_cities, main.curl.populstat);
   };
