@@ -436,8 +436,6 @@
     // Return the handle
     return element;
   };
-  
-  
 
   global.initialiseChrome = async function () {
     //Open chrome browser first

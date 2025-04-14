@@ -21,6 +21,7 @@
     "mathjs": "^14.3.0",
     "ml-matrix": "^6.12.0",
     "netcdfjs": "^3.0.0",
+    "papaparse": "^5.5.2",
     "pngjs": "^7.0.0",
     "puppeteer": "^24.6.1",
     "puppeteer-extra": "^3.3.6",

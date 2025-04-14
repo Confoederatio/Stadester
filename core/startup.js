@@ -4,6 +4,10 @@
     //Initialise main with cities
     global.main = {};
       global.main.browser_instances = {};
-      global.main.cities = {};
+      global.main.cities = {}; //Contains final Stadestér data
+      global.main.population = {}; //Contains city population data
+    
+    //Load .csv datasets
+    loadChandlerModelskiCSVs();
   };
 } 

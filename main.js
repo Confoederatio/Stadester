@@ -9,6 +9,7 @@ process.on('unhandledRejection', function (reason, p) {
 //File directories to load into Eoscala
 global.load_order = {
   load_directories: [
+    "common",
     "core",
     "UF"
   ],
@@ -34,6 +35,7 @@ global.mathjs = require("mathjs");
 global.ml_matrix = require("ml-matrix");
 global.netcdfjs = require("netcdfjs");
 global.readline = require("readline");
+global.papaparse = require("papaparse");
 global.path = require("path");
 global.pngjs = require("pngjs");
 global.puppeteer = require("puppeteer-core");
@@ -47,17 +49,6 @@ global.sync_request = require("sync-request");
 global.url = require("url");
 global.puppeteer = require("puppeteer-extra");
 global.StealthPlugin = require("puppeteer-extra-plugin-stealth");
-
-//Add main variable for proxy models to be built off of
-global.config = {
-  defines: {
-    common: {
-      prefix: "Stadestér",
-      startup_message: "Stadestér. Type 'help' for help."
-    }
-  }
-}
-global.main = {};
 
 //Load all scripts
 FileManager.loadAllScripts();
