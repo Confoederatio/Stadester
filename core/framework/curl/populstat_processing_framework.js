@@ -19,10 +19,16 @@
     var split_city_name = city_name.split(/,|-/);
     
     var all_countries = Object.keys(populstat_obj);
+    var city_country = "";
+    var country_dict = {};
+
+    if (split_city_name.length > 1)
+      city_country = split_city_name[split_city_name.length - 1].trim();
+    split_city_name.pop();
+    city_name = split_city_name.join("-");
 
     //1. Exact key match first
     for (var i = 0; i < all_countries.length; i++) {
-      var country_dict = {};
       var local_country = populstat_obj[all_countries[i]];
       var local_country_name = config.populstat.countries[all_countries[i]];
       var is_in_country = false;
@@ -44,9 +50,9 @@
       }
 
       //Check for exact city_exists
-      if (all_countries[i] == split_city_name[split_city_name.length - 1])
+      if (all_countries[i].toLowerCase().trim() == city_country)
         is_in_country = true;
-      if (local_country_name == split_city_name[split_city_name.length - 1])
+      if (local_country_name.toLowerCase().trim() == city_country)
         is_in_country = true;
 
       if (is_in_country) 
@@ -66,7 +72,7 @@
 
       for (var x = 0; x < all_cities.length; x++) {
         var local_city = local_country[all_cities[x]];
-        var local_city_names = [local_city.name].concat(local_city.other_names);
+        var local_city_names = [local_city.name];
           if (local_city.other_names)
             local_city_names = local_city_names.concat(local_city.other_names);
 
@@ -86,7 +92,7 @@
       //Iterate over all_cities
       var all_cities = Object.keys(local_country);
 
-      if (split_city_name.length > 1 && split_city_name[split_city_name.length - 1] == local_country_name)
+      if (split_city_name.length > 1 && city_country == local_country_name)
         for (var x = 0; x < all_cities.length; x++) {
           var local_city = local_country[all_cities[x]];
           var local_city_names = [local_city.name];
@@ -110,7 +116,7 @@
       var all_cities = Object.keys(local_country);
       var check_country = false;
 
-      if (split_city_name.length > 1 && split_city_name[split_city_name.length - 1] == local_country_name) {
+      if (split_city_name.length > 1 && city_country == local_country_name) {
         check_country = true;
       } else if (split_city_name.length == 1) {
         check_country = true;
