@@ -24,18 +24,21 @@
     var city_country = "";
     var country_dict = {};
 
-    //options.same_country handling
-    var country_key = getPopulstatCountry(city_name, { return_key: true });
-    all_countries = [country_key];
-
-    if (split_city_name.length > 1)
+    if (split_city_name.length > 1) {
       city_country = split_city_name[split_city_name.length - 1].trim();
-    split_city_name.pop();
+      split_city_name.pop();
+    }
     city_name = split_city_name.join("-");
+
+    //options.same_country handling
+    if (options.same_country) {
+      var country_key = getPopulstatCountry(city_country, { return_key: true });
+      all_countries = [country_key];
+    }
 
     //1. Exact key match first
     for (var i = 0; i < all_countries.length; i++) {
-      var local_country = populstat_obj[all_countries[i]];
+      let local_country = populstat_obj[all_countries[i]];
       var local_country_name = config.populstat.countries[all_countries[i]];
       var is_in_country = false;
 
@@ -60,6 +63,8 @@
         is_in_country = true;
       if (local_country_name.toLowerCase().trim() == city_country)
         is_in_country = true;
+      if (!city_country)
+        is_in_country = true;
 
       if (is_in_country) 
         if (country_dict[city_name])
@@ -71,7 +76,7 @@
     //2. Soft search next
     //Iterate over all_countries
     for (var i = 0; i < all_countries.length; i++) {
-      var local_country = populstat_obj[all_countries[i]];
+      let local_country = populstat_obj[all_countries[i]];
 
       //Iterate over all_cities
       var all_cities = Object.keys(local_country);
@@ -91,14 +96,14 @@
 
     //3. Soft search; exact country match
     for (var i = 0; i < all_countries.length; i++) {
-      var local_country = populstat_obj[all_countries[i]];
+      let local_country = populstat_obj[all_countries[i]];
       var local_country_name = config.populstat.countries[all_countries[i]];
         if (!local_country_name) local_country_name = all_countries[i];
 
       //Iterate over all_cities
       var all_cities = Object.keys(local_country);
 
-      if (split_city_name.length > 1 && city_country == local_country_name)
+      if (split_city_name.length > 1 && (city_country == local_country_name || !city_country))
         for (var x = 0; x < all_cities.length; x++) {
           var local_city = local_country[all_cities[x]];
           var local_city_names = [local_city.name];
@@ -114,7 +119,7 @@
 
     //4. Hard search
     for (var i = 0; i < all_countries.length; i++) {
-      var local_country = populstat_obj[all_countries[i]];
+      let local_country = populstat_obj[all_countries[i]];
       var local_country_name = config.populstat.countries[all_countries[i]];
         if (!local_country_name) local_country_name = all_countries[i];
 
@@ -124,7 +129,7 @@
 
       if (split_city_name.length > 1 && city_country == local_country_name) {
         check_country = true;
-      } else if (split_city_name.length == 1) {
+      } else if (split_city_name.length == 1 || !city_country) {
         check_country = true;
       }
 
@@ -174,7 +179,7 @@
 
     //Iterate over all_countries - key, soft search
     for (var i = 0; i < all_countries.length; i++)
-      if (populstat_obj[all_countries[i]].name.toLowerCase().trim().indexOf(country_name) != -1) {
+      if (all_countries[i].toLowerCase().trim().indexOf(country_name) != -1) {
         country_exists = [(!options.return_key) ? populstat_obj[all_countries[i]] : all_countries[i], true];
         break;
       }
@@ -273,21 +278,16 @@
           if (other_city_obj.population && local_city.population) 
             if (other_city_obj.name != local_city.name) {
               var all_population_keys = Object.keys(other_city_obj.population);
-              var old_population_obj = JSON.parse(JSON.stringify(other_city_obj.population));
               
               for (var y = 0; y < all_population_keys.length; y++) {
                 var local_value = local_city.population[all_population_keys[y]];
 
                 modifyValue(other_city_obj.population, all_population_keys[y], returnSafeNumber(local_value*-1));
-              /*if (other_city_obj.population[all_population_keys[y]] < 0 && local_value > 0)
-                  other_city_obj.population[all_population_keys[y]] = local_value;
-                if (other_city_obj.population[all_population_keys[y]] < 0 && old_population_obj[all_population_keys[y]] > 0)
-                  other_city_obj.population[all_population_keys[y]] = old_population_obj[all_population_keys[y]];*/
-              }
 
-              //Remove all zero values
-              console.log(` - ${other_city_obj.name} - subtracted population from ${local_city.name}:`);
-              console.log(`  `, other_city_obj.population);
+                //Remove any zero values
+                if (other_city_obj.population[all_population_keys[y]] <= 0)
+                  delete other_city_obj.population[all_population_keys[y]];
+              }
             }
       }
     }
