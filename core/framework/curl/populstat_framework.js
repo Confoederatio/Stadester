@@ -350,4 +350,60 @@
     //Return statement
     return populstat_obj;
   };
+
+  /**
+   * Removes duplicate coordinate pairs from the populstat object.
+   * @returns {Array<String>} An array of city-country keys with duplicate coordinates.
+   */
+  global.removeDuplicatePopulstatCoords = function () {
+    //Declare local instance variables
+    var coords_dict = {};
+    var populstat_obj = main.curl.populstat;
+
+    //Iterate over all_countries
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+      var all_cities = Object.keys(local_country);
+
+      for (var x = 0; x < all_cities.length; x++) {
+        var local_city = local_country[all_cities[x]];
+        var local_coords_string = JSON.stringify(local_city.coords);
+
+        if (!coords_dict[local_coords_string])
+          coords_dict[local_coords_string] = [];
+        coords_dict[local_coords_string].push(`${all_countries[i]}-${all_cities[x]}`);
+      }
+    }
+
+    //Iterate over all_coords_keys
+    var all_coords_keys = Object.keys(coords_dict);
+    var remove_coords_keys = [];
+
+    for (var i = 0; i < all_coords_keys.length; i++) {
+      var local_value = coords_dict[all_coords_keys[i]];
+
+      if (local_value.length > 1)
+        remove_coords_keys = remove_coords_keys.concat(local_value);
+    }
+
+    //Iterate over all_countries
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+      var all_cities = Object.keys(local_country);
+
+      for (var x = 0; x < all_cities.length; x++) {
+        var local_city = local_country[all_cities[x]];
+        var local_key = `${all_countries[i]}-${all_cities[x]}`;
+
+        if (remove_coords_keys.includes(local_key))
+          delete local_city.coords;
+      }
+    }
+    
+    console.log(`Pruned ${remove_coords_keys.length} duplicate coordinate pairs.`);
+    console.log(`- ${remove_coords_keys.join(", ")}`);
+
+    //Return statement
+    return remove_coords_keys;
+  };
 }
