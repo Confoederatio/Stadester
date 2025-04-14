@@ -142,12 +142,93 @@
 
   global.processPopulstatData = function () {
     //Declare local instance variables
-    var agglomeration_pattern = main.config.populstat.processing.agglomeration_patterns;
-    var populstat_obj = main.curl.populstat;
+    var agglomeration_patterns = config.populstat.processing.agglomeration_patterns;
+    if (!main.population.populstat) //Make sure main.population.populstat exists first
+      main.population.populstat = JSON.parse(JSON.stringify(main.curl.populstat));
+    var populstat_obj = main.population.populstat;
 
     //Iterate over all_countries
     var all_countries = Object.keys(populstat_obj);
 
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+      var local_country_name = config.populstat.countries[all_countries[i]];
+        if (!local_country_name) local_country_name = all_countries[i];
 
+      console.log(`- Processing ${local_country_name} (${i + 1}/${all_countries.length}) ..`);
+      
+      //Iterate over all_cities
+      var all_cities = Object.keys(local_country);
+
+      for (var x = 0; x < all_cities.length; x++) {
+        var local_city = local_country[all_cities[x]];
+        var local_city_names = [local_city.name];
+          if (local_city.other_names)
+            local_city_names = local_city_names.concat(local_city.other_names);
+        
+        var is_agglomeration = false;
+        var is_agglomeration_of = "";
+
+        //.name
+        if (local_city.name) {
+          var split_name = local_city.name.split(";");
+            for (var y = 0; y < split_name.length; y++)
+              split_name[y] = split_name[y].trim().toLowerCase();
+
+          //Iterate over agglomeration_patterns
+          for (var y = 0; y < agglomeration_patterns.length; y++)
+            if (split_name[0].indexOf(agglomeration_patterns[y]) != -1) {
+              is_agglomeration = true;
+              is_agglomeration_of = split_name[0].replace(agglomeration_patterns[y], "")
+                .replace(/\([^)]*\)/g, "").trim(); //Remove round brackets
+            }
+        }
+        //.particulars
+        if (local_city["particulars of the data"])
+          local_city.particulars = local_city["particulars of the data"];
+        if (local_city.particulars) 
+          if (typeof local_city.particulars == "string") {
+            var split_particulars = local_city.particulars.split(";");
+              for (var y = 0; y < split_particulars.length; y++)
+                split_particulars[y] = split_particulars[y].trim().toLowerCase();
+
+            //Iterate over agglomeration_patterns
+            for (var y = 0; y < agglomeration_patterns.length; y++)
+              if (split_particulars.indexOf(agglomeration_patterns[y]) != -1) {
+                is_agglomeration = true;
+                is_agglomeration_of = split_particulars.replace(agglomeration_patterns[y], "")
+                  .replace(/\([^)]*\)/g, "").trim(); //Remove round brackets
+
+                local_city.is_agglomeration_of = is_agglomeration_of;
+              }
+          }
+
+        //If is_agglomeration is true; find the city double and subtract it from the agglomeration
+        var other_city_obj;
+
+        //Iterate over local_city_names
+        for (var y = 0; y < local_city_names.length; y++) {
+          var local_city_name = `${local_city_names[y]}, ${local_country_name}`;
+          other_city_obj = getPopulstatCity(local_city_name);
+
+          if (other_city_obj) break;
+        }
+
+        //Subtract the other city from the agglomeration
+        if (other_city_obj) 
+          if (other_city_obj.population && local_city.population) {
+            var all_population_keys = Object.keys(other_city_obj.population);
+            
+            for (var y = 0; y < all_population_keys.length; y++) {
+              var local_value = other_city_obj.population[all_population_keys[y]];
+
+              modifyValue(local_city.population, all_population_keys[y], local_value*-1);
+            }
+          }
+      }
+    }
+
+    //Return statement
+    return main.population.populstat;
   };
 }

@@ -26,6 +26,10 @@
     console.log(`Processing ${country_key} (${config.populstat.countries[country_key]}), with ${all_cities.length} cities ..`);
 
     for (var i = 0; i < all_cities.length; i++) try {
+      //Save every 100 geolocated cities
+      if (i % 100 == 0 && i != 0)
+        savePopulstatData();
+
       var local_city = country_obj[all_cities[i]];
       var local_country_name = config.populstat.countries[country_key];
         local_country_name = getList(local_country_name)[0];
@@ -424,5 +428,9 @@
 
     //Return statement
     return remove_coords_keys;
+  };
+
+  global.savePopulstatData = function () {
+    FileManager.saveFileAsJSON(config.defines.common.input_file_paths.populstat_cities, main.curl.populstat);
   };
 }
