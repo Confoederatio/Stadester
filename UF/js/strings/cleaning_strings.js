@@ -1,4 +1,22 @@
 {
+  /**
+   * parseEuropeanNumber() - Parses a European number string into a float.
+   * @param {String} arg0_string - The string to pass to the function.
+   * 
+   * @returns {number}
+   */
+  global.parseEuropeanNumber = function (arg0_string) {
+    //Convert from parameters
+    var input = arg0_string.toString();
+
+    input = input.replace(/\s|&nbsp;/g, "") //Remove non-breaking spaces and regular spaces
+      .replace(/\.(?=\d{3}(,|$))/g, "") //Remove thousands separators (dots)
+      .replace(",", "."); //Replace comma with dot for decimal point
+
+    // Parse as float
+    return parseFloat(input);
+  };
+
   /*
     stripMarkdown() - Strips markdown from a string.
     arg0_input_string: (String) - The string to pass to the function.
@@ -27,7 +45,6 @@
     var input_string = arg0_input_string;
 
     //Return statement
-    return input_string.toString().replace(/(__)|(\*\*)/gm, "");
-  }
-
+    return input_string.toString().replace(/[^\d]/g, "");
+  };
 }

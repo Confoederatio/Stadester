@@ -7,9 +7,10 @@ config.defines.common = {
       modelski_ancient_v2: "./input/modelski/modelskiAncientV2.csv",
       modelski_modern: "./input/modelski/modelskiModern.csv",
       modelski_modern_v2: "./input/modelski/modelskiModernV2.csv",
-    }
+    },
+    populstat_cities: "./input/populstat_cities/populstat_cities.json"
   },
-  
+
   prefix: "Stadestér",
   startup_message: "Stadestér. Type 'help' for help."
 }

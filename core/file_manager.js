@@ -100,5 +100,14 @@ module.exports = {
 
     fs.writeFileSync("./database.json", JSON.stringify(main, null, 2));
     console.log(`Saved main DB to ${file_path}`);
+  },
+
+  saveFileAsJSON: function (arg0_file_path, arg1_data) {
+    //Convert from parameters
+    var file_path = arg0_file_path;
+    var data = arg1_data;
+    
+    fs.writeFileSync(file_path, JSON.stringify(data, null, 2));
+    console.log(`Saved JSON to ${file_path}`);
   }
 };

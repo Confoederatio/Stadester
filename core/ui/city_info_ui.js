@@ -54,6 +54,30 @@
     }
   };
 
+  global.printAllPopulstatCities = function () {
+    //Declare local instance variables
+    var populstat_obj = main.curl.populstat;
+    var total_cities = 0;
+
+    var all_populstat_countries = Object.keys(populstat_obj);
+
+    //Begin printing UI
+    console.log(`Populstat: Printing ${all_populstat_countries.length} countries.`);
+
+    //Iterate over all_populstat_countries
+    for (var i = 0; i < all_populstat_countries.length; i++) {
+      var local_country = all_populstat_countries[i];
+      var local_cities = Object.keys(populstat_obj[local_country]);
+
+      total_cities += local_cities.length;
+
+      //Print local_cities
+      console.log(`- ${local_country} (${local_cities.length}):`, local_cities.join(", "));
+    }
+
+    console.log(`Total cities: ${parseNumber(total_cities)}`);
+  };
+
   global.printCityCoords = function (arg0_city_name) {
     //Convert from parameters
     var city_name = arg0_city_name;

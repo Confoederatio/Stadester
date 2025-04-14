@@ -44,7 +44,6 @@ global.v8 = require("v8");
 
 global.AdBlockerPlugin = require("puppeteer-extra-plugin-adblocker");
 global.firefox = require("selenium-webdriver/firefox");
-global.JSDOM = require("jsdom");
 global.sync_request = require("sync-request");
 global.url = require("url");
 global.puppeteer = require("puppeteer-extra");
