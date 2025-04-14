@@ -1,6 +1,3 @@
-# Eoscala/Velkscala (Production)
+# Stadestér (Production).
 
-> [!WARNING]
-> `economic_datasets/`, `geographic_datasets/`, `node_modules/`, and `output/` are excluded. The other folders apart from `node_modules/` represent ~130GB of input data, and as such, cannot be included within Eoscala/Velkscala's production code efficiently. We will eventually work on a fix.
-
-A production repository for Eoscala/Velkscala. You can view the released version of the repository [here](https://github.com/Confoederatio/Eoscala-Velkscala).
+Stadestér is an urban population database of thousands of global cities from 3000BC to the present-day as taken from Chandler, Modelski, Reba et al., Populstat, and Wikipedia. Resultant information was hybridised, standardised, geolocated, cubic spline interpolated, and calculated at 1-year intervals using geomean scalars and beta volatility trust functions such that more granular data supersedes longer-term vague data, particularly after 1800AD.
