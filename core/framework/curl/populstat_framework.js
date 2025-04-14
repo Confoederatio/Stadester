@@ -234,6 +234,17 @@
     return return_obj;
   };
 
+  /**
+   * fixPopulstatCoords() - Attempts to fix any broken Populstat coordinates.
+   */
+  global.fixPopulstatCoords = function () {
+    //Remove duplicate coordinate pairs
+    removeDuplicatePopulstatCoords();
+
+    //Geolocate all cities
+    geolocateAllPopulstatCities();
+  };
+
   global.internalHelperGetAllLinksRecursively = async function (arg0_url, arg1_options) {
     //Declare local instance variables
     var url = arg0_url;
@@ -353,9 +364,14 @@
 
   /**
    * Removes duplicate coordinate pairs from the populstat object.
+   * @param {Number} arg0_precision - The number of decimal places to round coordinate pairs to when performing comparisons.
+   * 
    * @returns {Array<String>} An array of city-country keys with duplicate coordinates.
    */
-  global.removeDuplicatePopulstatCoords = function () {
+  global.removeDuplicatePopulstatCoords = function (arg0_precision) {
+    //Convert from parameters
+    var precision = (arg0_precision) ? arg0_precision : 4;
+
     //Declare local instance variables
     var coords_dict = {};
     var populstat_obj = main.curl.populstat;
@@ -367,7 +383,10 @@
 
       for (var x = 0; x < all_cities.length; x++) {
         var local_city = local_country[all_cities[x]];
-        var local_coords_string = JSON.stringify(local_city.coords);
+        var local_coords_string = JSON.stringify([
+          round(local_city.coords[0], precision),
+          round(local_city.coords[1], precision)
+        ]);
 
         if (!coords_dict[local_coords_string])
           coords_dict[local_coords_string] = [];
