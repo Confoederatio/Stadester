@@ -13,22 +13,16 @@
     //Declare local instance variables
     if (!global.browser_instance) await launchCityCoordsInstance();
 
-    var search_btn = await getElement(`button[aria-label="Search"]`);
-    var place_input = await getElement(`input[id="searchboxinput"]`);
-
     //Clear the search box before entering the new city name
+    await browser_instance.evaluate((city_name) => {
+      var place_input = document.getElementById("searchboxinput");
+      place_input.value = city_name;
+    }, city_name);
+    await sleep(randomNumber(1000, 1400));
     await browser_instance.evaluate(() => {
-      var local_place_input = document.querySelector(`input[id="searchboxinput"]`);
-
-      if (local_place_input) {
-        local_place_input.value = "";
-        local_place_input.dispatchEvent(new Event("input", { bubbles: true }));
-      }
+      var search_btn = document.querySelector("button[aria-label='Search']");
+      search_btn.click();
     });
-    await place_input.type(city_name);
-    await sleep(randomNumber(100, 500));
-    await search_btn.click();
-    await sleep(randomNumber(100, 500));
 
     //Fetch URL; this is where the latlng coordinates reside
     await browser_instance.waitForNavigation({ waitUntil: 'networkidle2' });
@@ -45,6 +39,25 @@
       lng_value = match[2];
     }
 
+    await sleep(randomNumber(800, 1000));
+
+    //Check to see if Google Maps could find the coordinate; if not override lat_value, lng_value
+    try {
+      var coords_found = true;
+      var search_result_el = await getElement("div.fontHeadlineSmall");
+      await sleep(randomNumber(800, 1000));
+      var search_result_text_content = await search_result_el.evaluate((element) => element.textContent, search_result_el);
+      console.log(`- Search result text content: ${search_result_text_content}`);
+  
+      if (search_result_text_content.includes("can't find"))
+        coords_found = false;
+  
+      if (!coords_found) {
+        lat_value = 0;
+        lng_value = 0;
+      }
+    } catch (e) {}
+
     //Return statement
     return [parseFloat(lat_value), parseFloat(lng_value)];
   };
@@ -55,6 +68,7 @@
   global.launchCityCoordsInstance = async function () {
     if (!global.browser_instance)
       await initialiseChrome();
+    global.browser_instance.setDefaultNavigationTimeout(120000);
 
     //Run a browser instance to go to latlong.net
     await global.browser_instance.goto('https://www.google.com/maps/');

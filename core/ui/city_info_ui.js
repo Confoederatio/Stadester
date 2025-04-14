@@ -1,6 +1,9 @@
 //Initialise functions
 {
-  global.printAllChandlerModelskiCityCountries = function () {
+  global.printAllChandlerModelskiCityCountries = function (arg0_do_not_print_cities) {
+    //Convert from parameters
+    var do_not_print_cities = arg0_do_not_print_cities;
+
     //Declare local instance variables
     var all_chandler_modelski_cities = Object.keys(main.population.chandler_modelski);
     var countries_obj = {};
@@ -26,7 +29,11 @@
     for (var i = 0; i < all_countries.length; i++) {
       var local_value = countries_obj[all_countries[i]];
 
-      console.log(`${all_countries[i]} (${local_value.length}):`, local_value.join(", "));
+      if (!do_not_print_cities) {
+        console.log(`${all_countries[i]} (${local_value.length}):`, local_value.join(", "));
+      } else {
+        console.log(all_countries[i]);
+      }
     }
   };
 

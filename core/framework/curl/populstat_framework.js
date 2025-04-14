@@ -1,5 +1,74 @@
 //Initialise functions
 {
+  global.geolocateAllPopulstatCities = async function () {
+    //Declare local instance variables
+    var all_countries = Object.keys(main.curl.populstat);
+
+    //Iterate over all_countries
+    for (var i = 0; i < all_countries.length; i++) try {
+      console.log(`Processing (${i + 1}/${all_countries.length}) ..`);
+      await geolocatePopulstatCountryCities(all_countries[i]);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  global.geolocatePopulstatCountryCities = async function (arg0_country_key) {
+    //Convert from parameters
+    var country_key = arg0_country_key;
+
+    //Declare local instance variables
+    var country_obj = main.curl.populstat[country_key];
+    
+    //Iterate over all_cities
+    var all_cities = Object.keys(country_obj);
+    
+    console.log(`Processing ${country_key} (${config.populstat.countries[country_key]}), with ${all_cities.length} cities ..`);
+
+    for (var i = 0; i < all_cities.length; i++) try {
+      var local_city = country_obj[all_cities[i]];
+      var local_country_name = config.populstat.countries[country_key];
+        local_country_name = getList(local_country_name)[0];
+
+      //Skip if coords already exist
+      if (local_city.coords) continue;
+
+      //.other_names handling
+      console.log(`- ${local_city.name}`);
+      if (local_city.name) {
+        var city_names = [`${local_city.name}, ${local_country_name}`];
+
+        if (local_city.other_names)
+          for (var x = 0; x < local_city.other_names.length; x++)
+            city_names.push(`${local_city.other_names[x]}, ${local_country_name}`);
+        console.log(` - Processing ${local_city.name}: `, city_names);
+
+        //Iterate over all city_names until a valid latlng coord is found
+        for (var x = 0; x < city_names.length; x++) try {
+          var local_coords = await getCityCoords(city_names[x]);
+
+          if (local_coords[0] != 0 && local_coords[1] != 0) {
+            console.log(` - Found ${city_names[x]} at (${local_coords[0]}, ${local_coords[1]}), (${i + 1}/${all_cities.length})`);
+            local_city.coords = local_coords;
+            break;
+          } else {
+            console.log(` - Failed to find ${city_names[x]} at (${local_coords[0]}, ${local_coords[1]}), (${i + 1}/${all_cities.length})`);
+          } 
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    
+    //Save the updated populstat object to JSON file
+    FileManager.saveFileAsJSON(config.defines.common.input_file_paths.populstat_cities, main.curl.populstat);
+
+    //Return statement
+    return country_obj;
+  };
+
   global.getAllLinksRecursively = async function (arg0_url, arg1_options) {
     //Convert from parameters
     var url = arg0_url;
@@ -221,5 +290,64 @@
       console.error(`- Failed to visit ${url}`);
       console.error(e);
     }
+  };
+
+  global.loadPopulstatData = function () {
+    //Declare local instance variables
+    var populstat_obj = FileManager.loadFileAsJSON(config.defines.common.input_file_paths.populstat_cities);
+
+    var all_countries = Object.keys(populstat_obj);
+
+    //Iterate over all_countries
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+      
+      //Iterate over all_cities
+      var all_cities = Object.keys(local_country);
+
+      for (var x = 0; x < all_cities.length; x++) try {
+        var local_city = local_country[all_cities[x]];
+        var local_city_other_names = undefined;
+        var local_city_population_obj = {};
+        
+        //1. Iterate over all_city_keys; handle population figures
+        var all_city_keys = Object.keys(local_city);
+
+        for (var y = 0; y < all_city_keys.length; y++) {
+          var is_population_key = false;
+          var local_value = local_city[all_city_keys[y]];
+
+          //Other names handling
+          if (all_city_keys[y].startsWith(`variants `)) try {
+            local_city_other_names = local_value.split(", ");
+            delete local_city[all_city_keys[y]];
+          } catch (e) {}
+
+          //Population handling
+          if (!isNaN(parseInt(all_city_keys[y])) && !isNaN(local_value))
+            is_population_key = true;
+          if (is_population_key) {
+            local_city_population_obj[all_city_keys[y]] = local_value;
+            delete local_city[all_city_keys[y]];
+          }
+        }
+
+        //2. Only cities with population figures should be kept
+        if (Object.keys(local_city_population_obj).length > 0) {
+          local_city.other_names = local_city_other_names;
+          local_city.population = local_city_population_obj;
+        } else {
+          if (!local_city.population)
+            delete local_country[all_cities[x]];
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    
+    main.curl.populstat = populstat_obj;
+
+    //Return statement
+    return populstat_obj;
   };
 }

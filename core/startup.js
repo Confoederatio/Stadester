@@ -15,7 +15,7 @@
 
     //Load Populstat; Wikipedia
     try {
-      global.main.curl.populstat = FileManager.loadFileAsJSON(config.defines.common.input_file_paths.populstat_cities);
+      global.main.curl.populstat = loadPopulstatData();
     } catch (e) {
       console.error(e);
     }
