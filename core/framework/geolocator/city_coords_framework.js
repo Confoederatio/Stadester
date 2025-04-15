@@ -26,7 +26,7 @@
 
     //Fetch URL; this is where the latlng coordinates reside
     await browser_instance.waitForNavigation({ waitUntil: 'networkidle2' });
-    await sleep(randomNumber(4000, 5000));
+    await sleep(randomNumber(8000, 10000)); //You want to sleep for a long time for reliability
 
     var lat_value = 0;
     var lng_value = 0;
