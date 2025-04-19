@@ -1,5 +1,17 @@
 //Initialise functions
 {
+  global.getWikipediaCityData = async function (arg0_link) {
+    //Convert from parameters
+    var link = arg0_link;
+
+    //Declare local instance variables
+    var dom_obj = await JSDOM.fromURL(link);
+    var dom_document = dom_obj.window.document;
+    var return_obj = {};
+    
+    //
+  };
+
   global.getWikipediaCityLink = async function (arg0_city_name) {
     //Convert from parameters
     var city_name = arg0_city_name;
