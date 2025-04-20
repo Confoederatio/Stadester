@@ -34,7 +34,6 @@
 
             if (has_year) {
               population_table_el = local_el;
-              console.log(local_text_content);
               break;
             }
           }
@@ -102,8 +101,7 @@
               parseFloat(local_content) : parseFloat(stripNonNumerics(local_content));
             if (isNaN(local_value))
               local_value = parseFloat(stripNonNumerics(local_content));
-
-            console.log(`- Processing: `, local_row, local_content, local_value);
+            
             if (y == 0) {
               local_year = local_value;
             } else if (y == 1) {
@@ -143,7 +141,6 @@
 
             if (local_link.startsWith("/wiki/")) {
               var absolute_url = `https://en.wikipedia.org${local_link}`;
-              console.log(`- Found 'Demographics of' page at: ${absolute_url}`);
               return_obj = await getWikipediaCityData(absolute_url);
             }
           }
@@ -184,7 +181,6 @@
           if (local_year_content) {
             local_year_content = local_year_content.split(/[-–]/)[0];
             population_infobox_year = stripNonNumerics(local_year_content);
-            console.log(`Local infobox year:`, population_infobox_year);
           }
         }
 
@@ -209,7 +205,6 @@
                 local_value = parseFloat(stripNonNumerics(local_content));
 
               if (!isNaN(local_value)) {
-                console.log(`- Local infobox value: `, local_value, local_content);
                 population_infobox_value = local_value;
                 break;
               }
