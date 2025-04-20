@@ -43,7 +43,7 @@
 
     //Return the final image buffer
     return canvas.toBuffer();
-  }
+  };
 
   global.adjustSliderToMin = async function (arg0_el) {
     //Convert from parameters
@@ -56,7 +56,7 @@
     //Create an actions object; move slider to the minimum value
     var actions = browser_instance.actions({ bridge: true });
     await actions.dragAndDrop(slider, { x: x_offset, y: 0 }).perform();
-  }
+  };
 
   global.clickElement = async function (arg0_el) {
     //Convert from parameters
@@ -64,7 +64,7 @@
 
     //Click element
     try { await local_el.click(); } catch {}
-  }
+  };
 
   /*
     getBrowserInstance() - Fetches browser instance.
@@ -94,7 +94,7 @@
 
     //Return statement
     return global.browser_instance;
-  }
+  };
 
   global.getPlaintextFromSelectors = async function (arg0_url, arg1_selectors) {
     //Convert from parameters
@@ -125,7 +125,7 @@
     } else {
       return "";
     }
-  }
+  };
 
   global.getWebsiteHTML = async function (arg0_url) {
     //Convert from parameters
@@ -155,7 +155,7 @@
 
     //Return statement
     return fetch_html;
-  }
+  };
 
   /*
     getWebsiteLinks()
@@ -240,7 +240,7 @@
 
     //Return statement
     return unique(links);
-  }
+  };
 
   global.getWebsitePlaintext = async function (arg0_url) {
     //Convert from parameters
@@ -252,7 +252,7 @@
     //Return statement
     if (fetch_html)
       return stripHTML(fetch_html);
-  }
+  };
 
   /*
     generatePlaintext() - Generates a plaintext string dump from Plaintext CURL JSON.
@@ -303,7 +303,7 @@
 
     //Return statement
     return string;
-  }
+  };
 
   /*
     generatePlaintextRecursively() - Helper function for generatePlaintext().
@@ -420,7 +420,7 @@
     //6. Return string
     //Return statement
     return string;
-  }
+  };
 
   global.getElement = async function (selector) {
     // Wait until the selector appears in the DOM and is visible
@@ -455,7 +455,7 @@
 
     //Return statement
     return pages[0];
-  }
+  };
 
   global.isPageConnected = async function (arg0_browser_instance) {
     //Convert from parameters
@@ -468,7 +468,7 @@
     } catch (e) {
       return false;
     }
-  }
+  };
 
   /*
     screenshotHTML() - Takes screenshots from a current Puppeteer browser instance.
@@ -585,7 +585,7 @@
       log.error(`Error taking A4 screenshots: ${e}`);
       console.log(e);
     }
-  }
+  };
 
   global.sleep = function (arg0_ms) {
     //Convert from parameters
@@ -593,7 +593,7 @@
 
     //Return statement
     return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  };
 
   global.stripHTML = function (arg0_html) {
     //Convert from parameters
@@ -623,7 +623,7 @@
       //Return statement
       return pt_formatted.trim();
     }
-  }
+  };
 
   global.waitForStableContent = async function (arg0_browser_instance, arg1_selector, arg2_interval) {
     //Convert from parameters
@@ -659,7 +659,7 @@
       { polling: interval, timeout: 0 },
       selector
     );
-  }
+  };
 
   global.writeTextFile = function (arg0_filepath, arg1_text) {
     //Convert from parameters
@@ -672,5 +672,5 @@
     } catch (e) {
       console.log(e);
     }
-  }
+  };
 }
