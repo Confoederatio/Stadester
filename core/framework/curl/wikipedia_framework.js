@@ -90,7 +90,13 @@
 
         if (local_row_has_number) {
           for (var y = 0; y < local_cells.length; y++) {
+            var all_sup_els = local_cells[y].querySelectorAll("sup");
+            if (all_sup_els.length)
+              for (var z = 0; z < all_sup_els.length; z++)
+                all_sup_els[z].remove();
+
             var local_content = local_cells[y].textContent;
+              local_content = local_content.split(/[-–]/)[0];
             var local_value = (!local_content.includes(",")) ? 
               parseFloat(local_content) : parseFloat(stripNonNumerics(local_content));
             if (isNaN(local_value))
@@ -110,9 +116,36 @@
             }
           }
 
-          if (!isNaN(local_population))
-            modifyValue(return_obj, local_year, local_population);
+          if (!isNaN(local_population)) {
+            var is_not_error = true;
+
+            if (local_year.toString().includes(`e`))
+              is_not_error = false;
+            if (isNaN(parseInt(local_year)))
+              is_not_error = false;
+
+            if (is_not_error)
+              modifyValue(return_obj, local_year, local_population);
+          }
         }
+      }
+    } else {
+      //There is no population table, check if there is a 'Demographics of' page.
+      var all_main_article_els = dom_document.querySelectorAll(`div.hatnote:has(a)`);
+
+      for (var i = 0; i < all_main_article_els.length; i++) {
+        var local_links = all_main_article_els[i].querySelectorAll("a");
+
+        for (var x = 0; x < local_links.length; x++)
+          if (local_links[x].textContent.toLowerCase().trim().includes("demographics of ")) {
+            var local_link = local_links[x].getAttribute("href");
+
+            if (local_link.startsWith("/wiki/")) {
+              var absolute_url = `https://en.wikipedia.org${local_link}`;
+              console.log(`- Found 'Demographics of' page at: ${absolute_url}`);
+              return_obj = await getWikipediaCityData(absolute_url);
+            }
+          }
       }
     }
 
