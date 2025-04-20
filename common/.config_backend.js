@@ -1,5 +1,6 @@
 global.config = {
   chandler_modelski: {},
   defines: {},
-  populstat: {}
+  populstat: {},
+  wikipedia: {}
 };

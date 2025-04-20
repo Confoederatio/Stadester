@@ -8,8 +8,116 @@
     var dom_obj = await JSDOM.fromURL(link);
     var dom_document = dom_obj.window.document;
     var return_obj = {};
+    var wikipedia_processing_obj = config.wikipedia.processing;
     
-    //
+    //Fetch population table element
+    var population_table_el;
+    var population_table_els = dom_document.querySelectorAll(wikipedia_processing_obj.population_table_selector);
+
+    for (var i = 0; i < population_table_els.length; i++) {
+      var local_el = population_table_els[i];
+
+      for (var x = 0; x < wikipedia_processing_obj.population_patterns.length; x++) {
+        var local_header_el = local_el.querySelector("caption");
+        var local_pattern = wikipedia_processing_obj.population_patterns[x].toLowerCase().trim();
+
+        if (local_header_el) {
+          var local_text_content = local_el.textContent.toLowerCase().trim();
+
+          if (local_text_content.includes(local_pattern)) {
+            var has_year = false;
+
+            for (var y = 0; y < wikipedia_processing_obj.year_patterns.length; y++)
+              if (local_text_content.includes(wikipedia_processing_obj.year_patterns[y]))
+                has_year = true;
+
+            if (has_year) {
+              population_table_el = local_el;
+              console.log(local_text_content);
+              break;
+            }
+          }
+        }
+      }
+      if (population_table_el)
+        break;
+    }
+    
+    if (population_table_el) {
+      var in_thousands = false;
+      var in_millions = false;
+
+      //1. Check if the population is in thousands or millions
+      for (var x = 0; x < wikipedia_processing_obj.thousands_patterns.length; x++) {
+        var local_pattern = wikipedia_processing_obj.thousands_patterns[x].toLowerCase().trim();
+        var local_text_content = population_table_el.textContent.toLowerCase().trim();
+
+        if (local_text_content.includes(local_pattern)) {
+          in_thousands = true;
+          break;
+        }
+      }
+      for (var x = 0; x < wikipedia_processing_obj.millions_patterns.length; x++) {
+        var local_pattern = wikipedia_processing_obj.millions_patterns[x].toLowerCase().trim();
+        var local_text_content = population_table_el.textContent.toLowerCase().trim();
+
+        if (local_text_content.includes(local_pattern)) {
+          in_millions = true;
+          break;
+        }
+      }
+
+      //2. Fetch population data
+      var all_rows = population_table_el.querySelectorAll("tr");
+
+      for (var x = 0; x < all_rows.length; x++) {
+        var local_row = all_rows[x];
+        var local_row_has_number = false;
+
+        var local_cells = local_row.querySelectorAll("th, td");
+        var local_population;
+        var local_year;
+        
+        //Iterate over local_cells
+        for (var y = 0; y < local_cells.length; y++) {
+          var local_value = parseFloat(stripNonNumerics(local_cells[y].textContent));
+
+          if (!isNaN(local_value)) {
+            local_row_has_number = true;
+            break;
+          }
+        }
+
+        if (local_row_has_number) {
+          for (var y = 0; y < local_cells.length; y++) {
+            var local_content = local_cells[y].textContent;
+            var local_value = (!local_content.includes(",")) ? 
+              parseFloat(local_content) : parseFloat(stripNonNumerics(local_content));
+            if (isNaN(local_value))
+              local_value = parseFloat(stripNonNumerics(local_content));
+
+            console.log(`- Processing: `, local_row, local_content, local_value);
+            if (y == 0) {
+              local_year = local_value;
+            } else if (y == 1) {
+              if (in_thousands) {
+                local_value *= 1000;
+              } else if (in_millions) {
+                local_value *= 1000000;
+              }
+
+              local_population = local_value;
+            }
+          }
+
+          if (!isNaN(local_population))
+            modifyValue(return_obj, local_year, local_population);
+        }
+      }
+    }
+
+    //Return statement
+    return return_obj;
   };
 
   global.getWikipediaCityLink = async function (arg0_city_name) {
