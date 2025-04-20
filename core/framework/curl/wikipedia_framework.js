@@ -14,6 +14,7 @@
     var population_table_el;
     var population_table_els = dom_document.querySelectorAll(wikipedia_processing_obj.population_table_selector);
 
+    //1. Fetch population table
     for (var i = 0; i < population_table_els.length; i++) {
       var local_el = population_table_els[i];
 
@@ -147,6 +148,77 @@
             }
           }
       }
+    }
+
+    //2. Fetch population total from infobox
+    var infobox_el = dom_document.querySelector(`table.infobox.ib-settlement`);
+
+    if (infobox_el) {
+      var all_rows = infobox_el.querySelectorAll("tr");
+      var population_infobox_value;
+      var population_infobox_year;
+
+      for (var x = 0; x < all_rows.length; x++) {
+        var local_cell_has_population = false;
+        var local_cells = all_rows[x].querySelectorAll("td, th");
+
+        for (var y = 0; y < wikipedia_processing_obj.population_patterns.length; y++) {
+          var local_pattern = wikipedia_processing_obj.population_patterns[y].toLowerCase().trim();
+
+          if (all_rows[x].textContent.toLowerCase().trim().includes(local_pattern)) {
+            local_cell_has_population = true;
+            break;
+          }
+        }
+
+        if (local_cell_has_population) {
+          var year_cell = local_cells[0];
+            
+          var all_sup_els = year_cell.querySelectorAll("sup");
+          for (var z = 0; z < all_sup_els.length; z++)
+            all_sup_els[z].remove();
+
+          var local_split_content = year_cell.textContent.split(/\s+/);
+          var local_year_content = local_split_content[1];
+
+          if (local_year_content) {
+            local_year_content = local_year_content.split(/[-–]/)[0];
+            population_infobox_year = stripNonNumerics(local_year_content);
+            console.log(`Local infobox year:`, population_infobox_year);
+          }
+        }
+
+        //2.1. Immediate post-infobox handling
+        if (
+          population_infobox_year &&
+          isNaN(population_infobox_value)
+        )
+          for (var y = 1; y < local_cells.length; y++) {
+            var local_cell = local_cells[y];
+
+            if (local_cell) {
+              var all_sup_els = local_cell.querySelectorAll("sup");
+              for (var z = 0; z < all_sup_els.length; z++)
+                all_sup_els[z].remove();
+
+              var local_content = local_cell.textContent;
+              local_content = local_content.split(/[-–]/)[0];
+              var local_value = (!local_content.includes(",")) ? 
+                parseFloat(local_content) : parseFloat(stripNonNumerics(local_content));
+              if (isNaN(local_value))
+                local_value = parseFloat(stripNonNumerics(local_content));
+
+              if (!isNaN(local_value)) {
+                console.log(`- Local infobox value: `, local_value, local_content);
+                population_infobox_value = local_value;
+                break;
+              }
+            }
+          }
+      }
+
+      if (population_infobox_year && !isNaN(population_infobox_value))
+        return_obj[population_infobox_year] = population_infobox_value;
     }
 
     //Return statement

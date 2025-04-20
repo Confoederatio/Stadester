@@ -45,6 +45,6 @@
     var input_string = arg0_input_string;
 
     //Return statement
-    return input_string.toString().replace(/[^\d]/g, "");
+    return input_string.toString().replace(/[^\d]/gm, "");
   };
 }
