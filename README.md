@@ -1,8 +1,5 @@
 # Stadestér (Production)
 
-### <div align = "center">Global Economic and Population Data, 10000BC-2023AD.</div>
-<div align = "center">Figure 1. GDP (PPP) in FY2000 International Dollars, 100s in AD1850.</div>
-
 <div align = "center">-</div>
 <br>
 <img src = "https://i.postimg.cc/8CKkNXk2/crd-light-logo.png" height = "64">
