@@ -55,6 +55,7 @@
           for (var x = 0; x < local_city.other_names.length; x++)
             city_names.push(`${local_city.other_names[x]}, ${local_country_name}`);
         console.log(` - Processing ${local_city.name}: `, city_names);
+        console.log(`  - Populstat towns remaining: (${getPopulstatMissingCoordsTotal()}/${getPopulstatTotalTowns()})`);
 
         //Iterate over all city_names until a valid latlng coord is found
         for (var x = 0; x < city_names.length; x++) try {
@@ -172,6 +173,53 @@
 
     //Return statement
     return all_town_links;
+  };
+
+  global.getPopulstatMissingCoordsTotal = function () {
+    //Declare local instance variables
+    var cities_missing_coords = 0;
+    var populstat_obj = main.curl.populstat;
+
+    //Iterate over all_countries
+    var all_countries = Object.keys(populstat_obj);
+
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+
+      //Iterate over all_cities
+      var all_cities = Object.keys(local_country);
+
+      for (var x = 0; x < all_cities.length; x++) {
+        var local_city = local_country[all_cities[x]];
+        
+        if (!local_city.coords)
+          cities_missing_coords++;
+      }
+    }
+
+    //Return statement
+    return cities_missing_coords;
+  };
+
+  global.getPopulstatTotalTowns = function () {
+    //Declare local instance variables
+    var populstat_obj = main.curl.populstat;
+    var total_towns = 0;
+
+    //Iterate over all_countries
+    var all_countries = Object.keys(populstat_obj);
+
+    for (var i = 0; i < all_countries.length; i++) {
+      var local_country = populstat_obj[all_countries[i]];
+      
+      //Iterate over all_cities
+      var all_cities = Object.keys(local_country);
+
+      total_towns += all_cities.length;
+    }
+
+    //Return statement
+    return total_towns;
   };
 
   /**
