@@ -1,4 +1,4 @@
-# Stadestér (Production)
+# Stadestér
 <br>
 <img src = "https://i.postimg.cc/8CKkNXk2/crd-light-logo.png" height = "64">
 
