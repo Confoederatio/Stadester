@@ -13,6 +13,19 @@
     }
   };
 
+  global.getAllWikipediaCitiesData = async function () {
+    //Declare local instance variables
+    var all_countries = Object.keys(main.curl.populstat);
+
+    //Iterate over all_countries
+    for (var i = 0; i < all_countries.length; i++) try {
+      console.log(`Processing (${i + 1}/${all_countries.length}) ..`);
+      await getWikipediaCountryCitiesData(all_countries[i]);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   global.getWikipediaCityData = async function (arg0_link) {
     //Convert from parameters
     var link = arg0_link;
@@ -397,6 +410,63 @@
           console.error(e);
         }
       }
+    } catch (e) {
+      console.error(e);
+    }
+
+    //Save the updated wikipedia object to JSON file
+    FileManager.saveFileAsJSON(config.defines.common.input_file_paths.populstat_cities, main.curl.populstat);
+
+    //Return statement
+    return country_obj;
+  };
+
+  global.getWikipediaCountryCitiesData = async function (arg0_country_key) {
+    //Convert from parameters
+    var country_key = arg0_country_key;
+
+    //Declare local instance variables
+    var country_obj = main.curl.populstat[country_key];
+
+    //Iterate over all_cities
+    var all_cities = Object.keys(country_obj);
+
+    console.log(`Processing ${country_key} (${config.populstat.countries[country_key]}), with ${all_cities.length} cities ..`);
+
+    for (var i = 0; i < all_cities.length; i++) try {
+      //Save every 100 geolocated cities
+      if (i % 100 == 0 && i != 0)
+        savePopulstatData();
+
+      var city_names = [`${local_city.name}, ${local_country_name}`];
+      var local_city = country_obj[all_cities[i]];
+      var local_country_name = config.populstat.countries[country_key];
+        local_country_name = getList(local_country_name)[0];
+
+      if (local_city.other_names)
+        for (var x = 0; x < local_city.other_names.length; x++)
+          city_names.push(`${local_city.other_names[x]}, ${local_country_name}`);
+      console.log(` - Processing ${local_city.name}: `, city_names, `(${i + 1}/${all_cities.length})`);
+
+      //1. Find local_city.wikipedia_link if it is not already present
+      if (!local_city.wikipedia_link)
+        for (var x = 0; x < city_names.length; x++) try {
+          var local_wikipedia_link = await getWikipediaCityLink(city_names[x]);
+
+          if (local_wikipedia_link) {
+            console.log(` - Found ${city_names[x]} at ${local_wikipedia_link}`);
+            local_city.wikipedia_link = local_wikipedia_link;
+            break;
+          } else {
+            console.log(` - Failed to find ${city_names[x]} at ${local_wikipedia_link}`);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      
+      //2. Fetch wikipedia_data
+      var wikipedia_data = await getWikipediaCityData(local_city.wikipedia_link);
+      console.log(local_city.wikipedia_link, wikipedia_data);
     } catch (e) {
       console.error(e);
     }
