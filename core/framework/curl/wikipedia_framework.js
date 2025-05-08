@@ -438,6 +438,9 @@
       if (i % 100 == 0 && i != 0)
         savePopulstatData();
 
+      //Skip if wikipedia_population already exists
+      if (local_city.wikipedia_population) continue;
+
       var city_names = [`${local_city.name}, ${local_country_name}`];
       var local_city = country_obj[all_cities[i]];
       var local_country_name = config.populstat.countries[country_key];
@@ -467,6 +470,16 @@
       //2. Fetch wikipedia_data
       var wikipedia_data = await getWikipediaCityData(local_city.wikipedia_link);
       console.log(local_city.wikipedia_link, wikipedia_data);
+
+      if (Object.keys(wikipedia_data).length == 0) try {
+        wikipedia_data = await getWikipediaCityData(`https://en.wikipedia.org/wiki/${local_city.name}`);
+        console.log(local_city.wikipedia_link, wikipedia_data);
+      } catch (e) {
+        console.error(e);
+      }
+
+      //Set local_city.wikipedia_population
+      local_city.wikipedia_population = wikipedia_data;
     } catch (e) {
       console.error(e);
     }
