@@ -519,13 +519,14 @@
           wikipedia_data = await getWikipediaCityData(local_wiki_link);
 
           console.log(`- Loading fallback for population table:`);
-          console.log(` -`, local_wiki_link, wikipedia_data);
+          console.log(` -`, local_wiki_link);
 
           //Break if wikipedia_data is found
           if (wikipedia_data)
             if (Object.keys(wikipedia_data).length > 0)
               break;
         } catch (e) {}
+        console.log(wikipedia_data);
       } catch (e) {}
 
       //Set local_city.wikipedia_population
