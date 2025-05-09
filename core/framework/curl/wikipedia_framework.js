@@ -459,6 +459,7 @@
       //Save every 100 geolocated cities
       if (i % 100 == 0 && i != 0)
         savePopulstatData();
+      
       //Internal guard clause; skip if wikipedia_population already exists
       if (local_city.wikipedia_population) 
         if (Object.keys(local_city.wikipedia_population).length > 0) continue;
