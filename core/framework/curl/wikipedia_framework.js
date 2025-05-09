@@ -438,13 +438,13 @@
       if (i % 100 == 0 && i != 0)
         savePopulstatData();
 
-      //Skip if wikipedia_population already exists
-      if (local_city.wikipedia_population) continue;
-
       var city_names = [`${local_city.name}, ${local_country_name}`];
       var local_city = country_obj[all_cities[i]];
       var local_country_name = config.populstat.countries[country_key];
         local_country_name = getList(local_country_name)[0];
+
+      //Skip if wikipedia_population already exists
+      if (local_city.wikipedia_population) continue;
 
       if (local_city.other_names)
         for (var x = 0; x < local_city.other_names.length; x++)
