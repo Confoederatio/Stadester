@@ -13,14 +13,24 @@
     }
   };
 
-  global.getAllWikipediaCitiesData = async function () {
+  /**
+   * getAllWikipediaCitiesData() - Fetches the wikipedia_population data for all cities in all countries.
+   * @param {Object} [arg0_options] - The options to use for the fetch.
+   *  @param {boolean} [arg0_options.overwrite_data=false] - Whether to overwrite the existing wikipedia_population data.
+   * 
+   * @returns {Object} - The country object with the wikipedia_population data.
+   */
+  global.getAllWikipediaCitiesData = async function (arg0_options) {
+    //Convert from parameters
+    var options = (arg0_options) ? arg0_options : {};
+
     //Declare local instance variables
     var all_countries = Object.keys(main.curl.populstat);
 
     //Iterate over all_countries
     for (var i = 0; i < all_countries.length; i++) try {
       console.log(`Processing (${i + 1}/${all_countries.length}) ..`);
-      await getWikipediaCountryCitiesData(all_countries[i]);
+      await getWikipediaCountryCitiesData(all_countries[i], options);
     } catch (e) {
       console.error(e);
     }
@@ -421,12 +431,22 @@
     return country_obj;
   };
 
-  global.getWikipediaCountryCitiesData = async function (arg0_country_key) {
+  /**
+   * getWikipediaCountryCitiesData() - Fetches the wikipedia_population data for all cities in a country.
+   * @param {String} arg0_country_key - The country key to fetch the data for.
+   * @param {Object} [arg1_options] - The options to use for the fetch.
+   *  @param {boolean} [arg1_options.overwrite_data=false] - Whether to overwrite the existing wikipedia_population data.
+   * 
+   * @returns {Object} - The country object with the wikipedia_population data.
+   */
+  global.getWikipediaCountryCitiesData = async function (arg0_country_key, arg1_options) {
     //Convert from parameters
     var country_key = arg0_country_key;
+    var options = (arg1_options) ? arg1_options : {};
 
     //Declare local instance variables
     var country_obj = main.curl.populstat[country_key];
+    var wikipedia_processing_obj = config.wikipedia.processing;
 
     //Iterate over all_cities
     var all_cities = Object.keys(country_obj);
@@ -434,17 +454,18 @@
     console.log(`Processing ${country_key} (${config.populstat.countries[country_key]}), with ${all_cities.length} cities ..`);
 
     for (var i = 0; i < all_cities.length; i++) try {
+      var local_city = country_obj[all_cities[i]];
+
       //Save every 100 geolocated cities
       if (i % 100 == 0 && i != 0)
         savePopulstatData();
+      //Internal guard clause; skip if wikipedia_population already exists
+      if (local_city.wikipedia_population) 
+        if (Object.keys(local_city.wikipedia_population).length > 0) continue;
 
       var city_names = [`${local_city.name}, ${local_country_name}`];
-      var local_city = country_obj[all_cities[i]];
       var local_country_name = config.populstat.countries[country_key];
         local_country_name = getList(local_country_name)[0];
-
-      //Skip if wikipedia_population already exists
-      if (local_city.wikipedia_population) continue;
 
       if (local_city.other_names)
         for (var x = 0; x < local_city.other_names.length; x++)
@@ -452,27 +473,47 @@
       console.log(` - Processing ${local_city.name}: `, city_names, `(${i + 1}/${all_cities.length})`);
 
       //1. Find local_city.wikipedia_link if it is not already present
-      if (!local_city.wikipedia_link)
-        for (var x = 0; x < city_names.length; x++) try {
-          var local_wikipedia_link = await getWikipediaCityLink(city_names[x]);
-
-          if (local_wikipedia_link) {
-            console.log(` - Found ${city_names[x]} at ${local_wikipedia_link}`);
-            local_city.wikipedia_link = local_wikipedia_link;
-            break;
-          } else {
-            console.log(` - Failed to find ${city_names[x]} at ${local_wikipedia_link}`);
-          }
-        } catch (e) {
-          console.error(e);
-        }
+      if (!local_city.wikipedia_link && !options.overwrite_data) continue; //Skip for now
       
       //2. Fetch wikipedia_data
-      var wikipedia_data = await getWikipediaCityData(local_city.wikipedia_link);
-      console.log(local_city.wikipedia_link, wikipedia_data);
+      var wikipedia_data;
+      
+      //3. Fetch wikipedia_data using recursive failing loop
+      async function internalLoadMainLink () {
+        var success = false;
+        var wikipedia_data;
 
-      if (Object.keys(wikipedia_data).length == 0) try {
+        while (!success) {
+          try {
+            wikipedia_data = await getWikipediaCityData(local_city.wikipedia_link);
+            success = true; // Exit the loop if the data is successfully fetched
+          } catch (e) {
+            console.error(e); // Log the error
+            // Optionally, add a delay before retrying to avoid spamming the server
+            await new Promise((resolve) => setTimeout(resolve, 1000)); // 1-second delay
+          }
+        }
+
+        return wikipedia_data;
+      } 
+
+      //4. Make sure the link does not contain excluded patterns; otherwise skip it
+      var has_excluded_pattern = false;
+
+      //Iterate over all wikipedia_processing_obj.excluded_urls
+      for (var x = 0; x < wikipedia_processing_obj.excluded_urls.length; x++)
+        if (local_city.wikipedia_link.includes(wikipedia_processing_obj.excluded_urls[x]))
+          has_excluded_pattern = true;
+
+      if (!has_excluded_pattern) {
+        wikipedia_data = await internalLoadMainLink();
+
+        console.log(local_city.wikipedia_link, wikipedia_data);
+      }
+
+      if (!wikipedia_data || Object.keys(wikipedia_data).length == 0) try {
         wikipedia_data = await getWikipediaCityData(`https://en.wikipedia.org/wiki/${local_city.name}`);
+        console.log(`Loading fallback for population table:`);
         console.log(local_city.wikipedia_link, wikipedia_data);
       } catch (e) {
         console.error(e);
