@@ -16,4 +16,4 @@ Raw dumps of demographic data, cleaned and refined are available from the follow
 - Populstat (Geolocated, Cleaned)
 - Wikipedia (Geolocated, Cleaned)
 
-This repository is currently in production, and as such, datasets are not yet complete. Stadestér is a sub-project of both **Eoscala** and **Velkscala**.
+This repository is currently in production and may be subject to frequent updates. Stadestér is a sub-project of both **Eoscala** and **Velkscala**.
