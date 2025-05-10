@@ -87,7 +87,38 @@
 
     //Return statement
     return return_array;
-  }
+  };
+
+  /**
+   * findDomain() - Finds the closest valid domain in an array for a given value.
+   * @param {Array<number>} arg0_input_array - The array to search.
+   * @param {number} arg1_value - The value to find the closest valid domain for.
+   * 
+   * @returns {Array<number, number>}
+   */
+  global.findDomain = function (arg0_input_array, arg1_value) {
+    //Convert from parameters
+    var input_array = getList(arg0_input_array);
+    var value = returnSafeNumber(arg1_value);
+    
+    //Guard clause if input_array has less than 2 elements
+    if (input_array.length < 2) return;
+
+    //Declare local instance variables
+    var sorted_array = [...new Set(input_array)].sort((a, b) => a - b);
+
+    //Return statement
+    //Return cases if value is outside domain
+    if (value <= sorted_array[0]) 
+      return [sorted_array[0], sorted_array[1]];
+    if (value >= sorted_array[sorted_array.length - 1]) 
+      return [sorted_array[sorted_array.length - 2], sorted_array[sorted_array.length - 1]];
+
+    //Iterate over all elements in sorted_array
+    for (var i = 0; i < sorted_array.length - 1; i++)
+      if (value >= sorted_array[i] && value <= sorted_array[i + 1])
+        return [sorted_array[i], sorted_array[i + 1]];
+  };
 
   /*
     flattenArray() - Flattens a nested array to be 1-deep.
@@ -101,7 +132,7 @@
 
     //Return statement
     return input_array.flat(Infinity);
-  }
+  };
 
   /*
     getCardinality() - Fetches the cardinality of an array/object/variable.
@@ -164,7 +195,23 @@
 
     //Return statement
     return (array.length == 0 || array.every((element) => element == undefined));
-  }
+  };
+
+  /**
+   * mergeArray() - Given two arrays, return the concatenation.
+   * @param {Array} arg0_input_array 
+   * @param {Array} arg1_array 
+   * 
+   * @returns {Array}
+   */
+  global.mergeArrays = function (arg0_input_array, arg1_array) {
+    //Convert from parameters
+    var input_array = getList(arg0_input_array);
+    var array = getList(arg1_array);
+
+    //Return statement
+    return input_array.concat(array);
+  };
 
   /*
     moveElement() - Moves an element from one index to another.

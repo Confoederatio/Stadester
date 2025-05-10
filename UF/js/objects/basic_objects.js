@@ -40,7 +40,42 @@
 
     //Return statement
     return cleaned_object;
-  }
+  };
+
+  /**
+   * cubicSplineInterpolationObject() - Performs a cubic spline interpolation operation on an object.
+   * @param {Object} arg0_object - The object to perform the cubic spline interpolation on.
+   * @param {Object} [arg1_options]
+   *  @param {Array<number>} [arg1_options.years] - Optional. The years to interpolate over if possible.
+   * 
+   * @return {Object}
+   */
+  global.cubicSplineInterpolationObject = function (arg0_object, arg1_options) {
+    //Convert from parameters
+    var object = arg0_object;
+    var options = (arg1_options) ? arg1_options : {};
+
+    //Declare local instance variables
+    var sorted_indices = sortYearValues(object);
+    var values = sorted_indices.values;
+    var years = sorted_indices.years;
+
+    //Initialise options post-local instance variables
+    options.years = (options.years) ? 
+      getList(options.years) : years;
+
+    //Iterate over all years in domain
+    for (var i = 0; i < options.years.length; i++)
+      if (options.years[i] <= returnSafeNumber(years[years.length - 1])) {
+        let current_year = options.years[i];
+
+        if (current_year <= returnSafeNumber(years[years.length - 1]))
+          object[current_year] = cubicSplineInterpolation(years, values, current_year);
+      }
+
+    //Return statement
+    return object;
+  };
 
   /*
     flattenObject() - Moves all keys into the 1st nesting.
@@ -89,7 +124,7 @@
 
     //Return statement
     return object;
-  }
+  };
 
   /*
     getDepth() - Returns object depth as a number.
@@ -115,7 +150,7 @@
 
     //Return statement
     return depth;
-  }
+  };
 
   /*
     getObjectKey() - Fetches object value from a string (e.g. 'test.one.two')
@@ -150,7 +185,7 @@
 
     //Return statement
     return return_value;
-  }
+  };
 
   /*
     getObjectList() - Returns object as an array list.
@@ -176,7 +211,7 @@
     } else {
       return [];
     }
-  }
+  };
 
   /*
     getSubobject() - Fetches a subobject.
@@ -231,7 +266,7 @@
         }
       }
     }
-  }
+  };
 
   /*
     getSubobjectKeys() - Fetches the keys in a subobject that match the given criteria.
@@ -282,7 +317,7 @@
 
     //Return statement
     return all_keys;
-  }
+  };
 
   /*
     mergeObjects() - Merges two objects together.
@@ -379,7 +414,7 @@
 
     //Return statement
     return object;
-  }
+  };
 
   /*
     sortObject() - Sorts an object.
@@ -407,5 +442,22 @@
         return (mode == "descending") ? b - a : a - b;
       })
     );
-  }
+  };
+
+  global.sortYearValues = function (arg0_object) {
+    //Convert from parameters
+    var object = arg0_object;
+
+    //Declare local instance variables
+    var values = Object.values(object).map((value) => value);
+    var years = Object.keys(object).map((year) => parseInt(year));
+
+    //Ensure values; years are sorted properly
+    var sorted_indices = years.map((_, i) => i).sort((a, b) => years[a] - years[b]);
+      values = sorted_indices.map(i => values[i]);
+      years = sorted_indices.map(i => years[i]);
+
+    //Return statement
+    return { values: values, years: years };
+  };
 }

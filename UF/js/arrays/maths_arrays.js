@@ -633,7 +633,7 @@
 
     //Return statement
     return tridiagonal_matrix;
-  }
+  };
 
   /*
     inverseMatrix() - Inverts a matrix.
@@ -693,6 +693,40 @@
 
     //Return statement
     return result;
+  };
+
+  global.linearInterpolation = function (arg0_x_values, arg1_y_values, arg2_x_to_interpolate) {
+    var x_values = getList(arg0_x_values);
+    var y_values = getList(arg1_y_values);
+    var x = parseFloat(arg2_x_to_interpolate);
+    
+    //Guard clause to make sure x_values and y_values are valid
+    if (x_values.length < 2 || y_values.length < 2) return y_values[0];
+    if (x_values[0] == x_values[1]) return y_values[0];
+    
+    //Declare local instance variables
+    var left_x = x_values[0];
+    var right_x = x_values[1];
+    var left_y = y_values[0];
+    var right_y = y_values[1];
+  
+    //Use exponential growth if both values are positive
+    if (left_y > 0 && right_y > 0) {
+      var growth_rate = Math.log(right_y / left_y) / (right_x - left_x);
+      if (x < left_x)
+        return left_y * Math.exp(growth_rate * (x - left_x));
+      if (x > right_x)
+        return right_y * Math.exp(growth_rate * (x - right_x));
+      return left_y + (x - left_x) * (right_y - left_y) / (right_x - left_x); //Linear interpolation
+    }
+  
+    //Return statement; fallback to standard linear if growth is not defined
+    var slope = (right_y - left_y) / (right_x - left_x);
+    if (x < left_x)
+      return left_y + (x - left_x) * slope;
+    if (x > right_x)
+      return right_y + (x - right_x) * slope;
+    return left_y + (x - left_x) * slope;
   };
 
   /*
