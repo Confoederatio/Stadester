@@ -1,9 +1,10 @@
 //Initialise functions
 {
-  global.fixAllWikipediaOutliers = function () {
-    //Declare local instance variables
-    var populstat_obj = main.population.populstat;
+  global.fixAllWikipediaOutliers = function (arg0_populstat_obj) {
+    //Convert from parameters
+    var populstat_obj = (arg0_populstat_obj) ? arg0_populstat_obj : main.population.populstat;
 
+    //Declare local instance variables
     var all_countries = Object.keys(populstat_obj);
 
     //Iterate over all_countries
@@ -70,5 +71,8 @@
         }
       }
     }
+
+    //Return statement
+    return populstat_obj;
   }
 }

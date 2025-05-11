@@ -4,6 +4,7 @@
    * getPopulstatCity() - Fetches a Populstat city object/combined key '<city>-<country>'.
    * @param {String} arg0_city_name 
    * @param {Object} [arg1_options]
+   *  @param {Object} [arg1_options.populstat_obj] - If provided, use this Populstat object instead of main.population.populstat.
    *  @param {boolean} [arg1_options.same_country=false] - If true, only search within the same country.
    *  @param {boolean} [arg1_options.return_key=false] - If true, return the city key instead of the city object.
    * 
@@ -16,8 +17,10 @@
 
     //Declare local instance variables
     var city_exists = ["", false]; //[city_obj, city_exists];
-    var populstat_obj = (main.population.populstat) ? 
-      main.population.populstat : main.curl.populstat;
+    var populstat_obj = (options.populstat_obj) ? 
+      options.populstat_obj : 
+        (main.population.populstat) ? 
+          main.population.populstat : main.curl.populstat; //Double ternary; refactor later
     var split_city_name = city_name.split(/,|-/);
     
     var all_countries = Object.keys(populstat_obj);
