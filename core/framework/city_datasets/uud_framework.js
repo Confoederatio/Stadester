@@ -148,7 +148,7 @@
     for (var i = 0; i < all_countries.length; i++) {
       var local_country = uud_obj[all_countries[i]];
 
-      if (local_country.type) continue;
+      if (local_country.type) continue; //Internal guard clause; this is likely a Chandler-Modelski city
 
       //Iterate over all_cities
       var all_cities = Object.keys(local_country);
@@ -268,6 +268,15 @@
     var uud_obj = initialiseUUD();
 
     //Save uud_obj
+    console.log(`- Saving raw UUD data...`);
     FileManager.saveFileAsJSON(config.defines.common.input_file_paths.uud_cities, uud_obj);
+
+    //Process uud_obj
+    console.log(`- Processing UUD data...`);
+    new_uud_obj = processUUD(JSON.parse(JSON.stringify(uud_obj)));
+
+    //Save new_uud_obj
+    console.log(`- Saving processed UUD data...`);
+    FileManager.saveFileAsJSON(config.defines.common.input_file_paths.processed_uud_cities, new_uud_obj);
   };
 }

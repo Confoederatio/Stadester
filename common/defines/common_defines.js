@@ -9,6 +9,7 @@ config.defines.common = {
       modelski_modern_v2: "./input/modelski/modelskiModernV2.csv",
     },
     populstat_cities: "./input/populstat_cities/populstat_cities.json",
+    processed_uud_cities: "./input/uud/processed_uud_cities.json",
     uud_cities: "./input/uud/uud_cities.json"
   },
 
