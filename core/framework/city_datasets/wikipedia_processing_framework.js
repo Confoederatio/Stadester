@@ -65,7 +65,8 @@
         } else {
           //Otherwise; update wikipedia_population and scale it by local_average_deviation to be compatible with Populstat
           local_city.wikipedia_population = operateObject(best_fit_dictionary[0][2], `n = n*${local_average_deviation}`);
-          local_city.wikipedia_population = cubicSplineInterpolationObject(local_city.wikipedia_population);
+          if (Object.keys(local_city.wikipedia_population).length >= 2)
+            local_city.wikipedia_population = cubicSplineInterpolationObject(local_city.wikipedia_population);
 
           local_city.best_fit_dictionary = best_fit_dictionary;
         }

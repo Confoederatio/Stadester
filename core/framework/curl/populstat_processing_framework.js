@@ -64,8 +64,9 @@
       //Check for exact city_exists
       if (all_countries[i].toLowerCase().trim() == city_country)
         is_in_country = true;
-      if (local_country_name.toLowerCase().trim() == city_country)
-        is_in_country = true;
+      if (local_country_name)
+        if (local_country_name.toLowerCase().trim() == city_country)
+          is_in_country = true;
       if (!city_country)
         is_in_country = true;
 
@@ -91,9 +92,10 @@
             local_city_names = local_city_names.concat(local_city.other_names);
 
         for (var y = 0; y < local_city_names.length; y++)
-          if (local_city_names[y].toLowerCase().trim().indexOf(city_name) != -1)
-            city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
-              `${all_cities[x]}-${local_country_name}`, true];
+          if (local_city_names[y])
+            if (local_city_names[y].toLowerCase().trim().indexOf(city_name) != -1)
+              city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
+                `${all_cities[x]}-${local_country_name}`, true];
       }
     }
 
@@ -114,9 +116,10 @@
               local_city_names = local_city_names.concat(local_city.other_names);
 
           for (var y = 0; y < local_city_names.length; y++)
-            if (local_city_names[y].toLowerCase().trim() == city_name)
-              city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
-                `${all_cities[x]}-${local_country_name}`, true];
+            if (local_city_names[y])
+              if (local_city_names[y].toLowerCase().trim() == city_name)
+                city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
+                  `${all_cities[x]}-${local_country_name}`, true];
         }
     }
 
@@ -144,9 +147,10 @@
               local_city_names = local_city_names.concat(local_city.other_names);
           
           for (var y = 0; y < local_city_names.length; y++)
-            if (local_city_names[y].toLowerCase().trim() == city_name)
-              city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
-                `${all_cities[x]}-${local_country_name}`, true];
+            if (local_city_names[y])
+              if (local_city_names[y].toLowerCase().trim() == city_name)
+                city_exists = [(!options.return_key) ? local_country[all_cities[x]] :
+                  `${all_cities[x]}-${local_country_name}`, true];
         }
     }
 

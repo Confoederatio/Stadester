@@ -133,7 +133,7 @@
       var closest_object_key = findClosestPointInDomain(object_domain, local_value);
       var closest_object_value = object[closest_object_key];
 
-      average_deviations.push(local_value/closest_object_value);
+      average_deviations.push(returnSafeNumber(local_value)/returnSafeNumber(closest_object_value, 1));
     }
 
     //Return statement
