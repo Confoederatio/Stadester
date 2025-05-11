@@ -41,6 +41,17 @@
         }
 
         //2. Fetch average deviation factor via closest point sampling
+        //Remove .wikipedia_population's first element if it is within 2% of the present population
+        var all_wikipedia_population_keys = Object.keys(local_city.wikipedia_population);
+
+        if (all_wikipedia_population_keys.length >= 2) {
+          var first_wikipedia_population = local_city.wikipedia_population[all_wikipedia_population_keys[0]];
+          var last_wikipedia_population = local_city.wikipedia_population[all_wikipedia_population_keys[all_wikipedia_population_keys.length - 1]];
+
+          if (Math.abs(first_wikipedia_population - local_city.population) < 0.02*local_city.population)
+            delete local_city.wikipedia_population[all_wikipedia_population_keys[0]];
+        }
+
         var wikipedia_population = JSON.parse(JSON.stringify(local_city.wikipedia_population));
         var tn_wikipedia_population = operateObject(JSON.parse(JSON.stringify(local_city.wikipedia_population)), `n = n/1000`);
         var mn_wikipedia_population = operateObject(JSON.parse(JSON.stringify(local_city.wikipedia_population)), `n = n/1000000`);

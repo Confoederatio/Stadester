@@ -62,28 +62,37 @@
         console.error(e);
       }
 
-      //Otherwise; check if there are any UUD cities whose .coords are within 0,1 degrees of ot_latlng
+      //Otherwise; check if there are any UUD cities whose .coords are within 0,1 degrees of ot_latlng; fetch closest match
       //Iterate over all_countries
-      for (var x = 0; x < all_countries.length; x++) {
-        var local_country = uud_obj[all_countries[x]];
+      var closest_uud_city = [undefined, 1];
 
-        //Iterate over all_cities in country
-        var all_cities = Object.keys(local_country);
+      if (!local_uud_city) {
+        for (var x = 0; x < all_countries.length; x++) {
+          var local_country = uud_obj[all_countries[x]];
 
-        for (var y = 0; y < all_cities.length; y++) {
-          var local_ot_city = local_country[all_cities[y]];
+          //Iterate over all_cities in country
+          var all_cities = Object.keys(local_country);
 
-          if (local_ot_city.type) continue; //Skip if .type is already set; this is likely a Chandler-Modelski city
+          for (var y = 0; y < all_cities.length; y++) {
+            var local_ot_city = local_country[all_cities[y]];
 
-          var latlng = local_ot_city.coords;
-          var ot_latlng = [local_city.latitude, local_city.longitude];
+            if (local_ot_city.type) continue; //Skip if .type is already set; this is likely a Chandler-Modelski city
 
-          if (latlng)
-            if (Math.abs(latlng[0] - ot_latlng[0]) <= 0.1 && Math.abs(latlng[1] - ot_latlng[1]) <= 0.1) {
-              local_uud_city = local_country[all_cities[y]];
-              break;
-            }
+            var latlng = local_ot_city.coords;
+            var ot_latlng = [local_city.latitude, local_city.longitude];
+
+            if (latlng)
+              if (Math.abs(latlng[0] - ot_latlng[0]) <= 0.1 && Math.abs(latlng[1] - ot_latlng[1]) <= 0.1) {
+                var sum_distance = Math.abs(latlng[0] - ot_latlng[0]) + Math.abs(latlng[1] - ot_latlng[1]);
+
+                if (sum_distance < closest_uud_city[1] && sum_distance < 0.2)
+                  closest_uud_city = [local_country[all_cities[y]], sum_distance];
+              }
+          }
         }
+
+        if (closest_uud_city[0])
+          local_uud_city = closest_uud_city[0];
       }
 
       //Assign populstat/chandler_modelski city types
@@ -123,6 +132,10 @@
     return uud_obj;
   };
 
+  /**
+   * processUUD() - Merges all UUD city data into having monolithic .population estimates
+   * @param {*} arg0_uud_obj 
+   */
   global.processUUD = function (arg0_uud_obj) {
     //Convert from parameters
     var uud_obj = arg0_uud_obj;
@@ -130,9 +143,12 @@
     //Declare local instance variables
     var all_countries = Object.keys(uud_obj);
 
+    //1. Handle .type = "populstat" first
     //Iterate over all_countries
     for (var i = 0; i < all_countries.length; i++) {
       var local_country = uud_obj[all_countries[i]];
+
+      if (local_country.type) continue;
 
       //Iterate over all_cities
       var all_cities = Object.keys(local_country);
@@ -140,8 +156,19 @@
       for (var x = 0; x < all_cities.length; x++) {
         var local_uud_city = local_country[all_cities[x]];
         
+        //Wikipedia population
+        if (local_uud_city.wikipedia_population) {
+          //2. Remove all duplicate entries from .wikipedia_population
+
+          //3. Cubic interpolate intervening years
+
+          //4. Merge .wikipedia_population into .population using geometric mean where domains overlap
+        }
       }
     }
+
+    //Return statement
+    return uud_obj;
   };
 
   global.saveUUDData = function () {
