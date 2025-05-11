@@ -1,6 +1,6 @@
 //Initialise functions
 {
-  function fixAllWikipediaOutliers () { //[WIP] - Finish function body
+  global.fixAllWikipediaOutliers = function () {
     //Declare local instance variables
     var populstat_obj = main.population.populstat;
 
@@ -24,6 +24,7 @@
         if (local_city.wikipedia_population)
           if (Object.keys(local_city.wikipedia_population).length > 0)
             has_wikipedia_population = true;
+        if (!has_wikipedia_population) continue;
 
         //1. Cubic spline .population field if possible
         if (local_city.population) {
@@ -57,13 +58,15 @@
         best_fit_dictionary.sort((a, b) => a[1] - b[1]);
         var best_fit_deviation = best_fit_dictionary[0][1];
 
-        //Delete wikipedia_population if deviation exceeds 4 (i.e. one quartile)
-        if (best_fit_deviation > 4) {
+        //Delete wikipedia_population if deviation exceeds twice the credible estimates
+        if (best_fit_deviation < 0.5 || best_fit_deviation > 2) {
           delete local_city.wikipedia_population;
         } else {
           //Otherwise; update wikipedia_population and scale it by local_average_deviation to be compatible with Populstat
-          local_city.wikipedia_population = operateObject(best_fit_dictionary[0][2], `n = n/${local_average_deviation}`);
+          local_city.wikipedia_population = operateObject(best_fit_dictionary[0][2], `n = n*${local_average_deviation}`);
           local_city.wikipedia_population = cubicSplineInterpolationObject(local_city.wikipedia_population);
+
+          local_city.best_fit_dictionary = best_fit_dictionary;
         }
       }
     }
