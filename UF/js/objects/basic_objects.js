@@ -466,6 +466,17 @@
     var object = arg0_object;
 
     //Declare local instance variables
-    
+    var values = Object.values(object);
+
+    var duplicates = values.filter((value, index, array) => array.indexOf(value) !== array.lastIndexOf(value));
+    var return_obj = {};
+
+    //Remove keys with duplicate values
+    for (var [key, value] of Object.entries(object))
+      if (!duplicates.includes(value))
+        return_obj[key] = value;
+
+    //Return statement
+    return return_obj;
   };
 }
