@@ -460,4 +460,12 @@
     //Return statement
     return { values: values, years: years };
   };
+
+  global.strictRemoveDuplicatesInObject = function (arg0_object) { //[WIP] - Finish function body
+    //Convert from parameters
+    var object = arg0_object;
+
+    //Declare local instance variables
+    
+  };
 }

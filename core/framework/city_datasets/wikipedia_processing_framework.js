@@ -21,11 +21,6 @@
         var local_population_domain = [];
 
         var has_wikipedia_population = false;
-        
-        if (local_city.wikipedia_population)
-          if (Object.keys(local_city.wikipedia_population).length > 0)
-            has_wikipedia_population = true;
-        if (!has_wikipedia_population) continue;
 
         //1. Cubic spline .population field if possible
         if (local_city.population) {
@@ -39,6 +34,12 @@
             parseInt(all_population_keys[all_population_keys.length - 1])
           ];
         }
+        
+        //1.1. See if wikipedia_population is present and needs fixing
+        if (local_city.wikipedia_population)
+          if (Object.keys(local_city.wikipedia_population).length > 0)
+            has_wikipedia_population = true;
+        if (!has_wikipedia_population) continue;
 
         //2. Fetch average deviation factor via closest point sampling
         //Remove .wikipedia_population's first element if it is within 2% of the present population

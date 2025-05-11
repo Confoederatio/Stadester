@@ -158,12 +158,14 @@
         
         //Wikipedia population
         if (local_uud_city.wikipedia_population) {
-          //2. Remove all duplicate entries from .wikipedia_population
+          //2. Remove all duplicate integer entries from .wikipedia_population. Do not preserve any of the duplicate entries.
 
           //3. Cubic interpolate intervening years
 
           //4. Merge .wikipedia_population into .population using geometric mean where domains overlap
         }
+
+        //5. Merge .chandler_modelski_population into .population (after cubic spline interpolation) using geometric mean where domains overlap
       }
     }
 
