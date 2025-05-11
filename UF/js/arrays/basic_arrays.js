@@ -89,6 +89,26 @@
     return return_array;
   };
 
+  /** 
+   * findClosestPointInDomain() - Finds the closest point in a domain for a given value.
+   * @param {Array<number>} arg0_input_array - The array to search.
+   * @param {number} arg1_value - The value to find the closest point for.
+   * 
+   * @returns {number}
+   */
+  global.findClosestPointInDomain = function (arg0_input_array, arg1_value) {
+    //Convert from parameters
+    var input_array = getList(arg0_input_array).sort((a, b) => a - b);
+    var value = returnSafeNumber(arg1_value);
+
+    //Ensure the target is within the domain
+    if (value < input_array[0]) return input_array[0];
+    if (value > input_array[input_array.length - 1]) return input_array[input_array.length - 1];
+
+    //Return statement
+    return value;
+  };
+
   /**
    * findDomain() - Finds the closest valid domain in an array for a given value.
    * @param {Array<number>} arg0_input_array - The array to search.

@@ -113,7 +113,32 @@
 
     //Return statement
     return operateObjects(object, ot_object, `i = i/x`, options);
-  }
+  };
+
+  global.getAverageDeviationFromObject = function (arg0_object, arg1_object) {
+    //Convert from parameters
+    var object = arg0_object;
+    var ot_object = arg1_object;
+    
+    //Declare local instance variables
+    var all_object_keys = Object.keys(object);
+    var all_ot_object_keys = Object.keys(ot_object);
+    var average_deviations = [];
+    var object_domain = [parseInt(all_object_keys[0]), parseInt(all_object_keys[all_object_keys.length - 1])];
+
+    //Iterate over all_ot_object_keys
+    for (var i = 0; i < all_ot_object_keys.length; i++) {
+      var local_value = ot_object[all_ot_object_keys[i]];
+
+      var closest_object_key = findClosestPointInDomain(object_domain, local_value);
+      var closest_object_value = object[closest_object_key];
+
+      average_deviations.push(local_value/closest_object_value);
+    }
+
+    //Return statement
+    return getAverage(average_deviations);
+  };
 
   /*
     getObjectMaximum() - Fetches the maximum value within an object.

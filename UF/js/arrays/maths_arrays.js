@@ -485,7 +485,22 @@
 
     //Return statement
     return solution;
-  }
+  };
+
+  global.getAverage = function (arg0_input_array) {
+    //Convert from parameters
+    var input_array = getList(arg0_input_array);
+
+    //Declare local instance variables
+    var array_sum = 0;
+
+    //Iterate over input_array
+    for (var i = 0; i < input_array.length; i++)
+      array_sum += input_array[i];
+
+    //Return statement
+    return array_sum/input_array.length;
+  };
 
   /*
     getCofactor() - Fetches the cofactor in a matrix.
