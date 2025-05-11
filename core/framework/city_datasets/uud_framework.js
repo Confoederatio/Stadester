@@ -226,6 +226,32 @@
         }
 
         //6. Merge .chandler_modelski_population into .population (after cubic spline interpolation) using geometric mean where domains overlap
+        if (local_uud_city.chandler_modelski_population) {
+          var all_chandler_modelski_population_keys = Object.keys(local_uud_city.chandler_modelski_population);
+          var chandler_modelski_population_domain = [
+            parseInt(all_chandler_modelski_population_keys[0]), 
+            parseInt(all_chandler_modelski_population_keys[all_chandler_modelski_population_keys.length - 1])
+          ];
+          
+          local_uud_city.chandler_modelski_population = cubicSplineInterpolationObject(local_uud_city.chandler_modelski_population, { 
+            years: chandler_modelski_population_years 
+          });
+
+          //Merge .chandler_modelski_population into .population using geometric mean where domains overlap
+          all_chandler_modelski_population_keys = Object.keys(local_uud_city.chandler_modelski_population);
+
+          //Iterate over all_chandler_modelski_population_keys
+          for (var y = 0; y < all_chandler_modelski_population_keys.length; y++) {
+            var local_population_value = local_uud_city.population[all_chandler_modelski_population_keys[y]];
+            var local_chandler_modelski_value = local_uud_city.chandler_modelski_population[all_chandler_modelski_population_keys[y]];
+
+            if (local_population_value && local_chandler_modelski_value) {
+              local_uud_city.population[all_chandler_modelski_population_keys[y]] = weightedGeometricMean([local_population_value, local_chandler_modelski_value]);
+            } else {
+              local_uud_city.population[all_chandler_modelski_population_keys[y]] = local_chandler_modelski_value;
+            }
+          }
+        }
 
         //7. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
 

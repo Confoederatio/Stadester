@@ -60,6 +60,9 @@
     var values = sorted_indices.values;
     var years = sorted_indices.years;
 
+    //Guard clause if there are less than 2 years
+    if (years.length < 2) return object;
+
     //Initialise options post-local instance variables
     options.years = (options.years) ? 
       getList(options.years) : years;

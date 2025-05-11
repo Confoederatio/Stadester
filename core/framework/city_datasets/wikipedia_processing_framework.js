@@ -26,7 +26,9 @@
         if (local_city.population) {
           var all_population_keys = Object.keys(local_city.population);
 
-          local_city.population = cubicSplineInterpolationObject(local_city.population);
+          //Cubic spline interpolate if there are at least 2 extant data points
+          if (all_population_keys.length >= 2)
+            local_city.population = cubicSplineInterpolationObject(local_city.population);
           local_city.population = operateObject(local_city.population, `n = n*1000`);
 
           local_population_domain = [
