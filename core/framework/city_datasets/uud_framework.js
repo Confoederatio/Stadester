@@ -1,5 +1,18 @@
 //Initialise functions
 {
+  global.flattenMetrosInUUD = function (arg0_uud_obj) {
+    //Convert from parameters
+    var uud_obj = arg0_uud_obj;
+
+    //[WIP] - Move this to a stage 2 function post-interpolation
+    //1. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
+
+    //2. Remove any zero or negative values from the main agglomeration if there is a main agglomeration
+
+    //Return statement
+    return uud_obj;
+  };
+
   global.initialiseUUD = function (arg0_options) {
     //Convert from parameters
     var options = (arg0_options) ? arg0_options : {};
@@ -132,6 +145,16 @@
     return uud_obj;
   };
 
+  global.interpolateUUD = function (arg0_uud_obj) {
+    //Convert from parameters
+    var uud_obj = arg0_uud_obj;
+    
+    //Declare local instance variables
+    
+    //Return statement
+    return uud_obj;
+  };
+
   /**
    * processUUD() - Merges all UUD city data into having monolithic .population estimates
    * @param {*} arg0_uud_obj 
@@ -169,7 +192,7 @@
             var local_population_value = local_uud_city.population[all_wikipedia_population_keys[y]];
             var local_wikipedia_value = local_uud_city.wikipedia_population[all_wikipedia_population_keys[y]];
 
-            if (local_population_value) {
+            if (local_population_value != undefined) {
               local_uud_city.population[all_wikipedia_population_keys[y]] = weightedGeometricMean([local_population_value, local_wikipedia_value]);
             } else {
               local_uud_city.population[all_wikipedia_population_keys[y]] = local_wikipedia_value;
@@ -186,19 +209,30 @@
             var local_chandler_modelski_value = local_uud_city.chandler_modelski_population[all_chandler_modelski_population_keys[y]];
             var local_population_value = local_uud_city.population[all_chandler_modelski_population_keys[y]];
             
-            if (local_chandler_modelski_value) {
+            if (local_population_value != undefined) {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = weightedGeometricMean([local_population_value, local_chandler_modelski_value]);
             } else {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = local_chandler_modelski_value;
             }
           }
         }
-
-        //4. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
-
-        //5. Remove any zero or negative values from the main agglomeration if there is a main agglomeration
       }
     }
+
+    //4. Remove growth rate outliers, then interpolate, then flatten UUD
+    uud_obj = removeUUDGrowthRateOutliers(uud_obj);
+    uud_obj = interpolateUUD(uud_obj);
+    uud_obj = flattenMetrosInUUD(uud_obj);
+    
+    //Return statement
+    return uud_obj;
+  };
+
+  global.removeUUDGrowthRateOutliers = function (arg0_uud_obj) {
+    //Convert from parameters
+    var uud_obj = arg0_uud_obj;
+
+    //Declare local instance variables
     
     //Return statement
     return uud_obj;
