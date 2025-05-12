@@ -1,3 +1,3 @@
 config.populstat.processing = {
-  agglomeration_patterns: [`(agglomeration)`, `agglomeration of`]
+  agglomeration_patterns: [`agglomeration of`]
 };

@@ -158,7 +158,16 @@
     return (city_exists[1]) ? city_exists[0] : undefined;
   };
 
-  global.getPopulstatMetroObject = function (arg0_city_name) {
+  /**
+   * getPopulstatMetroObject() - Fetches a Populstat metro object/combined key '<city>-<country>'.
+   * @param {String} arg0_city_name 
+   * @param {Object} [arg1_options]
+   *  
+   *  @param {boolean} [arg1_options.return_key=false] - If true, return the city key instead of the city object.
+   * 
+   * @returns {Object|String}
+   */
+  global.getPopulstatMetroObject = function (arg0_city_name, arg1_options) {
 
   };
 

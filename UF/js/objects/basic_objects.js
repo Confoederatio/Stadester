@@ -80,6 +80,28 @@
     return object;
   };
 
+  global.cubicSplineInterpolationObjectDomain = function (arg0_object) {
+    //Convert from parameters
+    var object = arg0_object;
+
+    //Declare local instance variables
+    var all_object_keys = Object.keys(object);
+    var object_domain = [
+      parseInt(all_object_keys[0]),
+      parseInt(all_object_keys[all_object_keys.length - 1])
+    ];
+    var object_years = [];
+
+    //Fill in object_domain for all years
+    for (var i = object_domain[0]; i <= object_domain[1]; i++)
+      object_years.push(i);
+
+    //Return statement
+    return cubicSplineInterpolationObject(object, {
+      years: object_years
+    });
+  };
+
   /*
     flattenObject() - Moves all keys into the 1st nesting.
     arg0_object: (Object) - The object to pass.

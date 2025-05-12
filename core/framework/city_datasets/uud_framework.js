@@ -135,8 +135,10 @@
   /**
    * processUUD() - Merges all UUD city data into having monolithic .population estimates
    * @param {*} arg0_uud_obj 
+   * 
+   * @returns {Object}
    */
-  global.processUUD = function (arg0_uud_obj) { //[WIP] - Finish function body
+  global.processUUD = function (arg0_uud_obj) {
     //Convert from parameters
     var uud_obj = arg0_uud_obj;
 
@@ -147,7 +149,7 @@
     //Iterate over all_countries
     for (var i = 0; i < all_countries.length; i++) {
       var local_country = uud_obj[all_countries[i]];
-
+      
       if (local_country.type) continue; //Internal guard clause; this is likely a Chandler-Modelski city
 
       //Iterate over all_cities
@@ -156,68 +158,18 @@
       for (var x = 0; x < all_cities.length; x++) {
         var local_uud_city = local_country[all_cities[x]];
 
-        //.population
-        //2. Cubic interpolate intervening years for .population, but only if there are at least 2 extant data points
-        if (local_uud_city.population) {
-          var all_population_keys = Object.keys(local_uud_city.population);
-
-          if (all_population_keys.length >= 2) {
-            //Cubic interpolate intervening years
-            var population_domain = [
-              parseInt(all_population_keys[0]), 
-              parseInt(all_population_keys[all_population_keys.length - 1])
-            ];
-            var population_years = [];
-
-            //Fill in population_domain for all years
-            for (var y = population_domain[0]; y <= population_domain[1]; y++)
-              population_years.push(y);
-
-            //Cubic interpolate intervening years
-            local_uud_city.population = cubicSplineInterpolationObject(local_uud_city.population, { 
-              years: population_years 
-            });
-          }
-        }
-        
         if (!local_uud_city.population) local_uud_city.population = {};
 
-        //.wikipedia_population 
+        //2. Merge .wikipedia_population into .population using geometric mean where domains overlap
         if (local_uud_city.wikipedia_population) {
           var all_wikipedia_population_keys = Object.keys(local_uud_city.wikipedia_population);
-
-          //3. Remove all duplicate integer entries from .wikipedia_population. Do not preserve any of the duplicate entries.
-          local_uud_city.wikipedia_population = removeAllDuplicateValuesInObject(local_uud_city.wikipedia_population);
-
-          //4. Cubic interpolate intervening years, but only if there are at least 2 extant data points
-          if (all_wikipedia_population_keys.length >= 2) {
-            //Cubic interpolate intervening years
-            var wikipedia_population_domain = [
-              parseInt(all_wikipedia_population_keys[0]), 
-              parseInt(all_wikipedia_population_keys[all_wikipedia_population_keys.length - 1])
-            ];
-
-            var wikipedia_population_years = [];
-
-            //Fill in wikipedia_population_domain for all years
-            for (var y = wikipedia_population_domain[0]; y <= wikipedia_population_domain[1]; y++)
-              wikipedia_population_years.push(y);
-
-            //Cubic interpolate intervening years
-            local_uud_city.wikipedia_population = cubicSplineInterpolationObject(local_uud_city.wikipedia_population, { 
-              years: wikipedia_population_years 
-            });
-          }
-
-          //5. Merge .wikipedia_population into .population using geometric mean where domains overlap
-          all_wikipedia_population_keys = Object.keys(local_uud_city.wikipedia_population);
 
           //Iterate over all_wikipedia_population_keys
           for (var y = 0; y < all_wikipedia_population_keys.length; y++) {
             var local_population_value = local_uud_city.population[all_wikipedia_population_keys[y]];
             var local_wikipedia_value = local_uud_city.wikipedia_population[all_wikipedia_population_keys[y]];
 
-            if (local_population_value && local_wikipedia_value) {
+            if (local_population_value) {
               local_uud_city.population[all_wikipedia_population_keys[y]] = weightedGeometricMean([local_population_value, local_wikipedia_value]);
             } else {
               local_uud_city.population[all_wikipedia_population_keys[y]] = local_wikipedia_value;
@@ -225,27 +177,16 @@
           }
         }
 
-        //6. Merge .chandler_modelski_population into .population (after cubic spline interpolation) using geometric mean where domains overlap
+        //3. Merge .chandler_modelski_population into .population using geometric mean where domains overlap
         if (local_uud_city.chandler_modelski_population) {
           var all_chandler_modelski_population_keys = Object.keys(local_uud_city.chandler_modelski_population);
-          var chandler_modelski_population_domain = [
-            parseInt(all_chandler_modelski_population_keys[0]), 
-            parseInt(all_chandler_modelski_population_keys[all_chandler_modelski_population_keys.length - 1])
-          ];
-          
-          local_uud_city.chandler_modelski_population = cubicSplineInterpolationObject(local_uud_city.chandler_modelski_population, { 
-            years: chandler_modelski_population_years 
-          });
-
-          //Merge .chandler_modelski_population into .population using geometric mean where domains overlap
-          all_chandler_modelski_population_keys = Object.keys(local_uud_city.chandler_modelski_population);
 
           //Iterate over all_chandler_modelski_population_keys
           for (var y = 0; y < all_chandler_modelski_population_keys.length; y++) {
-            var local_population_value = local_uud_city.population[all_chandler_modelski_population_keys[y]];
             var local_chandler_modelski_value = local_uud_city.chandler_modelski_population[all_chandler_modelski_population_keys[y]];
-
-            if (local_population_value && local_chandler_modelski_value) {
+            var local_population_value = local_uud_city.population[all_chandler_modelski_population_keys[y]];
+            
+            if (local_chandler_modelski_value) {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = weightedGeometricMean([local_population_value, local_chandler_modelski_value]);
             } else {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = local_chandler_modelski_value;
@@ -253,12 +194,12 @@
           }
         }
 
-        //7. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
+        //4. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
 
-        //8. Remove any zero or negative values from the main agglomeration if there is a main agglomeration
+        //5. Remove any zero or negative values from the main agglomeration if there is a main agglomeration
       }
     }
-
+    
     //Return statement
     return uud_obj;
   };
