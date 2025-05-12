@@ -140,6 +140,16 @@
     return getAverage(average_deviations);
   };
 
+  global.getObjectGrowthRates = function (arg0_object) { //[WIP] - Finish function body
+    //Convert from parameters
+    var object = arg0_object;
+
+    //Declare local instance variables
+    var all_object_keys = Object.keys(object);
+    
+    
+  };
+
   /*
     getObjectMaximum() - Fetches the maximum value within an object.
     arg0_object: (Object) - The object to pass.

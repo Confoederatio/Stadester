@@ -6,8 +6,10 @@
 
     //[WIP] - Move this to a stage 2 function post-interpolation
     //1. Fetch local_agglomeration_obj; subtract suburbs from .is_agglomeration_of figures for overlapping years where possible
-
+    
     //2. Remove any zero or negative values from the main agglomeration if there is a main agglomeration
+
+    //3. Merge cities with duplicate .coords
 
     //Return statement
     return uud_obj;
@@ -187,17 +189,18 @@
         if (local_uud_city.wikipedia_population) {
           var all_wikipedia_population_keys = Object.keys(local_uud_city.wikipedia_population);
 
-          //Iterate over all_wikipedia_population_keys
-          for (var y = 0; y < all_wikipedia_population_keys.length; y++) {
-            var local_population_value = local_uud_city.population[all_wikipedia_population_keys[y]];
-            var local_wikipedia_value = local_uud_city.wikipedia_population[all_wikipedia_population_keys[y]];
+          //Iterate over all_wikipedia_population_keys; skip first key which is often erroneous
+          if (wikipedia_population_keys.length > 1)
+            for (var y = 1; y < all_wikipedia_population_keys.length; y++) {
+              var local_population_value = local_uud_city.population[all_wikipedia_population_keys[y]];
+              var local_wikipedia_value = local_uud_city.wikipedia_population[all_wikipedia_population_keys[y]];
 
-            if (local_population_value != undefined) {
-              local_uud_city.population[all_wikipedia_population_keys[y]] = weightedGeometricMean([local_population_value, local_wikipedia_value]);
-            } else {
-              local_uud_city.population[all_wikipedia_population_keys[y]] = local_wikipedia_value;
+              if (local_population_value != undefined && local_population_value > 0) {
+                local_uud_city.population[all_wikipedia_population_keys[y]] = weightedGeometricMean([local_population_value, local_wikipedia_value]);
+              } else {
+                local_uud_city.population[all_wikipedia_population_keys[y]] = local_wikipedia_value;
+              }
             }
-          }
         }
 
         //3. Merge .chandler_modelski_population into .population using geometric mean where domains overlap
@@ -209,7 +212,7 @@
             var local_chandler_modelski_value = local_uud_city.chandler_modelski_population[all_chandler_modelski_population_keys[y]];
             var local_population_value = local_uud_city.population[all_chandler_modelski_population_keys[y]];
             
-            if (local_population_value != undefined) {
+            if (local_population_value != undefined && local_population_value > 0) {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = weightedGeometricMean([local_population_value, local_chandler_modelski_value]);
             } else {
               local_uud_city.population[all_chandler_modelski_population_keys[y]] = local_chandler_modelski_value;
@@ -228,6 +231,12 @@
     return uud_obj;
   };
 
+  /**
+   * removeUUDGrowthRateOutliers() - Removes growth rate outliers from UUD - anything with a yearly growth rate of more than 25% or less than -25%
+   * @param {Object} arg0_uud_obj 
+   * 
+   * @returns {Object}
+   */
   global.removeUUDGrowthRateOutliers = function (arg0_uud_obj) {
     //Convert from parameters
     var uud_obj = arg0_uud_obj;
