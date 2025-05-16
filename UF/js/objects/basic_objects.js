@@ -84,7 +84,7 @@
     //Convert from parameters
     var object = arg0_object;
 
-    //Declare local instance variables
+    //Declare local instance variables  
     var all_object_keys = Object.keys(object);
     var object_domain = [
       parseInt(all_object_keys[0]),

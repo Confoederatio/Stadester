@@ -171,7 +171,7 @@
 
   };
 
-  /**
+  /** 
    * getPopulstatCountry() - Fetches a Populstat country object/key.
    * @param {String} arg0_country_name 
    * @param {Object} [arg1_options]
