@@ -58,6 +58,86 @@
     return max_pop;
   };
   
+  global.mergeCityEntries = function (arg0_target_city, arg1_source_city, arg2_is_metro) {
+    //Convert from parameters
+    var target_city = arg0_target_city;
+    var source_city = arg1_source_city;
+    var is_metro = arg2_is_metro;
+    
+    if (!target_city || !source_city) return target_city;
+    
+    //Initialize name_peaks tracking map
+    if (!target_city.name_peaks) {
+      target_city.name_peaks = {};
+      if (target_city.name)
+        target_city.name_peaks[target_city.name] = getPeakPopulation(target_city.population);
+    }
+    if (!source_city.name_peaks) {
+      source_city.name_peaks = {};
+      if (source_city.name)
+        source_city.name_peaks[source_city.name] = getPeakPopulation(source_city.population);
+    }
+    
+    //Merge name_peaks from source into target
+    let source_name_keys = Object.keys(source_city.name_peaks);
+    for (let i = 0; i < source_name_keys.length; i++) {
+      let name_key = source_name_keys[i];
+      let source_peak = source_city.name_peaks[name_key];
+      target_city.name_peaks[name_key] = Math.max(target_city.name_peaks[name_key] || 0, source_peak);
+    }
+    
+    if (source_city.name && target_city.name_peaks[source_city.name] === undefined)
+      target_city.name_peaks[source_city.name] = getPeakPopulation(source_city.population);
+    
+    //Determine primary name with highest individual peak population
+    let old_target_name = target_city.name;
+    let best_name = old_target_name;
+    let max_name_peak = -1;
+    let all_name_keys = Object.keys(target_city.name_peaks);
+    
+    for (let i = 0; i < all_name_keys.length; i++) {
+      let name_key = all_name_keys[i];
+      let name_peak = target_city.name_peaks[name_key];
+      if (name_peak > max_name_peak) {
+        max_name_peak = name_peak;
+        best_name = name_key;
+      }
+    }
+    
+    if (best_name) target_city.name = best_name;
+    
+    console.log(`- (!CM): Merging '${source_city.name}' into '${old_target_name}' -> Selected name: '${target_city.name}'`);
+    
+    //Merge other_names array
+    if (!target_city.other_names) target_city.other_names = [];
+    let candidate_names = [];
+    if (old_target_name) candidate_names.push(old_target_name);
+    if (source_city.name) candidate_names.push(source_city.name);
+    if (Array.isArray(source_city.other_names))
+      candidate_names = candidate_names.concat(source_city.other_names);
+    if (Array.isArray(target_city.other_names))
+      candidate_names = candidate_names.concat(target_city.other_names);
+    
+    for (let i = 0; i < candidate_names.length; i++) {
+      let cur_name = candidate_names[i];
+      if (cur_name && cur_name !== target_city.name && !target_city.other_names.includes(cur_name))
+        target_city.other_names.push(cur_name);
+    }
+    
+    //Merge attributes
+    if (source_city.is_agglomeration_of)
+      target_city.is_agglomeration_of = source_city.is_agglomeration_of;
+    
+    if (source_city.population)
+      if (is_metro) {
+        target_city.population = mergeCityPopulations(source_city.population, target_city.population);
+      } else {
+        target_city.population = mergeCityPopulations(target_city.population, source_city.population);
+      }
+    
+    return target_city;
+  };
+  
   global.initialiseUUD = function () {
     //Declare local instance variables
     var options = {
@@ -91,11 +171,16 @@
     
     for (let i = 0; i < all_options_keys.length; i++) {
       let local_db = options[all_options_keys[i]];
-      
-      //First come, first-serve
       let all_local_cities = Object.keys(local_db.data);
       
-      if (i === 0)
+      //Ensure key field exists on local cities
+      for (let x = 0; x < all_local_cities.length; x++) {
+        let city_obj = local_db.data[all_local_cities[x]];
+        if (city_obj && !city_obj.key) city_obj.key = all_local_cities[x];
+      }
+      
+      //First come, first-serve
+      if (i === 0) {
         for (let x = 0; x < all_local_cities.length; x++) {
           let local_city = local_db.data[all_local_cities[x]];
           
@@ -104,10 +189,11 @@
           
           return_obj[all_local_cities[x]] = local_city;
         }
+        continue;
+      }
       
       //Regular Euclidean merging based on precision rules
       {
-        //1. Iterate over all_local_cities and check against all_return_keys coords
         let all_return_keys = Object.keys(return_obj);
         
         for (let x = 0; x < all_local_cities.length; x++) {
@@ -184,14 +270,14 @@
               }
               
               if (closest_uud_city_match[0] <= local_db.semantic_precision) try {
-                if (!(i == 0 && return_obj[closest_uud_city_match[1].key])) {
+                if (closest_uud_city_match[1] && return_obj[closest_uud_city_match[1].key]) {
                   console.log(`- (!CM): Semantic merge match found: ${local_city.name}, ${closest_uud_city_match[1].name}, distance: ${closest_uud_city_match[0]}`);
                   was_merged = [true, closest_uud_city_match[1]];
                 }
               } catch (e) { console.error(e); }
             }
           
-          if (i != 0 && return_obj[all_local_cities[x]]) {
+          if (return_obj[all_local_cities[x]]) {
             let direct_match = return_obj[all_local_cities[x]];
             if (isAgglomeration(direct_match) === isAgglomeration(local_city))
               was_merged = [true, direct_match];
@@ -200,28 +286,11 @@
           let is_separate_city = false;
           
           if (was_merged[0]) {
-            let actual_city = return_obj[was_merged[1].key];
+            let actual_city = was_merged[1];
             
             if (actual_city) {
-              let local_peak_pop = getPeakPopulation(local_city.population);
-              let actual_peak_pop = getPeakPopulation(actual_city.population);
-              let old_actual_name = actual_city.name;
-              
-              if (local_peak_pop > actual_peak_pop && local_city.name)
-                actual_city.name = local_city.name;
-              
-              console.log(`- (!CM): Merging '${local_city.name}' into '${old_actual_name}' -> Selected name: '${actual_city.name}'`);
-              
-              if (local_city.is_agglomeration_of)
-                actual_city.is_agglomeration_of = local_city.is_agglomeration_of;
-              if (local_city.population)
-                if (local_db.is_metro) {
-                  actual_city.population = mergeCityPopulations(local_city.population, actual_city.population);
-                } else {
-                  actual_city.population = mergeCityPopulations(actual_city.population, local_city.population);
-                }
+              mergeCityEntries(actual_city, local_city, local_db.is_metro);
               actual_city.type = all_options_keys[i];
-              
               return_obj[actual_city.key] = actual_city;
               
               if (all_local_cities[x] != actual_city.key) delete return_obj[all_local_cities[x]];
@@ -235,7 +304,6 @@
           if (is_separate_city) {
             console.log(`- (!CM): Adding separate city: (${all_options_keys[i]})`, local_city.name);
             local_city.type = all_options_keys[i];
-            
             return_obj[all_local_cities[x]] = local_city;
           }
         }
@@ -300,20 +368,7 @@
             }
             
             if (should_merge) {
-              let a_peak = getPeakPopulation(city_a.population);
-              let b_peak = getPeakPopulation(city_b.population);
-              let old_a_name = city_a.name;
-              
-              if (b_peak > a_peak && city_b.name)
-                city_a.name = city_b.name;
-              
-              console.log(`- (!CM): Post-deduplication merge '${city_b.name}' into '${old_a_name}' -> Selected name: '${city_a.name}'`);
-              
-              if (city_b.is_agglomeration_of)
-                city_a.is_agglomeration_of = city_b.is_agglomeration_of;
-              if (city_b.population)
-                city_a.population = mergeCityPopulations(city_a.population, city_b.population);
-              
+              mergeCityEntries(city_a, city_b, false);
               delete return_obj[city_b_key];
             }
           }
@@ -497,7 +552,7 @@
     
     //Return statement
     return population_obj;
-  }
+  };
   
   global.mergeCityPopulations = function (arg0_population_obj, arg1_population_obj) {
     //Convert from parameters
