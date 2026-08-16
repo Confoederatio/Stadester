@@ -241,13 +241,13 @@
           if (city_b) {
             let should_merge = false;
             
-            //Check duplicate coordinates (distance <= 0.05)
+            //Check duplicate coordinates
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
               let norm_a = city_a.name.toLowerCase().trim();
               let norm_b = city_b.name.toLowerCase().trim();
               
-              if (dist <= 0.05 && norm_a === norm_b) should_merge = true;
+              if (dist <= 5 && norm_a === norm_b) should_merge = true;
             } catch (e) {
               console.error(e);
             }
