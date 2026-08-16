@@ -241,22 +241,32 @@
           if (city_b) {
             let should_merge = false;
             
-            //Check duplicate coordinates and name/other_names match
+            //Check duplicate coordinates and processed name/other_names match
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
               
               if (dist <= 5) {
                 let city_a_names = [];
-                if (city_a.name) city_a_names.push(city_a.name.toLowerCase().trim());
+                if (city_a.name) {
+                  let local_processed_name = processCityName(city_a.name);
+                  if (local_processed_name) city_a_names.push(local_processed_name);
+                }
                 if (Array.isArray(city_a.other_names))
-                  for (let x = 0; x < city_a.other_names.length; x++)
-                    if (city_a.other_names[x]) city_a_names.push(`${city_a.other_names[x]}`.toLowerCase().trim());
+                  for (let x = 0; x < city_a.other_names.length; x++) {
+                    let local_processed_name = processCityName(city_a.other_names[x]);
+                    if (local_processed_name) city_a_names.push(local_processed_name);
+                  }
                 
                 let city_b_names = [];
-                if (city_b.name) city_b_names.push(city_b.name.toLowerCase().trim());
+                if (city_b.name) {
+                  let local_processed_name = processCityName(city_b.name);
+                  if (local_processed_name) city_b_names.push(local_processed_name);
+                }
                 if (Array.isArray(city_b.other_names))
-                  for (let x = 0; x < city_b.other_names.length; x++)
-                    if (city_b.other_names[x]) city_b_names.push(`${city_b.other_names[x]}`.toLowerCase().trim());
+                  for (let x = 0; x < city_b.other_names.length; x++) {
+                    let local_processed_name = processCityName(city_b.other_names[x]);
+                    if (local_processed_name) city_b_names.push(local_processed_name);
+                  }
                 
                 for (let x = 0; x < city_a_names.length; x++) {
                   for (let y = 0; y < city_b_names.length; y++)
@@ -512,6 +522,19 @@
     
     //Return statement
     return population_obj;
+  };
+  
+  global.processCityName = function (arg0_name) {
+    //Convert from parameters
+    var name = (arg0_name) ? `${arg0_name}` : "";
+    
+    //Declare local instance variables
+    name = name.replace(/\(([^)]+)\)/g, function (match, p1) {
+      return (p1.toLowerCase().trim() === "agglomeration") ? "(agglomeration)" : "";
+    });
+    
+    //Return statement
+    return name.replace(/\s+/g, " ").trim().toLowerCase();
   };
   
   //saveUUDData() - Both initialises, then saves UUD data.
