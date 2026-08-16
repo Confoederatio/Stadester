@@ -528,10 +528,8 @@
     //Convert from parameters
     var name = (arg0_name) ? `${arg0_name}` : "";
     
-    //Declare local instance variables
-    name = name.replace(/\(([^)]+)\)/g, function (match, p1) {
-      return (p1.toLowerCase().trim() === "agglomeration") ? "(agglomeration)" : "";
-    });
+    //Declare local instance variables; remove all bracketed substrings including (agglomeration) for matching
+    name = name.replace(/\([^)]+\)/g, "");
     
     //Return statement
     return name.replace(/\s+/g, " ").trim().toLowerCase();
