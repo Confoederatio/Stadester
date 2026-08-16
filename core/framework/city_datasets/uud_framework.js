@@ -241,13 +241,32 @@
           if (city_b) {
             let should_merge = false;
             
-            //Check duplicate coordinates
+            //Check duplicate coordinates and name/other_names match
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
-              let norm_a = city_a.name.toLowerCase().trim();
-              let norm_b = city_b.name.toLowerCase().trim();
               
-              if (dist <= 5 && norm_a === norm_b) should_merge = true;
+              if (dist <= 5) {
+                let city_a_names = [];
+                if (city_a.name) city_a_names.push(city_a.name.toLowerCase().trim());
+                if (Array.isArray(city_a.other_names))
+                  for (let x = 0; x < city_a.other_names.length; x++)
+                    if (city_a.other_names[x]) city_a_names.push(`${city_a.other_names[x]}`.toLowerCase().trim());
+                
+                let city_b_names = [];
+                if (city_b.name) city_b_names.push(city_b.name.toLowerCase().trim());
+                if (Array.isArray(city_b.other_names))
+                  for (let x = 0; x < city_b.other_names.length; x++)
+                    if (city_b.other_names[x]) city_b_names.push(`${city_b.other_names[x]}`.toLowerCase().trim());
+                
+                for (let x = 0; x < city_a_names.length; x++) {
+                  for (let y = 0; y < city_b_names.length; y++)
+                    if (city_a_names[x] === city_b_names[y]) {
+                      should_merge = true;
+                      break;
+                    }
+                  if (should_merge) break;
+                }
+              }
             } catch (e) {
               console.error(e);
             }
