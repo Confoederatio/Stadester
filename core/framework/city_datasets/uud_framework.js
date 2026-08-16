@@ -14,88 +14,6 @@
       return true;
   };
   
-  global.canCitiesMerge = function (arg0_city_a, arg1_city_b, arg2_distance) {
-    //Convert from parameters
-    var city_a = arg0_city_a;
-    var city_b = arg1_city_b;
-    var distance = arg2_distance;
-    
-    if (!city_a || !city_b) return false;
-    
-    //Distance < 0.01 always merges
-    if (distance !== undefined && distance < 0.01) return true;
-    
-    //Helper to retrieve original name set
-    function getOriginalNames(city) {
-      if (city.original_names) return city.original_names;
-      let names = [];
-      if (city.name) {
-        let proc_n = processCityName(city.name);
-        if (proc_n) names.push(proc_n);
-      }
-      if (Array.isArray(city.other_names))
-        for (let i = 0; i < city.other_names.length; i++) {
-          let proc_n = processCityName(city.other_names[i]);
-          if (proc_n && !names.includes(proc_n)) names.push(proc_n);
-        }
-      city.original_names = names;
-      return names;
-    }
-    
-    let names_a = getOriginalNames(city_a);
-    let names_b = getOriginalNames(city_b);
-    
-    //Option B: Exact same original name (.name or .other_names)
-    for (let i = 0; i < names_a.length; i++)
-      for (let j = 0; j < names_b.length; j++)
-        if (names_a[i] === names_b[j]) return true;
-    
-    //Option A: Overlapping time domains AND population ratio < 2x
-    if (city_a.population && city_b.population) {
-      let years_a = Object.keys(city_a.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
-      let years_b = Object.keys(city_b.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
-      
-      if (years_a.length > 0 && years_b.length > 0) {
-        let start_a = years_a[0];
-        let end_a = years_a[years_a.length - 1];
-        let start_b = years_b[0];
-        let end_b = years_b[years_b.length - 1];
-        
-        let overlap_start = Math.max(start_a, start_b);
-        let overlap_end = Math.min(end_a, end_b);
-        
-        if (overlap_start <= overlap_end) {
-          let max_ratio = 0;
-          let evaluated_years = 0;
-          
-          for (let yr = overlap_start; yr <= overlap_end; yr++) {
-            let val_a = (city_a.population[yr] !== undefined) ? getPeakPopulation({ [yr]: city_a.population[yr] }) : 0;
-            let val_b = (city_b.population[yr] !== undefined) ? getPeakPopulation({ [yr]: city_b.population[yr] }) : 0;
-            
-            if (val_a > 0 && val_b > 0) {
-              evaluated_years++;
-              let ratio = (val_a > val_b) ? val_a / val_b : val_b / val_a;
-              if (ratio > max_ratio) max_ratio = ratio;
-            }
-          }
-          
-          if (evaluated_years === 0) {
-            let peak_a = getPeakPopulation(city_a.population);
-            let peak_b = getPeakPopulation(city_b.population);
-            if (peak_a > 0 && peak_b > 0) {
-              let overall_ratio = (peak_a > peak_b) ? peak_a / peak_b : peak_b / peak_a;
-              if (overall_ratio < 2) return true;
-            }
-          } else if (max_ratio > 0 && max_ratio < 2) {
-            return true;
-          }
-        }
-      }
-    }
-    
-    return false;
-  };
-  
   global.getCoordsDistance = function (arg0_coords, arg1_coords) {
     //Convert from parameters
     var coords = arg0_coords;
@@ -138,6 +56,99 @@
     
     //Return statement
     return max_pop;
+  };
+
+  global.mergeCityEntries = function (arg0_target_city, arg1_source_city, arg2_is_metro) {
+    //Convert from parameters
+    var target_city = arg0_target_city;
+    var source_city = arg1_source_city;
+    var is_metro = arg2_is_metro;
+    
+    if (!target_city || !source_city) return target_city;
+    
+    //Initialize original_names set if missing
+    if (!target_city.original_names) {
+      target_city.original_names = [];
+      if (target_city.name) {
+        let proc_n = processCityName(target_city.name);
+        if (proc_n) target_city.original_names.push(proc_n);
+      }
+      if (Array.isArray(target_city.other_names))
+        for (let i = 0; i < target_city.other_names.length; i++) {
+          let proc_n = processCityName(target_city.other_names[i]);
+          if (proc_n && !target_city.original_names.includes(proc_n))
+            target_city.original_names.push(proc_n);
+        }
+    }
+
+    //Initialize name_peaks tracking map
+    if (!target_city.name_peaks) {
+      target_city.name_peaks = {};
+      if (target_city.name)
+        target_city.name_peaks[target_city.name] = getPeakPopulation(target_city.population);
+    }
+    
+    let source_peak = getPeakPopulation(source_city.population);
+    if (source_city.name) {
+      let current_source_name_peak = target_city.name_peaks[source_city.name] || 0;
+      target_city.name_peaks[source_city.name] = Math.max(current_source_name_peak, source_peak);
+    }
+    if (source_city.name_peaks) {
+      let source_name_keys = Object.keys(source_city.name_peaks);
+      for (let i = 0; i < source_name_keys.length; i++) {
+        let name_key = source_name_keys[i];
+        let name_peak = source_city.name_peaks[name_key];
+        target_city.name_peaks[name_key] = Math.max(target_city.name_peaks[name_key] || 0, name_peak);
+      }
+    }
+    
+    //Determine primary name with highest individual peak population
+    let old_target_name = target_city.name;
+    let best_name = old_target_name;
+    let max_name_peak = -1;
+    let all_name_keys = Object.keys(target_city.name_peaks);
+    
+    for (let i = 0; i < all_name_keys.length; i++) {
+      let name_key = all_name_keys[i];
+      let name_peak = target_city.name_peaks[name_key];
+      if (name_peak > max_name_peak) {
+        max_name_peak = name_peak;
+        best_name = name_key;
+      }
+    }
+    
+    if (best_name) target_city.name = best_name;
+    
+    console.log(`- (!CM): Merging '${source_city.name}' into '${old_target_name}' -> Selected name: '${target_city.name}'`);
+    
+    //Merge other_names array without duplicates
+    if (!target_city.other_names) target_city.other_names = [];
+    let candidate_names = [];
+    if (old_target_name) candidate_names.push(old_target_name);
+    if (source_city.name) candidate_names.push(source_city.name);
+    if (Array.isArray(source_city.other_names))
+      candidate_names = candidate_names.concat(source_city.other_names);
+    if (Array.isArray(target_city.other_names))
+      candidate_names = candidate_names.concat(target_city.other_names);
+    
+    for (let i = 0; i < candidate_names.length; i++) {
+      let cur_name = candidate_names[i];
+      if (cur_name && cur_name !== target_city.name && !target_city.other_names.includes(cur_name))
+        target_city.other_names.push(cur_name);
+    }
+    
+    //Merge attributes
+    if (source_city.is_agglomeration_of)
+      target_city.is_agglomeration_of = source_city.is_agglomeration_of;
+    
+    if (source_city.population)
+      if (is_metro) {
+        target_city.population = mergeCityPopulations(source_city.population, target_city.population);
+      } else {
+        target_city.population = mergeCityPopulations(target_city.population, source_city.population);
+      }
+    
+    return target_city;
   };
   
   global.initialiseUUD = function () {
@@ -236,10 +247,8 @@
                   var local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
                   
                   if (local_distance <= local_db.precision && local_distance < closest_distance) {
-                    if (canCitiesMerge(local_uud_city, local_city, local_distance)) {
-                      closest_uud_city = local_uud_city;
-                      closest_distance = local_distance;
-                    }
+                    closest_uud_city = local_uud_city;
+                    closest_distance = local_distance;
                   }
                 } catch (e) {
                   console.error(e);
@@ -280,10 +289,8 @@
                   if (local_uud_city.coords && local_city.coords) try {
                     let local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
                     
-                    if (local_distance <= closest_uud_city_match[0]) {
-                      if (canCitiesMerge(local_uud_city, local_city, local_distance))
-                        closest_uud_city_match = [local_distance, local_uud_city];
-                    }
+                    if (local_distance <= closest_uud_city_match[0])
+                      closest_uud_city_match = [local_distance, local_uud_city];
                   } catch (e) { console.error(e); }
                 }
               } catch (e) {
@@ -300,7 +307,7 @@
           
           if (return_obj[all_local_cities[x]]) {
             let direct_match = return_obj[all_local_cities[x]];
-            if (isAgglomeration(direct_match) === isAgglomeration(local_city) && canCitiesMerge(direct_match, local_city, 0))
+            if (isAgglomeration(direct_match) === isAgglomeration(local_city))
               was_merged = [true, direct_match];
           }
           
@@ -352,9 +359,42 @@
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
               
-              if (dist <= 0.05) {
-                if (canCitiesMerge(city_a, city_b, dist))
-                  should_merge = true;
+              if (dist <= 5) {
+                if (!city_a.original_names) {
+                  city_a.original_names = [];
+                  if (city_a.name) {
+                    let proc_n = processCityName(city_a.name);
+                    if (proc_n) city_a.original_names.push(proc_n);
+                  }
+                  if (Array.isArray(city_a.other_names))
+                    for (let x = 0; x < city_a.other_names.length; x++) {
+                      let proc_n = processCityName(city_a.other_names[x]);
+                      if (proc_n && !city_a.original_names.includes(proc_n))
+                        city_a.original_names.push(proc_n);
+                    }
+                }
+                if (!city_b.original_names) {
+                  city_b.original_names = [];
+                  if (city_b.name) {
+                    let proc_n = processCityName(city_b.name);
+                    if (proc_n) city_b.original_names.push(proc_n);
+                  }
+                  if (Array.isArray(city_b.other_names))
+                    for (let x = 0; x < city_b.other_names.length; x++) {
+                      let proc_n = processCityName(city_b.other_names[x]);
+                      if (proc_n && !city_b.original_names.includes(proc_n))
+                        city_b.original_names.push(proc_n);
+                    }
+                }
+
+                for (let x = 0; x < city_a.original_names.length; x++) {
+                  for (let y = 0; y < city_b.original_names.length; y++)
+                    if (city_a.original_names[x] === city_b.original_names[y]) {
+                      should_merge = true;
+                      break;
+                    }
+                  if (should_merge) break;
+                }
               }
             } catch (e) {
               console.error(e);
@@ -472,139 +512,6 @@
     return uud_obj;
   };
   
-  global.mergeCityEntries = function (arg0_target_city, arg1_source_city, arg2_is_metro) {
-    //Convert from parameters
-    var target_city = arg0_target_city;
-    var source_city = arg1_source_city;
-    var is_metro = arg2_is_metro;
-    
-    if (!target_city || !source_city) return target_city;
-    
-    //Initialize original_names set if missing
-    if (!target_city.original_names) {
-      target_city.original_names = [];
-      if (target_city.name) {
-        let proc_n = processCityName(target_city.name);
-        if (proc_n) target_city.original_names.push(proc_n);
-      }
-      if (Array.isArray(target_city.other_names))
-        for (let i = 0; i < target_city.other_names.length; i++) {
-          let proc_n = processCityName(target_city.other_names[i]);
-          if (proc_n && !target_city.original_names.includes(proc_n))
-            target_city.original_names.push(proc_n);
-        }
-    }
-    
-    //Initialize name_peaks tracking map
-    if (!target_city.name_peaks) {
-      target_city.name_peaks = {};
-      if (target_city.name)
-        target_city.name_peaks[target_city.name] = getPeakPopulation(target_city.population);
-    }
-    
-    let source_peak = getPeakPopulation(source_city.population);
-    if (source_city.name) {
-      let current_source_name_peak = target_city.name_peaks[source_city.name] || 0;
-      target_city.name_peaks[source_city.name] = Math.max(current_source_name_peak, source_peak);
-    }
-    if (source_city.name_peaks) {
-      let source_name_keys = Object.keys(source_city.name_peaks);
-      for (let i = 0; i < source_name_keys.length; i++) {
-        let name_key = source_name_keys[i];
-        let name_peak = source_city.name_peaks[name_key];
-        target_city.name_peaks[name_key] = Math.max(target_city.name_peaks[name_key] || 0, name_peak);
-      }
-    }
-    
-    //Determine primary name with highest individual peak population
-    let old_target_name = target_city.name;
-    let best_name = old_target_name;
-    let max_name_peak = -1;
-    let all_name_keys = Object.keys(target_city.name_peaks);
-    
-    for (let i = 0; i < all_name_keys.length; i++) {
-      let name_key = all_name_keys[i];
-      let name_peak = target_city.name_peaks[name_key];
-      if (name_peak > max_name_peak) {
-        max_name_peak = name_peak;
-        best_name = name_key;
-      }
-    }
-    
-    if (best_name) target_city.name = best_name;
-    
-    console.log(`- (!CM): Merging '${source_city.name}' into '${old_target_name}' -> Selected name: '${target_city.name}'`);
-    
-    //Merge other_names array without duplicates
-    if (!target_city.other_names) target_city.other_names = [];
-    let candidate_names = [];
-    if (old_target_name) candidate_names.push(old_target_name);
-    if (source_city.name) candidate_names.push(source_city.name);
-    if (Array.isArray(source_city.other_names))
-      candidate_names = candidate_names.concat(source_city.other_names);
-    if (Array.isArray(target_city.other_names))
-      candidate_names = candidate_names.concat(target_city.other_names);
-    
-    for (let i = 0; i < candidate_names.length; i++) {
-      let cur_name = candidate_names[i];
-      if (cur_name && cur_name !== target_city.name && !target_city.other_names.includes(cur_name))
-        target_city.other_names.push(cur_name);
-    }
-    
-    //Merge attributes
-    if (source_city.is_agglomeration_of)
-      target_city.is_agglomeration_of = source_city.is_agglomeration_of;
-    
-    if (source_city.population)
-      if (is_metro) {
-        target_city.population = mergeCityPopulations(source_city.population, target_city.population);
-      } else {
-        target_city.population = mergeCityPopulations(target_city.population, source_city.population);
-      }
-    
-    return target_city;
-  };
-  
-  global.mergeCityPopulations = function (arg0_population_obj, arg1_population_obj) {
-    //Convert from parameters
-    var population_obj = JSON.parse(JSON.stringify(arg0_population_obj));
-    var ot_population_obj = JSON.parse(JSON.stringify(arg1_population_obj));
-    
-    //Declare local instance variables
-    var all_ot_population_keys = Object.keys(ot_population_obj);
-    var all_population_keys = Object.keys(population_obj);
-    
-    //Make everything in all_population_keys an array
-    for (let i = 0; i < all_population_keys.length; i++)
-      if (!Array.isArray(population_obj[all_population_keys[i]]))
-        population_obj[all_population_keys[i]] = [population_obj[all_population_keys[i]]];
-    
-    //Iterate over all_ot_population_keys and attempt their merger into population_obj
-    for (let i = 0; i < all_ot_population_keys.length; i++) {
-      let local_value = ot_population_obj[all_ot_population_keys[i]];
-      
-      if (Array.isArray(local_value))
-        local_value = local_value.flat(Infinity);
-      
-      if (Array.isArray(population_obj[all_ot_population_keys[i]])) {
-        if (!Array.isArray(local_value)) {
-          population_obj[all_ot_population_keys[i]].push(local_value);
-        } else {
-          population_obj[all_ot_population_keys[i]] = population_obj[all_ot_population_keys[i]].concat(local_value);
-        }
-      } else {
-        if (!Array.isArray(local_value)) {
-          population_obj[all_ot_population_keys[i]] = [local_value];
-        } else {
-          population_obj[all_ot_population_keys[i]] = local_value;
-        }
-      }
-    }
-    
-    //Return statement
-    return population_obj;
-  };
-  
   global.mergeMetroToCityPopulations = function (arg0_metro_population_obj, arg1_population_obj) {
     //Convert from parameters
     var metro_population_obj = JSON.parse(JSON.stringify(arg0_metro_population_obj));
@@ -672,6 +579,46 @@
           } else {
             population_obj[all_metro_keys[i]] = population_obj[all_metro_keys[i]].concat(local_value);
           }
+        }
+      }
+    }
+    
+    //Return statement
+    return population_obj;
+  };
+  
+  global.mergeCityPopulations = function (arg0_population_obj, arg1_population_obj) {
+    //Convert from parameters
+    var population_obj = JSON.parse(JSON.stringify(arg0_population_obj));
+    var ot_population_obj = JSON.parse(JSON.stringify(arg1_population_obj));
+    
+    //Declare local instance variables
+    var all_ot_population_keys = Object.keys(ot_population_obj);
+    var all_population_keys = Object.keys(population_obj);
+    
+    //Make everything in all_population_keys an array
+    for (let i = 0; i < all_population_keys.length; i++)
+      if (!Array.isArray(population_obj[all_population_keys[i]]))
+        population_obj[all_population_keys[i]] = [population_obj[all_population_keys[i]]];
+    
+    //Iterate over all_ot_population_keys and attempt their merger into population_obj
+    for (let i = 0; i < all_ot_population_keys.length; i++) {
+      let local_value = ot_population_obj[all_ot_population_keys[i]];
+      
+      if (Array.isArray(local_value))
+        local_value = local_value.flat(Infinity);
+      
+      if (Array.isArray(population_obj[all_ot_population_keys[i]])) {
+        if (!Array.isArray(local_value)) {
+          population_obj[all_ot_population_keys[i]].push(local_value);
+        } else {
+          population_obj[all_ot_population_keys[i]] = population_obj[all_ot_population_keys[i]].concat(local_value);
+        }
+      } else {
+        if (!Array.isArray(local_value)) {
+          population_obj[all_ot_population_keys[i]] = [local_value];
+        } else {
+          population_obj[all_ot_population_keys[i]] = local_value;
         }
       }
     }
