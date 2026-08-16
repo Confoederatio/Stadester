@@ -79,29 +79,43 @@
     };
     var return_obj = {};
     
+    function isAgglomeration(city) {
+      if (!city) return false;
+      if (city.is_agglomeration_of) return true;
+      if (city.name && city.name.toLowerCase().includes("agglomeration")) return true;
+      return false;
+    }
+    
     //1. Unify all databases; iterate over all_options_keys
     var all_options_keys = Object.keys(options);
     
     for (let i = 0; i < all_options_keys.length; i++) {
       let local_db = options[all_options_keys[i]];
       
-      //Merge in order
+      //First come, first-serve
       let all_local_cities = Object.keys(local_db.data);
       
       if (i === 0)
         for (let x = 0; x < all_local_cities.length; x++) {
           let local_city = local_db.data[all_local_cities[x]];
           
+          if (local_city.name && local_city.name.toLowerCase().includes("agglomeration") && !local_city.is_agglomeration_of)
+            local_city.is_agglomeration_of = local_city.name.replace(/\(agglomeration\)/i, "").trim();
+          
           return_obj[all_local_cities[x]] = local_city;
         }
       
       //Regular Euclidean merging based on precision rules
       {
-        //1. Iterate over all_local_cities and check against dynamically updated all_return_keys coords
+        //1. Iterate over all_local_cities and check against all_return_keys coords
+        let all_return_keys = Object.keys(return_obj);
+        
         for (let x = 0; x < all_local_cities.length; x++) {
-          let all_return_keys = Object.keys(return_obj);
           var local_city = local_db.data[all_local_cities[x]];
           var was_merged = [false, undefined];
+          
+          if (local_city.name && local_city.name.toLowerCase().includes("agglomeration") && !local_city.is_agglomeration_of)
+            local_city.is_agglomeration_of = local_city.name.replace(/\(agglomeration\)/i, "").trim();
           
           //.precision check
           if (local_db.precision) {
@@ -112,6 +126,9 @@
               var local_uud_city = return_obj[all_return_keys[y]];
               
               if (local_uud_city && local_uud_city.coords && local_city.coords) {
+                //Never merge agglomerations with city proper entries
+                if (isAgglomeration(local_uud_city) !== isAgglomeration(local_city)) continue;
+                
                 try {
                   var local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
                   
@@ -137,11 +154,9 @@
           //.semantic_precision check
           if (!was_merged[0])
             if (local_db.semantic_precision) {
-              //Check if local_city should be merged using semantic_precision threshold
               let city_names = [`${local_city.name}`, `${local_city.key}`];
               let closest_uud_city_match = [Infinity, undefined];
               
-              //Iterate over all .names, .other_names if possible
               if (local_city.other_names)
                 for (let y = 0; y < local_city.other_names.length; y++) {
                   city_names.push(`${local_city.other_names[y]}`);
@@ -149,24 +164,25 @@
                     city_names.push(`${local_city.other_names[y]}, ${local_city.country}`);
                 }
               
-              //Iterate over all city_names, looking for a semantic match
               for (let y = 0; y < city_names.length; y++) try {
                 let local_uud_city = getFlattenedPopulstatCity(city_names[y], {
                   populstat_obj: return_obj
                 });
                 
-                if (local_uud_city)
+                if (local_uud_city) {
+                  if (isAgglomeration(local_uud_city) !== isAgglomeration(local_city)) continue;
+                  
                   if (local_uud_city.coords && local_city.coords) try {
                     let local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
                     
                     if (local_distance <= closest_uud_city_match[0])
                       closest_uud_city_match = [local_distance, local_uud_city];
                   } catch (e) { console.error(e); }
+                }
               } catch (e) {
                 console.error(e);
               }
               
-              //Set was_merged if possible
               if (closest_uud_city_match[0] <= local_db.semantic_precision) try {
                 if (!(i == 0 && return_obj[closest_uud_city_match[1].key])) {
                   console.log(`- (!CM): Semantic merge match found: ${local_city.name}, ${closest_uud_city_match[1].name}, distance: ${closest_uud_city_match[0]}`);
@@ -175,11 +191,12 @@
               } catch (e) { console.error(e); }
             }
           
-          //Regular merge logic; merge into actual_city - direct key check prior to merging
-          if (i != 0 && return_obj[all_local_cities[x]])
-            was_merged = [true, return_obj[all_local_cities[x]]];
+          if (i != 0 && return_obj[all_local_cities[x]]) {
+            let direct_match = return_obj[all_local_cities[x]];
+            if (isAgglomeration(direct_match) === isAgglomeration(local_city))
+              was_merged = [true, direct_match];
+          }
           
-          //Merge cities found to be identical
           let is_separate_city = false;
           
           if (was_merged[0]) {
@@ -225,7 +242,7 @@
       }
     }
     
-    //1.5 Global post-deduplication pass across all merged entries
+    //1.5 Post-deduplication pass preserving agglomeration vs city proper separation
     console.time(`- Deduplicating raw UUD entries...`);
     let deduplicate_keys = Object.keys(return_obj);
     
@@ -239,9 +256,10 @@
           let city_b = return_obj[city_b_key];
           
           if (city_b) {
+            if (isAgglomeration(city_a) !== isAgglomeration(city_b)) continue;
+            
             let should_merge = false;
             
-            //Check duplicate coordinates and processed name/other_names match
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
               
@@ -306,11 +324,9 @@
     //2. Flatten .population array entries; take weightedGeometricMean
     var all_return_keys = Object.keys(return_obj);
     
-    //Iterate over all_return_keys
     for (let i = 0; i < all_return_keys.length; i++) {
       let local_city = return_obj[all_return_keys[i]];
       
-      //Check to make sure local_city has valid coords and population
       if (local_city.coords && Array.isArray(local_city.coords))
         if (!isNaN(parseFloat(local_city.coords[0])) && !isNaN(parseFloat(local_city.coords[1]))) {
           local_city.coords = [parseFloat(local_city.coords[0]), parseFloat(local_city.coords[1])];
@@ -330,7 +346,6 @@
             }
           }
         } else {
-          //Delete malformed cities
           delete return_obj[all_return_keys[i]];
         }
     }
@@ -528,8 +543,10 @@
     //Convert from parameters
     var name = (arg0_name) ? `${arg0_name}` : "";
     
-    //Declare local instance variables; remove all bracketed substrings including (agglomeration) for matching
-    name = name.replace(/\([^)]+\)/g, "");
+    //Declare local instance variables
+    name = name.replace(/\(([^)]+)\)/g, function (match, p1) {
+      return (p1.toLowerCase().trim() === "agglomeration") ? "(agglomeration)" : "";
+    });
     
     //Return statement
     return name.replace(/\s+/g, " ").trim().toLowerCase();

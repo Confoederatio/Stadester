@@ -16,7 +16,7 @@
 			
 			stadester_obj["Cardiff-United Kingdom"].population = rhondda_population;
 			stadester_obj["Rhondda-United Kingdom"].population = cardiff_population;
-		} catch (e) { console.error(e); }
+		} catch (e) { console.warn(e); }
 		try {
 			//Minneapolis duplicate fix
 			delete stadester_obj["Minneapolis-United States of America"];

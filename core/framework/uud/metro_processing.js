@@ -112,34 +112,41 @@
 	global.getStadesterMetroObject = function (arg0_city_obj) {
 		//Convert from parameters
 		var city_obj = arg0_city_obj;
+		if (!city_obj) return;
 		
-		//Internal guard clause if the city is not an agglomeration of anything
-		if (!city_obj.is_agglomeration_of) return;
+		//If city_obj is itself an agglomeration, it has no parent metro above it
+		if (city_obj.name && city_obj.name.toLowerCase().includes("agglomeration")) return;
 		
 		//Declare local instance variables
 		var stadester_obj = getStadesterObject();
-		
 		var all_cities = Object.keys(stadester_obj);
 		var candidate_cities = [];
+		var base_city_name = city_obj.name.toLowerCase().replace(/\(agglomeration\)/i, "").trim();
 		
-		//Iterate over all_cities
+		//Iterate over all_cities looking for an agglomeration parent within 250km
 		for (let i = 0; i < all_cities.length; i++) {
-			//Convert from parameters
 			var local_city = stadester_obj[all_cities[i]];
+			if (local_city.key === city_obj.key) continue;
 			
-			if (local_city.country == city_obj.country)
-				//Check to make sure this city is within 250km of our candidate city and has agglomeration in the name before pushing
-				try {
-					if (haversineDistance(local_city.coords, city_obj.coords) <= 250)
-						if (local_city.population &&
-							Object.keys(local_city.population).length > Object.keys(city_obj.population).length
-						)
-							candidate_cities.push(stadester_obj[all_cities[i]]);
-				} catch (e) { console.error(`Error when iterating for city:`, all_cities[i], e); }
+			var is_cand_agg = (local_city.name && local_city.name.toLowerCase().includes("agglomeration")) || local_city.is_agglomeration_of;
+			if (!is_cand_agg) continue;
+			
+			try {
+				if (haversineDistance(local_city.coords, city_obj.coords) <= 250) {
+					let cand_base_name = local_city.is_agglomeration_of ? local_city.is_agglomeration_of.toLowerCase().trim() : local_city.name.toLowerCase().replace(/\(agglomeration\)/i, "").trim();
+					
+					if (cand_base_name === base_city_name || local_city.name.toLowerCase().includes(base_city_name))
+						candidate_cities.push(local_city);
+				}
+			} catch (e) {
+				console.error(`Error when iterating for city:`, all_cities[i], e);
+			}
 		}
 		
+		if (candidate_cities.length === 0) return;
+		
 		//Return statement
-		return getStadesterBestCityMatch({ name: city_obj.is_agglomeration_of }, candidate_cities);
+		return getStadesterBestCityMatch({ name: base_city_name }, candidate_cities);
 	};
 	
 	global.getStadesterObject = function () {
@@ -148,8 +155,8 @@
 			global.stadester_obj : JSON.parse(fs.readFileSync(config.defines.common.input_file_paths.stadester_cities));
 	}
 	
-	global.parseUUDToStadester = function () { //[WIP] - This needs to be deprecated and moved later
-	 	//Declare local instance variables
+	global.parseUUDToStadester = function () {
+		//Declare local instance variables
 		var return_obj = {};
 		var uud_obj = JSON.parse(fs.readFileSync(config.defines.common.input_file_paths.processed_uud_cities));
 		
@@ -161,7 +168,6 @@
 			
 			//Set country name
 			if (!local_city.country) {
-				// Try to get country from config if possible
 				var country_name = null;
 				
 				if (local_city.region) {
@@ -169,7 +175,6 @@
 				} else if (local_city.country) {
 					country_name = local_city.country;
 				} else {
-					// Try to parse from key if possible
 					var split_key = all_cities[i].split("-");
 					country_name = split_key[split_key.length - 1];
 				}
@@ -185,6 +190,9 @@
 			
 			local_city.key = all_cities[i];
 			if (!local_city.name) local_city.name = all_cities[i];
+			
+			if (local_city.name && local_city.name.toLowerCase().includes("agglomeration") && !local_city.is_agglomeration_of)
+				local_city.is_agglomeration_of = local_city.name.replace(/\(agglomeration\)/i, "").trim();
 			
 			//Check to make sure name doesn't have a colon in it
 			if (local_city.name && local_city.name.includes(":")) continue;
