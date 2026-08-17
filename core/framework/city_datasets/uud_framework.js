@@ -488,16 +488,14 @@
         try { dist = getCoordsDistance(city_a.coords, city_b.coords); } catch (e) {}
         
         if (isAgglomeration(city_a) !== isAgglomeration(city_b)) {
-          // Paris Clone Override: Exact name & tight proxy ignores the agglomeration difference entirely
-          if (!(is_exact_name && dist < 0.05)) {
-            if (dist <= max_explicit_precision) {
-              let city_proper = isAgglomeration(city_a) ? city_b : city_a;
-              let agg_city = isAgglomeration(city_a) ? city_a : city_b;
-              if (!city_proper.is_agglomeration_of)
-                city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
-            }
-            continue;
+          // FIX: Agglomerations and City Propers are strictly prohibited from merging together.
+          if (dist <= max_explicit_precision) {
+            let city_proper = isAgglomeration(city_a) ? city_b : city_a;
+            let agg_city = isAgglomeration(city_a) ? city_a : city_b;
+            if (!city_proper.is_agglomeration_of)
+              city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
           }
+          continue;
         }
         
         let should_merge = false;
@@ -567,6 +565,31 @@
     var uud_obj = arg0_uud_obj;
     let options = (arg1_options) ? arg1_options : {};
     
+    // PRE-INTERPOLATION PASS: Pad cities forward to prevent bad spline extrapolation dipping
+    let all_cities = Object.keys(uud_obj);
+    for (let i = 0; i < all_cities.length; i++) {
+      let city = uud_obj[all_cities[i]];
+      
+      if (city.population) {
+        let pop_keys = Object.keys(city.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+        if (pop_keys.length > 0) {
+          let max_year = pop_keys[pop_keys.length - 1];
+          let last_val = city.population[max_year];
+          
+          // FIX: Only pad forward if the city's last recorded data point is modern (e.g. >= 1975).
+          // Otherwise, ancient/historical ruins will incorrectly persist into the 21st century.
+          if (max_year >= 1975) {
+            for (let j = 0; j < config.uud.processing.hyde_years.length; j++) {
+              let hyde_year = config.uud.processing.hyde_years[j];
+              if (hyde_year > max_year && hyde_year <= config.uud.processing.uud_domain[1]) {
+                city.population[hyde_year] = last_val;
+              }
+            }
+          }
+        }
+      }
+    }
+    
     //Iterate over all years in config.uud.processing.hyde_years that is within the UUD domain
     for (var i = 0; i < config.uud.processing.hyde_years.length; i++) {
       let local_year = config.uud.processing.hyde_years[i];
@@ -576,6 +599,28 @@
         console.time(`- Processed UUD for ${local_year} ..`);
         uud_obj = interpolateUUDForYear(uud_obj, local_year, options);
         console.timeEnd(`- Processed UUD for ${local_year} ..`);
+      }
+    }
+    
+    // POST-INTERPOLATION PASS: Remove redundant successive identical entries to clean up JSON bloat
+    for (let i = 0; i < all_cities.length; i++) {
+      let city = uud_obj[all_cities[i]];
+      if (city.population) {
+        let keys = Object.keys(city.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+        let to_delete = [];
+        for (let k = 1; k < keys.length - 1; k++) {
+          let prev = city.population[keys[k-1]];
+          let curr = city.population[keys[k]];
+          let next = city.population[keys[k+1]];
+          
+          // If perfectly identical and collinear, it's redundant.
+          if (prev === curr && curr === next) {
+            to_delete.push(keys[k]);
+          }
+        }
+        for (let k = 0; k < to_delete.length; k++) {
+          delete city.population[to_delete[k]];
+        }
       }
     }
     
@@ -859,12 +904,15 @@
     var name = (arg0_name) ? `${arg0_name}` : "";
     
     //Declare local instance variables
-    name = name.replace(/\([^)]*\)/g, function (match) {
-      var lower_match = match.toLowerCase();
-      return (lower_match.includes("agglomeration") || lower_match.includes("greater")) ? match.toLowerCase() : "";
-    });
-    name = name.replace(/greater\s*/gi, "");
-    name = name.replace(/agglomeration\s*/gi, "");
+    // Strip all parenthesis blocks to isolate the base semantic name completely
+    name = name.replace(/\([^)]*\)/g, "");
+    
+    // Strip standalone semantic modifiers
+    name = name.replace(/\bgreater\b/gi, "");
+    name = name.replace(/\bagglomeration\b/gi, "");
+    
+    // Safety catch for empty brackets if they somehow slipped through
+    name = name.replace(/\(\s*\)/g, "");
     
     //Return statement
     return name.replace(/\s+/g, " ").trim().toLowerCase();

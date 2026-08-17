@@ -4,6 +4,16 @@
 		var stadester_obj = arg0_stadester_obj;
 		var all_cities = Object.keys(stadester_obj);
 		
+		// OPTIMIZATION: Build a reverse dictionary of metros to suburbs to avoid O(N) searching for every negative year
+		var metro_to_suburbs = {};
+		for (let i = 0; i < all_cities.length; i++) {
+			let city = stadester_obj[all_cities[i]];
+			if (city.metro_key && city.metro_key !== city.key) {
+				if (!metro_to_suburbs[city.metro_key]) metro_to_suburbs[city.metro_key] = [];
+				metro_to_suburbs[city.metro_key].push(city);
+			}
+		}
+		
 		for (let i = 0; i < all_cities.length; i++) {
 			var city = stadester_obj[all_cities[i]];
 			var pop = city.population || {};
@@ -17,13 +27,10 @@
 				var year = negative_years[y];
 				var negative_value = Math.abs(pop[year]);
 				
-				// Find suburbs (other cities with .metro_key === city.key, but not the city itself)
-				var suburbs = all_cities
-				.filter((k) => k !== city.key) // Exclude the metro itself
-				.map((k) => stadester_obj[k])
-				.filter(
+				// Fast O(1) lookup of suburbs belonging to this metro
+				var raw_suburbs = metro_to_suburbs[city.key] || [];
+				var suburbs = raw_suburbs.filter(
 					(c) =>
-						c.metro_key === city.key &&
 						c.population &&
 						typeof c.population[year] === "number" &&
 						c.population[year] > 0
@@ -69,12 +76,60 @@
 		global.stadester_obj = stadester_obj;
 		
 		if (!do_not_flatten_metros) {
-			//Iterate over all_cities in stadester_obj
 			var all_cities = Object.keys(stadester_obj);
+			
+			// OPTIMIZATION: Setup spatial context and precompute name arrays
+			// ~250km limit is about 2.25 degrees. A 2.5 degree grid cell guarantees local bounding box overlaps
+			let context = {
+				agg_grid: new Map(),
+				CELL_SIZE: 2.5,
+				getGridCell: function(coords) {
+					return `${Math.floor(coords[0] / this.CELL_SIZE)},${Math.floor(coords[1] / this.CELL_SIZE)}`;
+				},
+				getAdjacentCells: function(coords) {
+					let x = Math.floor(coords[0] / this.CELL_SIZE);
+					let y = Math.floor(coords[1] / this.CELL_SIZE);
+					let cells = [];
+					for(let dx = -1; dx <= 1; dx++) {
+						for(let dy = -1; dy <= 1; dy++) {
+							cells.push(`${x + dx},${y + dy}`);
+						}
+					}
+					return cells;
+				}
+			};
+			
+			console.log(`- Precomputing spatial grids and name caches...`);
+			for (let i = 0; i < all_cities.length; i++) {
+				let city = stadester_obj[all_cities[i]];
+				
+				// Cache processed string names to skip evaluating Regex hundreds of thousands of times
+				let n = [];
+				if (city.name) n.push(processCityName(city.name));
+				if (city.is_agglomeration_of) n.push(processCityName(city.is_agglomeration_of));
+				if (Array.isArray(city.other_names)) {
+					for (let k = 0; k < city.other_names.length; k++) n.push(processCityName(city.other_names[k]));
+				}
+				if (Array.isArray(city.original_names)) {
+					for (let k = 0; k < city.original_names.length; k++) n.push(processCityName(city.original_names[k]));
+				}
+				city._cached_names = [...new Set(n.filter(x => x))];
+				
+				let is_agg = city.is_agglomeration || (city.name && (city.name.toLowerCase().includes("agglomeration") || city.name.toLowerCase().includes("greater")));
+				
+				if (is_agg && city.coords) {
+					let cell = context.getGridCell(city.coords);
+					if (!context.agg_grid.has(cell)) context.agg_grid.set(cell, []);
+					context.agg_grid.get(cell).push(city);
+				}
+			}
+			
+			console.log(`- Resolving and flattening overlapping metro populations...`);
+			let subtractions_made = 0;
 			
 			for (let i = 0; i < all_cities.length; i++) {
 				var local_city = stadester_obj[all_cities[i]];
-				var metro_obj = getStadesterMetroObject(local_city);
+				var metro_obj = getStadesterMetroObject(local_city, context);
 				if (metro_obj) {
 					metro_obj = stadester_obj[metro_obj.key];
 					if (metro_obj.key == local_city.key) continue; //Internal guard clause for self-intersections
@@ -83,20 +138,59 @@
 				//Subtract overlapping .population values in local_city from metro_obj.population
 				if (metro_obj) {
 					var all_local_population_keys = Object.keys(local_city.population);
+					let matched_a_year = false;
 					
-					for (let x = 0; x < all_local_population_keys.length; x++)
-						if (
-							!isNaN(metro_obj.population[all_local_population_keys[x]]) &&
-							!isNaN(local_city.population[all_local_population_keys[x]])
-						) {
+					for (let x = 0; x < all_local_population_keys.length; x++) {
+						let year = all_local_population_keys[x];
+						
+						// Enforce explicit float parsing to prevent JS Type Coercion issues during subtraction
+						let agg_pop = parseFloat(metro_obj.population[year]);
+						let city_pop = parseFloat(local_city.population[year]);
+						
+						if (!isNaN(agg_pop) && !isNaN(city_pop)) {
 							local_city.metro_key = metro_obj.key;
-							metro_obj.population[all_local_population_keys[x]] -= local_city.population[all_local_population_keys[x]];
+							metro_obj.population[year] = agg_pop - city_pop;
+							matched_a_year = true;
+							
+							// FIX: Cap at zero to prevent the agglomeration population from turning negative.
+							// This stops distributeNegativeValuesAcrossMetros from mistakenly zeroing out the city proper later on.
+							if (metro_obj.population[year] < 0) {
+								metro_obj.population[year] = 0;
+							}
 						}
+					}
+					
+					if (matched_a_year) subtractions_made++;
 				}
 			}
+			console.log(`- Flattened populations for ${subtractions_made} cities against their agglomerations.`);
 			
-			//Distribute excess negative values across metros
+			//Distribute excess negative values across metros 
+			//(Though we cap at 0 above, this remains as a safety harness for other datasets injecting negative values)
 			stadester_obj = distributeNegativeValuesAcrossMetros(stadester_obj);
+			
+			// Cleanup cache memory before serialization and strip redundant successive population entries
+			for (let i = 0; i < all_cities.length; i++) {
+				let city = stadester_obj[all_cities[i]];
+				delete city._cached_names;
+				
+				if (city.population) {
+					let keys = Object.keys(city.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+					let to_delete = [];
+					for (let k = 1; k < keys.length - 1; k++) {
+						let prev = city.population[keys[k-1]];
+						let curr = city.population[keys[k]];
+						let next = city.population[keys[k+1]];
+						
+						if (prev === curr && curr === next) {
+							to_delete.push(keys[k]);
+						}
+					}
+					for (let k = 0; k < to_delete.length; k++) {
+						delete city.population[to_delete[k]];
+					}
+				}
+			}
 		} else {
 			console.log(`- Chose not to flatten Stadestér metros.`);
 		}
@@ -170,17 +264,16 @@
 		return bestCity;
 	};
 	
-	global.getStadesterMetroObject = function (arg0_city_obj) {
+	global.getStadesterMetroObject = function (arg0_city_obj, arg1_context) {
 		//Convert from parameters
 		var city_obj = arg0_city_obj;
+		var context = arg1_context;
 		if (!city_obj) return;
 		
 		//If city_obj is itself an agglomeration, it has no parent metro above it
 		if (city_obj.name && (city_obj.name.toLowerCase().includes("agglomeration") || city_obj.name.toLowerCase().includes("greater") || city_obj.is_agglomeration)) return;
 		
 		//Declare local instance variables
-		var stadester_obj = getStadesterObject();
-		var all_cities = Object.keys(stadester_obj);
 		var candidate_cities = [];
 		
 		function getAllNames(c) {
@@ -198,36 +291,77 @@
 			return n;
 		}
 		
-		let city_names = getAllNames(city_obj);
+		let city_names = city_obj._cached_names || getAllNames(city_obj);
 		
-		//Iterate over all_cities looking for an agglomeration parent within 250km
-		for (let i = 0; i < all_cities.length; i++) {
-			var local_city = stadester_obj[all_cities[i]];
-			if (local_city.key === city_obj.key) continue;
+		// OPTIMIZATION: Fast path utilising injected spatial context grid
+		if (context && context.agg_grid && city_obj.coords) {
+			let cells = context.getAdjacentCells(city_obj.coords);
 			
-			var is_cand_agg = local_city.is_agglomeration || (local_city.name && (local_city.name.toLowerCase().includes("agglomeration") || local_city.name.toLowerCase().includes("greater")));
-			if (!is_cand_agg) continue;
-			
-			try {
-				if (haversineDistance(local_city.coords, city_obj.coords) <= 250) {
-					let cand_names = getAllNames(local_city);
-					let matched = false;
-					
-					for (let x = 0; x < city_names.length; x++) {
-						for (let y = 0; y < cand_names.length; y++) {
-							if (city_names[x] && cand_names[y] && (city_names[x] === cand_names[y] || cand_names[y].includes(city_names[x]) || city_names[x].includes(cand_names[y]))) {
-								matched = true;
-								break;
+			for (let c = 0; c < cells.length; c++) {
+				let cell_aggs = context.agg_grid.get(cells[c]);
+				if (cell_aggs) {
+					for (let a = 0; a < cell_aggs.length; a++) {
+						let local_city = cell_aggs[a];
+						if (local_city.key === city_obj.key) continue;
+						
+						try {
+							if (haversineDistance(local_city.coords, city_obj.coords) <= 250) {
+								let cand_names = local_city._cached_names || getAllNames(local_city);
+								let matched = false;
+								
+								for (let x = 0; x < city_names.length; x++) {
+									for (let y = 0; y < cand_names.length; y++) {
+										if (city_names[x] && cand_names[y] && (city_names[x] === cand_names[y] || cand_names[y].includes(city_names[x]) || city_names[x].includes(cand_names[y]))) {
+											matched = true;
+											break;
+										}
+									}
+									if (matched) break;
+								}
+								
+								if (matched)
+									candidate_cities.push(local_city);
 							}
+						} catch (e) {
+							console.error(`Error when iterating for city:`, local_city.key, e);
 						}
-						if (matched) break;
 					}
-					
-					if (matched)
-						candidate_cities.push(local_city);
 				}
-			} catch (e) {
-				console.error(`Error when iterating for city:`, all_cities[i], e);
+			}
+		} else {
+			// Fallback: Default slow O(N) evaluation
+			var stadester_obj = getStadesterObject();
+			var all_cities = Object.keys(stadester_obj);
+			
+			//Iterate over all_cities looking for an agglomeration parent within 250km
+			for (let i = 0; i < all_cities.length; i++) {
+				var local_city = stadester_obj[all_cities[i]];
+				if (local_city.key === city_obj.key) continue;
+				
+				var is_cand_agg = local_city.is_agglomeration || (local_city.name && (local_city.name.toLowerCase().includes("agglomeration") || local_city.name.toLowerCase().includes("greater")));
+				if (!is_cand_agg) continue;
+				
+				try {
+					if (haversineDistance(local_city.coords, city_obj.coords) <= 250) {
+						let cand_names = getAllNames(local_city);
+						let matched = false;
+						
+						for (let x = 0; x < city_names.length; x++) {
+							for (let y = 0; y < cand_names.length; y++) {
+								if (city_names[x] && cand_names[y] && (city_names[x] === cand_names[y] || cand_names[y].includes(city_names[x]) || city_names[x].includes(cand_names[y]))) {
+									matched = true;
+									break;
+								}
+							}
+							if (matched) break;
+						}
+						
+						if (matched)
+							candidate_cities.push(local_city);
+					}
+				} catch (e) {
+					console.error(`Error when iterating for city:`, all_cities[i], e);
+				}
 			}
 		}
 		
@@ -303,13 +437,17 @@
 	global.removeStadesterDuplicates = function (stadester_obj) {
 		let grouped = {};
 		
-		// Group by rounded coords (0.1 deg threshold)
+		// Group by rounded coords (0.1 deg threshold) AND agglomeration status
 		for (let key in stadester_obj) {
 			let city = stadester_obj[key];
 			if (!city || !Array.isArray(city.coords) || city.coords.length < 2) continue;
 			let lat = Number(city.coords[0]).toFixed(3);
 			let lng = Number(city.coords[1]).toFixed(3);
-			let groupKey = `${lat},${lng}`;
+			
+			// FIX: Prevent city proper and agglomerations from being grouped simply because they share identical coordinates.
+			let is_agg = (city.is_agglomeration || (city.name && (city.name.toLowerCase().includes("agglomeration") || city.name.toLowerCase().includes("greater")))) ? "agg" : "city";
+			let groupKey = `${lat},${lng},${is_agg}`;
+			
 			if (!grouped[groupKey]) grouped[groupKey] = [];
 			grouped[groupKey].push({ key, city });
 		}
