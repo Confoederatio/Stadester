@@ -60,7 +60,7 @@
   
   global.initialiseUUD = function (arg0_options) {
     //Declare local instance variables
-    var options = {
+    let options = {
       populstat: {
         data: getPopulstatObject(), //semantic_precision: 0.05
       },
@@ -77,9 +77,9 @@
         data: getBuringhObject(), precision: 0.05, semantic_precision: 1
       }
     };
-    var return_obj = {};
-    var max_explicit_precision = 0;
-    var opt_keys = Object.keys(options);
+    let return_obj = {};
+    let max_explicit_precision = 0;
+    let opt_keys = Object.keys(options);
     
     for (let k = 0; k < opt_keys.length; k++) {
       if (options[opt_keys[k]].precision && options[opt_keys[k]].precision > max_explicit_precision)
@@ -95,6 +95,64 @@
         if (lower_n.includes("agglomeration") || lower_n.includes("greater")) return true;
       }
       return false;
+    }
+    
+    function isPopulationRatioValid(pop_a, pop_b) {
+      if (!pop_a || !pop_b) return { valid: true, overlaps: false };
+      
+      let keys_a = Object.keys(pop_a).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+      let keys_b = Object.keys(pop_b).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+      if (keys_a.length === 0 || keys_b.length === 0) return { valid: true, overlaps: false };
+      
+      let min_a = keys_a[0], max_a = keys_a[keys_a.length - 1];
+      let min_b = keys_b[0], max_b = keys_b[keys_b.length - 1];
+      
+      let int_start = Math.max(min_a, min_b);
+      let int_end = Math.min(max_a, max_b);
+      
+      if (int_start > int_end) {
+        return { valid: true, overlaps: false };
+      }
+      
+      let all_keys = Array.from(new Set([...keys_a, ...keys_b])).sort((a, b) => a - b);
+      let check_keys = all_keys.filter(yr => yr >= int_start && yr <= int_end);
+      
+      let is_valid = true;
+      
+      function getValueAtYear(pop, keys, yr) {
+        if (pop[yr] !== undefined) {
+          let val = Array.isArray(pop[yr]) ? pop[yr][0] : pop[yr];
+          return parseFloat(val);
+        }
+        let lower = keys[0], upper = keys[keys.length - 1];
+        for (let j = 0; j < keys.length; j++) {
+          if (keys[j] < yr) lower = keys[j];
+          if (keys[j] > yr) { upper = keys[j]; break; }
+        }
+        let val_lower = parseFloat(Array.isArray(pop[lower]) ? pop[lower][0] : pop[lower]);
+        let val_upper = parseFloat(Array.isArray(pop[upper]) ? pop[upper][0] : pop[upper]);
+        if (!isNaN(val_lower) && !isNaN(val_upper) && upper !== lower) {
+          return val_lower + (val_upper - val_lower) * ((yr - lower) / (upper - lower));
+        }
+        return isNaN(val_lower) ? val_upper : val_lower;
+      }
+      
+      for (let k = 0; k < check_keys.length; k++) {
+        let yr = check_keys[k];
+        let num_a = getValueAtYear(pop_a, keys_a, yr);
+        let num_b = getValueAtYear(pop_b, keys_b, yr);
+        
+        if (!isNaN(num_a) && !isNaN(num_b) && num_a > 0 && num_b > 0) {
+          let ratio = num_a / num_b;
+          // Widened ratio bound checks to 4x difference threshold 
+          if (ratio < 0.25 || ratio > 4.0) {
+            is_valid = false;
+            break;
+          }
+        }
+      }
+      
+      return { valid: is_valid, overlaps: true };
     }
     
     function getAllCityNames(city) {
@@ -191,7 +249,7 @@
             var same_agg = (isAgglomeration(local_uud_city) === isAgglomeration(local_city));
             
             if (!same_agg) {
-              if (local_distance <= (local_db.precision || max_explicit_precision || 0.15)) {
+              if (local_distance <= (local_db.precision || max_explicit_precision)) {
                 let city_proper = isAgglomeration(local_uud_city) ? local_city : local_uud_city;
                 let agg_city = isAgglomeration(local_uud_city) ? local_uud_city : local_city;
                 if (!city_proper.is_agglomeration_of)
@@ -209,19 +267,27 @@
             
             // Exact same name (including .other_names) + within search radius -> force merge
             let is_exact_name = checkExactNameMatch(local_uud_city, local_city);
-            let search_radius = Math.max(local_db.precision || 0, local_db.semantic_precision || 0, max_explicit_precision, 0.15);
+            let search_radius = Math.max(local_db.precision || 0, local_db.semantic_precision || 0, max_explicit_precision);
             
             if (is_exact_name && local_distance <= search_radius) {
-              console.log(`- (!CM): Exact name proximity merge (${local_uud_city.name} - ${local_city.name}):`, local_distance);
-              was_merged = [true, local_uud_city];
-              break;
+              let pop_check = isPopulationRatioValid(local_uud_city.population, local_city.population);
+              
+              if (pop_check.valid) {
+                console.log(`- (!CM): Exact name proximity merge (${local_uud_city.name} - ${local_city.name}):`, local_distance);
+                was_merged = [true, local_uud_city];
+                break;
+              }
             }
             
             // Standard precision check with population ratio guard
             if (local_db.precision && local_distance <= local_db.precision) {
-              console.log(`- (!CM): Proximity merge match found (${local_uud_city.name} - ${local_city.name}):`, local_distance);
-              was_merged = [true, local_uud_city];
-              break;
+              let pop_check = isPopulationRatioValid(local_uud_city.population, local_city.population);
+              
+              if (pop_check.valid) {
+                console.log(`- (!CM): Proximity merge match found (${local_uud_city.name} - ${local_city.name}):`, local_distance);
+                was_merged = [true, local_uud_city];
+                break;
+              }
             }
           }
         }
@@ -258,8 +324,13 @@
           
           if (closest_uud_city_match[0] <= local_db.semantic_precision) try {
             if (closest_uud_city_match[1] && return_obj[closest_uud_city_match[1].key]) {
-              console.log(`- (!CM): Semantic merge match found: ${local_city.name}, ${closest_uud_city_match[1].name}, distance: ${closest_uud_city_match[0]}`);
-              was_merged = [true, closest_uud_city_match[1]];
+              let pop_check = isPopulationRatioValid(local_city.population, closest_uud_city_match[1].population);
+              
+              // Only enact the semantic match if population scales are compatible AND domains actually overlap 
+              if (pop_check.valid && pop_check.overlaps) {
+                console.log(`- (!CM): Semantic merge match found: ${local_city.name}, ${closest_uud_city_match[1].name}, distance: ${closest_uud_city_match[0]}`);
+                was_merged = [true, closest_uud_city_match[1]];
+              }
             }
           } catch (e) { console.error(e); }
         }
@@ -297,12 +368,15 @@
     }
     
     //1.5 Post-deduplication pass preserving agglomeration vs city proper separation
-    console.time(`- Deduplicating raw UUD entries...`);
+    console.log(`- Deduplicating raw UUD entries ...`)
+    console.time(`- Deduplicating raw UUD entries ...`);
     let deduplicate_keys = Object.keys(return_obj);
     
     for (let i = 0; i < deduplicate_keys.length; i++) {
       let city_a_key = deduplicate_keys[i];
       let city_a = return_obj[city_a_key];
+      
+      if (i % 1000 === 0 && i !== 0) console.log(`- ${i}/${deduplicate_keys.length} ...`);
       
       if (city_a)
         for (let j = i + 1; j < deduplicate_keys.length; j++) {
@@ -313,7 +387,7 @@
             if (isAgglomeration(city_a) !== isAgglomeration(city_b)) {
               if (city_a.coords && city_b.coords) try {
                 let dist = getCoordsDistance(city_a.coords, city_b.coords);
-                if (dist <= Math.max(max_explicit_precision, 0.25)) {
+                if (dist <= max_explicit_precision) {
                   let city_proper = isAgglomeration(city_a) ? city_b : city_a;
                   let agg_city = isAgglomeration(city_a) ? city_a : city_b;
                   if (!city_proper.is_agglomeration_of)
@@ -330,13 +404,12 @@
             if (city_a.coords && city_b.coords) try {
               let dist = getCoordsDistance(city_a.coords, city_b.coords);
               let is_exact_name = checkExactNameMatch(city_a, city_b);
+              let pop_check = isPopulationRatioValid(city_a.population, city_b.population);
               
               if (dist < 0.01) {
                 should_merge = true;
-              } else if (is_exact_name && dist <= Math.max(max_explicit_precision, 0.25)) {
-                should_merge = true;
-              } else if (dist <= max_explicit_precision) {
-                if (is_exact_name) should_merge = true;
+              } else if (is_exact_name && dist <= max_explicit_precision) {
+                if (pop_check.valid) should_merge = true;
               }
             } catch (e) {
               console.error(e);
@@ -349,7 +422,7 @@
           }
         }
     }
-    console.timeEnd(`- Deduplicating raw UUD entries...`);
+    console.timeEnd(`- Deduplicating raw UUD entries ...`);
     
     //2. Flatten .population array entries; take weightedGeometricMean
     var all_return_keys = Object.keys(return_obj);
