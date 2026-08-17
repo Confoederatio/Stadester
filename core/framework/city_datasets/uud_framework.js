@@ -60,7 +60,7 @@
   
   global.initialiseUUD = function (arg0_options) {
     //Declare local instance variables
-    let options = {
+    var options = {
       populstat: {
         data: getPopulstatObject(), //semantic_precision: 0.05
       },
@@ -68,7 +68,7 @@
         data: getWorldcitypopObject(),
         is_metro: true,
         //legacy_chandler_modelski_merging: true
-        precision: 0.05, semantic_precision: 1
+        precision: 0.1, semantic_precision: 1
       },
       devries: {
         data: getDeVriesCitiesObject(), precision: 0.1, semantic_precision: 1
@@ -77,15 +77,39 @@
         data: getBuringhObject(), precision: 0.05, semantic_precision: 1
       }
     };
-    let return_obj = {};
-    let max_explicit_precision = 0;
-    let opt_keys = Object.keys(options);
+    var return_obj = {};
+    var max_explicit_precision = 0;
+    var opt_keys = Object.keys(options);
     
     for (let k = 0; k < opt_keys.length; k++) {
       if (options[opt_keys[k]].precision && options[opt_keys[k]].precision > max_explicit_precision)
         max_explicit_precision = options[opt_keys[k]].precision;
     }
     if (max_explicit_precision === 0) max_explicit_precision = 0.1;
+    
+    // Grid Optimization Helpers
+    let city_grid = new Map();
+    function getGridCells(coords, radius) {
+      let min_lat = Math.floor(Number(coords[0]) - radius);
+      let max_lat = Math.floor(Number(coords[0]) + radius);
+      let min_lng = Math.floor(Number(coords[1]) - radius);
+      let max_lng = Math.floor(Number(coords[1]) + radius);
+      let cells = [];
+      for (let lat = min_lat; lat <= max_lat; lat++) {
+        for (let lng = min_lng; lng <= max_lng; lng++) {
+          cells.push(`${lat},${lng}`);
+        }
+      }
+      return cells;
+    }
+    function addToGrid(city) {
+      if (!city || !city.coords) return;
+      let lat = Math.floor(Number(city.coords[0]));
+      let lng = Math.floor(Number(city.coords[1]));
+      let cell = `${lat},${lng}`;
+      if (!city_grid.has(cell)) city_grid.set(cell, new Set());
+      city_grid.get(cell).add(city.key);
+    }
     
     function isAgglomeration(city) {
       if (!city) return false;
@@ -110,14 +134,22 @@
       let int_start = Math.max(min_a, min_b);
       let int_end = Math.min(max_a, max_b);
       
+      // If domains completely miss each other, guard NY vs Hoboken sizes using a 10x magnitude limit
       if (int_start > int_end) {
+        let peak_a = getPeakPopulation(pop_a);
+        let peak_b = getPeakPopulation(pop_b);
+        if (peak_a > 0 && peak_b > 0) {
+          let ratio = peak_a / peak_b;
+          if (ratio < 0.1 || ratio > 10.0) return { valid: false, overlaps: false };
+        }
         return { valid: true, overlaps: false };
       }
       
       let all_keys = Array.from(new Set([...keys_a, ...keys_b])).sort((a, b) => a - b);
       let check_keys = all_keys.filter(yr => yr >= int_start && yr <= int_end);
       
-      let is_valid = true;
+      let fail_count = 0;
+      let valid_checks = 0;
       
       function getValueAtYear(pop, keys, yr) {
         if (pop[yr] !== undefined) {
@@ -143,16 +175,20 @@
         let num_b = getValueAtYear(pop_b, keys_b, yr);
         
         if (!isNaN(num_a) && !isNaN(num_b) && num_a > 0 && num_b > 0) {
+          valid_checks++;
           let ratio = num_a / num_b;
           // Widened ratio bound checks to 4x difference threshold 
           if (ratio < 0.25 || ratio > 4.0) {
-            is_valid = false;
-            break;
+            fail_count++;
           }
         }
       }
       
-      return { valid: is_valid, overlaps: true };
+      // Majority-rule validation - Prevent single bad interpolated data points from blocking legitimate merges
+      if (valid_checks > 0 && (fail_count / valid_checks) > 0.5) return { valid: false, overlaps: true };
+      if (valid_checks > 0 && valid_checks <= 2 && fail_count === valid_checks) return { valid: false, overlaps: true };
+      
+      return { valid: true, overlaps: true };
     }
     
     function getAllCityNames(city) {
@@ -200,6 +236,21 @@
         let city_obj = local_db.data[all_local_cities[x]];
         if (city_obj) {
           if (!city_obj.key) city_obj.key = all_local_cities[x];
+          
+          if (city_obj.particulars) {
+            let p_str = String(city_obj.particulars).toLowerCase();
+            if (p_str.includes("agglomeration of") || p_str.includes("part of") || p_str.includes("suburb")) {
+              city_obj.is_agglomeration = false;
+              let match = p_str.match(/agglomeration of\s+([a-z\s]+)/) || p_str.match(/part of\s+([a-z\s]+)/) || p_str.match(/suburb of\s+([a-z\s]+)/);
+              if (match && match[1]) city_obj.is_agglomeration_of = processCityName(match[1]);
+            } else if (p_str.includes("agglomeration") || p_str.includes("greater")) {
+              city_obj.is_agglomeration = true;
+              if (!city_obj.is_agglomeration_of) {
+                if (city_obj.name) city_obj.is_agglomeration_of = processCityName(city_obj.name);
+              }
+            }
+          }
+          
           if (city_obj.name) {
             let lower_n = city_obj.name.toLowerCase();
             if (lower_n.includes("agglomeration") || lower_n.includes("greater")) {
@@ -208,6 +259,7 @@
                 city_obj.is_agglomeration_of = processCityName(city_obj.name);
             }
           }
+          
           if (!city_obj.original_names) {
             city_obj.original_names = [];
             if (city_obj.name) {
@@ -224,9 +276,19 @@
         }
       }
       
-      //Iterate over local cities and merge against return_obj
-      let all_return_keys = Object.keys(return_obj);
+      // Fast path: Bypasses spatial deduplication entirely for the base databank to save processing time
+      if (i === 0) {
+        console.log(`- (!CM): Fast-adding base database: ${all_options_keys[i]} (${all_local_cities.length} cities)`);
+        for (let x = 0; x < all_local_cities.length; x++) {
+          let local_city = local_db.data[all_local_cities[x]];
+          local_city.type = all_options_keys[i];
+          return_obj[all_local_cities[x]] = local_city;
+          addToGrid(local_city);
+        }
+        continue;
+      }
       
+      //Iterate over local cities and merge against return_obj
       for (let x = 0; x < all_local_cities.length; x++) {
         var local_city = local_db.data[all_local_cities[x]];
         var was_merged = [false, undefined];
@@ -240,55 +302,83 @@
           }
         }
         
-        all_return_keys = Object.keys(return_obj);
-        
-        for (var y = 0; y < all_return_keys.length; y++) {
-          var local_uud_city = return_obj[all_return_keys[y]];
-          if (local_uud_city && local_uud_city.coords && local_city.coords) {
-            var local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
-            var same_agg = (isAgglomeration(local_uud_city) === isAgglomeration(local_city));
-            
-            if (!same_agg) {
-              if (local_distance <= (local_db.precision || max_explicit_precision)) {
-                let city_proper = isAgglomeration(local_uud_city) ? local_city : local_uud_city;
-                let agg_city = isAgglomeration(local_uud_city) ? local_uud_city : local_city;
-                if (!city_proper.is_agglomeration_of)
-                  city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
+        if (local_city.coords) {
+          let search_radius = Math.max(local_db.precision || 0, local_db.semantic_precision || 0, max_explicit_precision);
+          let cells_to_check = getGridCells(local_city.coords, search_radius + 0.5);
+          
+          let candidate_keys = new Set();
+          for (let c = 0; c < cells_to_check.length; c++) {
+            let keys_in_cell = city_grid.get(cells_to_check[c]);
+            if (keys_in_cell) keys_in_cell.forEach(k => candidate_keys.add(k));
+          }
+          
+          let candidate_array = Array.from(candidate_keys);
+          
+          let best_match = undefined;
+          let best_score = -Infinity;
+          
+          for (var y = 0; y < candidate_array.length; y++) {
+            var local_uud_city = return_obj[candidate_array[y]];
+            if (local_uud_city && local_uud_city.coords) {
+              var local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
+              var same_agg = (isAgglomeration(local_uud_city) === isAgglomeration(local_city));
+              
+              if (!same_agg) {
+                if (local_distance <= (local_db.precision || max_explicit_precision)) {
+                  let city_proper = isAgglomeration(local_uud_city) ? local_city : local_uud_city;
+                  let agg_city = isAgglomeration(local_uud_city) ? local_uud_city : local_city;
+                  if (!city_proper.is_agglomeration_of)
+                    city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
+                }
+                continue;
               }
-              continue;
-            }
-            
-            // Distance < 0.01 forced merge no matter what
-            if (local_distance < 0.01) {
-              console.log(`- (!CM): Distance < 0.01 forced merge (${local_uud_city.name} - ${local_city.name}):`, local_distance);
-              was_merged = [true, local_uud_city];
-              break;
-            }
-            
-            // Exact same name (including .other_names) + within search radius -> force merge
-            let is_exact_name = checkExactNameMatch(local_uud_city, local_city);
-            let search_radius = Math.max(local_db.precision || 0, local_db.semantic_precision || 0, max_explicit_precision);
-            
-            if (is_exact_name && local_distance <= search_radius) {
+              
+              let is_exact_name = checkExactNameMatch(local_uud_city, local_city);
               let pop_check = isPopulationRatioValid(local_uud_city.population, local_city.population);
               
-              if (pop_check.valid) {
-                console.log(`- (!CM): Exact name proximity merge (${local_uud_city.name} - ${local_city.name}):`, local_distance);
-                was_merged = [true, local_uud_city];
-                break;
-              }
-            }
-            
-            // Standard precision check with population ratio guard
-            if (local_db.precision && local_distance <= local_db.precision) {
-              let pop_check = isPopulationRatioValid(local_uud_city.population, local_city.population);
+              let is_match = false;
               
-              if (pop_check.valid) {
-                console.log(`- (!CM): Proximity merge match found (${local_uud_city.name} - ${local_city.name}):`, local_distance);
-                was_merged = [true, local_uud_city];
-                break;
+              // Forced merge override - guarded by pop_check so Hoboken != NY
+              if (local_distance < 0.01) {
+                if (pop_check.valid) is_match = true;
+              }
+              // Exact name proximity merge
+              else if (is_exact_name && local_distance <= search_radius) {
+                if (pop_check.valid) is_match = true;
+              }
+              // Standard precision check
+              else if (local_db.precision && local_distance <= local_db.precision) {
+                if (pop_check.valid) {
+                  // GUARD: Prevent wildly different names with zero temporal overlap from merging
+                  // just because they are geographically close (e.g. Sumer & Azamiyah).
+                  if (is_exact_name || pop_check.overlaps) {
+                    is_match = true;
+                  }
+                }
+              }
+              
+              // Rank matches: favors exact names, proximity, and crucially forces ancient entries to inherit the dominant anchor city (Log10 peak)
+              if (is_match) {
+                let score = 0;
+                if (is_exact_name) score += 10000;
+                if (local_distance < 0.01) score += 5000;
+                score += (1.0 - (local_distance / Math.max(0.01, search_radius))) * 1000;
+                
+                let peak = getPeakPopulation(local_uud_city.population);
+                score += (peak / 100);
+                
+                if (score > best_score) {
+                  best_score = score;
+                  best_match = local_uud_city;
+                }
               }
             }
+          }
+          
+          if (best_match) {
+            let actual_dist = getCoordsDistance(best_match.coords, local_city.coords);
+            console.log(`- (!CM): Selected best proxy match (${best_match.name} - ${local_city.name}), dist: ${actual_dist.toFixed(3)}, score: ${best_score.toFixed(2)}`);
+            was_merged = [true, best_match];
           }
         }
         
@@ -326,8 +416,7 @@
             if (closest_uud_city_match[1] && return_obj[closest_uud_city_match[1].key]) {
               let pop_check = isPopulationRatioValid(local_city.population, closest_uud_city_match[1].population);
               
-              // Only enact the semantic match if population scales are compatible AND domains actually overlap 
-              if (pop_check.valid && pop_check.overlaps) {
+              if (pop_check.valid) {
                 console.log(`- (!CM): Semantic merge match found: ${local_city.name}, ${closest_uud_city_match[1].name}, distance: ${closest_uud_city_match[0]}`);
                 was_merged = [true, closest_uud_city_match[1]];
               }
@@ -363,66 +452,77 @@
           console.log(`- (!CM): Adding separate city: (${all_options_keys[i]})`, local_city.name);
           local_city.type = all_options_keys[i];
           return_obj[all_local_cities[x]] = local_city;
+          addToGrid(local_city); // Assign unique additions to our spatial hashing map
         }
       }
     }
     
     //1.5 Post-deduplication pass preserving agglomeration vs city proper separation
-    console.log(`- Deduplicating raw UUD entries ...`)
-    console.time(`- Deduplicating raw UUD entries ...`);
+    console.time(`- Deduplicating raw UUD entries...`);
     let deduplicate_keys = Object.keys(return_obj);
+    let deleted_keys = new Set();
     
     for (let i = 0; i < deduplicate_keys.length; i++) {
       let city_a_key = deduplicate_keys[i];
+      if (deleted_keys.has(city_a_key)) continue;
+      
       let city_a = return_obj[city_a_key];
+      if (!city_a || !city_a.coords) continue;
       
-      if (i % 1000 === 0 && i !== 0) console.log(`- ${i}/${deduplicate_keys.length} ...`);
+      let cells_to_check = getGridCells(city_a.coords, max_explicit_precision + 0.5);
+      let cand_keys = new Set();
+      for (let c = 0; c < cells_to_check.length; c++) {
+        let keys_in_cell = city_grid.get(cells_to_check[c]);
+        if (keys_in_cell) keys_in_cell.forEach(k => cand_keys.add(k));
+      }
       
-      if (city_a)
-        for (let j = i + 1; j < deduplicate_keys.length; j++) {
-          let city_b_key = deduplicate_keys[j];
-          let city_b = return_obj[city_b_key];
-          
-          if (city_b) {
-            if (isAgglomeration(city_a) !== isAgglomeration(city_b)) {
-              if (city_a.coords && city_b.coords) try {
-                let dist = getCoordsDistance(city_a.coords, city_b.coords);
-                if (dist <= max_explicit_precision) {
-                  let city_proper = isAgglomeration(city_a) ? city_b : city_a;
-                  let agg_city = isAgglomeration(city_a) ? city_a : city_b;
-                  if (!city_proper.is_agglomeration_of)
-                    city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
-                }
-              } catch (e) {
-                console.error(e);
-              }
-              continue;
+      for (let city_b_key of cand_keys) {
+        if (city_a_key === city_b_key) continue;
+        if (deleted_keys.has(city_b_key)) continue;
+        
+        let city_b = return_obj[city_b_key];
+        if (!city_b || !city_b.coords) continue;
+        
+        let is_exact_name = checkExactNameMatch(city_a, city_b);
+        let dist = 1000;
+        try { dist = getCoordsDistance(city_a.coords, city_b.coords); } catch (e) {}
+        
+        if (isAgglomeration(city_a) !== isAgglomeration(city_b)) {
+          // Paris Clone Override: Exact name & tight proxy ignores the agglomeration difference entirely
+          if (!(is_exact_name && dist < 0.05)) {
+            if (dist <= max_explicit_precision) {
+              let city_proper = isAgglomeration(city_a) ? city_b : city_a;
+              let agg_city = isAgglomeration(city_a) ? city_a : city_b;
+              if (!city_proper.is_agglomeration_of)
+                city_proper.is_agglomeration_of = agg_city.is_agglomeration_of || processCityName(agg_city.name);
             }
-            
-            let should_merge = false;
-            
-            if (city_a.coords && city_b.coords) try {
-              let dist = getCoordsDistance(city_a.coords, city_b.coords);
-              let is_exact_name = checkExactNameMatch(city_a, city_b);
-              let pop_check = isPopulationRatioValid(city_a.population, city_b.population);
-              
-              if (dist < 0.01) {
-                should_merge = true;
-              } else if (is_exact_name && dist <= max_explicit_precision) {
-                if (pop_check.valid) should_merge = true;
-              }
-            } catch (e) {
-              console.error(e);
-            }
-            
-            if (should_merge) {
-              mergeCityEntries(city_a, city_b, false);
-              delete return_obj[city_b_key];
-            }
+            continue;
           }
         }
+        
+        let should_merge = false;
+        try {
+          let pop_check = isPopulationRatioValid(city_a.population, city_b.population);
+          
+          if (dist < 0.01) {
+            if (pop_check.valid) should_merge = true;
+          } else if (dist <= max_explicit_precision) {
+            if (is_exact_name && pop_check.valid) {
+              should_merge = true;
+            }
+          }
+        } catch (e) {
+          console.error(e);
+        }
+        
+        if (should_merge) {
+          mergeCityEntries(city_a, city_b, false);
+          deleted_keys.add(city_b_key);
+          delete return_obj[city_b_key];
+        }
+      }
     }
-    console.timeEnd(`- Deduplicating raw UUD entries ...`);
+    console.timeEnd(`- Deduplicating raw UUD entries...`);
     
     //2. Flatten .population array entries; take weightedGeometricMean
     var all_return_keys = Object.keys(return_obj);

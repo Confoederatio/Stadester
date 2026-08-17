@@ -56799,10 +56799,10 @@
     "latitude": 38.0397022,
     "longitude": -1.4920384
   },
-  "Mulheim an der Ruhr-Germany": {
-    "name": "Mulheim an der Ruhr",
+  "Ruhr-Germany": {
+    "name": "Ruhr",
     "country": "Germany",
-    "key": "Mulheim an der Ruhr-Germany",
+    "key": "Ruhr-Germany",
     "is_interpolated": false,
     "links": [
       1400,
