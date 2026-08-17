@@ -65,9 +65,9 @@
 		
 		//Declare local instance variables
 		var stadester_obj = getStadesterObject();
-			stadester_obj = removeStadesterDuplicates(stadester_obj);
-			global.stadester_obj = stadester_obj;
-			
+		stadester_obj = removeStadesterDuplicates(stadester_obj);
+		global.stadester_obj = stadester_obj;
+		
 		if (!do_not_flatten_metros) {
 			//Iterate over all_cities in stadester_obj
 			var all_cities = Object.keys(stadester_obj);
@@ -109,33 +109,121 @@
 		return stadester_obj;
 	};
 	
+	global.getStadesterBestCityMatch = function (city_obj, candidate_cities) {
+		// Levenshtein distance helper
+		function levenshtein(a, b) {
+			let matrix = Array.from({ length: a.length + 1 }, () =>
+				Array(b.length + 1).fill(0)
+			);
+			for (let i = 0; i <= a.length; i++) matrix[i][0] = i;
+			for (let j = 0; j <= b.length; j++) matrix[0][j] = j;
+			for (let i = 1; i <= a.length; i++) {
+				for (let j = 1; j <= b.length; j++) {
+					if (a[i - 1] === b[j - 1]) {
+						matrix[i][j] = matrix[i - 1][j - 1];
+					} else {
+						matrix[i][j] =
+							1 +
+							Math.min(
+								matrix[i - 1][j], // deletion
+								matrix[i][j - 1], // insertion
+								matrix[i - 1][j - 1] // substitution
+							);
+					}
+				}
+			}
+			return matrix[a.length][b.length];
+		}
+		
+		// Scoring function
+		function cityNameScore(input, candidate) {
+			if (input === candidate) return 3;
+			if (
+				candidate.toLowerCase().includes(input.toLowerCase()) ||
+				input.toLowerCase().includes(candidate.toLowerCase())
+			)
+				return 2;
+			let lev = levenshtein(input.toLowerCase(), candidate.toLowerCase());
+			return 1 / (1 + lev);
+		}
+		
+		// Main logic
+		let bestScore = -Infinity;
+		let bestCity = null;
+		
+		for (let i = 0; i < candidate_cities.length; i++) {
+			let local_city_names = [candidate_cities[i].name];
+			if (candidate_cities[i].other_names)
+				local_city_names = local_city_names.concat(
+					candidate_cities[i].other_names
+				);
+			
+			for (let candidateName of local_city_names) {
+				let score = cityNameScore(city_obj.name, candidateName);
+				if (score > bestScore) {
+					bestScore = score;
+					bestCity = candidate_cities[i];
+				}
+				if (score === 3) return bestCity; // Early exit for perfect match
+			}
+		}
+		return bestCity;
+	};
+	
 	global.getStadesterMetroObject = function (arg0_city_obj) {
 		//Convert from parameters
 		var city_obj = arg0_city_obj;
 		if (!city_obj) return;
 		
 		//If city_obj is itself an agglomeration, it has no parent metro above it
-		if (city_obj.name && city_obj.name.toLowerCase().includes("agglomeration")) return;
+		if (city_obj.name && (city_obj.name.toLowerCase().includes("agglomeration") || city_obj.name.toLowerCase().includes("greater") || city_obj.is_agglomeration)) return;
 		
 		//Declare local instance variables
 		var stadester_obj = getStadesterObject();
 		var all_cities = Object.keys(stadester_obj);
 		var candidate_cities = [];
-		var base_city_name = city_obj.name.toLowerCase().replace(/\(agglomeration\)/i, "").trim();
+		
+		function getAllNames(c) {
+			let n = [];
+			if (c.name) n.push(processCityName(c.name));
+			if (c.is_agglomeration_of) n.push(processCityName(c.is_agglomeration_of));
+			if (Array.isArray(c.other_names)) {
+				for (let k = 0; k < c.other_names.length; k++)
+					n.push(processCityName(c.other_names[k]));
+			}
+			if (Array.isArray(c.original_names)) {
+				for (let k = 0; k < c.original_names.length; k++)
+					n.push(processCityName(c.original_names[k]));
+			}
+			return n;
+		}
+		
+		let city_names = getAllNames(city_obj);
 		
 		//Iterate over all_cities looking for an agglomeration parent within 250km
 		for (let i = 0; i < all_cities.length; i++) {
 			var local_city = stadester_obj[all_cities[i]];
 			if (local_city.key === city_obj.key) continue;
 			
-			var is_cand_agg = (local_city.name && local_city.name.toLowerCase().includes("agglomeration")) || local_city.is_agglomeration_of;
+			var is_cand_agg = local_city.is_agglomeration || (local_city.name && (local_city.name.toLowerCase().includes("agglomeration") || local_city.name.toLowerCase().includes("greater")));
 			if (!is_cand_agg) continue;
 			
 			try {
 				if (haversineDistance(local_city.coords, city_obj.coords) <= 250) {
-					let cand_base_name = local_city.is_agglomeration_of ? local_city.is_agglomeration_of.toLowerCase().trim() : local_city.name.toLowerCase().replace(/\(agglomeration\)/i, "").trim();
+					let cand_names = getAllNames(local_city);
+					let matched = false;
 					
-					if (cand_base_name === base_city_name || local_city.name.toLowerCase().includes(base_city_name))
+					for (let x = 0; x < city_names.length; x++) {
+						for (let y = 0; y < cand_names.length; y++) {
+							if (city_names[x] && cand_names[y] && (city_names[x] === cand_names[y] || cand_names[y].includes(city_names[x]) || city_names[x].includes(cand_names[y]))) {
+								matched = true;
+								break;
+							}
+						}
+						if (matched) break;
+					}
+					
+					if (matched)
 						candidate_cities.push(local_city);
 				}
 			} catch (e) {
@@ -146,14 +234,15 @@
 		if (candidate_cities.length === 0) return;
 		
 		//Return statement
-		return getStadesterBestCityMatch({ name: base_city_name }, candidate_cities);
+		let base_name = city_obj.is_agglomeration_of || city_obj.name;
+		return getStadesterBestCityMatch({ name: base_name }, candidate_cities);
 	};
 	
 	global.getStadesterObject = function () {
 		//Return statement
 		return (global.stadester_obj) ?
 			global.stadester_obj : JSON.parse(fs.readFileSync(config.defines.common.input_file_paths.stadester_cities));
-	}
+	};
 	
 	global.parseUUDToStadester = function () {
 		//Declare local instance variables
@@ -191,8 +280,8 @@
 			local_city.key = all_cities[i];
 			if (!local_city.name) local_city.name = all_cities[i];
 			
-			if (local_city.name && local_city.name.toLowerCase().includes("agglomeration") && !local_city.is_agglomeration_of)
-				local_city.is_agglomeration_of = local_city.name.replace(/\(agglomeration\)/i, "").trim();
+			if (local_city.name && (local_city.name.toLowerCase().includes("agglomeration") || local_city.name.toLowerCase().includes("greater")) && !local_city.is_agglomeration_of)
+				local_city.is_agglomeration_of = processCityName(local_city.name);
 			
 			//Check to make sure name doesn't have a colon in it
 			if (local_city.name && local_city.name.includes(":")) continue;
@@ -212,41 +301,41 @@
 	
 	//[WIP] - Refactor at a later date
 	global.removeStadesterDuplicates = function (stadester_obj) {
-		const grouped = {};
+		let grouped = {};
 		
 		// Group by rounded coords (0.1 deg threshold)
-		for (const key in stadester_obj) {
-			const city = stadester_obj[key];
+		for (let key in stadester_obj) {
+			let city = stadester_obj[key];
 			if (!city || !Array.isArray(city.coords) || city.coords.length < 2) continue;
-			const lat = Number(city.coords[0]).toFixed(3);
-			const lng = Number(city.coords[1]).toFixed(3);
-			const groupKey = `${lat},${lng}`;
+			let lat = Number(city.coords[0]).toFixed(3);
+			let lng = Number(city.coords[1]).toFixed(3);
+			let groupKey = `${lat},${lng}`;
 			if (!grouped[groupKey]) grouped[groupKey] = [];
 			grouped[groupKey].push({ key, city });
 		}
 		
-		const result = {};
+		let result = {};
 		
-		for (const groupKey in grouped) {
-			const group = grouped[groupKey];
+		for (let groupKey in grouped) {
+			let group = grouped[groupKey];
 			
 			// Find the city with the most population years (highest data fidelity)
 			group.sort((a, b) => {
-				const numYears = obj =>
+				let numYears = obj =>
 					obj && obj.city && obj.city.population
 						? Object.keys(obj.city.population).length
 						: 0;
 				return numYears(b) - numYears(a);
 			});
 			
-			const best = group[0].city;
+			let best = group[0].city;
 			if (!best || !best.population) continue;
 			
 			// Merge all population keys from all cities in the group into the best
 			for (let i = 1; i < group.length; i++) {
-				const duplicate = group[i].city;
+				let duplicate = group[i].city;
 				if (!duplicate || !duplicate.population) continue;
-				for (const popKey in duplicate.population) {
+				for (let popKey in duplicate.population) {
 					if (!best.population.hasOwnProperty(popKey)) {
 						best.population[popKey] = duplicate.population[popKey];
 					}
@@ -258,69 +347,5 @@
 		}
 		
 		return result;
-	};
-}
-
-//Internal helper functions - [WIP] - To be refactored later
-{
-	global.getStadesterBestCityMatch = function (city_obj, candidate_cities) {
-		// Levenshtein distance helper
-		function levenshtein(a, b) {
-			const matrix = Array.from({ length: a.length + 1 }, () =>
-				Array(b.length + 1).fill(0)
-			);
-			for (let i = 0; i <= a.length; i++) matrix[i][0] = i;
-			for (let j = 0; j <= b.length; j++) matrix[0][j] = j;
-			for (let i = 1; i <= a.length; i++) {
-				for (let j = 1; j <= b.length; j++) {
-					if (a[i - 1] === b[j - 1]) {
-						matrix[i][j] = matrix[i - 1][j - 1];
-					} else {
-						matrix[i][j] =
-							1 +
-							Math.min(
-								matrix[i - 1][j], // deletion
-								matrix[i][j - 1], // insertion
-								matrix[i - 1][j - 1] // substitution
-							);
-					}
-				}
-			}
-			return matrix[a.length][b.length];
-		}
-		
-		// Scoring function
-		function cityNameScore(input, candidate) {
-			if (input === candidate) return 3;
-			if (
-				candidate.toLowerCase().includes(input.toLowerCase()) ||
-				input.toLowerCase().includes(candidate.toLowerCase())
-			)
-				return 2;
-			const lev = levenshtein(input.toLowerCase(), candidate.toLowerCase());
-			return 1 / (1 + lev);
-		}
-		
-		// Main logic
-		let bestScore = -Infinity;
-		let bestCity = null;
-		
-		for (let i = 0; i < candidate_cities.length; i++) {
-			let local_city_names = [candidate_cities[i].name];
-			if (candidate_cities[i].other_names)
-				local_city_names = local_city_names.concat(
-					candidate_cities[i].other_names
-				);
-			
-			for (const candidateName of local_city_names) {
-				const score = cityNameScore(city_obj.name, candidateName);
-				if (score > bestScore) {
-					bestScore = score;
-					bestCity = candidate_cities[i];
-				}
-				if (score === 3) return bestCity; // Early exit for perfect match
-			}
-		}
-		return bestCity;
 	};
 }
