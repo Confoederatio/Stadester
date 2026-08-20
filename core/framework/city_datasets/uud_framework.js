@@ -561,13 +561,74 @@
   };
   
   global.interpolateUUD = function (arg0_uud_obj, arg1_options) {
-    //Convert from praameters
+    // Convert from parameters
     var uud_obj = arg0_uud_obj;
     let options = (arg1_options) ? arg1_options : {};
     
-    // PRE-INTERPOLATION PASS: Pad cities forward to prevent bad spline extrapolation dipping
+    // Initialize options
+    if (!options.mode) options.mode = "linear";
+    
     let all_cities = Object.keys(uud_obj);
+    
+    // Determine valid target years for interpolation from config
+    let target_years = [];
+    for (let i = 0; i < config.uud.processing.hyde_years.length; i++) {
+      let hyde_year = config.uud.processing.hyde_years[i];
+      if (hyde_year >= config.uud.processing.uud_domain[0] && hyde_year <= config.uud.processing.uud_domain[1]) {
+        target_years.push(hyde_year);
+      }
+    }
+    
+    // MAIN INTERPOLATION PASS: Batch process all missing target years per city
+    console.log(`Interpolating for years:`, target_years);
+    console.time(`- Processed UUD interpolations`);
+    
     for (let i = 0; i < all_cities.length; i++) {
+      try {
+        let local_city = uud_obj[all_cities[i]];
+        if (i % 1000 === 0 && i !== 0) console.log(`- ${i}/${all_cities.length} cities processed (mode: ${options.mode})`);
+        
+        let valid_keys = 0;
+        
+        if (local_city.population) {
+          let all_population_keys = Object.keys(local_city.population);
+          
+          for (let x = 0; x < all_population_keys.length; x++) {
+            let local_population = local_city.population[all_population_keys[x]];
+            
+            if (local_population > 0) valid_keys++;
+          }
+          
+          // Ensure there are enough valid keys to interpolate
+          if (valid_keys >= 2) {
+            let missing_years = [];
+            
+            // Collect target years that do not exist yet on this specific city
+            for (let y = 0; y < target_years.length; y++) {
+              if (local_city.population[target_years[y]] === undefined) {
+                missing_years.push(target_years[y]);
+              }
+            }
+            
+            // Run interpolation passing the array of missing years
+            if (missing_years.length > 0) {
+              if (options.mode === "cubic") {
+                local_city.population = cubicSplineInterpolationObject(local_city.population, { years: missing_years });
+              } else if (options.mode === "linear") {
+                local_city.population = linearInterpolationObject(local_city.population, { years: missing_years });
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.error(`Error interpolating city ${all_cities[i]}:`, e);
+      }
+    }
+    
+    console.timeEnd(`- Processed UUD interpolations`);
+    
+    //Pad cities forward for metro-correction step
+    /*for (let i = 0; i < all_cities.length; i++) {
       let city = uud_obj[all_cities[i]];
       
       if (city.population) {
@@ -588,87 +649,9 @@
           }
         }
       }
-    }
+    }*/
     
-    //Iterate over all years in config.uud.processing.hyde_years that is within the UUD domain
-    for (var i = 0; i < config.uud.processing.hyde_years.length; i++) {
-      let local_year = config.uud.processing.hyde_years[i];
-      
-      if (local_year >= config.uud.processing.uud_domain[0] && local_year <= config.uud.processing.uud_domain[1]) {
-        console.log(`Interpolating for ${local_year} ..`);
-        console.time(`- Processed UUD for ${local_year} ..`);
-        uud_obj = interpolateUUDForYear(uud_obj, local_year, options);
-        console.timeEnd(`- Processed UUD for ${local_year} ..`);
-      }
-    }
-    
-    // POST-INTERPOLATION PASS: Remove redundant successive identical entries to clean up JSON bloat
-    for (let i = 0; i < all_cities.length; i++) {
-      let city = uud_obj[all_cities[i]];
-      if (city.population) {
-        let keys = Object.keys(city.population).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
-        let to_delete = [];
-        for (let k = 1; k < keys.length - 1; k++) {
-          let prev = city.population[keys[k-1]];
-          let curr = city.population[keys[k]];
-          let next = city.population[keys[k+1]];
-          
-          // If perfectly identical and collinear, it's redundant.
-          if (prev === curr && curr === next) {
-            to_delete.push(keys[k]);
-          }
-        }
-        for (let k = 0; k < to_delete.length; k++) {
-          delete city.population[to_delete[k]];
-        }
-      }
-    }
-    
-    //Return statement
-    return uud_obj;
-  };
-  
-  global.interpolateUUDForYear = function (arg0_uud_obj, arg1_year, arg2_options) {
-    //Convert from parameters
-    var uud_obj = arg0_uud_obj;
-    var year = parseInt(arg1_year);
-    let options = (arg2_options) ? arg2_options : {};
-    
-    //Initialise options
-    if (!options.mode) options.mode = "linear";
-    
-    //Declare local instance variables
-    var all_cities = Object.keys(uud_obj);
-    
-    //Iterate over all_cities
-    for (let i = 0; i < all_cities.length; i++) try {
-      let local_city = uud_obj[all_cities[i]];
-      if (i % 1000 === 0 && i !== 0) console.log(`- ${i}/${all_cities.length} for ${year}`);
-      
-      let valid_keys = 0;
-      
-      if (local_city.population) {
-        let all_population_keys = Object.keys(local_city.population);
-        
-        for (let x = 0; x < all_population_keys.length; x++) {
-          let local_population = local_city.population[all_population_keys[x]];
-          
-          if (local_population > 0)
-            valid_keys++;
-        }
-      }
-      
-      if (local_city.population && valid_keys >= 2 && local_city.population[year] === undefined)
-        if (options.mode === "cubic") {
-          local_city.population = cubicSplineInterpolationObject(local_city.population, { years: [year] });
-        } else if (options.mode === "linear") {
-          local_city.population = linearInterpolationObject(local_city.population, { years: [year] });
-        }
-    } catch (e) {
-      console.error(e);
-    }
-    
-    //Return statement
+    // Return statement
     return uud_obj;
   };
   
@@ -929,7 +912,7 @@
     console.timeEnd(`- Initialising UUD ..`);
     
     //Interpolate uud_obj
-    uud_obj = interpolateUUD(uud_obj);
+    uud_obj = interpolateUUD(uud_obj, options);
     saveUUDObject(uud_obj);
   };
   

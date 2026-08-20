@@ -194,52 +194,41 @@
     //Return statement
     return lower_triangular_matrix;
   };
-
+  
   global.cubicSplineInterpolation = function (arg0_x_values, arg1_y_values, arg2_x_to_interpolate) {
     //Convert from parameters
     var x_values = getList(arg0_x_values);
     var y_values = getList(arg1_y_values);
-      y_values = y_values.map((y) => (y > 0) ? Math.log(y) : Math.log(1e-6));
+    y_values = y_values.map((y) => (y > 0) ? Math.log(y) : Math.log(1e-6));
     var x_to_interpolate = parseInt(arg2_x_to_interpolate);
-
+    
     //Declare local instance variables
     var interpolation = new cubic_spline(x_values, y_values);
     var log_interpolated = interpolation.at(x_to_interpolate);
-    var max_value = Math.max(...y_values.map((y) => Math.exp(y)));
-
     var interpolated_value = Math.exp(log_interpolated);
-
-    //Find bounding values (before & after)
+    
+    //Find bounding values (before & after) to clamp the spline
     var prev_known_value = -Infinity;
     var next_known_value = Infinity;
-    var prev_known_year = null;
-    var next_known_year = null;
-
-    //Iterate over all x_values to find bounding years and values
+    
+    //Iterate over all x_values to find bounding values
     for (var i = 0; i < x_values.length; i++) {
-      if (x_values[i] < x_to_interpolate) {
-        prev_known_year = x_values[i];
+      if (x_values[i] <= x_to_interpolate) {
         prev_known_value = Math.exp(y_values[i]);
-      } else if (x_values[i] > x_to_interpolate) {
-        next_known_year = x_values[i];
+      }
+      if (x_values[i] >= x_to_interpolate) {
         next_known_value = Math.exp(y_values[i]);
         break;
       }
     }
-
-    //If we have valid bounding values, perform linear interpolation
-    if (prev_known_year !== null && next_known_year !== null && 
-        prev_known_value !== -Infinity && next_known_value !== Infinity) {
-      interpolated_value = prev_known_value + 
-        ((x_to_interpolate - prev_known_year) / (next_known_year - prev_known_year)) * 
-        (next_known_value - prev_known_value);
-    }
-
-    //Cap within bounds (prevents overshoot)
-    if (prev_known_value !== -Infinity && next_known_value !== Infinity) {
-      interpolated_value = Math.max(prev_known_value, Math.min(interpolated_value, next_known_value));
-    }
-
+    
+    //Cap within bounds (prevents overshoot/undershoot common in splines)
+    //We use Math.min/Math.max on the bounds in case the data is trending downwards
+    var lower_bound = Math.min(prev_known_value, next_known_value);
+    var upper_bound = Math.max(prev_known_value, next_known_value);
+    
+    interpolated_value = Math.max(lower_bound, Math.min(interpolated_value, upper_bound));
+    
     //Return statement
     return interpolated_value;
   };
