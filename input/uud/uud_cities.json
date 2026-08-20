@@ -35487,17 +35487,25 @@
     "type": "populstat"
   },
   "Kalyân-India": {
-    "name": "Kalyân",
+    "name": "Kalyan (MAH)",
     "state": "MH",
     "particulars": "agglomeration of Mumbaî (Bombay)",
     "population": {
-      "1891": 12600,
+      "1100": 133333,
+      "1143": 118817,
+      "1150": 120072,
+      "1200": 121211,
+      "1891": 31782.929380407968,
+      "1901": 77087,
       "1941": 31400,
       "1951": 58900,
       "1961": 73500,
       "1971": 99500,
+      "1975": 204839,
       "1981": 135900,
-      "1991": 1014600
+      "1991": 1014600,
+      "2001": 1193512,
+      "2011": 1276614
     },
     "coords": [
       19.2403305,
@@ -35510,7 +35518,24 @@
     "original_names": [
       "kalyân"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Kalyân": 1014600,
+      "Kalyan (MAH)": 1276614
+    },
+    "name_coords": {
+      "Kalyân": [
+        19.2403305,
+        73.1305395
+      ],
+      "Kalyan (MAH)": [
+        19.2403305,
+        73.1305395
+      ]
+    },
+    "other_names": [
+      "Kalyân"
+    ]
   },
   "Kâmâreddi-India": {
     "name": "Kâmâreddi",
@@ -47074,21 +47099,27 @@
     "type": "populstat"
   },
   "Vijayawâda-India": {
-    "name": "Vijayawâda",
+    "name": "Vijayawada (AP)",
     "state": "AD",
     "other_names": [
       "Bezwada",
-      "Bezvada"
+      "Bezvada",
+      "Vijayawâda"
     ],
     "population": {
+      "600": 56666,
+      "622": 55933,
+      "800": 40000,
       "1891": 20700,
       "1941": 86200,
+      "1950": 155000,
       "1951": 161200,
       "1961": 230400,
       "1968": 312800,
       "1971": 343700,
       "1981": 545000,
-      "1991": 845800
+      "1991": 845800,
+      "2000": 1524000
     },
     "coords": [
       16.5061743,
@@ -47101,7 +47132,21 @@
       "bezwada",
       "bezvada"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Vijayawâda": 845800,
+      "Vijayawada (AP)": 1524000
+    },
+    "name_coords": {
+      "Vijayawâda": [
+        16.5061743,
+        80.6480153
+      ],
+      "Vijayawada (AP)": [
+        16.5061743,
+        80.6480153
+      ]
+    }
   },
   "Vikramasingapuram-India": {
     "name": "Vikramasingapuram",
@@ -344852,8 +344897,8 @@
       "2001": 12500
     },
     "coords": [
-      39.63,
-      -8.2
+      39.46178215500106,
+      -8.198256080810468
     ],
     "country": "Portugal",
     "key": "Abrantes-Portugal",
@@ -344868,8 +344913,8 @@
     },
     "name_coords": {
       "Abrantes": [
-        39.63,
-        -8.2
+        39.46178215500106,
+        -8.198256080810468
       ],
       "Arevalo": [
         39.39987199999999,
@@ -345626,8 +345671,8 @@
         -6.756737999999999
       ],
       "Braganca": [
-        41.8061131,
-        -6.756737999999999
+        41.80604575967681,
+        -6.756780696825818
       ]
     }
   },
@@ -348358,9 +348403,9 @@
       "1650": 19000,
       "1700": 24000,
       "1750": 30000,
-      "1800": 37000,
+      "1800": 18248.28759089466,
       "1820": 9000,
-      "1850": 15000,
+      "1850": 9486.832980505138,
       "1900": 19005.26242912736,
       "1920": 10000,
       "1931": 12100,
@@ -348384,6 +348429,7 @@
     "type": "buringh",
     "name_peaks": {
       "Santarém": 63600,
+      "Santarem (P)": 10000,
       "Santarem": 64000
     },
     "name_coords": {
@@ -348391,12 +348437,17 @@
         39.2848804,
         -8.704075
       ],
+      "Santarem (P)": [
+        39.23630946111227,
+        -8.686642739423858
+      ],
       "Santarem": [
         39.23,
         -8.68
       ]
     },
     "other_names": [
+      "Santarem (P)",
       "Santarém",
       "Scalabis"
     ]
@@ -348646,8 +348697,8 @@
       "2001": 37600
     },
     "coords": [
-      38.43,
-      -9.1
+      38.44422665164237,
+      -9.101431471115617
     ],
     "country": "Portugal",
     "key": "Sesimbra-Portugal",
@@ -348665,8 +348716,8 @@
         -9.1014903
       ],
       "Sezimbra": [
-        38.43,
-        -9.1
+        38.44422665164237,
+        -9.101431471115617
       ]
     },
     "other_names": [
@@ -348938,8 +348989,8 @@
       "2001": 12600
     },
     "coords": [
-      37.12,
-      -7.65
+      37.13266561508804,
+      -7.642591767756667
     ],
     "country": "Portugal",
     "key": "Tavira-Portugal",
@@ -348952,8 +349003,8 @@
     },
     "name_coords": {
       "Tavira": [
-        37.12,
-        -7.65
+        37.13266561508804,
+        -7.642591767756667
       ]
     },
     "other_names": [
@@ -349400,45 +349451,30 @@
     "type": "populstat"
   },
   "Viseu-Portugal": {
-    "name": "Vizeu",
+    "name": "Viseu",
     "province": "VS*",
     "elevation": 451,
     "other_names": [
       "Vizeu",
-      "Viseo",
-      "Viseu",
-      "Bazu"
+      "Viseo"
     ],
     "population": {
-      "700": 1000,
-      "800": 1000,
-      "900": 1000,
-      "1000": 2000,
-      "1100": 2000,
-      "1200": 2000,
       "1300": 3000,
-      "1400": 2000,
-      "1500": 3000,
-      "1550": 4000,
-      "1600": 4000,
-      "1650": 4000,
-      "1700": 4000,
       "1750": 4000,
       "1800": 9000,
-      "1850": 10392.304845413264,
-      "1900": 17773.57589231835,
+      "1850": 6000,
+      "1900": 8100,
       "1920": 8300,
       "1931": 9500,
-      "1950": 32338.83114770848,
+      "1950": 12600,
       "1960": 17000,
       "1970": 16100.000000000002,
       "1991": 83000,
-      "2000": 94000,
       "2001": 93500
     },
     "coords": [
-      40.8,
-      -7.92
+      40.6565861,
+      -7.9124712
     ],
     "country": "Portugal",
     "key": "Viseu-Portugal",
@@ -349447,19 +349483,14 @@
       "vizeu",
       "viseo"
     ],
-    "type": "buringh",
+    "type": "chandler_modelski",
     "name_peaks": {
-      "Viseu": 93500,
-      "Vizeu": 94000
+      "Viseu": 93500
     },
     "name_coords": {
       "Viseu": [
         40.6565861,
         -7.9124712
-      ],
-      "Vizeu": [
-        40.8,
-        -7.92
       ]
     }
   },
@@ -390443,51 +390474,27 @@
     "type": "populstat"
   },
   "Castrillón-Spain": {
-    "name": "Ronda",
+    "name": "Castrillón",
     "province": 33,
     "elevation": 30,
     "population": {
-      "1500": 7000,
-      "1600": 8000,
-      "1700": 10000,
-      "1750": 11000,
-      "1800": 15000,
-      "1850": 23000,
-      "1900": 11627.553482998906,
+      "1900": 6500,
       "1949": 8100,
-      "1950": 31000,
       "1986": 21800,
       "1990": 21200,
       "1996": 22400,
-      "2000": 27720.028860013837
+      "2000": 22600
     },
     "coords": [
-      43.40473060000001,
-      -6.8784689
+      43.3974589,
+      -6.791804600000001
     ],
     "country": "Spain",
     "key": "Castrillón-Spain",
     "original_names": [
       "castrillón"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Castrillón": 22600,
-      "Ronda": 34000
-    },
-    "name_coords": {
-      "Castrillón": [
-        43.3974589,
-        -6.791804600000001
-      ],
-      "Ronda": [
-        43.40473060000001,
-        -6.8784689
-      ]
-    },
-    "other_names": [
-      "Castrillón"
-    ]
+    "type": "populstat"
   },
   "Castro-Urdiales-Spain": {
     "name": "Castro-Urdiales",
@@ -395333,31 +395340,16 @@
     "province": 11,
     "elevation": 5,
     "other_names": [
-      "Linea (La -)",
-      "Gibraltar",
-      "Jabal Ṭāriq",
-      "Mons Calpe"
+      "Linea (La -)"
     ],
     "population": {
-      "1200": 1000,
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 2000,
-      "1750": 3000,
-      "1800": 8944.27190999916,
-      "1850": 16000,
-      "1900": 32688.21753461235,
+      "1900": 29600,
       "1910": 30000,
       "1917": 30000,
       "1920": 63200,
       "1930": 35400,
       "1940": 35100,
       "1949": 55100,
-      "1950": 20000,
       "1960": 58200,
       "1970": 52700,
       "1981": 56300,
@@ -395365,7 +395357,7 @@
       "1988": 61000,
       "1990": 61600,
       "1996": 59300,
-      "2000": 39496.835316263
+      "2000": 60000
     },
     "coords": [
       36.1682563,
@@ -395377,21 +395369,7 @@
       "línea de la concepción",
       "linea"
     ],
-    "type": "buringh",
-    "name_peaks": {
-      "Línea de la Concepción (La -)": 63200,
-      "Gibraltar": 59000
-    },
-    "name_coords": {
-      "Línea de la Concepción (La -)": [
-        36.1682563,
-        -5.3494719
-      ],
-      "Gibraltar": [
-        36.140751,
-        -5.353585
-      ]
-    }
+    "type": "populstat"
   },
   "Lizarra-Spain": {
     "name": "Lizarra",
@@ -401355,6 +401333,68 @@
       "rivas-vaciamadrid"
     ],
     "type": "populstat"
+  },
+  "Ronda-Spain": {
+    "name": "Ronda",
+    "province": 29,
+    "elevation": 739,
+    "population": {
+      "700": 2000,
+      "800": 2000,
+      "900": 2000,
+      "1000": 3000,
+      "1100": 3000,
+      "1200": 4000,
+      "1300": 3000,
+      "1400": 5000,
+      "1500": 7000,
+      "1550": 7483.314773547882,
+      "1600": 7999.999999999996,
+      "1650": 9000,
+      "1700": 10000,
+      "1750": 11000,
+      "1800": 14999.999999999993,
+      "1822": 15000,
+      "1850": 23000,
+      "1884": 19400,
+      "1900": 19079.189343615235,
+      "1910": 22700,
+      "1917": 23000,
+      "1920": 30400,
+      "1930": 33200,
+      "1940": 15800,
+      "1949": 31000,
+      "1950": 31000,
+      "1960": 17700,
+      "1970": 22100,
+      "1986": 35500,
+      "1990": 34100,
+      "1996": 34400,
+      "2000": 33999.99999999998
+    },
+    "coords": [
+      36.746209,
+      -5.161225099999999
+    ],
+    "country": "Spain",
+    "key": "Ronda-Spain",
+    "original_names": [
+      "ronda"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Ronda": 35500
+    },
+    "name_coords": {
+      "Ronda": [
+        36.746209,
+        -5.161225099999999
+      ]
+    },
+    "other_names": [
+      "Runda",
+      "Arunda"
+    ]
   },
   "Roquetas de Mar-Spain": {
     "name": "Roquetas de Mar",
@@ -407724,8 +407764,8 @@
       "2000": 24031.22968139583
     },
     "coords": [
-      38.78,
-      -0.17
+      38.78893906092875,
+      0.16637328611318192
     ],
     "country": "Spain",
     "key": "Xàbia-Spain",
@@ -407744,8 +407784,8 @@
         0.1660573
       ],
       "Javea": [
-        38.78,
-        -0.17
+        38.78893906092875,
+        0.16637328611318192
       ]
     }
   },
@@ -426058,87 +426098,27 @@
     }
   },
   "Aston Manor-United Kingdom": {
-    "name": "Tottenham",
+    "name": "Aston Manor",
     "country+": "EN/WM",
     "particulars": "agglomeration of Birmingham",
     "population": {
-      "1600": 2000,
-      "1700": 5000,
-      "1800": 8000,
-      "1850": 17000,
-      "1881": 49963.186447623615,
-      "1891": 69936.97162445626,
-      "1901": 34382.25055383489,
-      "1911": 76238.11514127863,
-      "1921": 146700,
-      "1931": 109078.50384012425,
-      "1938": 76041.64384394966,
-      "1947": 131000,
-      "1951": 38100,
-      "1971": 45220.12826164915,
-      "1975": 105100,
-      "1981": 46743.98357008097
+      "1881": 53800,
+      "1891": 68600,
+      "1901": 77300,
+      "1911": 75000
     },
     "coords": [
-      55.378051,
-      -3.435973
+      52.51604176913019,
+      -1.8728685072312745
     ],
-    "is_agglomeration_of": "london",
+    "is_agglomeration_of": "birmingham",
     "country": "United Kingdom",
     "key": "Aston Manor-United Kingdom",
     "is_agglomeration": false,
     "original_names": [
       "aston manor"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Aston Manor": 77300,
-      "Heston and Isleworth": 101500,
-      "Newburn": 43700,
-      "Northaven": 105100,
-      "Tottenham": 157800,
-      "St Peter Port": 17000,
-      "Walton and Weybridge": 51900
-    },
-    "name_coords": {
-      "Aston Manor": [
-        55.378051,
-        -3.435973
-      ],
-      "Heston and Isleworth": [
-        55.378051,
-        -3.435973
-      ],
-      "Newburn": [
-        55.378051,
-        -3.435973
-      ],
-      "Northaven": [
-        55.378051,
-        -3.435973
-      ],
-      "Tottenham": [
-        55.378051,
-        -3.435973
-      ],
-      "St Peter Port": [
-        55.378051,
-        -3.435973
-      ],
-      "Walton and Weybridge": [
-        55.378051,
-        -3.435973
-      ]
-    },
-    "other_names": [
-      "Aston Manor",
-      "Newburn",
-      "Heston and Isleworth",
-      "Northaven",
-      "St Peter Port",
-      "Walton and Weybridge",
-      "Walton-on-Thames and Weybridge"
-    ]
+    "type": "populstat"
   },
   "Aylesbury-United Kingdom": {
     "name": "Aylesbury",
@@ -428296,7 +428276,7 @@
     "type": "populstat"
   },
   "Chatham-United Kingdom": {
-    "name": "Gillingham",
+    "name": "Chatham",
     "country+": "EN/GL",
     "particulars": "agglomeration of London",
     "population": {
@@ -428308,34 +428288,32 @@
       "1400": 1000,
       "1500": 1000,
       "1550": 1000,
-      "1600": 999.9999999999997,
-      "1650": 1414.213562373095,
-      "1700": 2924.017738212865,
-      "1750": 3684.031498640385,
-      "1800": 10656.0223676661,
+      "1600": 1000,
+      "1650": 2000,
+      "1700": 5000,
+      "1750": 5000,
+      "1800": 15556.349186104046,
       "1821": 13000,
-      "1850": 19798.98987322333,
+      "1850": 49000,
       "1861": 36200,
       "1871": 45800,
       "1881": 46800,
-      "1900": 10535.653752852739,
-      "1901": 39708.31147253683,
-      "1911": 47034.986977780696,
-      "1921": 48187.13521262703,
-      "1931": 51424.70223540434,
-      "1938": 56302.22020489068,
+      "1900": 37000,
+      "1901": 37100,
+      "1911": 42300,
+      "1921": 43000,
+      "1931": 43000,
+      "1938": 44900,
       "1947": 41400,
-      "1950": 29444.863728670913,
-      "1951": 56027.49325108165,
-      "1961": 72900,
-      "1971": 71521.32549107294,
-      "1975": 93900,
-      "1981": 78016.02399507424,
-      "2000": 84261.4977317636
+      "1950": 51000,
+      "1951": 44400,
+      "1971": 57800,
+      "1981": 65800,
+      "2000": 71000
     },
     "coords": [
-      51.37,
-      0.55
+      51.36,
+      0.54
     ],
     "is_agglomeration_of": "london",
     "country": "United Kingdom",
@@ -428346,26 +428324,16 @@
     ],
     "type": "buringh",
     "name_peaks": {
-      "Chatham": 71000,
-      "Gillingham": 100000
+      "Chatham": 71000
     },
     "name_coords": {
       "Chatham": [
         51.36,
         0.54
-      ],
-      "Gillingham": [
-        51.37,
-        0.55
       ]
     },
     "other_names": [
-      "Cetham",
-      "Chatham",
-      "Gelingeham",
-      "Gellingeham",
-      "Gyllingeham",
-      "Gilingeham"
+      "Cetham"
     ]
   },
   "Cheadle and Gatley-United Kingdom": {
@@ -430358,6 +430326,35 @@
       "Gatesheued"
     ]
   },
+  "Gillingham-United Kingdom": {
+    "name": "Gillingham",
+    "country+": "EN/GL",
+    "particulars": "agglomeration of London",
+    "population": {
+      "1901": 42500,
+      "1911": 52300,
+      "1921": 54000,
+      "1931": 61500,
+      "1938": 70600,
+      "1951": 70700,
+      "1961": 72900,
+      "1971": 88500,
+      "1975": 93900,
+      "1981": 92500
+    },
+    "coords": [
+      51.386322,
+      0.551438
+    ],
+    "is_agglomeration_of": "london",
+    "country": "United Kingdom",
+    "key": "Gillingham-United Kingdom",
+    "is_agglomeration": false,
+    "original_names": [
+      "gillingham"
+    ],
+    "type": "populstat"
+  },
   "Gloucester-United Kingdom": {
     "name": "Gloucester",
     "country+": "EN",
@@ -431478,6 +431475,26 @@
     ],
     "type": "populstat"
   },
+  "Heston and Isleworth-United Kingdom": {
+    "name": "Heston and Isleworth",
+    "country+": "EN",
+    "population": {
+      "1901": 30900,
+      "1911": 43000,
+      "1931": 75400,
+      "1938": 101500
+    },
+    "coords": [
+      51.4748980633963,
+      -0.34331645608749006
+    ],
+    "country": "United Kingdom",
+    "key": "Heston and Isleworth-United Kingdom",
+    "original_names": [
+      "heston and isleworth"
+    ],
+    "type": "populstat"
+  },
   "High Wycombe-United Kingdom": {
     "name": "Wycombe",
     "country+": "EN",
@@ -431853,8 +431870,8 @@
       "2000": 134269.50510074876
     },
     "coords": [
-      52.07,
-      1.17
+      52.05347055557675,
+      1.1612327256293347
     ],
     "country": "United Kingdom",
     "key": "Ipswich-United Kingdom",
@@ -431867,8 +431884,8 @@
     },
     "name_coords": {
       "Ipswich": [
-        52.07,
-        1.17
+        52.05347055557675,
+        1.1612327256293347
       ]
     },
     "other_names": [
@@ -433702,8 +433719,8 @@
       "1997": 184300
     },
     "coords": [
-      50.8910135,
-      -4.0929147
+      51.410118345077734,
+      -0.19383037398553826
     ],
     "is_agglomeration_of": "london",
     "country": "United Kingdom",
@@ -433967,6 +433984,25 @@
         -0.81
       ]
     }
+  },
+  "Newburn-United Kingdom": {
+    "name": "Newburn",
+    "country+": "EN/TW",
+    "population": {
+      "1901": 12500,
+      "1971": 39400,
+      "1981": 43700
+    },
+    "coords": [
+      54.984132533371074,
+      -1.7426454309838149
+    ],
+    "country": "United Kingdom",
+    "key": "Newburn-United Kingdom",
+    "original_names": [
+      "newburn"
+    ],
+    "type": "populstat"
   },
   "Newbury-United Kingdom": {
     "name": "Newbury",
@@ -434310,6 +434346,23 @@
       "Northantone",
       "Norhamptone"
     ]
+  },
+  "Northavon-United Kingdom": {
+    "name": "Northavon",
+    "country+": "EN",
+    "population": {
+      "1975": 105100
+    },
+    "coords": [
+      51.603791109704474,
+      -2.5180484967016383
+    ],
+    "country": "United Kingdom",
+    "key": "Northavon-United Kingdom",
+    "original_names": [
+      "northavon"
+    ],
+    "type": "populstat"
   },
   "North Bedforshire-United Kingdom": {
     "name": "North Bedforshire",
@@ -434713,8 +434766,8 @@
       "2000": 104000
     },
     "coords": [
-      53.56794,
-      -2.035096
+      53.54,
+      -2.12
     ],
     "is_agglomeration_of": "manchester",
     "country": "United Kingdom",
@@ -434723,14 +434776,14 @@
     "original_names": [
       "oldham"
     ],
-    "type": "populstat",
+    "type": "buringh",
     "name_peaks": {
       "Oldham": 227500
     },
     "name_coords": {
       "Oldham": [
-        53.56794,
-        -2.035096
+        53.54,
+        -2.12
       ]
     },
     "other_names": []
@@ -435003,22 +435056,36 @@
     "country+": "EN",
     "particulars": "agglomeration of Bournemouth",
     "population": {
+      "1200": 1000,
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 2000,
+      "1750": 3000,
+      "1800": 5000,
+      "1850": 9000,
+      "1900": 19000,
       "1901": 19500,
       "1911": 39000,
       "1921": 43700,
       "1931": 57200,
       "1938": 68900,
+      "1950": 51000,
       "1951": 83000,
       "1961": 92100,
       "1971": 106600,
       "1975": 110600,
       "1981": 122800,
       "1991": 130000,
-      "1993": 137200
+      "1993": 137200,
+      "2000": 138000
     },
     "coords": [
-      50.71505,
-      -1.987248
+      50.71502338303383,
+      -1.987260069360964
     ],
     "is_agglomeration_of": "bournemouth",
     "country": "United Kingdom",
@@ -435027,7 +435094,25 @@
     "original_names": [
       "poole"
     ],
-    "type": "populstat"
+    "type": "buringh",
+    "name_peaks": {
+      "Poole": 138000
+    },
+    "name_coords": {
+      "Poole": [
+        50.71502338303383,
+        -1.987260069360964
+      ]
+    },
+    "other_names": [
+      "Pool",
+      "Pole",
+      "Poles",
+      "Poll",
+      "Polle",
+      "Polman",
+      "Poolman"
+    ]
   },
   "Portsmouth-United Kingdom": {
     "name": "Portsmouth",
@@ -437799,6 +437884,33 @@
       ]
     }
   },
+  "Tottenham-United Kingdom": {
+    "name": "Tottenham",
+    "country+": "EN/GL",
+    "particulars": "agglomeration of London",
+    "population": {
+      "1881": 46400,
+      "1891": 71300,
+      "1901": 102500,
+      "1911": 137400,
+      "1921": 146700,
+      "1931": 157800,
+      "1938": 144400,
+      "1947": 131000
+    },
+    "coords": [
+      51.605431077187305,
+      -0.06803003606527452
+    ],
+    "is_agglomeration_of": "london",
+    "country": "United Kingdom",
+    "key": "Tottenham-United Kingdom",
+    "is_agglomeration": false,
+    "original_names": [
+      "tottenham"
+    ],
+    "type": "populstat"
+  },
   "Tower Hamlets-United Kingdom": {
     "name": "Tower Hamlets",
     "country+": "EN/GL",
@@ -437817,8 +437929,16 @@
       "1750": 4000,
       "1800": 6000,
       "1850": 19000,
+      "1871": 62900,
+      "1881": 128699.99999999999,
+      "1891": 204900,
       "1900": 35000,
-      "1901": 467400,
+      "1901": 353529.0087107422,
+      "1911": 289000,
+      "1921": 300900,
+      "1931": 294300,
+      "1938": 254900,
+      "1947": 174700,
       "1950": 50000,
       "1961": 205700,
       "1971": 165800,
@@ -437841,7 +437961,7 @@
     "type": "buringh",
     "name_peaks": {
       "Tower Hamlets": 467400,
-      "West Ham": 71000
+      "West Ham": 300900
     },
     "name_coords": {
       "Tower Hamlets": [
@@ -437849,8 +437969,8 @@
         -0.0347399
       ],
       "West Ham": [
-        51.53,
-        0.01
+        51.53998735917284,
+        0.01306241775806886
       ]
     },
     "other_names": [
@@ -438202,6 +438322,34 @@
       "Walthamstow"
     ]
   },
+  "Walton and Weybridge-United Kingdom": {
+    "name": "Walton and Weybridge",
+    "country+": "EN/GL",
+    "particulars": "agglomeration of London",
+    "other_names": [
+      "Walton-on-Thames and Weybridge"
+    ],
+    "population": {
+      "1901": 15700,
+      "1938": 30000,
+      "1951": 38100,
+      "1971": 51900,
+      "1981": 50000
+    },
+    "coords": [
+      51.37174499761287,
+      -0.45789320020061
+    ],
+    "is_agglomeration_of": "london",
+    "country": "United Kingdom",
+    "key": "Walton and Weybridge-United Kingdom",
+    "is_agglomeration": false,
+    "original_names": [
+      "walton and weybridge",
+      "walton-on-thames and weybridge"
+    ],
+    "type": "populstat"
+  },
   "Wandsworth-United Kingdom": {
     "name": "Wandsworth",
     "country+": "EN/GL",
@@ -438529,34 +438677,6 @@
     "other_names": [
       "Bromwic"
     ]
-  },
-  "West Ham-United Kingdom": {
-    "name": "West Ham",
-    "country+": "EN/GL",
-    "particulars": "agglomeration of London",
-    "population": {
-      "1871": 62900,
-      "1881": 128699.99999999999,
-      "1891": 204900,
-      "1901": 267400,
-      "1911": 289000,
-      "1921": 300900,
-      "1931": 294300,
-      "1938": 254900,
-      "1947": 174700
-    },
-    "coords": [
-      50.61181,
-      -2.469636
-    ],
-    "is_agglomeration_of": "london",
-    "country": "United Kingdom",
-    "key": "West Ham-United Kingdom",
-    "is_agglomeration": false,
-    "original_names": [
-      "west ham"
-    ],
-    "type": "populstat"
   },
   "Westminster-United Kingdom": {
     "name": "Westminster",
@@ -442161,9 +442281,14 @@
     "name": "Saint Peter Port",
     "country+": "CI",
     "other_names": [
-      "Saint Pierre"
+      "Saint Pierre",
+      "St Peter Port"
     ],
     "population": {
+      "1600": 2000,
+      "1700": 5000,
+      "1800": 8000,
+      "1850": 17000,
       "1901": 18300,
       "1921": 18300,
       "1931": 16700,
@@ -442183,7 +442308,21 @@
       "saint peter port",
       "saint pierre"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Saint Peter Port": 18300,
+      "St Peter Port": 17000
+    },
+    "name_coords": {
+      "Saint Peter Port": [
+        55.378051,
+        -3.435973
+      ],
+      "St Peter Port": [
+        55.378051,
+        -3.435973
+      ]
+    }
   },
   "Douglas-United Kingdom": {
     "name": "Douglas",
@@ -679528,8 +679667,8 @@
       "1850": 4000
     },
     "coords": [
-      41.3409206,
-      1.4020976
+      40.833333,
+      -5.5
     ],
     "latitude": 41.3409206,
     "longitude": 1.4020976,
@@ -687209,8 +687348,8 @@
       "2000": 10000
     },
     "coords": [
-      43.05,
-      -1.43
+      49.05211714680135,
+      -1.4433788554154778
     ],
     "latitude": 49.052184,
     "longitude": -1.443535,
@@ -687223,8 +687362,8 @@
     },
     "name_coords": {
       "Coutances": [
-        43.05,
-        -1.43
+        49.05211714680135,
+        -1.4433788554154778
       ]
     },
     "other_names": [
@@ -689536,6 +689675,56 @@
       "Gebel e Zghir"
     ]
   },
+  "Gibraltar-Spain": {
+    "name": "Gibraltar",
+    "country": "Spain",
+    "key": "Gibraltar-Spain",
+    "is_interpolated": false,
+    "links": [
+      1800,
+      1850,
+      1900
+    ],
+    "population": {
+      "1200": 1000,
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 2000,
+      "1750": 3000,
+      "1800": 8944.27190999916,
+      "1850": 16000,
+      "1900": 34351.12807463534,
+      "1950": 20000,
+      "2000": 26000
+    },
+    "coords": [
+      36.140751,
+      -5.353585
+    ],
+    "latitude": 36.140751,
+    "longitude": -5.353585,
+    "original_names": [
+      "gibraltar"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Gibraltar": 59000
+    },
+    "name_coords": {
+      "Gibraltar": [
+        36.140751,
+        -5.353585
+      ]
+    },
+    "other_names": [
+      "Jabal Ṭāriq",
+      "Mons Calpe"
+    ]
+  },
   "Gluckstadt-Germany": {
     "name": "Glueckstadt",
     "country": "Germany",
@@ -691361,35 +691550,6 @@
     "longitude": 79.74839949999999,
     "original_names": [
       "kalpi"
-    ],
-    "type": "chandler_modelski"
-  },
-  "Kalyan (MAH)-India": {
-    "name": "Kalyan (MAH)",
-    "country": "India",
-    "key": "Kalyan (MAH)-India",
-    "is_interpolated": false,
-    "links": [
-      1100,
-      1200,
-      2000
-    ],
-    "population": {
-      "1100": 133333,
-      "1143": 118817,
-      "1150": 120072,
-      "1200": 121211,
-      "1901": 1911655,
-      "2000": 2180000
-    },
-    "coords": [
-      19.2403305,
-      73.1305395
-    ],
-    "latitude": 19.2403305,
-    "longitude": 73.1305395,
-    "original_names": [
-      "kalyan"
     ],
     "type": "chandler_modelski"
   },
@@ -696315,8 +696475,8 @@
       "2000": 19000
     },
     "coords": [
-      38.63,
-      -8.22
+      38.64800624041331,
+      -8.216820984465015
     ],
     "latitude": 38.64814,
     "longitude": -8.211679799999999,
@@ -696329,8 +696489,8 @@
     },
     "name_coords": {
       "Montemor o Novo": [
-        38.63,
-        -8.22
+        38.64800624041331,
+        -8.216820984465015
       ]
     },
     "other_names": [
@@ -702345,34 +702505,6 @@
     ],
     "type": "chandler_modelski"
   },
-  "Santarem (P)-Portugal": {
-    "name": "Santarem (P)",
-    "country": "Portugal",
-    "key": "Santarem (P)-Portugal",
-    "is_interpolated": false,
-    "links": [
-      1300,
-      1500,
-      1800,
-      1850
-    ],
-    "population": {
-      "1300": 7000,
-      "1500": 10000,
-      "1800": 9000,
-      "1850": 6000
-    },
-    "coords": [
-      39.4413042,
-      -8.7346968
-    ],
-    "latitude": 39.4413042,
-    "longitude": -8.7346968,
-    "original_names": [
-      "santarem"
-    ],
-    "type": "chandler_modelski"
-  },
   "Santiago Tilantongo-Mexico": {
     "name": "Santiago Tilantongo",
     "country": "Mexico",
@@ -703143,8 +703275,8 @@
       "2000": 9000
     },
     "coords": [
-      51.2,
-      -2.55
+      51.190929689159084,
+      -2.547799474924316
     ],
     "latitude": 51.1909,
     "longitude": -2.547886,
@@ -703157,8 +703289,8 @@
     },
     "name_coords": {
       "Shepton Mallet": [
-        51.2,
-        -2.55
+        51.190929689159084,
+        -2.547799474924316
       ]
     },
     "other_names": [
@@ -706944,34 +707076,6 @@
     ],
     "type": "chandler_modelski"
   },
-  "Vijayawada (AP)-India": {
-    "name": "Vijayawada (AP)",
-    "country": "India",
-    "key": "Vijayawada (AP)-India",
-    "is_interpolated": false,
-    "links": [
-      600,
-      800,
-      2000
-    ],
-    "population": {
-      "600": 56666,
-      "622": 55933,
-      "800": 40000,
-      "1881": 1373796,
-      "2000": 1524000
-    },
-    "coords": [
-      16.5061743,
-      80.6480153
-    ],
-    "latitude": 16.5061743,
-    "longitude": 80.6480153,
-    "original_names": [
-      "vijayawada"
-    ],
-    "type": "chandler_modelski"
-  },
   "Vila Vicosa-Portugal": {
     "name": "Vila Vicosa",
     "country": "Portugal",
@@ -707238,8 +707342,8 @@
       "2000": 6000
     },
     "coords": [
-      38.73,
-      -2.98
+      38.73413159770613,
+      -3.011634648401504
     ],
     "latitude": 38.7340294,
     "longitude": -3.0115714,
@@ -707253,12 +707357,12 @@
     },
     "name_coords": {
       "Villanueva de los Infante": [
-        38.7340294,
-        -3.0115714
+        38.73416507414694,
+        -3.011548817710718
       ],
       "Villanueva de los Infantes": [
-        38.73,
-        -2.98
+        38.73413159770613,
+        -3.011634648401504
       ]
     },
     "other_names": [
@@ -708866,53 +708970,6 @@
     ],
     "type": "devries"
   },
-  "Ronda-Spain": {
-    "key": "Ronda-Spain",
-    "population": {
-      "700": 2000,
-      "800": 2000,
-      "900": 2000,
-      "1000": 3000,
-      "1100": 3000,
-      "1200": 4000,
-      "1300": 3000,
-      "1400": 5000,
-      "1500": 7000,
-      "1550": 7483.314773547882,
-      "1600": 8000,
-      "1650": 9000,
-      "1700": 10000,
-      "1750": 11000,
-      "1800": 15000,
-      "1850": 23000,
-      "1900": 21000,
-      "1950": 31000,
-      "2000": 34000
-    },
-    "country": "Spain",
-    "coords": [
-      36.73,
-      -5.17
-    ],
-    "name": "Ronda",
-    "original_names": [
-      "ronda"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Ronda": 34000
-    },
-    "name_coords": {
-      "Ronda": [
-        36.73,
-        -5.17
-      ]
-    },
-    "other_names": [
-      "Runda",
-      "Arunda"
-    ]
-  },
   "Archidona-Spain": {
     "name": "Archidona",
     "coords": [
@@ -709227,8 +709284,8 @@
   "Braganca-Portugal": {
     "name": "Braganca",
     "coords": [
-      41.78,
-      -6.77
+      41.80600094425491,
+      -6.756672130846337
     ],
     "country": "Portugal",
     "other_names": [
@@ -709762,8 +709819,8 @@
   "Figuiera da Foz-Portugal": {
     "name": "Figuiera da Foz",
     "coords": [
-      40.15,
-      -8.85
+      40.15213824462043,
+      -8.85738384642249
     ],
     "country": "Portugal",
     "other_names": [
@@ -709828,6 +709885,46 @@
     "original_names": [
       "fuentes de andalucia",
       "fuentes de andalucía"
+    ],
+    "type": "buringh"
+  },
+  "Gillingham-UK": {
+    "name": "Gillingham",
+    "coords": [
+      51.0375,
+      -2.2748
+    ],
+    "country": "UK",
+    "other_names": [
+      "Gelingeham",
+      "Gellingeham",
+      "Gyllingeham",
+      "Gilingeham"
+    ],
+    "key": "Gillingham-UK",
+    "population": {
+      "1100": 1000,
+      "1200": 1000,
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 2000,
+      "1800": 5000,
+      "1850": 8000,
+      "1900": 3000,
+      "1950": 17000,
+      "2000": 100000
+    },
+    "original_names": [
+      "gillingham",
+      "gelingeham",
+      "gellingeham",
+      "gyllingeham",
+      "gilingeham"
     ],
     "type": "buringh"
   },
@@ -711038,51 +711135,6 @@
     ],
     "type": "buringh"
   },
-  "Poole-UK": {
-    "name": "Poole",
-    "coords": [
-      50.72,
-      -0.98
-    ],
-    "country": "UK",
-    "other_names": [
-      "Pool",
-      "Pole",
-      "Poles",
-      "Poll",
-      "Polle",
-      "Polman",
-      "Poolman"
-    ],
-    "key": "Poole-UK",
-    "population": {
-      "1200": 1000,
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 2000,
-      "1750": 3000,
-      "1800": 5000,
-      "1850": 9000,
-      "1900": 19000,
-      "1950": 51000,
-      "2000": 138000
-    },
-    "original_names": [
-      "poole",
-      "pool",
-      "pole",
-      "poles",
-      "poll",
-      "polle",
-      "polman",
-      "poolman"
-    ],
-    "type": "buringh"
-  },
   "Sack-Russia": {
     "name": "Sack",
     "coords": [
@@ -711340,8 +711392,8 @@
   "St Peter Port-UK": {
     "name": "St Peter Port",
     "coords": [
-      49.45,
-      -2.53
+      49.45695068371872,
+      -2.5369759150475217
     ],
     "country": "UK",
     "other_names": [
@@ -711563,6 +711615,47 @@
       "vigon",
       "vigone",
       "vicus guidonis"
+    ],
+    "type": "buringh"
+  },
+  "Vizeu-Portugal": {
+    "name": "Vizeu",
+    "coords": [
+      440.6563408403,
+      -7.910645624710445
+    ],
+    "country": "Portugal",
+    "other_names": [
+      "Viseu",
+      "Bazu",
+      ""
+    ],
+    "key": "Vizeu-Portugal",
+    "population": {
+      "700": 1000,
+      "800": 1000,
+      "900": 1000,
+      "1000": 2000,
+      "1100": 2000,
+      "1200": 2000,
+      "1300": 3000,
+      "1400": 2000,
+      "1500": 3000,
+      "1550": 4000,
+      "1600": 4000,
+      "1650": 4000,
+      "1700": 4000,
+      "1750": 4000,
+      "1800": 9000,
+      "1850": 18000,
+      "1900": 39000,
+      "1950": 83000,
+      "2000": 94000
+    },
+    "original_names": [
+      "vizeu",
+      "viseu",
+      "bazu"
     ],
     "type": "buringh"
   },

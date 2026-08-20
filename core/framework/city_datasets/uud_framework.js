@@ -77,6 +77,10 @@
         data: getBuringhObject(), precision: 0.05, semantic_precision: 1
       }
     };
+    let cannot_be_merged = [{
+      name: "Gibraltar",
+      ot_name: "Línea de la Concepción"
+    }];
     var return_obj = {};
     var max_explicit_precision = 0;
     var opt_keys = Object.keys(options);
@@ -224,6 +228,67 @@
       return false;
     }
     
+    function isCannotBeMerged(city_a, city_b) {
+      if (!city_a || !city_b) return false;
+      let names_a = getAllCityNames(city_a);
+      let names_b = getAllCityNames(city_b);
+      
+      if (city_a.name && !names_a.includes(city_a.name)) names_a.push(city_a.name);
+      if (city_b.name && !names_b.includes(city_b.name)) names_b.push(city_b.name);
+      
+      if (Array.isArray(city_a.other_names)) {
+        for (let k = 0; k < city_a.other_names.length; k++) {
+          if (!names_a.includes(city_a.other_names[k])) names_a.push(city_a.other_names[k]);
+        }
+      }
+      if (Array.isArray(city_b.other_names)) {
+        for (let k = 0; k < city_b.other_names.length; k++) {
+          if (!names_b.includes(city_b.other_names[k])) names_b.push(city_b.other_names[k]);
+        }
+      }
+      if (Array.isArray(city_a.original_names)) {
+        for (let k = 0; k < city_a.original_names.length; k++) {
+          if (!names_a.includes(city_a.original_names[k])) names_a.push(city_a.original_names[k]);
+        }
+      }
+      if (Array.isArray(city_b.original_names)) {
+        for (let k = 0; k < city_b.original_names.length; k++) {
+          if (!names_b.includes(city_b.original_names[k])) names_b.push(city_b.original_names[k]);
+        }
+      }
+      
+      for (let k = 0; k < cannot_be_merged.length; k++) {
+        let rule = cannot_be_merged[k];
+        if (!rule || !rule.name || !rule.ot_name) continue;
+        
+        let target_1 = String(rule.name).toLowerCase();
+        let target_2 = String(rule.ot_name).toLowerCase();
+        
+        let proc_target_1 = typeof processCityName === "function" ? processCityName(rule.name) : "";
+        let proc_target_2 = typeof processCityName === "function" ? processCityName(rule.ot_name) : "";
+        
+        let a_has_1 = false;
+        let a_has_2 = false;
+        let b_has_1 = false;
+        let b_has_2 = false;
+        
+        for (let x = 0; x < names_a.length; x++) {
+          let str_a = String(names_a[x]).toLowerCase();
+          if (str_a.includes(target_1) || (proc_target_1 && str_a.includes(proc_target_1))) a_has_1 = true;
+          if (str_a.includes(target_2) || (proc_target_2 && str_a.includes(proc_target_2))) a_has_2 = true;
+        }
+        
+        for (let y = 0; y < names_b.length; y++) {
+          let str_b = String(names_b[y]).toLowerCase();
+          if (str_b.includes(target_1) || (proc_target_1 && str_b.includes(proc_target_1))) b_has_1 = true;
+          if (str_b.includes(target_2) || (proc_target_2 && str_b.includes(proc_target_2))) b_has_2 = true;
+        }
+        
+        if ((a_has_1 && b_has_2) || (a_has_2 && b_has_1)) return true;
+      }
+      return false;
+    }
+    
     //1. Unify all databases; iterate over all_options_keys
     var all_options_keys = Object.keys(options);
     
@@ -320,6 +385,8 @@
           for (var y = 0; y < candidate_array.length; y++) {
             var local_uud_city = return_obj[candidate_array[y]];
             if (local_uud_city && local_uud_city.coords) {
+              if (isCannotBeMerged(local_uud_city, local_city)) continue;
+              
               var local_distance = getCoordsDistance(local_uud_city.coords, local_city.coords);
               var same_agg = (isAgglomeration(local_uud_city) === isAgglomeration(local_city));
               
@@ -393,6 +460,8 @@
             });
             
             if (local_uud_city) {
+              if (isCannotBeMerged(local_uud_city, local_city)) continue;
+              
               if (isAgglomeration(local_uud_city) !== isAgglomeration(local_city)) {
                 let city_proper = isAgglomeration(local_uud_city) ? local_city : local_uud_city;
                 let agg_city = isAgglomeration(local_uud_city) ? local_uud_city : local_city;
@@ -426,7 +495,7 @@
         
         if (!was_merged[0] && return_obj[all_local_cities[x]]) {
           let direct_match = return_obj[all_local_cities[x]];
-          if (isAgglomeration(direct_match) === isAgglomeration(local_city))
+          if (isAgglomeration(direct_match) === isAgglomeration(local_city) && !isCannotBeMerged(direct_match, local_city))
             was_merged = [true, direct_match];
         }
         
@@ -482,6 +551,7 @@
         
         let city_b = return_obj[city_b_key];
         if (!city_b || !city_b.coords) continue;
+        if (isCannotBeMerged(city_a, city_b)) continue;
         
         let is_exact_name = checkExactNameMatch(city_a, city_b);
         let dist = 1000;
@@ -628,7 +698,7 @@
     console.timeEnd(`- Processed UUD interpolations`);
     
     //Pad cities forward for metro-correction step
-    /*for (let i = 0; i < all_cities.length; i++) {
+    for (let i = 0; i < all_cities.length; i++) {
       let city = uud_obj[all_cities[i]];
       
       if (city.population) {
@@ -649,9 +719,9 @@
           }
         }
       }
-    }*/
+    }
     
-    // Return statement
+    //Return statement
     return uud_obj;
   };
   
