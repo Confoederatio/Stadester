@@ -87885,22 +87885,19 @@
     "type": "populstat"
   },
   "Kur`catov-Kazakhstan": {
-    "name": "Qara`zal",
+    "name": "Kur`catov",
     "other_names": [
-      "Kurchatov",
-      "Kur`catov",
-      "Kara`zal",
-      "Karazhal"
+      "Kurchatov"
     ],
     "population": {
-      "1959": 8804.544281222055,
-      "1979": 15672.906558772052,
-      "1989": 17176.437348880005,
-      "1999": 10867.842472174503
+      "1959": 7600,
+      "1979": 13800,
+      "1989": 16300,
+      "1999": 9300
     },
     "coords": [
-      48.019573,
-      66.923684
+      50.752628066303025,
+      78.53940459782336
     ],
     "country": "Kazakhstan",
     "key": "Kur`catov-Kazakhstan",
@@ -87908,21 +87905,7 @@
       "kur`catov",
       "kurchatov"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Kur`catov": 16300,
-      "Qara`zal": 18100
-    },
-    "name_coords": {
-      "Kur`catov": [
-        48.019573,
-        66.923684
-      ],
-      "Qara`zal": [
-        48.019573,
-        66.923684
-      ]
-    }
+    "type": "populstat"
   },
   "Lisakovsk-Kazakhstan": {
     "name": "Lisakovsk",
@@ -88164,6 +88147,32 @@
         73.1093826
       ]
     }
+  },
+  "Qara`zal-Kazakhstan": {
+    "name": "Qara`zal",
+    "foundation year; or": 1963,
+    "other_names": [
+      "Kara`zal",
+      "Karazhal"
+    ],
+    "population": {
+      "1959": 10200,
+      "1979": 17800,
+      "1989": 18100,
+      "1999": 12700
+    },
+    "coords": [
+      48.019573,
+      66.923684
+    ],
+    "country": "Kazakhstan",
+    "key": "Qara`zal-Kazakhstan",
+    "original_names": [
+      "qara`zal",
+      "kara`zal",
+      "karazhal"
+    ],
+    "type": "populstat"
   },
   "Qostanay-Kazakhstan": {
     "name": "Qostanay",
@@ -148114,8 +148123,8 @@
       "2001": 12200
     },
     "coords": [
-      47.33,
-      11.73
+      47.34828498887653,
+      11.707714360357738
     ],
     "country": "Austria",
     "key": "Schwaz-Austria",
@@ -148127,8 +148136,8 @@
     },
     "name_coords": {
       "Schwaz": [
-        47.33,
-        11.73
+        47.34828498887653,
+        11.707714360357738
       ]
     },
     "other_names": []
@@ -154945,9 +154954,7 @@
       "Bruxelles",
       "Brussels",
       "Brussel",
-      "Bruocsela",
-      "Elsene",
-      "Ixelles"
+      "Bruocsela"
     ],
     "population": {
       "1000": 1000,
@@ -154979,43 +154986,42 @@
       "1850": 140674.4057880021,
       "1851": 194715,
       "1862": 178000,
-      "1867": 63762.05768323353,
+      "1867": 169400,
       "1874": 180200,
       "1875": 286267,
       "1880": 170300,
-      "1887": 85658.62478466485,
-      "1894": 95157.50101804902,
+      "1887": 174700,
+      "1894": 186700,
       "1900": 294383.74955149955,
-      "1901": 103753.65053818589,
-      "1906": 118410.9792206787,
-      "1911": 113702.6824661582,
+      "1901": 183700,
+      "1906": 198600,
+      "1911": 177100,
       "1914": 624151,
-      "1921": 82000,
       "1925": 774921,
-      "1927": 134127.9612907018,
-      "1931": 130918.98258083126,
-      "1936": 130343.00901851238,
-      "1940": 131058.46023817005,
-      "1942": 127910.51559586491,
+      "1927": 211900,
+      "1931": 200700,
+      "1936": 193500,
+      "1940": 191700,
+      "1942": 185500,
       "1950": 440778.40237470804,
-      "1954": 128152.33123123433,
-      "1960": 126580.80423192136,
-      "1965": 126709.11569417569,
-      "1970": 311530.47229222505,
-      "1975": 299437.1527162964,
-      "1980": 104957.1341072154,
-      "1984": 101168.76988478213,
-      "1985": 101688.83911226442,
-      "1988": 101062.35698814866,
-      "1990": 99963.84346352435,
-      "1993": 98774.18691135857,
+      "1954": 178900,
+      "1960": 171000,
+      "1965": 170800,
+      "1970": 582848.6527392853,
+      "1975": 573957.4830072346,
+      "1980": 144000,
+      "1984": 137200,
+      "1985": 136600,
+      "1988": 136000,
+      "1990": 136700,
+      "1993": 134200,
       "1995": 136400,
-      "1999": 99002.4242127434,
+      "1999": 133900,
       "2000": 519560.3911000145
     },
     "coords": [
-      50.8260453,
-      4.3802052
+      50.84648832499982,
+      4.3524369002235765
     ],
     "country": "Belgium",
     "key": "Brussel-Belgium",
@@ -155028,25 +155034,20 @@
     "name_peaks": {
       "Brussel": 211900,
       "Brussels": 2157349,
-      "Bruxelles": 184000,
-      "Elsene": 94000
+      "Bruxelles": 184000
     },
     "name_coords": {
       "Brussel": [
-        50.84727889021173,
-        4.352722344987132
+        50.84648832499982,
+        4.3524369002235765
       ],
       "Brussels": [
-        50.8260453,
-        4.3802052
+        50.84648832499982,
+        4.3524369002235765
       ],
       "Bruxelles": [
-        50.83,
-        4.33
-      ],
-      "Elsene": [
-        50.8278557,
-        4.3714303
+        50.846414010452385,
+        4.352260344486202
       ]
     },
     "is_agglomeration_of": "brussel"
@@ -155081,8 +155082,8 @@
       "1999": 959300
     },
     "coords": [
-      50.84770289999999,
-      4.357200100000001
+      50.84648832499982,
+      4.3524369002235765
     ],
     "country": "Belgium",
     "key": "Brussel (agglomeration)-Belgium",
@@ -156330,6 +156331,53 @@
     "original_names": [
       "ekeren",
       "eeckeren"
+    ],
+    "type": "populstat"
+  },
+  "Elsene-Belgium": {
+    "name": "Elsene",
+    "province": "BS",
+    "particulars": "agglomeration of Brussel",
+    "other_names": [
+      "Ixelles"
+    ],
+    "population": {
+      "1867": 24000,
+      "1887": 42000,
+      "1894": 48500,
+      "1901": 58600,
+      "1906": 70600,
+      "1911": 73000,
+      "1921": 82000,
+      "1927": 84900,
+      "1931": 85400,
+      "1936": 87800,
+      "1940": 89600,
+      "1942": 88200,
+      "1954": 91800,
+      "1960": 93700,
+      "1965": 94000,
+      "1970": 89000,
+      "1975": 81500,
+      "1980": 76500,
+      "1984": 74600,
+      "1985": 75700,
+      "1988": 75100,
+      "1990": 73100,
+      "1993": 72700,
+      "1999": 73200
+    },
+    "coords": [
+      50.8278557,
+      4.3714303
+    ],
+    "is_agglomeration_of": "brussel",
+    "country": "Belgium",
+    "key": "Elsene-Belgium",
+    "is_agglomeration": false,
+    "original_names": [
+      "elsene",
+      "ixelles"
     ],
     "type": "populstat"
   },
@@ -191530,8 +191578,8 @@
       "2003": 55900
     },
     "coords": [
-      56.47,
-      10.05
+      56.46016743437311,
+      10.036525334777695
     ],
     "country": "Denmark",
     "key": "Randers-Denmark",
@@ -191544,8 +191592,8 @@
     },
     "name_coords": {
       "Randers": [
-        56.47,
-        10.05
+        56.46016743437311,
+        10.036525334777695
       ]
     },
     "other_names": [
@@ -191915,8 +191963,8 @@
       "2003": 43800
     },
     "coords": [
-      55.65,
-      12.08
+      55.641789078498,
+      12.087405108525893
     ],
     "country": "Denmark",
     "key": "Roskilde-Denmark",
@@ -191929,8 +191977,8 @@
     },
     "name_coords": {
       "Roskilde": [
-        55.65,
-        12.08
+        55.641789078498,
+        12.087405108525893
       ]
     },
     "other_names": [],
@@ -191953,8 +192001,8 @@
       "2003": 53500
     },
     "coords": [
-      55.64191,
-      12.087845
+      55.641789078498,
+      12.087405108525893
     ],
     "country": "Denmark",
     "key": "Roskilde (agglomeration/municip.)-Denmark",
@@ -231357,8 +231405,8 @@
       "2000": 251000
     },
     "coords": [
-      56.57,
-      9.93
+      53.54741793091176,
+      9.935286729640126
     ],
     "is_agglomeration_of": "hamburg",
     "country": "Germany",
@@ -231373,8 +231421,8 @@
     },
     "name_coords": {
       "Altona": [
-        56.57,
-        9.93
+        53.54741793091176,
+        9.935286729640126
       ]
     },
     "other_names": [
@@ -234278,8 +234326,8 @@
     },
     "name_coords": {
       "Biberach an der Riss": [
-        48.0951473,
-        9.7901525
+        48.09856411254521,
+        9.78933277601848
       ],
       "Biberach": [
         48.1,
@@ -246920,8 +246968,8 @@
       "2000": 48849.769702630125
     },
     "coords": [
-      51.8,
-      6.18
+      51.78650455689103,
+      6.129454232205365
     ],
     "country": "Germany",
     "key": "Kleve-Germany",
@@ -246934,8 +246982,8 @@
     },
     "name_coords": {
       "Kleve": [
-        51.8,
-        6.18
+        51.78650455689103,
+        6.129454232205365
       ]
     },
     "other_names": [
@@ -251263,23 +251311,30 @@
       "Gladbach",
       "Monchengladbach",
       "Rheydt",
+      "Moenchengladbach",
+      "Gladebach",
+      "Monichgladebach",
+      "Moenchsgladbach",
+      "Monnike Gladbeeck",
+      "Munneke Glebbek",
       "parochiam Reithe",
       "München-Gladbach Land"
     ],
     "population": {
+      "1000": 1000,
       "1100": 1000,
       "1200": 1000,
       "1300": 1000,
       "1400": 1000,
       "1500": 1000,
       "1550": 1000,
-      "1600": 1000,
+      "1600": 999.9999999999997,
       "1650": 1000,
-      "1700": 2000,
-      "1750": 2000,
-      "1800": 3000,
+      "1700": 1414.213562373095,
+      "1750": 1414.213562373095,
+      "1800": 2080.0838230519034,
       "1818": 15000,
-      "1850": 10305.253862820788,
+      "1850": 8134.090853318093,
       "1861": 17100,
       "1864": 18700,
       "1867": 22100,
@@ -251289,7 +251344,7 @@
       "1885": 44200,
       "1890": 22602.654711338666,
       "1895": 25908.49281606323,
-      "1900": 38973.83956762616,
+      "1900": 42199.19372007838,
       "1905": 34580.19664490068,
       "1910": 39501.898688544075,
       "1916": 35253.22680266304,
@@ -251300,7 +251355,7 @@
       "1933": 126600,
       "1939": 128400,
       "1946": 110400,
-      "1950": 121516.68859148136,
+      "1950": 122378.30900146096,
       "1964": 153700,
       "1970": 152200,
       "1979": 257500,
@@ -251312,11 +251367,11 @@
       "1994": 420000,
       "1996": 266700,
       "1998": 266500,
-      "2000": 264893.18602032785
+      "2000": 264260.614620039
     },
     "coords": [
-      51.1941686,
-      6.4315392
+      51.193937562432716,
+      6.435669630555064
     ],
     "country": "Germany",
     "key": "Mönchengladbach-Germany",
@@ -251330,12 +251385,13 @@
       "Mönchengladbach": 420000,
       "Monchengladbach": 266800,
       "Rheydt": 78000,
+      "Moenchengladbach": 263000,
       "München-Gladbach Land": 23500
     },
     "name_coords": {
       "Mönchengladbach": [
-        51.1941686,
-        6.4315392
+        51.193937562432716,
+        6.435669630555064
       ],
       "Monchengladbach": [
         51.1941686,
@@ -251344,6 +251400,10 @@
       "Rheydt": [
         51.3,
         6.45
+      ],
+      "Moenchengladbach": [
+        51.193937562432716,
+        6.435669630555064
       ],
       "München-Gladbach Land": [
         51.1941686,
@@ -259247,8 +259307,8 @@
         7.0847931
       ],
       "Burscheid": [
-        51.085636,
-        7.110593199999999
+        51.08501063305291,
+        7.111007735889526
       ]
     },
     "other_names": [
@@ -271250,8 +271310,8 @@
       "2001": 85000
     },
     "coords": [
-      39.7,
-      22.35
+      39.36440733413698,
+      22.934016333163946
     ],
     "country": "Greece",
     "key": "Vólos-Greece",
@@ -271267,12 +271327,12 @@
     },
     "name_coords": {
       "Vólos": [
-        39.366584,
-        22.9506769
+        39.36440733413698,
+        22.934016333163946
       ],
       "Volos": [
-        39.7,
-        22.35
+        39.36440733413698,
+        22.934016333163946
       ]
     },
     "is_agglomeration_of": "vólos"
@@ -271288,8 +271348,8 @@
       "1991": 106200
     },
     "coords": [
-      39.366584,
-      22.9506769
+      39.36440733413698,
+      22.934016333163946
     ],
     "country": "Greece",
     "key": "Vólos (agglomeration)-Greece",
@@ -271521,8 +271581,8 @@
       "2001": 16400
     },
     "coords": [
-      37.87,
-      20.73
+      37.78836198887083,
+      20.898940567672
     ],
     "country": "Greece",
     "key": "Zakynthos-Greece",
@@ -271538,8 +271598,8 @@
     },
     "name_coords": {
       "Zakynthos": [
-        37.87,
-        20.73
+        37.78836198887083,
+        20.898940567672
       ]
     }
   },
@@ -294898,23 +294958,32 @@
     "name": "Mazara del Vallo",
     "province": "TP",
     "population": {
+      "700": 2000,
+      "800": 2000,
+      "900": 2000,
+      "1000": 2000,
+      "1100": 3000,
+      "1200": 3000,
       "1300": 4000,
       "1400": 1000,
+      "1500": 3000,
+      "1550": 5000,
       "1600": 7000,
+      "1650": 7000,
       "1700": 7000,
       "1750": 8000,
       "1800": 8000,
       "1850": 11000,
-      "1900": 17700,
+      "1900": 5949.789912257407,
       "1901": 17700,
-      "1950": 33200,
+      "1950": 8148.619514985345,
       "1951": 33200,
       "1961": 35400,
       "1965": 38200,
       "1968": 40000,
       "1981": 42300,
       "1991": 47800,
-      "2000": 47800,
+      "2000": 9777.525249264254,
       "2001": 48200
     },
     "coords": [
@@ -294926,17 +294995,25 @@
     "original_names": [
       "mazara del vallo"
     ],
-    "type": "chandler_modelski",
+    "type": "buringh",
     "name_peaks": {
-      "Mazara del Vallo": 48200
+      "Mazara del Vallo": 48200,
+      "Mazzara": 11000
     },
     "name_coords": {
       "Mazara del Vallo": [
         37.6551076,
         12.5901857
+      ],
+      "Mazzara": [
+        37.65505311516476,
+        12.590217664372904
       ]
     },
-    "other_names": []
+    "other_names": [
+      "Mazzara",
+      "Mazar"
+    ]
   },
   "Merano-Italy": {
     "name": "Merano",
@@ -298432,8 +298509,8 @@
       "2001": 141400
     },
     "coords": [
-      44.73,
-      10.6
+      44.702610039623835,
+      10.634898474372227
     ],
     "country": "Italy",
     "key": "Reggio nell'Emilia-Italy",
@@ -298450,8 +298527,8 @@
     },
     "name_coords": {
       "Reggio nell'Emilia": [
-        44.70309659999999,
-        10.6346153
+        44.70308370041284,
+        10.634980086973842
       ],
       "Reggio Emilia": [
         44.70309659999999,
@@ -298462,8 +298539,8 @@
         10.63125
       ],
       "Reggio nell Emilia": [
-        44.73,
-        10.6
+        44.702610039623835,
+        10.634898474372227
       ]
     }
   },
@@ -333591,8 +333668,8 @@
       "2001": 12400
     },
     "coords": [
-      64.5176895,
-      11.3364043
+      64.46632085148545,
+      11.495429641743485
     ],
     "country": "Norway",
     "key": "Namsos-Norway",
@@ -333695,8 +333772,8 @@
       "2001": 12300
     },
     "coords": [
-      59.65665629999999,
-      9.2094053
+      59.55920426587515,
+      9.262687369582837
     ],
     "country": "Norway",
     "key": "Notodden-Norway",
@@ -334558,8 +334635,8 @@
       "2001": 6200
     },
     "coords": [
-      70.15833409999999,
-      29.8116709
+      70.07430882103004,
+      29.748531612349037
     ],
     "country": "Norway",
     "key": "Vadsø-Norway",
@@ -334616,8 +334693,8 @@
       "2001": 12200
     },
     "coords": [
-      58.3392091,
-      7.8096552
+      58.26811221723489,
+      7.973866680046062
     ],
     "country": "Norway",
     "key": "Vennesla-Norway",
@@ -335163,8 +335240,8 @@
       "2000": 30000
     },
     "coords": [
-      50.98,
-      20.42
+      49.968762566127936,
+      20.430141443339526
     ],
     "country": "Poland",
     "key": "Bochnia-Poland",
@@ -335177,8 +335254,8 @@
     },
     "name_coords": {
       "Bochnia": [
-        50.98,
-        20.42
+        49.968762566127936,
+        20.430141443339526
       ]
     },
     "other_names": [
@@ -346528,7 +346605,6 @@
     "name": "Figueira da Foz",
     "province": "CM",
     "population": {
-      "1850": 6000,
       "1900": 6200,
       "1920": 6800,
       "1931": 8200,
@@ -346547,17 +346623,7 @@
     "original_names": [
       "figueira da foz"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Figueira da Foz": 62600
-    },
-    "name_coords": {
-      "Figueira da Foz": [
-        40.1521398,
-        -8.857583
-      ]
-    },
-    "other_names": []
+    "type": "populstat"
   },
   "Funchal-Portugal": {
     "name": "Funchal",
@@ -360015,172 +360081,32 @@
     "type": "populstat"
   },
   "A`'cinsk-Russia": {
-    "name": "D`'zokar",
+    "name": "A`'cinsk",
     "province": "KY",
     "found.yr": 1621,
     "other_names": [
-      "Achinsk",
-      "An`'zero-Sud`'zensk",
-      "Anzhero-Sudzhensk",
-      "Atomgrad",
-      "Babu`'skin",
-      "Babushkin",
-      "Losino-Ostrovsk",
-      "A`'cinsk",
-      "Balashikha",
-      "Bala`'sov",
-      "Balashov",
-      "Be`'zica",
-      "Bezhitsa",
-      "Ord`'zonikidzegrad",
-      "Borovi`'ci",
-      "Borovichi",
-      "Bala`'sicha",
-      "Dzerzhinsk",
-      "Rast'apino",
-      "Dzer`'zinsk",
-      "Grozny",
-      "Groznyj",
-      "Dzhokar",
-      "Dzohokhar-Ghala",
-      "Dzhohar (?)",
-      "Fr'azino",
-      "Frjazino",
-      "Fryazino",
-      "Gat`'cina",
-      "Gatchina",
-      "Trock",
-      "Trockoje",
-      "Chot`'cino",
-      "Gr'azi",
-      "Gryazi",
-      "I`'sim",
-      "Ishim",
-      "Korkina",
-      "I`'simbaj",
-      "Ishimbai",
-      "Jegor'evsk",
-      "Yegoryevsk",
-      "Egor'evsk",
-      "Jermola'evo",
-      "Yermolayevo",
-      "Kumertau",
-      "Jo`'skar-Ola",
-      "Ioshkar-Ola",
-      "Carevokok`'saisk",
-      "Krasnokok`'saisk",
-      "Kok`'sa`'zask",
-      "Kok`'satski Gorodok",
-      "Kandalak`'sa",
-      "Kandalaksha",
-      "Kandalax",
-      "Kannanlahti",
-      "Kostomuk`'sa",
-      "Kostomuksha",
-      "Kun`'cevo",
-      "Kuntsevo",
-      "Kur`'catov",
-      "Kurchatov",
-      "Ku`'sva",
-      "Kushva",
-      "L'ubercy",
-      "Lyubertsy",
-      "Macha`'ckala",
-      "Makhachkala",
-      "Petrovsk",
-      "Petrovsk Kavkaski",
-      "Me`'zdure`'censk",
-      "Mezhdurechensk",
-      "Ol`'zeras",
-      "Mi`'curinsk",
-      "Michurinsk; formerly: Kozlov",
-      "Mon`'cegorsk",
-      "Monchegorsk",
-      "Mor`'sansk",
-      "Morshansk",
-      "Myti`'s`'ci",
-      "Mytishchi",
-      "Ni`'zneudinsk",
-      "Nizhneudinsk",
-      "Novo`'ceboksarsk",
-      "Novocheboksarsk",
-      "Novo`'sachtinsk",
-      "Novoshakhtinsk",
-      "Komintern",
-      "Pu`'skino",
-      "Pushkino",
-      "Rti`'s`'cevo",
-      "Rtishchevo",
-      "R`'zev",
-      "Rzhev",
-      "`'S`'cëkino",
-      "Shchekino",
-      "`'S`'cokino",
-      "Shchokino",
-      "`'S`'cëlkovo",
-      "Shchelkovo",
-      "Sege`'za",
-      "Segezha",
-      "Sekehen",
-      "Solne`'cnogorsk",
-      "Solnechnogorsk",
-      "Stre`'zevoj",
-      "Strezhevoi",
-      "Tor`'zok",
-      "Torzhok",
-      "Ugli`'c",
-      "Uglich",
-      "Ust'-D`'zeguta",
-      "Ust-Dzheguta",
-      "Ust-D`'zegutinskaja",
-      "Verchn'aja Py`'sma",
-      "Verchn'aya Pyshma",
-      "Py`'sma",
-      "Vi`'cuga",
-      "Vichuga",
-      "Vol`'zsk",
-      "Volzhsk",
-      "Lopatino",
-      "Vol`'zskij",
-      "Volzhskii",
-      "Vol`'zskaja Caricyn",
-      "Vy`'snij Volo`'cek",
-      "Vyshniy Volochek",
-      "Zare`'cnyi",
-      "Zarechnyi",
-      "`'Zeleznodoro`'znyj",
-      "Zheleznodorozhnii",
-      "Obiralovka"
+      "Achinsk"
     ],
     "population": {
-      "1885": 35800,
-      "1891": 11058.967080216153,
-      "1897": 12039.979818134716,
-      "1901": 19622.48911038183,
-      "1907": 15910.36176903596,
-      "1911": 17321.563507840976,
-      "1920": 22547.34831304305,
-      "1926": 22766.192429130766,
-      "1933": 43238.80764396388,
-      "1936": 82336.54910848044,
-      "1939": 45281.79237931402,
-      "1956": 135373.23730165957,
-      "1959": 69762.7281930097,
-      "1964": 148258.04409478456,
-      "1967": 96319.41915529408,
-      "1970": 71487.31362324569,
-      "1973": 88436.1599946658,
-      "1979": 106991.66394489208,
-      "1981": 99263.25553604336,
-      "1989": 76873.26847359183,
-      "1991": 90718.28467302886,
-      "1994": 149881.1029120238,
-      "1996": 80228.61667895925,
-      "2001": 158800.57864652463
+      "1897": 6700,
+      "1911": 9800,
+      "1920": 11600,
+      "1926": 17000,
+      "1939": 32000,
+      "1959": 50000,
+      "1970": 97000,
+      "1973": 106000,
+      "1979": 117000,
+      "1981": 117000,
+      "1989": 122000,
+      "1991": 122000,
+      "1994": 121900,
+      "1996": 123000,
+      "2001": 120400
     },
     "coords": [
-      61.52401,
-      105.318756
+      56.23566157799549,
+      90.49017918244965
     ],
     "country": "Russia",
     "key": "A`'cinsk-Russia",
@@ -360188,267 +360114,7 @@
       "a`'cinsk",
       "achinsk"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "A`'cinsk": 123000,
-      "An`'zero-Sud`'zensk": 119000,
-      "Atomgrad": 97500,
-      "Babu`'skin": 113000,
-      "Bala`'sicha": 137600,
-      "Bala`'sov": 98400,
-      "Be`'zica": 82300,
-      "Borovi`'ci": 63000,
-      "Dzer`'zinsk": 286700,
-      "D`'zokar": 401400,
-      "Fr'azino": 54000,
-      "Gat`'cina": 80600,
-      "Gr'azi": 48300,
-      "I`'sim": 66000,
-      "I`'simbaj": 71000,
-      "Jegor'evsk": 74200,
-      "Jermola'evo": 65600,
-      "Jo`'skar-Ola": 250900,
-      "Kandalak`'sa": 54300,
-      "Kostomuk`'sa": 31600,
-      "Kun`'cevo": 140000,
-      "Kur`'catov": 48200,
-      "Ku`'sva": 43300,
-      "L'ubercy": 165300,
-      "Macha`'ckala": 339300,
-      "Me`'zdure`'censk": 107500,
-      "Mi`'curinsk": 123500,
-      "Mon`'cegorsk": 69000,
-      "Mor`'sansk": 50500,
-      "Myti`'s`'ci": 157000,
-      "Ni`'zneudinsk": 44000,
-      "Novo`'ceboksarsk": 124200,
-      "Novo`'sachtinsk": 109000,
-      "Pu`'skino": 76000,
-      "Rti`'s`'cevo": 45100,
-      "R`'zev": 70900,
-      "`'S`'cëkino": 70000,
-      "`'S`'cëlkovo": 109600,
-      "Sege`'za": 38200,
-      "Solne`'cnogorsk": 56700,
-      "Stre`'zevoj": 44100,
-      "Tor`'zok": 50500,
-      "Ugli`'c": 40000,
-      "Ust'-D`'zeguta": 31500,
-      "Verchn'aja Py`'sma": 53500,
-      "Vi`'cuga": 53000,
-      "Vol`'zsk": 62100,
-      "Vol`'zskij": 289900,
-      "Vy`'snij Volo`'cek": 76000,
-      "Zare`'cnyi": 63400,
-      "`'Zeleznodoro`'znyj": 101300
-    },
-    "name_coords": {
-      "A`'cinsk": [
-        61.52401,
-        105.318756
-      ],
-      "An`'zero-Sud`'zensk": [
-        61.52401,
-        105.318756
-      ],
-      "Atomgrad": [
-        61.52401,
-        105.318756
-      ],
-      "Babu`'skin": [
-        61.52401,
-        105.318756
-      ],
-      "Bala`'sicha": [
-        61.52401,
-        105.318756
-      ],
-      "Bala`'sov": [
-        61.52401,
-        105.318756
-      ],
-      "Be`'zica": [
-        61.52401,
-        105.318756
-      ],
-      "Borovi`'ci": [
-        61.52401,
-        105.318756
-      ],
-      "Dzer`'zinsk": [
-        61.52401,
-        105.318756
-      ],
-      "D`'zokar": [
-        61.52401,
-        105.318756
-      ],
-      "Fr'azino": [
-        61.52401,
-        105.318756
-      ],
-      "Gat`'cina": [
-        61.52401,
-        105.318756
-      ],
-      "Gr'azi": [
-        61.52401,
-        105.318756
-      ],
-      "I`'sim": [
-        61.52401,
-        105.318756
-      ],
-      "I`'simbaj": [
-        61.52401,
-        105.318756
-      ],
-      "Jegor'evsk": [
-        61.52401,
-        105.318756
-      ],
-      "Jermola'evo": [
-        61.52401,
-        105.318756
-      ],
-      "Jo`'skar-Ola": [
-        61.52401,
-        105.318756
-      ],
-      "Kandalak`'sa": [
-        61.52401,
-        105.318756
-      ],
-      "Kostomuk`'sa": [
-        61.52401,
-        105.318756
-      ],
-      "Kun`'cevo": [
-        61.52401,
-        105.318756
-      ],
-      "Kur`'catov": [
-        61.52401,
-        105.318756
-      ],
-      "Ku`'sva": [
-        61.52401,
-        105.318756
-      ],
-      "L'ubercy": [
-        61.52401,
-        105.318756
-      ],
-      "Macha`'ckala": [
-        61.52401,
-        105.318756
-      ],
-      "Me`'zdure`'censk": [
-        61.52401,
-        105.318756
-      ],
-      "Mi`'curinsk": [
-        61.52401,
-        105.318756
-      ],
-      "Mon`'cegorsk": [
-        61.52401,
-        105.318756
-      ],
-      "Mor`'sansk": [
-        61.52401,
-        105.318756
-      ],
-      "Myti`'s`'ci": [
-        61.52401,
-        105.318756
-      ],
-      "Ni`'zneudinsk": [
-        61.52401,
-        105.318756
-      ],
-      "Novo`'ceboksarsk": [
-        61.52401,
-        105.318756
-      ],
-      "Novo`'sachtinsk": [
-        61.52401,
-        105.318756
-      ],
-      "Pu`'skino": [
-        61.52401,
-        105.318756
-      ],
-      "Rti`'s`'cevo": [
-        61.52401,
-        105.318756
-      ],
-      "R`'zev": [
-        61.52401,
-        105.318756
-      ],
-      "`'S`'cëkino": [
-        61.52401,
-        105.318756
-      ],
-      "`'S`'cëlkovo": [
-        61.52401,
-        105.318756
-      ],
-      "Sege`'za": [
-        61.52401,
-        105.318756
-      ],
-      "Solne`'cnogorsk": [
-        61.52401,
-        105.318756
-      ],
-      "Stre`'zevoj": [
-        61.52401,
-        105.318756
-      ],
-      "Tor`'zok": [
-        61.52401,
-        105.318756
-      ],
-      "Ugli`'c": [
-        61.52401,
-        105.318756
-      ],
-      "Ust'-D`'zeguta": [
-        61.52401,
-        105.318756
-      ],
-      "Verchn'aja Py`'sma": [
-        61.52401,
-        105.318756
-      ],
-      "Vi`'cuga": [
-        61.52401,
-        105.318756
-      ],
-      "Vol`'zsk": [
-        61.52401,
-        105.318756
-      ],
-      "Vol`'zskij": [
-        61.52401,
-        105.318756
-      ],
-      "Vy`'snij Volo`'cek": [
-        61.52401,
-        105.318756
-      ],
-      "Zare`'cnyi": [
-        61.52401,
-        105.318756
-      ],
-      "`'Zeleznodoro`'znyj": [
-        61.52401,
-        105.318756
-      ]
-    },
-    "is_agglomeration_of": "moskva"
+    "type": "populstat"
   },
   "Adygeysk-Russia": {
     "name": "Adygeysk",
@@ -360791,6 +360457,42 @@
     "original_names": [
       "angarsk",
       "verchne angarsk"
+    ],
+    "type": "populstat"
+  },
+  "An`'zero-Sud`'zensk-Russia": {
+    "name": "An`'zero-Sud`'zensk",
+    "province": "KE",
+    "particulars": 1928,
+    "found.yr": 1931,
+    "other_names": [
+      "Anzhero-Sudzhensk"
+    ],
+    "population": {
+      "1933": 100000,
+      "1939": 71100,
+      "1956": 116000,
+      "1959": 116000,
+      "1964": 119000,
+      "1967": 116000,
+      "1970": 106000,
+      "1973": 103000,
+      "1979": 105000,
+      "1981": 107000,
+      "1989": 108000,
+      "1991": 107000,
+      "1994": 100700,
+      "1996": 100200
+    },
+    "coords": [
+      56.09546361059675,
+      85.995192504761
+    ],
+    "country": "Russia",
+    "key": "An`'zero-Sud`'zensk-Russia",
+    "original_names": [
+      "an`'zero-sud`'zensk",
+      "anzhero-sudzhensk"
     ],
     "type": "populstat"
   },
@@ -361215,6 +360917,25 @@
       ]
     }
   },
+  "Atomgrad-Russia": {
+    "name": "Atomgrad",
+    "province": "KY",
+    "variants of the name": -26,
+    "particulars": 1994,
+    "population": {
+      "1991": 97500
+    },
+    "coords": [
+      56.25,
+      93.533333
+    ],
+    "country": "Russia",
+    "key": "Atomgrad-Russia",
+    "original_names": [
+      "atomgrad"
+    ],
+    "type": "populstat"
+  },
   "Azov-Russia": {
     "name": "Azov",
     "province": "RO",
@@ -361243,6 +360964,33 @@
     "key": "Azov-Russia",
     "original_names": [
       "azov"
+    ],
+    "type": "populstat"
+  },
+  "Babu`'skin-Russia": {
+    "name": "Babu`'skin",
+    "province": "MS",
+    "particulars": 0.1968,
+    "found.yr": 1925,
+    "other_names": [
+      "Babushkin",
+      "Losino-Ostrovsk"
+    ],
+    "population": {
+      "1939": 70500,
+      "1959": 103000,
+      "1967": 113000
+    },
+    "coords": [
+      51.715693504980386,
+      105.86547580655746
+    ],
+    "country": "Russia",
+    "key": "Babu`'skin-Russia",
+    "original_names": [
+      "babu`'skin",
+      "babushkin",
+      "losino-ostrovsk"
     ],
     "type": "populstat"
   },
@@ -361290,6 +361038,94 @@
       ]
     },
     "other_names": []
+  },
+  "Bala`'sicha-Russia": {
+    "name": "Balashikha",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1939,
+    "other_names": [
+      "Balashikha",
+      "Bala`'sicha"
+    ],
+    "population": {
+      "1800": 1000,
+      "1850": 2000,
+      "1900": 11000,
+      "1939": 29000,
+      "1950": 58000,
+      "1959": 58000,
+      "1970": 92000,
+      "1973": 99000,
+      "1979": 118000,
+      "1981": 121000,
+      "1989": 136000,
+      "1991": 137600,
+      "1994": 134900,
+      "2000": 148000,
+      "2001": 131600
+    },
+    "coords": [
+      55.82,
+      37.97
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "Bala`'sicha-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "bala`'sicha",
+      "balashikha"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Bala`'sicha": 137600,
+      "Balashikha": 148000
+    },
+    "name_coords": {
+      "Bala`'sicha": [
+        55.79715258939867,
+        37.96909870485058
+      ],
+      "Balashikha": [
+        55.82,
+        37.97
+      ]
+    }
+  },
+  "Bala`'sov-Russia": {
+    "name": "Bala`'sov",
+    "province": "SR",
+    "found.yr": 1780,
+    "other_names": [
+      "Balashov"
+    ],
+    "population": {
+      "1897": 12200,
+      "1907": 22800,
+      "1926": 26800,
+      "1933": 39000,
+      "1939": 48000,
+      "1959": 64000,
+      "1970": 83000,
+      "1973": 87000,
+      "1979": 93000,
+      "1981": 95000,
+      "1989": 97000,
+      "1991": 97300,
+      "1996": 98400
+    },
+    "coords": [
+      51.543235924906156,
+      43.17935700533228
+    ],
+    "country": "Russia",
+    "key": "Bala`'sov-Russia",
+    "original_names": [
+      "bala`'sov",
+      "balashov"
+    ],
+    "type": "populstat"
   },
   "Balei-Russia": {
     "name": "Balei",
@@ -361442,66 +361278,6 @@
       "barnaul"
     ],
     "type": "populstat"
-  },
-  "Bary`'s-Russia": {
-    "name": "R'a`'zsk",
-    "province": "UL",
-    "particulars": 1954,
-    "found.yr": 1954,
-    "other_names": [
-      "Barysh",
-      "Bary`'s",
-      "Kalachinsk",
-      "Kurtamy`'s",
-      "Kurtamysh",
-      "Kala`'cinsk",
-      "Ryazhsk"
-    ],
-    "population": {
-      "1891": 4800,
-      "1897": 6244.9979983983985,
-      "1907": 15200,
-      "1926": 16200,
-      "1959": 24000,
-      "1970": 20899.76076418101,
-      "1989": 22546.188171962756,
-      "1996": 23194.89237999035
-    },
-    "coords": [
-      61.52401,
-      105.318756
-    ],
-    "country": "Russia",
-    "key": "Bary`'s-Russia",
-    "original_names": [
-      "bary`'s",
-      "barysh"
-    ],
-    "type": "populstat",
-    "name_peaks": {
-      "Bary`'s": 21900,
-      "Kala`'cinsk": 25900,
-      "Kurtamy`'s": 19000,
-      "R'a`'zsk": 27200
-    },
-    "name_coords": {
-      "Bary`'s": [
-        61.52401,
-        105.318756
-      ],
-      "Kala`'cinsk": [
-        61.52401,
-        105.318756
-      ],
-      "Kurtamy`'s": [
-        61.52401,
-        105.318756
-      ],
-      "R'a`'zsk": [
-        61.52401,
-        105.318756
-      ]
-    }
   },
   "Batajsk-Russia": {
     "name": "Bataysk",
@@ -362106,6 +361882,62 @@
       ]
     },
     "other_names": []
+  },
+  "Borovi`'ci-Russia": {
+    "name": "Borovi`'ci",
+    "province": "NG",
+    "found.yr": 1770,
+    "other_names": [
+      "Borovichi"
+    ],
+    "population": {
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 2000,
+      "1750": 3000,
+      "1800": 5000,
+      "1850": 8000,
+      "1897": 9400,
+      "1900": 10000,
+      "1911": 19000,
+      "1926": 28400,
+      "1939": 41000,
+      "1950": 50000,
+      "1959": 49000,
+      "1970": 55000,
+      "1973": 56000,
+      "1981": 61000,
+      "1989": 63000,
+      "1991": 62800,
+      "2000": 58000
+    },
+    "coords": [
+      58.39279758326973,
+      33.905388787841346
+    ],
+    "country": "Russia",
+    "key": "Borovi`'ci-Russia",
+    "original_names": [
+      "borovi`'ci",
+      "borovichi"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Borovi`'ci": 63000,
+      "Borovichi": 58000
+    },
+    "name_coords": {
+      "Borovi`'ci": [
+        58.39279758326973,
+        33.905388787841346
+      ],
+      "Borovichi": [
+        58.39279758326973,
+        33.905388787841346
+      ]
+    }
   },
   "Borzya-Russia": {
     "name": "Borzya",
@@ -363619,6 +363451,140 @@
     ],
     "type": "populstat"
   },
+  "Dzer`'zinsk-Russia": {
+    "name": "Dzer`'zinsk",
+    "province": "NZ",
+    "particulars": "agglomeration of Ni`znij Novgorod",
+    "found.yr": 1930,
+    "other_names": [
+      "Dzerzhinsk",
+      "Rast'apino",
+      "Rastyapino"
+    ],
+    "population": {
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 2000,
+      "1800": 2000,
+      "1850": 3000,
+      "1900": 3000,
+      "1926": 8900,
+      "1933": 47400,
+      "1939": 103400,
+      "1950": 164000,
+      "1956": 147000,
+      "1959": 163000,
+      "1964": 193000,
+      "1967": 201000,
+      "1970": 221000,
+      "1973": 231000,
+      "1979": 257000,
+      "1981": 263000,
+      "1989": 285000,
+      "1991": 286700,
+      "1994": 285500,
+      "1996": 283600,
+      "2000": 261000,
+      "2001": 274900
+    },
+    "coords": [
+      56.236704658316505,
+      43.46039469134008
+    ],
+    "is_agglomeration_of": "ni",
+    "country": "Russia",
+    "key": "Dzer`'zinsk-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "dzer`'zinsk",
+      "dzerzhinsk",
+      "rast'apino"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Dzer`'zinsk": 286700,
+      "Dzerzhinsk": 261000
+    },
+    "name_coords": {
+      "Dzer`'zinsk": [
+        56.236704658316505,
+        43.46039469134008
+      ],
+      "Dzerzhinsk": [
+        56.236704658316505,
+        43.46039469134008
+      ]
+    }
+  },
+  "D`'zokar-Russia": {
+    "name": "D`'zokar",
+    "province": "CN*",
+    "elevation": 128,
+    "found.yr": 1818,
+    "other_names": [
+      "Grozny",
+      "Groznyj",
+      "Dzhokar",
+      "Dzohokhar-Ghala",
+      "Dzhohar (?)",
+      "Grosny"
+    ],
+    "population": {
+      "1800": 1000,
+      "1850": 5000,
+      "1891": 6500,
+      "1897": 15600,
+      "1900": 21269.696753832668,
+      "1911": 34700,
+      "1920": 45200,
+      "1926": 68700,
+      "1936": 201300,
+      "1939": 172500,
+      "1950": 228630.7065990918,
+      "1956": 226600,
+      "1959": 240000,
+      "1964": 308000,
+      "1967": 331000,
+      "1970": 341000,
+      "1973": 363000,
+      "1979": 375000,
+      "1981": 379000,
+      "1989": 401000,
+      "1991": 401400,
+      "1996": 182700,
+      "2000": 329817.2221094587
+    },
+    "coords": [
+      43.31816396577791,
+      45.685920975463205
+    ],
+    "country": "Russia",
+    "key": "D`'zokar-Russia",
+    "original_names": [
+      "d`'zokar",
+      "grozny",
+      "groznyj",
+      "dzhokar",
+      "dzohokhar-ghala",
+      "dzhohar"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "D`'zokar": 401400,
+      "Grozny": 401400
+    },
+    "name_coords": {
+      "D`'zokar": [
+        43.31816396577791,
+        45.685920975463205
+      ],
+      "Grozny": [
+        43.31816396577791,
+        45.685920975463205
+      ]
+    }
+  },
   "Èlektrostal'-Russia": {
     "name": "Èlektrostal'",
     "province": "MS",
@@ -363771,6 +363737,34 @@
       ]
     }
   },
+  "Fr'azino-Russia": {
+    "name": "Fr'azino",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1951,
+    "other_names": [
+      "Frjazino",
+      "Fryazino"
+    ],
+    "population": {
+      "1989": 53000,
+      "1991": 54000
+    },
+    "coords": [
+      55.96010009110489,
+      38.04448669141888
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "Fr'azino-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "fr'azino",
+      "frjazino",
+      "fryazino"
+    ],
+    "type": "populstat"
+  },
   "Furmanov-Russia": {
     "name": "Furmanov",
     "province": "IV",
@@ -363791,6 +363785,46 @@
     "original_names": [
       "furmanov",
       "sereda"
+    ],
+    "type": "populstat"
+  },
+  "Gat`'cina-Russia": {
+    "name": "Gat`'cina",
+    "province": "LN",
+    "particulars": "agglomeration of St Petersburg",
+    "found.yr": 1499,
+    "other_names": [
+      "Gatchina",
+      "Trock",
+      "Trockoje",
+      "Chot`'cino"
+    ],
+    "population": {
+      "1897": 14800,
+      "1911": 17000,
+      "1920": 12000,
+      "1939": 38000,
+      "1959": 37000,
+      "1970": 63000,
+      "1973": 68000,
+      "1981": 77000,
+      "1989": 78000,
+      "1991": 80600
+    },
+    "coords": [
+      59.5770057353445,
+      30.133482977963293
+    ],
+    "is_agglomeration_of": "st petersburg",
+    "country": "Russia",
+    "key": "Gat`'cina-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "gat`'cina",
+      "gatchina",
+      "trock",
+      "trockoje",
+      "chot`'cino"
     ],
     "type": "populstat"
   },
@@ -363910,6 +363944,32 @@
       "gorno-altaisk",
       "ulala",
       "oirot turga"
+    ],
+    "type": "populstat"
+  },
+  "Gr'azi-Russia": {
+    "name": "Gr'azi",
+    "province": "LP",
+    "found.yr": 1938,
+    "other_names": [
+      "Gryazi"
+    ],
+    "population": {
+      "1970": 40000,
+      "1973": 42000,
+      "1989": 47500,
+      "1991": 47700,
+      "1996": 48300
+    },
+    "coords": [
+      52.492490986747825,
+      39.957027229211036
+    ],
+    "country": "Russia",
+    "key": "Gr'azi-Russia",
+    "original_names": [
+      "gr'azi",
+      "gryazi"
     ],
     "type": "populstat"
   },
@@ -364255,6 +364315,69 @@
     "key": "Isil'kul'-Russia",
     "original_names": [
       "isil'kul'"
+    ],
+    "type": "populstat"
+  },
+  "I`'sim-Russia": {
+    "name": "I`'sim",
+    "province": "TY",
+    "found.yr": 1570,
+    "other_names": [
+      "Ishim",
+      "Korkina"
+    ],
+    "population": {
+      "1891": 6800,
+      "1897": 7200,
+      "1911": 11900,
+      "1926": 14000,
+      "1939": 31000,
+      "1959": 48000,
+      "1970": 56000,
+      "1973": 57000,
+      "1979": 63000,
+      "1981": 62000,
+      "1989": 66000,
+      "1991": 65900
+    },
+    "coords": [
+      56.1087478047656,
+      69.46148568378432
+    ],
+    "country": "Russia",
+    "key": "I`'sim-Russia",
+    "original_names": [
+      "i`'sim",
+      "ishim",
+      "korkina"
+    ],
+    "type": "populstat"
+  },
+  "I`'simbaj-Russia": {
+    "name": "I`'simbaj",
+    "province": "BK",
+    "found.yr": 1932,
+    "other_names": [
+      "Ishimbai"
+    ],
+    "population": {
+      "1939": 22000,
+      "1959": 47000,
+      "1970": 54000,
+      "1973": 55000,
+      "1981": 60000,
+      "1989": 70000,
+      "1991": 71000
+    },
+    "coords": [
+      53.449600216924495,
+      56.033574498624546
+    ],
+    "country": "Russia",
+    "key": "I`'simbaj-Russia",
+    "original_names": [
+      "i`'simbaj",
+      "ishimbai"
     ],
     "type": "populstat"
   },
@@ -364634,6 +364757,41 @@
     ],
     "type": "populstat"
   },
+  "Jegor'evsk-Russia": {
+    "name": "Jegor'evsk",
+    "province": "MS",
+    "found.yr": 1778,
+    "other_names": [
+      "Yegoryevsk",
+      "Egor'evsk"
+    ],
+    "population": {
+      "1897": 19200,
+      "1907": 22500,
+      "1920": 28000,
+      "1926": 30000,
+      "1933": 37200,
+      "1939": 56300,
+      "1959": 59000,
+      "1970": 67000,
+      "1973": 70000,
+      "1981": 73000,
+      "1989": 74000,
+      "1991": 74200
+    },
+    "coords": [
+      55.38304776854723,
+      39.034537192482325
+    ],
+    "country": "Russia",
+    "key": "Jegor'evsk-Russia",
+    "original_names": [
+      "jegor'evsk",
+      "yegoryevsk",
+      "egor'evsk"
+    ],
+    "type": "populstat"
+  },
   "Jejsk-Russia": {
     "name": "Jejsk",
     "province": "KD",
@@ -364910,6 +365068,30 @@
     ],
     "type": "populstat"
   },
+  "Jermola'evo-Russia": {
+    "name": "Jermola'evo",
+    "province": "BK",
+    "other_names": [
+      "Yermolayevo",
+      "Kumertau"
+    ],
+    "population": {
+      "1989": 57000,
+      "1991": 65600
+    },
+    "coords": [
+      52.76328189563022,
+      55.81144987048437
+    ],
+    "country": "Russia",
+    "key": "Jermola'evo-Russia",
+    "original_names": [
+      "jermola'evo",
+      "yermolayevo",
+      "kumertau"
+    ],
+    "type": "populstat"
+  },
   "Jessentuki-Russia": {
     "name": "Jessentuki",
     "province": "ST",
@@ -364943,6 +365125,78 @@
       "issentuki"
     ],
     "type": "populstat"
+  },
+  "Jo`'skar-Ola-Russia": {
+    "name": "Yoshkar-Ola",
+    "province": "ME*",
+    "found.yr": 1584,
+    "other_names": [
+      "Ioshkar-Ola",
+      "Carevokok`'saisk",
+      "Krasnokok`'saisk",
+      "Kok`'sa`'zask",
+      "Kok`'satski Gorodok",
+      "Jo`'skar-Ola",
+      "Tsaryovokokshaysk",
+      "Krasnokokshaysk"
+    ],
+    "population": {
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 1000,
+      "1800": 1000,
+      "1850": 2000,
+      "1897": 1700,
+      "1900": 2000,
+      "1907": 2000,
+      "1911": 4000,
+      "1933": 9400,
+      "1939": 27000,
+      "1950": 88000,
+      "1959": 88000,
+      "1964": 126000,
+      "1967": 137000,
+      "1970": 166000,
+      "1973": 188000,
+      "1979": 201000,
+      "1981": 213000,
+      "1989": 242000,
+      "1991": 247800,
+      "1994": 249200,
+      "1996": 250900,
+      "2000": 257000,
+      "2001": 248500
+    },
+    "coords": [
+      56.641498730342796,
+      47.887727997659844
+    ],
+    "country": "Russia",
+    "key": "Jo`'skar-Ola-Russia",
+    "original_names": [
+      "jo`'skar-ola",
+      "ioshkar-ola",
+      "carevokok`'saisk",
+      "krasnokok`'saisk",
+      "kok`'sa`'zask",
+      "kok`'satski gorodok"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Jo`'skar-Ola": 250900,
+      "Yoshkar-Ola": 257000
+    },
+    "name_coords": {
+      "Jo`'skar-Ola": [
+        56.641498730342796,
+        47.887727997659844
+      ],
+      "Yoshkar-Ola": [
+        56.641498730342796,
+        47.887727997659844
+      ]
+    }
   },
   "Jurga-Russia": {
     "name": "Jurga",
@@ -365310,6 +365564,37 @@
       "kana`'s",
       "kanash",
       "`'sichrany"
+    ],
+    "type": "populstat"
+  },
+  "Kandalak`'sa-Russia": {
+    "name": "Kandalak`'sa",
+    "province": "MM",
+    "found.yr": 11,
+    "other_names": [
+      "Kandalaksha",
+      "Kandalax",
+      "Kannanlahti"
+    ],
+    "population": {
+      "1926": 7800,
+      "1967": 40000,
+      "1970": 42700,
+      "1989": 54000,
+      "1991": 54300,
+      "1996": 48500
+    },
+    "coords": [
+      67.15067690222463,
+      32.412785161223646
+    ],
+    "country": "Russia",
+    "key": "Kandalak`'sa-Russia",
+    "original_names": [
+      "kandalak`'sa",
+      "kandalaksha",
+      "kandalax",
+      "kannanlahti"
     ],
     "type": "populstat"
   },
@@ -366294,6 +366579,29 @@
     ],
     "type": "populstat"
   },
+  "Kostomuk`'sa-Russia": {
+    "name": "Kostomuk`'sa",
+    "province": "KI",
+    "found.yr": 1977,
+    "other_names": [
+      "Kostomuksha"
+    ],
+    "population": {
+      "1989": 30400,
+      "1996": 31600
+    },
+    "coords": [
+      64.5951324791586,
+      30.610975050169408
+    ],
+    "country": "Russia",
+    "key": "Kostomuk`'sa-Russia",
+    "original_names": [
+      "kostomuk`'sa",
+      "kostomuksha"
+    ],
+    "type": "populstat"
+  },
   "Kostroma-Russia": {
     "name": "Kostroma",
     "province": "KT*",
@@ -367028,6 +367336,31 @@
     ],
     "type": "populstat"
   },
+  "Kun`'cevo-Russia": {
+    "name": "Kun`'cevo",
+    "province": "MS",
+    "particulars": 0.1968,
+    "other_names": [
+      "Kuntsevo"
+    ],
+    "population": {
+      "1939": 61000,
+      "1956": 111000,
+      "1959": 128000,
+      "1967": 140000
+    },
+    "coords": [
+      55.733945300363516,
+      37.40572520504855
+    ],
+    "country": "Russia",
+    "key": "Kun`'cevo-Russia",
+    "original_names": [
+      "kun`'cevo",
+      "kuntsevo"
+    ],
+    "type": "populstat"
+  },
   "Kungur-Russia": {
     "name": "Kungur",
     "province": "PM",
@@ -367076,6 +367409,29 @@
       ]
     },
     "other_names": []
+  },
+  "Kur`'catov-Russia": {
+    "name": "Kur`'catov",
+    "province": "KS",
+    "found.yr": 1983,
+    "other_names": [
+      "Kurchatov"
+    ],
+    "population": {
+      "1989": 41000,
+      "1996": 48200
+    },
+    "coords": [
+      51.658554630832846,
+      35.65870638787436
+    ],
+    "country": "Russia",
+    "key": "Kur`'catov-Russia",
+    "original_names": [
+      "kur`'catov",
+      "kurchatov"
+    ],
+    "type": "populstat"
   },
   "Kurgan-Russia": {
     "name": "Kurgan",
@@ -367194,6 +367550,29 @@
       ]
     },
     "other_names": []
+  },
+  "Ku`'sva-Russia": {
+    "name": "Ku`'sva",
+    "province": "SV",
+    "found.yr": 1735,
+    "other_names": [
+      "Kushva"
+    ],
+    "population": {
+      "1989": 43000,
+      "1991": 43300
+    },
+    "coords": [
+      58.28492437881108,
+      59.768342062875
+    ],
+    "country": "Russia",
+    "key": "Ku`'sva-Russia",
+    "original_names": [
+      "ku`'sva",
+      "kushva"
+    ],
+    "type": "populstat"
   },
   "Kuzneck-Russia": {
     "name": "Kuzneck",
@@ -367586,6 +367965,65 @@
     ],
     "type": "populstat"
   },
+  "L'ubercy-Russia": {
+    "name": "L'ubercy",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1621,
+    "other_names": [
+      "Lyubertsy"
+    ],
+    "population": {
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 2000,
+      "1750": 4000,
+      "1800": 9000,
+      "1850": 20000,
+      "1900": 43000,
+      "1939": 46000,
+      "1950": 93000,
+      "1959": 93000,
+      "1964": 111000,
+      "1967": 120000,
+      "1970": 139000,
+      "1973": 148000,
+      "1979": 160000,
+      "1981": 163000,
+      "1989": 165000,
+      "1991": 164900,
+      "1994": 165300,
+      "2000": 157000,
+      "2001": 162600
+    },
+    "coords": [
+      55.68075053403153,
+      37.88801231981928
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "L'ubercy-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "l'ubercy",
+      "lyubertsy"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "L'ubercy": 165300,
+      "Lyubertsy": 157000
+    },
+    "name_coords": {
+      "L'ubercy": [
+        55.68075053403153,
+        37.88801231981928
+      ],
+      "Lyubertsy": [
+        55.68075053403153,
+        37.88801231981928
+      ]
+    }
+  },
   "L'ublino-Russia": {
     "name": "L'ublino",
     "province": "MS",
@@ -367684,6 +368122,92 @@
       "lytkarino"
     ],
     "type": "populstat"
+  },
+  "Macha`'ckala-Russia": {
+    "name": "Makhachkala",
+    "province": "DA*",
+    "elevation": -20,
+    "found.yr": 1844,
+    "other_names": [
+      "Makhachkala",
+      "Petrovsk",
+      "Petrovsk Kavkaski",
+      "Macha`'ckala",
+      "Mahackala",
+      "Tarki",
+      "Samander"
+    ],
+    "population": {
+      "700": 2000,
+      "800": 2000,
+      "900": 2000,
+      "1000": 2000,
+      "1100": 2000,
+      "1200": 2000,
+      "1300": 2000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 2000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 2000,
+      "1750": 4000,
+      "1800": 6000,
+      "1850": 9000,
+      "1897": 9800,
+      "1900": 8000,
+      "1920": 20800,
+      "1926": 32000,
+      "1933": 63700,
+      "1939": 86800,
+      "1950": 119000,
+      "1956": 106000,
+      "1959": 119000,
+      "1964": 146000,
+      "1967": 165000,
+      "1970": 186000,
+      "1973": 206000,
+      "1979": 250000,
+      "1981": 269000,
+      "1989": 317000,
+      "1991": 333500,
+      "1994": 328200,
+      "1996": 339300,
+      "2000": 513166.6396016015,
+      "2001": 327600
+    },
+    "coords": [
+      42.9777885,
+      47.5146913
+    ],
+    "country": "Russia",
+    "key": "Macha`'ckala-Russia",
+    "original_names": [
+      "macha`'ckala",
+      "makhachkala",
+      "petrovsk",
+      "petrovsk kavkaski"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Macha`'ckala": 339300,
+      "Makhachkala": 570000,
+      "Mahackala": 462000
+    },
+    "name_coords": {
+      "Macha`'ckala": [
+        42.9770989655933,
+        47.51475390298505
+      ],
+      "Makhachkala": [
+        42.9777885,
+        47.5146913
+      ],
+      "Mahackala": [
+        42.9770989655933,
+        47.51475390298505
+      ]
+    }
   },
   "Magadan-Russia": {
     "name": "Magadan",
@@ -367942,6 +368466,112 @@
     ],
     "type": "populstat"
   },
+  "Me`'zdure`'censk-Russia": {
+    "name": "Novo`'ceboksarsk",
+    "province": "KE",
+    "found.yr": 1946,
+    "other_names": [
+      "Mezhdurechensk",
+      "Ol`'zeras",
+      "Be`'zica",
+      "Barysh",
+      "Bary`'s",
+      "Bezhitsa",
+      "Ord`'zonikidzegrad",
+      "Kala`'cinsk",
+      "Kalachinsk",
+      "Kurtamy`'s",
+      "Kurtamysh",
+      "R'a`'zsk",
+      "Ryazhsk",
+      "Vy`'snij Volo`'cek",
+      "Vyshniy Volochek",
+      "Me`'zdure`'censk",
+      "Novocheboksarsk",
+      "`'S`'cëlkovo",
+      "Shchelkovo"
+    ],
+    "population": {
+      "1891": 4800,
+      "1897": 8668.162135098411,
+      "1907": 16122.034611053283,
+      "1926": 25235.32460953703,
+      "1933": 47087.15323737463,
+      "1939": 52088.306560133766,
+      "1959": 47411.80233130022,
+      "1970": 44779.705726918364,
+      "1973": 74008.42846534538,
+      "1979": 84852.8137423857,
+      "1981": 89200.50860658131,
+      "1989": 46675.528891530375,
+      "1991": 97616.44670003958,
+      "1994": 111494.77423275216,
+      "1996": 42072.03557439371,
+      "2001": 110619.09615146082
+    },
+    "coords": [
+      61.52401,
+      105.318756
+    ],
+    "country": "Russia",
+    "key": "Me`'zdure`'censk-Russia",
+    "original_names": [
+      "me`'zdure`'censk",
+      "mezhdurechensk",
+      "ol`'zeras"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Me`'zdure`'censk": 107500,
+      "Be`'zica": 82300,
+      "Bary`'s": 21900,
+      "Kala`'cinsk": 25900,
+      "Kurtamy`'s": 19000,
+      "R'a`'zsk": 27200,
+      "Vy`'snij Volo`'cek": 76000,
+      "Novo`'ceboksarsk": 124200,
+      "`'S`'cëlkovo": 109600
+    },
+    "name_coords": {
+      "Me`'zdure`'censk": [
+        61.52401,
+        105.318756
+      ],
+      "Be`'zica": [
+        61.52401,
+        105.318756
+      ],
+      "Bary`'s": [
+        61.52401,
+        105.318756
+      ],
+      "Kala`'cinsk": [
+        61.52401,
+        105.318756
+      ],
+      "Kurtamy`'s": [
+        61.52401,
+        105.318756
+      ],
+      "R'a`'zsk": [
+        61.52401,
+        105.318756
+      ],
+      "Vy`'snij Volo`'cek": [
+        61.52401,
+        105.318756
+      ],
+      "Novo`'ceboksarsk": [
+        61.52401,
+        105.318756
+      ],
+      "`'S`'cëlkovo": [
+        61.52401,
+        105.318756
+      ]
+    },
+    "is_agglomeration_of": "moskva"
+  },
   "Miass-Russia": {
     "name": "Miass",
     "province": "CL",
@@ -368001,6 +368631,79 @@
       "michailovka"
     ],
     "type": "populstat"
+  },
+  "Mi`'curinsk-Russia": {
+    "name": "Mi`'curinsk",
+    "province": "TB",
+    "elevation": 109,
+    "found.yr": 1636,
+    "other_names": [
+      "Michurinsk; formerly: Kozlov",
+      "Michurinsk",
+      "Micurinsk",
+      "Koslov",
+      "Kolov",
+      "Kozlov",
+      "Mitsjoerinsk"
+    ],
+    "population": {
+      "1650": 1000,
+      "1700": 3000,
+      "1750": 7000,
+      "1800": 12000,
+      "1850": 21000,
+      "1897": 40300,
+      "1900": 40496.91346263317,
+      "1907": 44200,
+      "1911": 50000,
+      "1920": 32600,
+      "1926": 53300,
+      "1933": 65900,
+      "1936": 70200,
+      "1939": 72000,
+      "1950": 90000,
+      "1959": 80000,
+      "1970": 94000,
+      "1973": 98000,
+      "1979": 102000,
+      "1981": 102000,
+      "1989": 109000,
+      "1991": 109400,
+      "1994": 105400,
+      "1996": 123500,
+      "2000": 96000,
+      "2001": 116800
+    },
+    "coords": [
+      52.892783781095105,
+      40.49885834296327
+    ],
+    "country": "Russia",
+    "key": "Mi`'curinsk-Russia",
+    "original_names": [
+      "mi`'curinsk",
+      "michurinsk; formerly: kozlov"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Mi`'curinsk": 123500,
+      "Michurinsk": 41000,
+      "Micurinsk": 96000
+    },
+    "name_coords": {
+      "Mi`'curinsk": [
+        52.892783781095105,
+        40.49885834296327
+      ],
+      "Michurinsk": [
+        52.8930342,
+        40.4980963
+      ],
+      "Micurinsk": [
+        52.892783781095105,
+        40.49782837467383
+      ]
+    }
   },
   "Mineral'nyje Vody-Russia": {
     "name": "Mineral'nyje Vody",
@@ -368078,6 +368781,88 @@
       "mirnyi"
     ],
     "type": "populstat"
+  },
+  "Mon`'cegorsk-Russia": {
+    "name": "Mon`'cegorsk",
+    "province": "MM",
+    "found.yr": 1937,
+    "other_names": [
+      "Monchegorsk"
+    ],
+    "population": {
+      "1970": 53000,
+      "1979": 51000,
+      "1981": 55000,
+      "1989": 69000,
+      "1991": 68100,
+      "1996": 61100
+    },
+    "coords": [
+      67.9431515552638,
+      32.891111056627295
+    ],
+    "country": "Russia",
+    "key": "Mon`'cegorsk-Russia",
+    "original_names": [
+      "mon`'cegorsk",
+      "monchegorsk"
+    ],
+    "type": "populstat"
+  },
+  "Mor`'sansk-Russia": {
+    "name": "Mor`'sansk",
+    "province": "TB",
+    "found.yr": 1779,
+    "other_names": [
+      "Morshansk"
+    ],
+    "population": {
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 2000,
+      "1750": 3000,
+      "1800": 5000,
+      "1850": 12000,
+      "1897": 26500,
+      "1900": 22000,
+      "1901": 27800,
+      "1907": 28100,
+      "1911": 31000,
+      "1926": 28000,
+      "1950": 41000,
+      "1967": 43000,
+      "1970": 45000,
+      "1979": 50000,
+      "1989": 50000,
+      "1991": 50500,
+      "1996": 50500,
+      "2000": 44000
+    },
+    "coords": [
+      53.444568764483876,
+      41.81904402231475
+    ],
+    "country": "Russia",
+    "key": "Mor`'sansk-Russia",
+    "original_names": [
+      "mor`'sansk",
+      "morshansk"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Mor`'sansk": 50500,
+      "Morshansk": 44000
+    },
+    "name_coords": {
+      "Mor`'sansk": [
+        53.444568764483876,
+        41.81904402231475
+      ],
+      "Morshansk": [
+        53.444568764483876,
+        41.81904402231475
+      ]
+    }
   },
   "Moskva-Russia": {
     "name": "Moscow",
@@ -368408,6 +369193,68 @@
       ]
     },
     "other_names": []
+  },
+  "Myti`'s`'ci-Russia": {
+    "name": "Mytishchi",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1925,
+    "other_names": [
+      "Mytishchi",
+      "Myti`'s`'ci",
+      "Bolshiye Mytishchi"
+    ],
+    "population": {
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 1000,
+      "1800": 1000,
+      "1850": 1000,
+      "1900": 1000,
+      "1939": 60100,
+      "1950": 99000,
+      "1959": 99000,
+      "1967": 112000,
+      "1970": 119000,
+      "1973": 125000,
+      "1979": 141000,
+      "1981": 145000,
+      "1989": 154000,
+      "1991": 153900,
+      "1994": 153000,
+      "2000": 160000,
+      "2001": 157000
+    },
+    "coords": [
+      55.924212678605564,
+      37.75708244097976
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "Myti`'s`'ci-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "myti`'s`'ci",
+      "mytishchi"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Myti`'s`'ci": 157000,
+      "Mytishchi": 160000
+    },
+    "name_coords": {
+      "Myti`'s`'ci": [
+        55.924212678605564,
+        37.75708244097976
+      ],
+      "Mytishchi": [
+        55.924212678605564,
+        37.75708244097976
+      ]
+    }
   },
   "Nabere`'znyje `'Celny-Russia": {
     "name": "Nabere`'znyje `'Celny",
@@ -368895,6 +369742,30 @@
       "Nizhnekamsky"
     ]
   },
+  "Ni`'zneudinsk-Russia": {
+    "name": "Ni`'zneudinsk",
+    "province": "KY",
+    "found.yr": 1648,
+    "other_names": [
+      "Nizhneudinsk"
+    ],
+    "population": {
+      "1897": 5800,
+      "1970": 39700,
+      "1989": 44000
+    },
+    "coords": [
+      54.90190109382042,
+      99.02510164216214
+    ],
+    "country": "Russia",
+    "key": "Ni`'zneudinsk-Russia",
+    "original_names": [
+      "ni`'zneudinsk",
+      "nizhneudinsk"
+    ],
+    "type": "populstat"
+  },
   "Ni`'znevartovsk-Russia": {
     "name": "Ni`'znevartovsk",
     "province": "KM,TY",
@@ -368999,16 +369870,16 @@
     },
     "name_coords": {
       "Ni`'znij Novgorod": [
-        56.3268684,
-        44.0058793
+        56.32716904709596,
+        44.00612784256728
       ],
       "Nizhny Novgorod": [
         56.3268684,
         44.0058793
       ],
       "Gorkij": [
-        56.33,
-        44
+        56.32716904709596,
+        44.00612784256728
       ]
     },
     "other_names": [
@@ -369017,7 +369888,8 @@
       "Gorki",
       "Gorky",
       "Nizhny-Novgorod"
-    ]
+    ],
+    "is_agglomeration_of": "ni`'znij novgorod"
   },
   "Ni`'znij Novgorod (agglomeration)-Russia": {
     "name": "Ni`'znij Novgorod (agglomeration)",
@@ -369033,8 +369905,8 @@
       "1991": 2025000
     },
     "coords": [
-      58.52556980000001,
-      31.2741928
+      56.32716904709596,
+      44.00612784256728
     ],
     "country": "Russia",
     "key": "Ni`'znij Novgorod (agglomeration)-Russia",
@@ -369338,8 +370210,7 @@
         58.52556980000001,
         31.2741928
       ]
-    },
-    "is_agglomeration_of": "ni`'znij novgorod"
+    }
   },
   "Novoaltajsk-Russia": {
     "name": "Novoaltajsk",
@@ -369417,8 +370288,8 @@
       "2001": 181600
     },
     "coords": [
-      47.2435046,
-      40.03760399999999
+      47.414445172841056,
+      40.10907914746802
     ],
     "country": "Russia",
     "key": "Novo`'cerkassk-Russia",
@@ -369434,16 +370305,16 @@
     },
     "name_coords": {
       "Novo`'cerkassk": [
-        47.2435046,
-        40.03760399999999
+        47.414445172841056,
+        40.10907914746802
       ],
       "Novocherkassk": [
         47.41483849999999,
         40.1084723
       ],
       "Novocerkassk": [
-        47.42,
-        40.08
+        47.414445172841056,
+        40.10907914746802
       ]
     }
   },
@@ -369715,6 +370586,59 @@
     "other_names": [
       "Novorossijsk"
     ]
+  },
+  "Novo`'sachtinsk-Russia": {
+    "name": "Novo`'sachtinsk",
+    "province": "RO",
+    "found.yr": 1863,
+    "other_names": [
+      "Novoshakhtinsk",
+      "Komintern"
+    ],
+    "population": {
+      "1900": 1000,
+      "1933": 48000,
+      "1939": 53600,
+      "1950": 103000,
+      "1959": 104000,
+      "1964": 109000,
+      "1967": 107000,
+      "1970": 102000,
+      "1973": 101000,
+      "1979": 104000,
+      "1981": 106000,
+      "1989": 108000,
+      "1991": 107300,
+      "1994": 105900,
+      "1996": 105700,
+      "2000": 101000
+    },
+    "coords": [
+      47.75636389355969,
+      39.93719016154429
+    ],
+    "country": "Russia",
+    "key": "Novo`'sachtinsk-Russia",
+    "original_names": [
+      "novo`'sachtinsk",
+      "novoshakhtinsk",
+      "komintern"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Novo`'sachtinsk": 109000,
+      "Novoshakhtinsk": 103000
+    },
+    "name_coords": {
+      "Novo`'sachtinsk": [
+        47.75636389355969,
+        39.93719016154429
+      ],
+      "Novoshakhtinsk": [
+        47.75636389355969,
+        39.93719016154429
+      ]
+    }
   },
   "Novosibirsk-Russia": {
     "name": "Novosibirsk",
@@ -370170,10 +371094,23 @@
       "Orekhovo-Zuyevo"
     ],
     "population": {
+      "1200": 1000,
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 3000,
+      "1750": 3000,
+      "1800": 4000,
+      "1850": 9000,
+      "1900": 22000,
       "1920": 31800,
       "1926": 62800,
       "1933": 77700,
       "1939": 99300,
+      "1950": 108000,
       "1956": 109000,
       "1959": 108000,
       "1964": 102000,
@@ -370185,6 +371122,7 @@
       "1989": 137000,
       "1991": 136800,
       "1994": 126300,
+      "2000": 122000,
       "2001": 124900
     },
     "coords": [
@@ -370197,7 +371135,21 @@
       "orechovo-zu'evo",
       "orekhovo-zuyevo"
     ],
-    "type": "populstat",
+    "type": "buringh",
+    "name_peaks": {
+      "Orechovo-Zu'evo": 137000,
+      "Orekhovo-Zuyevo": 122000
+    },
+    "name_coords": {
+      "Orechovo-Zu'evo": [
+        55.8034354,
+        38.9667902
+      ],
+      "Orekhovo-Zuyevo": [
+        55.806109322356136,
+        38.98233455740008
+      ]
+    },
     "is_agglomeration_of": "orechovo-zu'evo"
   },
   "Orechovo-Zu'evo (agglomeration)-Russia": {
@@ -371446,6 +372398,37 @@
     ],
     "type": "populstat"
   },
+  "Pu`'skino-Russia": {
+    "name": "Pu`'skino",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1499,
+    "other_names": [
+      "Pushkino"
+    ],
+    "population": {
+      "1939": 21000,
+      "1959": 30000,
+      "1970": 48000,
+      "1973": 54000,
+      "1981": 71000,
+      "1989": 76000,
+      "1991": 75800
+    },
+    "coords": [
+      56.00882389585239,
+      37.85235915565696
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "Pu`'skino-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "pu`'skino",
+      "pushkino"
+    ],
+    "type": "populstat"
+  },
   "Ramensko'e-Russia": {
     "name": "Ramensko'e",
     "province": "MS",
@@ -371863,6 +372846,30 @@
     ],
     "type": "populstat"
   },
+  "Rti`'s`'cevo-Russia": {
+    "name": "Rti`'s`'cevo",
+    "province": "SR",
+    "found.yr": 1920,
+    "other_names": [
+      "Rtishchevo"
+    ],
+    "population": {
+      "1970": 40000,
+      "1989": 44300,
+      "1996": 45100
+    },
+    "coords": [
+      52.26002012775994,
+      43.780717667619435
+    ],
+    "country": "Russia",
+    "key": "Rti`'s`'cevo-Russia",
+    "original_names": [
+      "rti`'s`'cevo",
+      "rtishchevo"
+    ],
+    "type": "populstat"
+  },
   "Rubcovsk-Russia": {
     "name": "Rubcovsk",
     "province": "AL",
@@ -371993,6 +373000,73 @@
       "Rybinsk": [
         58.057486,
         38.8116968
+      ]
+    }
+  },
+  "R`'zev-Russia": {
+    "name": "R`'zev",
+    "province": "TV",
+    "elevation": 162,
+    "found.yr": 12,
+    "other_names": [
+      "Rzhev"
+    ],
+    "population": {
+      "1000": 1000,
+      "1100": 1000,
+      "1200": 2000,
+      "1300": 2000,
+      "1400": 1000,
+      "1500": 2000,
+      "1550": 2000,
+      "1600": 3000,
+      "1650": 3000,
+      "1700": 4000,
+      "1750": 5000,
+      "1800": 9000,
+      "1850": 14000,
+      "1885": 35800,
+      "1891": 30600,
+      "1897": 31500,
+      "1900": 21000,
+      "1901": 21400,
+      "1907": 22600,
+      "1920": 24800,
+      "1926": 32000,
+      "1936": 39500,
+      "1939": 54100,
+      "1950": 50000,
+      "1959": 49000,
+      "1970": 61000,
+      "1973": 65000,
+      "1981": 70000,
+      "1989": 70000,
+      "1991": 70900,
+      "2000": 64000
+    },
+    "coords": [
+      56.258628216661094,
+      34.329432622643274
+    ],
+    "country": "Russia",
+    "key": "R`'zev-Russia",
+    "original_names": [
+      "r`'zev",
+      "rzhev"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "R`'zev": 70900,
+      "Rzhev": 64000
+    },
+    "name_coords": {
+      "R`'zev": [
+        56.258628216661094,
+        34.329432622643274
+      ],
+      "Rzhev": [
+        56.258628216661094,
+        34.329432622643274
       ]
     }
   },
@@ -372682,6 +373756,39 @@
     ],
     "type": "populstat"
   },
+  "`'S`'cëkino-Russia": {
+    "name": "`'S`'cëkino",
+    "province": "TL",
+    "found.yr": 1938,
+    "other_names": [
+      "Shchekino",
+      "`'S`'cokino",
+      "Shchokino"
+    ],
+    "population": {
+      "1939": 11000,
+      "1959": 46000,
+      "1970": 61000,
+      "1973": 68000,
+      "1981": 70000,
+      "1989": 69000,
+      "1991": 68800,
+      "1996": 66700
+    },
+    "coords": [
+      53.99918602341788,
+      37.51004526866783
+    ],
+    "country": "Russia",
+    "key": "`'S`'cëkino-Russia",
+    "original_names": [
+      "`'s`'cëkino",
+      "shchekino",
+      "`'s`'cokino",
+      "shchokino"
+    ],
+    "type": "populstat"
+  },
   "`'Sebekino-Russia": {
     "name": "`'Sebekino",
     "province": "BL",
@@ -372704,6 +373811,32 @@
       "`'sebekino",
       "shebekino",
       "ne`'segol"
+    ],
+    "type": "populstat"
+  },
+  "Sege`'za-Russia": {
+    "name": "Sege`'za",
+    "province": "KI",
+    "other_names": [
+      "Segezha",
+      "Sekehen"
+    ],
+    "population": {
+      "1970": 30000,
+      "1979": 28800,
+      "1989": 38200,
+      "1996": 36300
+    },
+    "coords": [
+      63.733333,
+      34.316667
+    ],
+    "country": "Russia",
+    "key": "Sege`'za-Russia",
+    "original_names": [
+      "sege`'za",
+      "segezha",
+      "sekehen"
     ],
     "type": "populstat"
   },
@@ -373379,6 +374512,33 @@
       ]
     }
   },
+  "Solne`'cnogorsk-Russia": {
+    "name": "Solne`'cnogorsk",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva; merger of Solne`cnaja Gora and Podsolne`cnoje",
+    "found.yr": 1938,
+    "other_names": [
+      "Solnechnogorsk"
+    ],
+    "population": {
+      "1981": 50000,
+      "1989": 55500,
+      "1991": 56700
+    },
+    "coords": [
+      56.190847663900975,
+      36.97047693937039
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "Solne`'cnogorsk-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "solne`'cnogorsk",
+      "solnechnogorsk"
+    ],
+    "type": "populstat"
+  },
   "Sortavala-Russia": {
     "name": "Sortavala",
     "province": "KI",
@@ -373733,6 +374893,28 @@
       ]
     },
     "other_names": []
+  },
+  "Stre`'zevoj-Russia": {
+    "name": "Stre`'zevoj",
+    "province": "TO",
+    "other_names": [
+      "Strezhevoi"
+    ],
+    "population": {
+      "1989": 43400,
+      "1996": 44100
+    },
+    "coords": [
+      60.723710367040034,
+      77.58099937100401
+    ],
+    "country": "Russia",
+    "key": "Stre`'zevoj-Russia",
+    "original_names": [
+      "stre`'zevoj",
+      "strezhevoi"
+    ],
+    "type": "populstat"
   },
   "Stupino-Russia": {
     "name": "Stupino",
@@ -374471,6 +375653,67 @@
     },
     "other_names": []
   },
+  "Tor`'zok-Russia": {
+    "name": "Tor`'zok",
+    "province": "TV",
+    "found.yr": 1139,
+    "other_names": [
+      "Torzhok",
+      "Torzok"
+    ],
+    "population": {
+      "1100": 1000,
+      "1200": 1000,
+      "1300": 2000,
+      "1400": 2000,
+      "1500": 3000,
+      "1550": 3000,
+      "1600": 4000,
+      "1650": 4000,
+      "1700": 5000,
+      "1750": 7000,
+      "1800": 10000,
+      "1850": 11000,
+      "1897": 15100,
+      "1900": 13000,
+      "1901": 12700,
+      "1907": 13400,
+      "1926": 17000,
+      "1950": 35000,
+      "1967": 43000,
+      "1970": 47000,
+      "1979": 50000,
+      "1989": 50000,
+      "1991": 50500,
+      "1996": 50200,
+      "2000": 50000
+    },
+    "coords": [
+      57.03591551885589,
+      34.96962448808078
+    ],
+    "country": "Russia",
+    "key": "Tor`'zok-Russia",
+    "original_names": [
+      "tor`'zok",
+      "torzhok"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Tor`'zok": 50500,
+      "Torzhok": 50000
+    },
+    "name_coords": {
+      "Tor`'zok": [
+        57.03591551885589,
+        34.96962448808078
+      ],
+      "Torzhok": [
+        57.03591551885589,
+        34.96962448808078
+      ]
+    }
+  },
   "Troick-Russia": {
     "name": "Troick",
     "province": "CL",
@@ -375073,6 +376316,67 @@
     ],
     "type": "populstat"
   },
+  "Ugli`'c-Russia": {
+    "name": "Ugli`'c",
+    "province": "YS",
+    "found.yr": 1148,
+    "other_names": [
+      "Uglich",
+      "Ugliche Pole"
+    ],
+    "population": {
+      "900": 1000,
+      "1000": 1000,
+      "1100": 2000,
+      "1200": 2000,
+      "1300": 2000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 2000,
+      "1750": 4000,
+      "1800": 7000,
+      "1850": 9000,
+      "1897": 9700,
+      "1900": 16000,
+      "1907": 9900,
+      "1926": 7100,
+      "1950": 29000,
+      "1970": 35000,
+      "1973": 37000,
+      "1989": 40000,
+      "1991": 40000,
+      "1996": 38900,
+      "2000": 38000
+    },
+    "coords": [
+      57.52369882523664,
+      38.32157080428269
+    ],
+    "country": "Russia",
+    "key": "Ugli`'c-Russia",
+    "original_names": [
+      "ugli`'c",
+      "uglich"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Ugli`'c": 40000,
+      "Uglich": 38000
+    },
+    "name_coords": {
+      "Ugli`'c": [
+        57.52369882523664,
+        38.32157080428269
+      ],
+      "Uglich": [
+        57.52369882523664,
+        38.32157080428269
+      ]
+    }
+  },
   "Ulan-Udè-Russia": {
     "name": "Ulan-Udè",
     "province": "BU*",
@@ -375351,6 +376655,31 @@
     ],
     "type": "populstat"
   },
+  "Ust'-D`'zeguta-Russia": {
+    "name": "Ust'-D`'zeguta",
+    "province": "KC",
+    "found.yr": 1975,
+    "other_names": [
+      "Ust-Dzheguta",
+      "Ust-D`'zegutinskaja"
+    ],
+    "population": {
+      "1989": 29200,
+      "1996": 31500
+    },
+    "coords": [
+      44.08437763088562,
+      41.97666893301973
+    ],
+    "country": "Russia",
+    "key": "Ust'-D`'zeguta-Russia",
+    "original_names": [
+      "ust'-d`'zeguta",
+      "ust-dzheguta",
+      "ust-d`'zegutinskaja"
+    ],
+    "type": "populstat"
+  },
   "Ust'-Ilimsk-Russia": {
     "name": "Ust'-Ilimsk",
     "province": "IR",
@@ -375527,6 +376856,34 @@
       ]
     }
   },
+  "Verchn'aja Py`'sma-Russia": {
+    "name": "Verchn'aja Py`'sma",
+    "province": "SV",
+    "particulars": "agglomeration of Sverdlovsk",
+    "found.yr": 1946,
+    "other_names": [
+      "Verchn'aya Pyshma",
+      "Py`'sma"
+    ],
+    "population": {
+      "1989": 53000,
+      "1991": 53500
+    },
+    "coords": [
+      56.97600575388924,
+      60.567471514684335
+    ],
+    "is_agglomeration_of": "sverdlovsk",
+    "country": "Russia",
+    "key": "Verchn'aja Py`'sma-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "verchn'aja py`'sma",
+      "verchn'aya pyshma",
+      "py`'sma"
+    ],
+    "type": "populstat"
+  },
   "Verchn'aja Salda-Russia": {
     "name": "Verchn'aja Salda",
     "province": "SV",
@@ -375551,6 +376908,36 @@
       "verchn'aja salda",
       "verchn'aya salda",
       "verchne-saldinski zavod"
+    ],
+    "type": "populstat"
+  },
+  "Vi`'cuga-Russia": {
+    "name": "Vi`'cuga",
+    "province": "IV",
+    "found.yr": 1920,
+    "other_names": [
+      "Vichuga"
+    ],
+    "population": {
+      "1926": 25000,
+      "1933": 34200,
+      "1939": 47000,
+      "1959": 51000,
+      "1970": 53000,
+      "1973": 52000,
+      "1981": 51000,
+      "1989": 49800,
+      "1991": 49700
+    },
+    "coords": [
+      57.213986586218965,
+      41.913424487455885
+    ],
+    "country": "Russia",
+    "key": "Vi`'cuga-Russia",
+    "original_names": [
+      "vi`'cuga",
+      "vichuga"
     ],
     "type": "populstat"
   },
@@ -376193,6 +377580,89 @@
       "Volsk"
     ]
   },
+  "Vol`'zsk-Russia": {
+    "name": "Volzhsky",
+    "province": "ME",
+    "found.yr": 0.1935,
+    "other_names": [
+      "Volzhsk",
+      "Lopatino",
+      "Vol`'zsk"
+    ],
+    "population": {
+      "1950": 67000,
+      "1967": 40000,
+      "1970": 44000,
+      "1981": 55000,
+      "1989": 61000,
+      "1991": 62000,
+      "1996": 62100,
+      "2000": 287000
+    },
+    "coords": [
+      55.87228584427861,
+      48.3568214439057
+    ],
+    "country": "Russia",
+    "key": "Vol`'zsk-Russia",
+    "original_names": [
+      "vol`'zsk",
+      "volzhsk",
+      "lopatino"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Vol`'zsk": 62100,
+      "Volzhsky": 287000
+    },
+    "name_coords": {
+      "Vol`'zsk": [
+        55.87228584427861,
+        48.3568214439057
+      ],
+      "Volzhsky": [
+        55.87228584427861,
+        48.3568214439057
+      ]
+    }
+  },
+  "Vol`'zskij-Russia": {
+    "name": "Vol`'zskij",
+    "province": "VO",
+    "particulars": "agglomeration of Volgograd",
+    "found.yr": 1954,
+    "other_names": [
+      "Volzhskii",
+      "Vol`'zskaja Caricyn"
+    ],
+    "population": {
+      "1959": 67000,
+      "1967": 114000,
+      "1970": 142000,
+      "1973": 169000,
+      "1979": 209000,
+      "1981": 220000,
+      "1989": 269000,
+      "1991": 278400,
+      "1994": 284600,
+      "1996": 289900,
+      "2001": 281700
+    },
+    "coords": [
+      48.81782239169432,
+      44.77061147352764
+    ],
+    "is_agglomeration_of": "volgograd",
+    "country": "Russia",
+    "key": "Vol`'zskij-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "vol`'zskij",
+      "volzhskii",
+      "vol`'zskaja caricyn"
+    ],
+    "type": "populstat"
+  },
   "Vorkuta-Russia": {
     "name": "Vorkuta",
     "province": "KO",
@@ -376469,6 +377939,28 @@
     ],
     "type": "populstat"
   },
+  "Zare`'cnyi-Russia": {
+    "name": "Zare`'cnyi",
+    "province": "PZ,SV?",
+    "other_names": [
+      "Zarechnyi"
+    ],
+    "population": {
+      "1989": 27700,
+      "1996": 63400
+    },
+    "coords": [
+      53.2,
+      45.166667
+    ],
+    "country": "Russia",
+    "key": "Zare`'cnyi-Russia",
+    "original_names": [
+      "zare`'cnyi",
+      "zarechnyi"
+    ],
+    "type": "populstat"
+  },
   "Zarinsk-Russia": {
     "name": "Zarinsk",
     "province": "AL",
@@ -376594,6 +378086,61 @@
       "zelenograd"
     ],
     "type": "populstat"
+  },
+  "`'Zeleznodoro`'znyj-Russia": {
+    "name": "Zheleznoorozhny",
+    "province": "MS",
+    "particulars": "agglomeration of Moskva",
+    "found.yr": 1952,
+    "other_names": [
+      "Zheleznodorozhnii",
+      "Obiralovka",
+      "`'Zeleznodoro`'znyj"
+    ],
+    "population": {
+      "1900": 1000,
+      "1939": 17000,
+      "1950": 40000,
+      "1959": 40000,
+      "1967": 41000,
+      "1970": 57000,
+      "1973": 62000,
+      "1979": 76000,
+      "1981": 80000,
+      "1989": 97000,
+      "1991": 99300,
+      "1994": 100500,
+      "2000": 104000,
+      "2001": 101300
+    },
+    "coords": [
+      55.75,
+      38.02
+    ],
+    "is_agglomeration_of": "moskva",
+    "country": "Russia",
+    "key": "`'Zeleznodoro`'znyj-Russia",
+    "is_agglomeration": false,
+    "original_names": [
+      "`'zeleznodoro`'znyj",
+      "zheleznodorozhnii",
+      "obiralovka"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "`'Zeleznodoro`'znyj": 101300,
+      "Zheleznoorozhny": 104000
+    },
+    "name_coords": {
+      "`'Zeleznodoro`'znyj": [
+        55.7427126951559,
+        38.01616254383659
+      ],
+      "Zheleznoorozhny": [
+        55.75,
+        38.02
+      ]
+    }
   },
   "`'Zeleznogorsk-Russia": {
     "name": "`'Zeleznogorsk",
@@ -419415,8 +420962,8 @@
       "2000": 13949.910393977447
     },
     "coords": [
-      47.03,
-      8.57
+      47.02070012537462,
+      8.653064064632355
     ],
     "country": "Switzerland",
     "key": "Schwyz-Switzerland",
@@ -419435,8 +420982,8 @@
         8.652988400000002
       ],
       "Schwytz": [
-        47.03,
-        8.57
+        47.02070012537462,
+        8.653064064632355
       ]
     }
   },
@@ -419537,8 +421084,8 @@
       "2000": 27000
     },
     "coords": [
-      46.24,
-      7.33
+      46.233228850928306,
+      7.360899661581828
     ],
     "country": "Switzerland",
     "key": "Sion-Switzerland",
@@ -419553,8 +421100,8 @@
     },
     "name_coords": {
       "Sion": [
-        46.24,
-        7.33
+        46.233228850928306,
+        7.360899661581828
       ]
     },
     "is_agglomeration_of": "sion"
@@ -420891,122 +422438,31 @@
     "type": "populstat"
   },
   "Al`cevs'k-Ukraine": {
-    "name": "Zapori`z`ja",
+    "name": "Al`cevs'k",
     "province": "LH",
     "other_names": [
       "Alchevs'k",
       "Kommunarsk",
       "Voro`silovsk",
-      "Voroshilovsk",
-      "Berdy`civv",
-      "Berdychivv",
-      "Berdi`cev",
-      "Berdichev",
-      "Ossipevsk",
-      "Osipenko(grad)",
-      "Dru`zkivka",
-      "Druzhkivka",
-      "D`zankoj",
-      "Dzhankoy",
-      "Illi`civs'k",
-      "Illichivs'k",
-      "Al`cevs'k",
-      "Kerch",
-      "Kerch'",
-      "Ker`c",
-      "Kremenchuk",
-      "Kremen`cug",
-      "Kremenchug",
-      "Feodosiya",
-      "Yevpatoria",
-      "Lysy`cans'k",
-      "Lysychans'k",
-      "Lisi`cansk",
-      "Lisichansk",
-      "Marhane`c'",
-      "Marhanets'",
-      "Margane`c",
-      "Marganets",
-      "Muka`ceve",
-      "Mukacheve",
-      "Muka`cevo",
-      "Mukachevo",
-      "Munkács",
-      "Sudak",
-      "Ni`zyn",
-      "Nizhyn",
-      "Ni`zni",
-      "Nizhni",
-      "Ne`zin",
-      "Nezhin",
-      "Nyezhin",
-      "Rubi`zne",
-      "Rubizhne",
-      "Rube`znoje",
-      "Rubezhnoye",
-      "`Sachtars'k",
-      "Shakhtars'k",
-      "`Sacht'orsk",
-      "Shakht'orsk",
-      "Sni`zne",
-      "Snizhne",
-      "Sne`znoje",
-      "Snezhnoye",
-      "Kremen`cuk",
-      "Zaporizhzhya",
-      "Zaporo`ze",
-      "Zaporozhe",
-      "Aleksandrovsk",
-      "Sevastopol"
+      "Voroshilovsk"
     ],
     "population": {
-      "1300": 34641.016151377546,
-      "1400": 46751.57751349146,
-      "1500": 45000,
-      "1600": 35000,
-      "1700": 29500,
-      "1750": 36000,
-      "1800": 3343.7015248821103,
-      "1840": 9900,
-      "1850": 11981.45282979018,
-      "1858": 35190.907916676435,
-      "1863": 30854.25306075036,
-      "1866": 20849.496338807836,
-      "1873": 31057.051737146987,
-      "1880": 26196.71015286129,
-      "1885": 46423.18053344798,
-      "1891": 38279.46002801238,
-      "1897": 39404.08940676462,
-      "1900": 33251.597703741885,
-      "1904": 55789.33486523184,
-      "1907": 38681.485534157306,
-      "1910": 48892.87746467419,
-      "1911": 58947.968521484545,
-      "1920": 43441.132422446615,
-      "1926": 35511.688212584195,
-      "1933": 47583.43173283571,
-      "1936": 97740.53431451933,
-      "1939": 55562.579383383665,
-      "1950": 72939.83909322835,
-      "1956": 381000,
-      "1959": 74358.5763868172,
-      "1964": 171661.6227869305,
-      "1967": 170023.19090370004,
-      "1970": 94694.68013891457,
-      "1973": 101475.61990496104,
-      "1974": 97377.9199320097,
-      "1979": 205980.68335961035,
-      "1981": 103943.6467952687,
-      "1989": 148781.3999361326,
-      "1991": 104515.78091379588,
-      "1995": 469015.99119859445,
-      "1998": 455793.99952171376,
-      "2000": 84616.29871643578,
-      "2001": 99299.98520010106
+      "1926": 16000,
+      "1936": 61500,
+      "1939": 54800,
+      "1959": 98000,
+      "1964": 119000,
+      "1967": 124000,
+      "1970": 123000,
+      "1973": 127000,
+      "1974": 127000,
+      "1979": 120000,
+      "1991": 126000,
+      "2001": 119000
     },
     "coords": [
-      48.379433,
-      31.16558
+      48.47176922571138,
+      38.814732164656206
     ],
     "country": "Ukraine",
     "key": "Al`cevs'k-Ukraine",
@@ -421017,107 +422473,7 @@
       "voro`silovsk",
       "voroshilovsk"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Al`cevs'k": 127000,
-      "Berdy`civv": 98800,
-      "Dru`zkivka": 74400,
-      "D`zankoj": 54500,
-      "Illi`civs'k": 56000,
-      "Ker`c": 178300,
-      "Kremen`cuk": 248000,
-      "Feodosiya": 85600,
-      "Yevpatoria": 110500,
-      "Lysy`cans'k": 126400,
-      "Marhane`c'": 54700,
-      "Muka`ceve": 88000,
-      "Sudak": 30000,
-      "Ni`zyn": 82000,
-      "Rubi`zne": 75100,
-      "`Sachtars'k": 73100,
-      "Sni`zne": 69000,
-      "Zapori`z`ja": 896600,
-      "Sevastopol": 366200
-    },
-    "name_coords": {
-      "Al`cevs'k": [
-        48.379433,
-        31.16558
-      ],
-      "Berdy`civv": [
-        48.379433,
-        31.16558
-      ],
-      "Dru`zkivka": [
-        48.379433,
-        31.16558
-      ],
-      "D`zankoj": [
-        48.379433,
-        31.16558
-      ],
-      "Illi`civs'k": [
-        48.379433,
-        31.16558
-      ],
-      "Ker`c": [
-        48.379433,
-        31.16558
-      ],
-      "Kremen`cuk": [
-        48.379433,
-        31.16558
-      ],
-      "Feodosiya": [
-        48.379433,
-        31.16558
-      ],
-      "Yevpatoria": [
-        48.379433,
-        31.16558
-      ],
-      "Lysy`cans'k": [
-        48.379433,
-        31.16558
-      ],
-      "Marhane`c'": [
-        48.379433,
-        31.16558
-      ],
-      "Muka`ceve": [
-        48.379433,
-        31.16558
-      ],
-      "Sudak": [
-        48.379433,
-        31.16558
-      ],
-      "Ni`zyn": [
-        48.379433,
-        31.16558
-      ],
-      "Rubi`zne": [
-        48.379433,
-        31.16558
-      ],
-      "`Sachtars'k": [
-        48.379433,
-        31.16558
-      ],
-      "Sni`zne": [
-        48.379433,
-        31.16558
-      ],
-      "Zapori`z`ja": [
-        48.379433,
-        31.16558
-      ],
-      "Sevastopol": [
-        48.379433,
-        31.16558
-      ]
-    },
-    "is_agglomeration_of": "lysy`cans'k"
+    "type": "populstat"
   },
   "Antracyt-Ukraine": {
     "name": "Antracyt",
@@ -421202,18 +422558,23 @@
     "other_names": [
       "Berd'ansk",
       "Berdyans'k",
-      "Osipenkograd"
+      "Osipenkograd",
+      "Berdjansk",
+      "Berdyansk"
     ],
     "population": {
+      "1800": 5000,
+      "1850": 10000,
       "1873": 20800,
       "1897": 26500,
-      "1900": 27200,
+      "1900": 27099.815497526917,
       "1910": 40000,
       "1911": 33000,
       "1920": 37000,
       "1926": 26000,
       "1933": 35900,
       "1939": 51700,
+      "1950": 55000,
       "1959": 65000,
       "1970": 100000,
       "1973": 110000,
@@ -421222,11 +422583,12 @@
       "1981": 126000,
       "1989": 132000,
       "1991": 138700,
+      "2000": 122000,
       "2001": 121000
     },
     "coords": [
-      46.7737707,
-      36.8034779
+      46.77289381156561,
+      36.803299636124805
     ],
     "country": "Ukraine",
     "key": "Berdjans'k-Ukraine",
@@ -421236,7 +422598,115 @@
       "berdyans'k",
       "osipenkograd"
     ],
-    "type": "populstat"
+    "type": "populstat",
+    "name_peaks": {
+      "Berdjans'k": 138700,
+      "Berdjansk": 122000,
+      "Berdyansk": 10000
+    },
+    "name_coords": {
+      "Berdjans'k": [
+        46.77289381156561,
+        36.803299636124805
+      ],
+      "Berdjansk": [
+        46.77289381156561,
+        36.803299636124805
+      ],
+      "Berdyansk": [
+        46.7737707,
+        36.8034779
+      ]
+    }
+  },
+  "Berdy`civv-Ukraine": {
+    "name": "Berdy`civv",
+    "province": "ZT",
+    "elevation": 250,
+    "other_names": [
+      "Berdychivv",
+      "Berdi`cev",
+      "Berdichev",
+      "Ossipevsk",
+      "Osipenko(grad)",
+      "Berdychiv",
+      "Berdicev"
+    ],
+    "population": {
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 2000,
+      "1800": 4582.57569495584,
+      "1842": 32825,
+      "1850": 47749.34554525329,
+      "1856": 53448,
+      "1858": 51600,
+      "1863": 53200,
+      "1866": 52800,
+      "1873": 52600,
+      "1880": 57000,
+      "1885": 77200,
+      "1891": 98800,
+      "1897": 53400,
+      "1900": 57006.697427865176,
+      "1904": 65900,
+      "1907": 62600,
+      "1910": 63600,
+      "1911": 76900,
+      "1920": 40500,
+      "1926": 51400,
+      "1933": 53100,
+      "1936": 66300,
+      "1939": 62000,
+      "1950": 60909.769331364245,
+      "1959": 53000,
+      "1970": 71000,
+      "1973": 75000,
+      "1974": 77000,
+      "1981": 82000,
+      "1989": 85000,
+      "1991": 93400,
+      "2000": 90659.80366182137,
+      "2001": 88000
+    },
+    "coords": [
+      49.910642334317465,
+      28.58972907752464
+    ],
+    "country": "Ukraine",
+    "key": "Berdy`civv-Ukraine",
+    "original_names": [
+      "berdy`civv",
+      "berdychivv",
+      "berdi`cev",
+      "berdichev",
+      "ossipevsk",
+      "osipenko"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Berdy`civv": 98800,
+      "Berdychiv": 93400,
+      "Berdicev": 88000
+    },
+    "name_coords": {
+      "Berdy`civv": [
+        49.910642334317465,
+        28.58972907752464
+      ],
+      "Berdychiv": [
+        49.9106591,
+        28.5900312
+      ],
+      "Berdicev": [
+        49.91148779170642,
+        28.590073871047753
+      ]
+    }
   },
   "Bila Cerkva-Ukraine": {
     "name": "Bila Cerkva",
@@ -421442,12 +422912,25 @@
     "province": "CK*",
     "other_names": [
       "Cherkassy",
-      "`Cerkasi"
+      "`Cerkasi",
+      "Cerkassy",
+      "Cherkasy"
     ],
     "population": {
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 2000,
+      "1650": 2000,
+      "1700": 3000,
+      "1750": 3000,
+      "1800": 5000,
+      "1850": 12000,
       "1858": 20400,
       "1863": 20500,
       "1897": 29600,
+      "1900": 30000,
       "1904": 36900,
       "1907": 36300,
       "1910": 42000,
@@ -421456,6 +422939,7 @@
       "1926": 39000,
       "1933": 39600,
       "1939": 51700,
+      "1950": 85000,
       "1959": 83000,
       "1964": 109000,
       "1967": 128000,
@@ -421468,11 +422952,12 @@
       "1991": 302200,
       "1995": 312000,
       "1998": 310800,
+      "2000": 295000,
       "2001": 295000
     },
     "coords": [
-      49.44131549999999,
-      32.0643442
+      49.441150409607296,
+      32.065021334094425
     ],
     "country": "Ukraine",
     "key": "`Cerkasy-Ukraine",
@@ -421481,7 +422966,26 @@
       "cherkassy",
       "`cerkasi"
     ],
-    "type": "populstat"
+    "type": "populstat",
+    "name_peaks": {
+      "`Cerkasy": 312000,
+      "Cerkassy": 295000,
+      "Cherkasy": 12000
+    },
+    "name_coords": {
+      "`Cerkasy": [
+        49.441150409607296,
+        32.065021334094425
+      ],
+      "Cerkassy": [
+        49.441150409607296,
+        32.065021334094425
+      ],
+      "Cherkasy": [
+        49.44131549999999,
+        32.0643442
+      ]
+    }
   },
   "`Cernihiv-Ukraine": {
     "name": "`Cernihiv",
@@ -422253,6 +423757,36 @@
     ],
     "type": "populstat"
   },
+  "Dru`zkivka-Ukraine": {
+    "name": "Dru`zkivka",
+    "particulars": "agglomeration of Kramators'k",
+    "other_names": [
+      "Druzhkivka"
+    ],
+    "population": {
+      "1939": 32000,
+      "1959": 43000,
+      "1970": 53000,
+      "1973": 57000,
+      "1974": 59000,
+      "1981": 67000,
+      "1991": 74400,
+      "2001": 65000
+    },
+    "coords": [
+      48.616039851700044,
+      37.52799694870724
+    ],
+    "is_agglomeration_of": "kramators",
+    "country": "Ukraine",
+    "key": "Dru`zkivka-Ukraine",
+    "is_agglomeration": false,
+    "original_names": [
+      "dru`zkivka",
+      "druzhkivka"
+    ],
+    "type": "populstat"
+  },
   "Dymytrov-Ukraine": {
     "name": "Dymytrov",
     "particulars": "agglomeration of Krasnoarmiys'k",
@@ -422280,6 +423814,28 @@
     "original_names": [
       "dymytrov",
       "dimitrov"
+    ],
+    "type": "populstat"
+  },
+  "D`zankoj-Ukraine": {
+    "name": "D`zankoj",
+    "province": "KR",
+    "other_names": [
+      "Dzhankoy"
+    ],
+    "population": {
+      "1974": 46000,
+      "1991": 54500
+    },
+    "coords": [
+      45.70968793550481,
+      34.38758406714796
+    ],
+    "country": "Ukraine",
+    "key": "D`zankoj-Ukraine",
+    "original_names": [
+      "d`zankoj",
+      "dzhankoy"
     ],
     "type": "populstat"
   },
@@ -422367,18 +423923,18 @@
       "1000": 5000,
       "1100": 9000,
       "1200": 12000,
-      "1300": 17000,
-      "1400": 25000,
-      "1500": 22000,
+      "1300": 26076.809620810596,
+      "1400": 42678.15600515092,
+      "1500": 31464.265445104546,
       "1550": 21000,
-      "1600": 20000,
+      "1600": 26457.513110645905,
       "1650": 14000,
-      "1700": 10000,
-      "1750": 44000,
+      "1700": 17175.56403731767,
+      "1750": 39799.4974842648,
       "1800": 5000,
       "1850": 8000,
       "1897": 27200,
-      "1900": 24000,
+      "1900": 30199.337741083,
       "1910": 40000,
       "1911": 38000,
       "1920": 34500,
@@ -422393,7 +423949,7 @@
       "1981": 78000,
       "1989": 81000,
       "1991": 85600,
-      "2000": 75000,
+      "2000": 80124.90249604052,
       "2001": 74000
     },
     "coords": [
@@ -422412,12 +423968,17 @@
     ],
     "type": "buringh",
     "name_peaks": {
-      "Feodosija": 85600
+      "Feodosija": 85600,
+      "Feodosiya": 85600
     },
     "name_coords": {
       "Feodosija": [
         45.04998481133145,
         35.38011801537567
+      ],
+      "Feodosiya": [
+        45.03149995260895,
+        35.381718888344665
       ]
     }
   },
@@ -422552,6 +424113,30 @@
         26.52
       ]
     }
+  },
+  "Illi`civs'k-Ukraine": {
+    "name": "Illi`civs'k",
+    "particulars": "agglomeration of Odesa",
+    "other_names": [
+      "Illichivs'k"
+    ],
+    "population": {
+      "1991": 56000,
+      "2001": 54000
+    },
+    "coords": [
+      46.295059142437886,
+      30.64841802917396
+    ],
+    "is_agglomeration_of": "odesa",
+    "country": "Ukraine",
+    "key": "Illi`civs'k-Ukraine",
+    "is_agglomeration": false,
+    "original_names": [
+      "illi`civs'k",
+      "illichivs'k"
+    ],
+    "type": "populstat"
   },
   "Ivano-Frankivs'k-Ukraine": {
     "name": "Ivano-Frankivs'k",
@@ -422775,8 +424360,8 @@
       "2001": 81000
     },
     "coords": [
-      46.9591587,
-      37.2782947
+      44.490321093536274,
+      34.153092428719766
     ],
     "country": "Ukraine",
     "key": "Jalta-Ukraine",
@@ -422833,9 +424418,9 @@
       "Evpatorija",
       "Yevpatoriya",
       "Guesleve",
+      "Yevpatoria",
       "Evapatorija",
-      "Guezliev",
-      "Yevpatoria"
+      "Guezliev"
     ],
     "population": {
       "700": 2000,
@@ -422855,7 +424440,7 @@
       "1800": 5000,
       "1850": 5000,
       "1897": 17900,
-      "1900": 18000,
+      "1900": 25349.55620913313,
       "1907": 21500,
       "1911": 30400,
       "1920": 30200,
@@ -422870,7 +424455,7 @@
       "1981": 97000,
       "1989": 108000,
       "1991": 110500,
-      "2000": 106000,
+      "2000": 108226.6141020775,
       "2001": 106000
     },
     "coords": [
@@ -422888,6 +424473,7 @@
     "type": "buringh",
     "name_peaks": {
       "Jevpatorija": 110500,
+      "Yevpatoria": 110500,
       "Evapatorija": 106000
     },
     "name_coords": {
@@ -422895,9 +424481,13 @@
         45.19045,
         33.366867
       ],
+      "Yevpatoria": [
+        45.190138363870446,
+        33.3670238126333
+      ],
       "Evapatorija": [
-        45.2,
-        33.37
+        45.190138363870446,
+        33.3670238126333
       ]
     }
   },
@@ -423010,6 +424600,89 @@
       "Kamyanets-Podilsky": [
         48.67,
         26.6
+      ]
+    }
+  },
+  "Ker`c-Ukraine": {
+    "name": "Ker`c",
+    "province": "KR",
+    "other_names": [
+      "Kerch",
+      "Kerch'",
+      "Karcha",
+      "Cerco",
+      "Cherkio"
+    ],
+    "population": {
+      "700": 1000,
+      "800": 1000,
+      "900": 1000,
+      "1000": 1000,
+      "1100": 1000,
+      "1200": 1000,
+      "1300": 3872.983346207417,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 1000,
+      "1800": 1000,
+      "1840": 9900,
+      "1850": 13000,
+      "1863": 21400,
+      "1873": 22400,
+      "1880": 22400,
+      "1885": 27100,
+      "1891": 32200.000000000004,
+      "1897": 33300,
+      "1900": 31867.945382260987,
+      "1904": 49700,
+      "1910": 56000,
+      "1911": 55800,
+      "1920": 35500,
+      "1933": 66700,
+      "1939": 104500,
+      "1950": 55398.55593785816,
+      "1959": 99000,
+      "1964": 114000,
+      "1967": 118000,
+      "1970": 128000,
+      "1973": 140000,
+      "1974": 145000,
+      "1979": 157000,
+      "1981": 159000,
+      "1989": 174000,
+      "1991": 178300,
+      "2000": 161895.33656038396,
+      "2001": 157000,
+      "-500": 16250
+    },
+    "coords": [
+      45.35942016552072,
+      36.469551138796405
+    ],
+    "country": "Ukraine",
+    "key": "Ker`c-Ukraine",
+    "original_names": [
+      "ker`c",
+      "kerch",
+      "kerch'"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Ker`c": 178300,
+      "Kerch": 178300
+    },
+    "name_coords": {
+      "Ker`c": [
+        45.35942016552072,
+        36.469551138796405
+      ],
+      "Kerch": [
+        45.35942016552072,
+        36.469551138796405
       ]
     }
   },
@@ -423503,6 +425176,87 @@
     ],
     "type": "populstat"
   },
+  "Kremen`cuk-Ukraine": {
+    "name": "Kremen`cuk",
+    "province": "PL",
+    "elevation": 81,
+    "other_names": [
+      "Kremenchuk",
+      "Kremen`cug",
+      "Kremenchug",
+      "Kremencug"
+    ],
+    "population": {
+      "1600": 1000,
+      "1650": 2000,
+      "1700": 3000,
+      "1750": 5000,
+      "1800": 8000,
+      "1850": 20976.17696340303,
+      "1858": 24000,
+      "1863": 25800,
+      "1866": 20300,
+      "1873": 37600,
+      "1880": 46600,
+      "1885": 50000,
+      "1891": 54800,
+      "1897": 58600,
+      "1900": 64957.10122842614,
+      "1904": 63200,
+      "1910": 99000,
+      "1911": 72900,
+      "1920": 74400,
+      "1926": 57300,
+      "1933": 68700,
+      "1939": 89600,
+      "1950": 86000,
+      "1959": 86000,
+      "1964": 121000,
+      "1967": 136000,
+      "1970": 148000,
+      "1973": 167000,
+      "1974": 171000,
+      "1979": 210000,
+      "1981": 215000,
+      "1991": 240600,
+      "1995": 248000,
+      "1998": 240700,
+      "2000": 237277.05325210022,
+      "2001": 234000
+    },
+    "coords": [
+      49.06634761046835,
+      33.41000559141547
+    ],
+    "country": "Ukraine",
+    "key": "Kremen`cuk-Ukraine",
+    "original_names": [
+      "kremen`cuk",
+      "kremenchuk",
+      "kremen`cug",
+      "kremenchug"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Kremen`cuk": 248000,
+      "Kremenchuk": 240600,
+      "Kremencug": 234000
+    },
+    "name_coords": {
+      "Kremen`cuk": [
+        49.06634761046835,
+        33.41000559141547
+      ],
+      "Kremenchuk": [
+        49.06634761046835,
+        33.41000559141547
+      ],
+      "Kremencug": [
+        49.06634761046835,
+        33.41000559141547
+      ]
+    }
+  },
   "Kryvyi Rih-Ukraine": {
     "name": "Kryvyi Rih",
     "province": "DP",
@@ -423976,6 +425730,41 @@
       ]
     }
   },
+  "Lysy`cans'k-Ukraine": {
+    "name": "Lysy`cans'k",
+    "province": "LH",
+    "other_names": [
+      "Lysychans'k",
+      "Lisi`cansk",
+      "Lisichansk"
+    ],
+    "population": {
+      "1939": 85000,
+      "1959": 104000,
+      "1967": 120000,
+      "1970": 117000,
+      "1973": 121000,
+      "1974": 120000,
+      "1979": 120000,
+      "1981": 120000,
+      "1991": 126400,
+      "2001": 115000
+    },
+    "coords": [
+      48.911262404198055,
+      38.42742080310615
+    ],
+    "country": "Ukraine",
+    "key": "Lysy`cans'k-Ukraine",
+    "original_names": [
+      "lysy`cans'k",
+      "lysychans'k",
+      "lisi`cansk",
+      "lisichansk"
+    ],
+    "type": "populstat",
+    "is_agglomeration_of": "lysy`cans'k"
+  },
   "Lysy`cans'k (agglomeration)-Ukraine": {
     "name": "Lysy`cans'k (agglomeration)",
     "province": "LH",
@@ -423983,8 +425772,8 @@
       "1991": 415000
     },
     "coords": [
-      48.379433,
-      31.16558
+      48.911262404198055,
+      38.42742080310615
     ],
     "country": "Ukraine",
     "key": "Lysy`cans'k (agglomeration)-Ukraine",
@@ -424040,6 +425829,33 @@
       "makaevka",
       "dmitrijevsk",
       "dmitriyevsk"
+    ],
+    "type": "populstat"
+  },
+  "Marhane`c'-Ukraine": {
+    "name": "Marhane`c'",
+    "province": "DP",
+    "other_names": [
+      "Marhanets'",
+      "Margane`c",
+      "Marganets"
+    ],
+    "population": {
+      "1981": 52000,
+      "1991": 54700,
+      "2001": 50000
+    },
+    "coords": [
+      47.64832308935939,
+      34.60936394448694
+    ],
+    "country": "Ukraine",
+    "key": "Marhane`c'-Ukraine",
+    "original_names": [
+      "marhane`c'",
+      "marhanets'",
+      "margane`c",
+      "marganets"
     ],
     "type": "populstat"
   },
@@ -424204,6 +426020,48 @@
       ]
     }
   },
+  "Muka`ceve-Ukraine": {
+    "name": "Muka`ceve",
+    "province": "ZK",
+    "other_names": [
+      "Mukacheve",
+      "Muka`cevo",
+      "Mukachevo",
+      "Munkács"
+    ],
+    "population": {
+      "1866": 8600,
+      "1880": 9600,
+      "1891": 10500,
+      "1900": 14400,
+      "1910": 17000,
+      "1926": 20800,
+      "1933": 29400,
+      "1939": 31600,
+      "1959": 46000,
+      "1970": 57000,
+      "1973": 63000,
+      "1974": 65000,
+      "1981": 75000,
+      "1989": 82000,
+      "1991": 88000,
+      "2001": 82000
+    },
+    "coords": [
+      48.449093330864926,
+      22.711342283517492
+    ],
+    "country": "Ukraine",
+    "key": "Muka`ceve-Ukraine",
+    "original_names": [
+      "muka`ceve",
+      "mukacheve",
+      "muka`cevo",
+      "mukachevo",
+      "munkács"
+    ],
+    "type": "populstat"
+  },
   "Mykolajiv-Ukraine": {
     "name": "Mykolajiv",
     "province": "MY",
@@ -424315,6 +426173,93 @@
       "nikopol'"
     ],
     "type": "populstat"
+  },
+  "Ni`zyn-Ukraine": {
+    "name": "Ni`zyn",
+    "province": "CH",
+    "other_names": [
+      "Nizhyn",
+      "Ni`zni",
+      "Nizhni",
+      "Ne`zin",
+      "Nezhin",
+      "Nyezhin",
+      "Nezin",
+      "Nejin",
+      "Nieshin",
+      "njezjin"
+    ],
+    "population": {
+      "1300": 1000,
+      "1400": 1000,
+      "1500": 2000,
+      "1550": 3000,
+      "1600": 4000,
+      "1650": 5000,
+      "1700": 6000,
+      "1750": 10000,
+      "1800": 12000,
+      "1850": 16000,
+      "1866": 20500,
+      "1873": 21000,
+      "1880": 21600,
+      "1885": 44400,
+      "1891": 44900,
+      "1897": 32100,
+      "1900": 30142.163160596156,
+      "1904": 46800,
+      "1907": 36400,
+      "1910": 53000,
+      "1911": 38600,
+      "1920": 29100,
+      "1926": 37000,
+      "1933": 34100,
+      "1939": 39000,
+      "1950": 45497.2526643093,
+      "1959": 46000,
+      "1970": 56000,
+      "1973": 61000,
+      "1974": 63000,
+      "1981": 72000,
+      "1991": 82000,
+      "2000": 78421.93570679061,
+      "2001": 76000
+    },
+    "coords": [
+      51.037728943233674,
+      31.887752871860613
+    ],
+    "country": "Ukraine",
+    "key": "Ni`zyn-Ukraine",
+    "original_names": [
+      "ni`zyn",
+      "nizhyn",
+      "ni`zni",
+      "nizhni",
+      "ne`zin",
+      "nezhin",
+      "nyezhin"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Ni`zyn": 82000,
+      "Nizhyn": 82000,
+      "Nezin": 75000
+    },
+    "name_coords": {
+      "Ni`zyn": [
+        51.037728943233674,
+        31.887752871860613
+      ],
+      "Nizhyn": [
+        51.037728943233674,
+        31.887752871860613
+      ],
+      "Nezin": [
+        51.037728943233674,
+        31.887752871860613
+      ]
+    }
   },
   "Nova Kachovka-Ukraine": {
     "name": "Nova Kachovka",
@@ -424956,6 +426901,77 @@
     ],
     "type": "populstat"
   },
+  "Rubi`zne-Ukraine": {
+    "name": "Rubi`zne",
+    "province": "LH",
+    "particulars": "agglomeration of Lysyscans'k",
+    "other_names": [
+      "Rubizhne",
+      "Rube`znoje",
+      "Rubezhnoye"
+    ],
+    "population": {
+      "1939": 22000,
+      "1959": 35000,
+      "1970": 58000,
+      "1973": 64000,
+      "1974": 66000,
+      "1981": 66000,
+      "1989": 68000,
+      "1991": 75100,
+      "2001": 65000
+    },
+    "coords": [
+      49.01585490948719,
+      38.375031768831604
+    ],
+    "is_agglomeration_of": "lysyscans",
+    "country": "Ukraine",
+    "key": "Rubi`zne-Ukraine",
+    "is_agglomeration": false,
+    "original_names": [
+      "rubi`zne",
+      "rubizhne",
+      "rube`znoje",
+      "rubezhnoye"
+    ],
+    "type": "populstat"
+  },
+  "`Sachtars'k-Ukraine": {
+    "name": "`Sachtars'k",
+    "province": "DT",
+    "particulars": "agglomeration of Torez",
+    "other_names": [
+      "Shakhtars'k",
+      "`Sacht'orsk",
+      "Shakht'orsk"
+    ],
+    "population": {
+      "1939": 29000,
+      "1959": 65000,
+      "1970": 65000,
+      "1973": 68000,
+      "1974": 70000,
+      "1981": 70000,
+      "1991": 73100,
+      "2001": 60000
+    },
+    "coords": [
+      48.04864909963619,
+      38.451027657341946
+    ],
+    "is_agglomeration_of": "torez",
+    "country": "Ukraine",
+    "key": "`Sachtars'k-Ukraine",
+    "is_agglomeration": false,
+    "original_names": [
+      "`sachtars'k",
+      "shakhtars'k",
+      "`sacht'orsk",
+      "shakht'orsk"
+    ],
+    "type": "populstat"
+  },
   "`Sepetivka-Ukraine": {
     "name": "`Sepetivka",
     "other_names": [
@@ -425002,12 +427018,12 @@
       "1650": 1000,
       "1700": 1000,
       "1750": 1000,
-      "1800": 20000,
-      "1850": 45000,
+      "1800": 10000,
+      "1850": 43988.63489584554,
       "1880": 26100,
       "1885": 33800,
       "1897": 53600,
-      "1900": 54000,
+      "1900": 57416.89646785169,
       "1904": 67800,
       "1910": 62000,
       "1911": 65099.99999999999,
@@ -425015,7 +427031,7 @@
       "1926": 67400,
       "1933": 78300,
       "1939": 111900,
-      "1950": 144000,
+      "1950": 145986.30072715727,
       "1956": 133000,
       "1959": 148000,
       "1964": 192000,
@@ -425029,7 +427045,7 @@
       "1991": 366200,
       "1995": 370000,
       "1998": 356000,
-      "2000": 342000,
+      "2000": 353893.20422975067,
       "2001": 341000
     },
     "coords": [
@@ -425048,6 +427064,7 @@
     "type": "buringh",
     "name_peaks": {
       "Sevastopil'": 370000,
+      "Sevastopol": 366200,
       "Sebastopol": 342000
     },
     "name_coords": {
@@ -425055,9 +427072,13 @@
         44.61665,
         33.525367
       ],
+      "Sevastopol": [
+        44.61684829274826,
+        33.52527890565567
+      ],
       "Sebastopol": [
-        44.6,
-        33.53
+        44.61684829274826,
+        33.52527890565567
       ]
     }
   },
@@ -425245,6 +427266,41 @@
     "original_names": [
       "smila",
       "smela"
+    ],
+    "type": "populstat"
+  },
+  "Sni`zne-Ukraine": {
+    "name": "Sni`zne",
+    "province": "DT",
+    "particulars": "agglomeration of Torez",
+    "other_names": [
+      "Snizhne",
+      "Sne`znoje",
+      "Snezhnoye"
+    ],
+    "population": {
+      "1939": 44000,
+      "1959": 69000,
+      "1970": 64000,
+      "1973": 65000,
+      "1974": 65000,
+      "1981": 67000,
+      "1991": 68900,
+      "2001": 59000
+    },
+    "coords": [
+      48.02808906662679,
+      38.76622079030641
+    ],
+    "is_agglomeration_of": "torez",
+    "country": "Ukraine",
+    "key": "Sni`zne-Ukraine",
+    "is_agglomeration": false,
+    "original_names": [
+      "sni`zne",
+      "snizhne",
+      "sne`znoje",
+      "snezhnoye"
     ],
     "type": "populstat"
   },
@@ -425750,6 +427806,56 @@
       "vinnytsya",
       "vinnica",
       "vinnitsa"
+    ],
+    "type": "populstat"
+  },
+  "Zapori`z`ja-Ukraine": {
+    "name": "Zapori`z`ja",
+    "province": "ZP*",
+    "elevation": 15,
+    "found.yr": 1770,
+    "other_names": [
+      "Zaporizhzhya",
+      "Zaporo`ze",
+      "Zaporozhe",
+      "Aleksandrovsk"
+    ],
+    "population": {
+      "1897": 28400,
+      "1900": 24200,
+      "1907": 25400,
+      "1910": 43000,
+      "1920": 49700,
+      "1926": 55300,
+      "1936": 229000,
+      "1939": 289200,
+      "1956": 381000,
+      "1959": 435000,
+      "1964": 529000,
+      "1967": 595000,
+      "1970": 658000,
+      "1973": 714000,
+      "1974": 729000,
+      "1979": 781000,
+      "1981": 812000,
+      "1989": 884000,
+      "1991": 896600,
+      "1995": 887000,
+      "1998": 863100,
+      "2001": 814000
+    },
+    "coords": [
+      48.379433,
+      31.16558
+    ],
+    "country": "Ukraine",
+    "key": "Zapori`z`ja-Ukraine",
+    "original_names": [
+      "zapori`z`ja",
+      "zaporizhzhya",
+      "zaporo`ze",
+      "zaporozhe",
+      "aleksandrovsk"
     ],
     "type": "populstat"
   },
@@ -681219,8 +683325,8 @@
       "2000": 10000
     },
     "coords": [
-      44.07,
-      14.45
+      42.07129372453094,
+      14.451398125833705
     ],
     "latitude": 42.0713753,
     "longitude": 14.4512059,
@@ -681233,8 +683339,8 @@
     },
     "name_coords": {
       "Atessa": [
-        44.07,
-        14.45
+        42.07129372453094,
+        14.451398125833705
       ]
     },
     "other_names": []
@@ -682388,105 +684494,6 @@
       "Belev"
     ]
   },
-  "Berdyansk-Ukraine": {
-    "name": "Berdjansk",
-    "country": "Ukraine",
-    "key": "Berdyansk-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      1850
-    ],
-    "population": {
-      "1800": 5000,
-      "1850": 10000,
-      "1900": 27000,
-      "1950": 55000,
-      "2000": 122000
-    },
-    "coords": [
-      46.75,
-      36.78
-    ],
-    "latitude": 46.7737707,
-    "longitude": 36.8034779,
-    "original_names": [
-      "berdyansk"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Berdyansk": 10000,
-      "Berdjansk": 122000
-    },
-    "name_coords": {
-      "Berdyansk": [
-        46.7737707,
-        36.8034779
-      ],
-      "Berdjansk": [
-        46.75,
-        36.78
-      ]
-    },
-    "other_names": [
-      "Berdyansk"
-    ]
-  },
-  "Berdychiv-Ukraine": {
-    "name": "Berdychiv",
-    "country": "Ukraine",
-    "key": "Berdychiv-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850,
-      1900,
-      1950,
-      2000
-    ],
-    "population": {
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 2000,
-      "1800": 4582.57569495584,
-      "1842": 32825,
-      "1850": 47749.34554525329,
-      "1856": 53448,
-      "1900": 58735.63654205171,
-      "1950": 60909.769331364245,
-      "2000": 90659.80366182137
-    },
-    "coords": [
-      49.9106591,
-      28.5900312
-    ],
-    "latitude": 49.9106591,
-    "longitude": 28.5900312,
-    "original_names": [
-      "berdychiv"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Berdychiv": 93400,
-      "Berdicev": 88000
-    },
-    "name_coords": {
-      "Berdychiv": [
-        49.9106591,
-        28.5900312
-      ],
-      "Berdicev": [
-        49.91148779170642,
-        28.590073871047753
-      ]
-    },
-    "other_names": [
-      "Berdicev"
-    ]
-  },
   "Bernay-France": {
     "name": "Bernay",
     "country": "France",
@@ -682959,8 +684966,8 @@
       "1500": 1000
     },
     "coords": [
-      57.85647029999999,
-      55.846671
+      54.98458616695187,
+      49.033569630027515
     ],
     "latitude": 57.85647029999999,
     "longitude": 55.846671,
@@ -682973,8 +684980,8 @@
     },
     "name_coords": {
       "Bolgary": [
-        57.85647029999999,
-        55.846671
+        54.98458616695187,
+        49.033569630027515
       ]
     },
     "other_names": [
@@ -683146,50 +685153,6 @@
       "Malum Stabulum",
       "Bono Stabulo"
     ]
-  },
-  "Borovichi-Russia": {
-    "name": "Borovichi",
-    "country": "Russia",
-    "key": "Borovichi-Russia",
-    "is_interpolated": false,
-    "links": [
-      1750,
-      1800,
-      1850
-    ],
-    "population": {
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 2000,
-      "1750": 3000,
-      "1800": 5000,
-      "1850": 8000,
-      "1900": 10000,
-      "1950": 50000,
-      "2000": 58000
-    },
-    "coords": [
-      58.37,
-      34
-    ],
-    "latitude": 58.3924996,
-    "longitude": 33.9066464,
-    "original_names": [
-      "borovichi"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Borovichi": 58000
-    },
-    "name_coords": {
-      "Borovichi": [
-        58.37,
-        34
-      ]
-    },
-    "other_names": []
   },
   "Borovsk-Russia": {
     "name": "Borovsk",
@@ -685782,7 +687745,7 @@
     "other_names": []
   },
   "Cervinara-Italy": {
-    "name": "Cervinara",
+    "name": "Montesarchio",
     "country": "Italy",
     "key": "Cervinara-Italy",
     "is_interpolated": false,
@@ -685791,28 +687754,29 @@
       1850
     ],
     "population": {
-      "800": 1000,
-      "900": 1000,
-      "1000": 1000,
-      "1100": 2000,
-      "1200": 2000,
-      "1300": 2000,
-      "1400": 1000,
-      "1500": 2000,
-      "1550": 2000,
-      "1600": 3000,
-      "1650": 3000,
+      "700": 1000,
+      "800": 1414.213562373095,
+      "900": 1414.213562373095,
+      "1000": 1414.213562373095,
+      "1100": 2449.489742783178,
+      "1200": 2449.489742783178,
+      "1300": 2449.489742783178,
+      "1400": 1414.213562373095,
+      "1500": 2449.489742783178,
+      "1550": 2449.489742783178,
+      "1600": 3464.1016151377544,
+      "1650": 3464.1016151377544,
       "1700": 4000,
       "1750": 5000,
-      "1800": 5999.999999999997,
-      "1850": 6999.999999999996,
+      "1800": 6000,
+      "1850": 7000,
       "1900": 7000,
       "1950": 11000,
-      "2000": 10000
+      "2000": 11832.159566199232
     },
     "coords": [
-      44.13,
-      14.55
+      41.07,
+      14.63
     ],
     "latitude": 41.0219688,
     "longitude": 14.6135171,
@@ -685822,21 +687786,22 @@
     "type": "buringh",
     "name_peaks": {
       "Cervinara": 11000,
-      "Montesarchio": 7000
+      "Montesarchio": 14000
     },
     "name_coords": {
       "Cervinara": [
-        44.13,
-        14.55
+        41.02199280426715,
+        14.61345006593646
       ],
       "Montesarchio": [
-        41.0633486,
-        14.6377713
+        41.07,
+        14.63
       ]
     },
     "other_names": [
       "Montesarchio",
-      "Cerbinaria Caudetanis"
+      "Cerbinaria Caudetanis",
+      "Cervinara"
     ]
   },
   "Cetraro-Italy": {
@@ -686025,58 +687990,6 @@
     },
     "other_names": [
       "Castrum Gunterii"
-    ]
-  },
-  "Cherkasy-Ukraine": {
-    "name": "Cerkassy",
-    "country": "Ukraine",
-    "key": "Cherkasy-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850
-    ],
-    "population": {
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 3000,
-      "1750": 3000,
-      "1800": 5000,
-      "1850": 12000,
-      "1900": 30000,
-      "1950": 85000,
-      "2000": 295000
-    },
-    "coords": [
-      49.43,
-      32.07
-    ],
-    "latitude": 49.44131549999999,
-    "longitude": 32.0643442,
-    "original_names": [
-      "cherkasy"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Cherkasy": 12000,
-      "Cerkassy": 295000
-    },
-    "name_coords": {
-      "Cherkasy": [
-        49.44131549999999,
-        32.0643442
-      ],
-      "Cerkassy": [
-        49.43,
-        32.07
-      ]
-    },
-    "other_names": [
-      "Cherkasy"
     ]
   },
   "Chiaramonte Gulfi-Italy": {
@@ -688180,8 +690093,8 @@
       "2000": 13000
     },
     "coords": [
-      48.9,
-      11.22
+      48.89101045160562,
+      11.18531229060712
     ],
     "latitude": 48.8910779,
     "longitude": 11.185239,
@@ -688195,12 +690108,12 @@
     },
     "name_coords": {
       "Eichstatt": [
-        48.8910779,
-        11.185239
+        48.89109500566665,
+        11.185183689882786
       ],
       "Eichstaett": [
-        48.9,
-        11.22
+        48.89101045160562,
+        11.18531229060712
       ]
     },
     "other_names": [
@@ -688770,6 +690683,53 @@
     },
     "other_names": [
       "Figiacus"
+    ]
+  },
+  "Figuiera da Foz-Portugal": {
+    "name": "Figuiera da Foz",
+    "country": "Portugal",
+    "key": "Figuiera da Foz-Portugal",
+    "is_interpolated": false,
+    "links": [
+      1850
+    ],
+    "population": {
+      "1200": 1000,
+      "1300": 2000,
+      "1400": 1000,
+      "1500": 1000,
+      "1550": 2000,
+      "1600": 3000,
+      "1650": 4000,
+      "1700": 5000,
+      "1750": 7000,
+      "1800": 10000,
+      "1850": 6928.203230275509,
+      "1900": 43000,
+      "1950": 58000,
+      "2000": 63000
+    },
+    "coords": [
+      40.15213824462043,
+      -8.85738384642249
+    ],
+    "latitude": 40.1521398,
+    "longitude": -8.857583,
+    "original_names": [
+      "figuiera da foz"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Figuiera da Foz": 63000
+    },
+    "name_coords": {
+      "Figuiera da Foz": [
+        40.15213824462043,
+        -8.85738384642249
+      ]
+    },
+    "other_names": [
+      "Figueira"
     ]
   },
   "Fondi-Italy": {
@@ -690089,46 +692049,6 @@
     },
     "other_names": [
       "Hayn"
-    ]
-  },
-  "Grozny-Russia": {
-    "name": "Grozny",
-    "country": "Russia",
-    "key": "Grozny-Russia",
-    "is_interpolated": false,
-    "links": [
-      1900,
-      1950,
-      2000
-    ],
-    "population": {
-      "1800": 1000,
-      "1850": 5000,
-      "1900": 21269.696753832668,
-      "1950": 228630.7065990918,
-      "2000": 329817.2221094587
-    },
-    "coords": [
-      43.31877009999999,
-      45.68652429999999
-    ],
-    "latitude": 43.31877009999999,
-    "longitude": 45.68652429999999,
-    "original_names": [
-      "grozny"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Grozny": 401400
-    },
-    "name_coords": {
-      "Grozny": [
-        43.31877009999999,
-        45.68652429999999
-      ]
-    },
-    "other_names": [
-      "Grosny"
     ]
   },
   "Guemu-Mali": {
@@ -691845,67 +693765,6 @@
       "Kirkbie Kendal"
     ]
   },
-  "Kerch-Ukraine": {
-    "name": "Kerch",
-    "country": "Ukraine",
-    "key": "Kerch-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      -500,
-      1300,
-      1800,
-      1850,
-      1900,
-      1950,
-      2000
-    ],
-    "population": {
-      "700": 1000,
-      "800": 1000,
-      "900": 1000,
-      "1000": 1000,
-      "1100": 1000,
-      "1200": 1000,
-      "1300": 3872.983346207417,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 1000,
-      "1800": 1000,
-      "1850": 13000,
-      "1900": 33406.586176980134,
-      "1950": 55398.55593785816,
-      "2000": 161895.33656038396,
-      "-500": 16250
-    },
-    "coords": [
-      45.307653319930786,
-      36.444518551737474
-    ],
-    "latitude": 45.307653319930786,
-    "longitude": 36.444518551737474,
-    "original_names": [
-      "kerch"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Kerch": 178300
-    },
-    "name_coords": {
-      "Kerch": [
-        45.307653319930786,
-        36.444518551737474
-      ]
-    },
-    "other_names": [
-      "Karcha",
-      "Cerco",
-      "Cherkio"
-    ]
-  },
   "Kerma-Sudan": {
     "name": "Kerma",
     "country": "Sudan",
@@ -692466,57 +694325,6 @@
     },
     "other_names": [
       "Republic of Mordovia"
-    ]
-  },
-  "Kremenchuk-Ukraine": {
-    "name": "Kremenchuk",
-    "country": "Ukraine",
-    "key": "Kremenchuk-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850,
-      1900,
-      1950,
-      2000
-    ],
-    "population": {
-      "1600": 1000,
-      "1650": 2000,
-      "1700": 3000,
-      "1750": 5000,
-      "1800": 8000,
-      "1850": 20976.17696340303,
-      "1900": 64957.10122842614,
-      "1950": 86000,
-      "2000": 237277.05325210022
-    },
-    "coords": [
-      49.065783,
-      33.410033
-    ],
-    "latitude": 49.065783,
-    "longitude": 33.410033,
-    "original_names": [
-      "kremenchuk"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Kremenchuk": 240600,
-      "Kremencug": 234000
-    },
-    "name_coords": {
-      "Kremenchuk": [
-        49.065783,
-        33.410033
-      ],
-      "Kremencug": [
-        49.07,
-        33.42
-      ]
-    },
-    "other_names": [
-      "Kremencug"
     ]
   },
   "Kremenets-Ukraine": {
@@ -693382,8 +695190,8 @@
       "2000": 29000
     },
     "coords": [
-      50.3,
-      34.5
+      50.583387040188,
+      34.4913836464347
     ],
     "latitude": 50.5837638,
     "longitude": 34.4904643,
@@ -693401,8 +695209,8 @@
         34.4904643
       ],
       "Lebedin": [
-        50.3,
-        34.5
+        50.583387040188,
+        34.4913836464347
       ]
     },
     "other_names": [
@@ -694215,67 +696023,6 @@
       "maheshwar"
     ],
     "type": "chandler_modelski"
-  },
-  "Makhachkala-Russia": {
-    "name": "Makhachkala",
-    "country": "Russia",
-    "key": "Makhachkala-Russia",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850,
-      2000
-    ],
-    "population": {
-      "700": 2000,
-      "800": 2000,
-      "900": 2000,
-      "1000": 2000,
-      "1100": 2000,
-      "1200": 2000,
-      "1300": 2000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 2000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 2000,
-      "1750": 4000,
-      "1800": 6000,
-      "1850": 9000,
-      "1900": 8000,
-      "1950": 119000,
-      "2000": 513166.6396016015
-    },
-    "coords": [
-      42.9777885,
-      47.5146913
-    ],
-    "latitude": 42.9777885,
-    "longitude": 47.5146913,
-    "original_names": [
-      "makhachkala"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Makhachkala": 570000,
-      "Mahackala": 462000
-    },
-    "name_coords": {
-      "Makhachkala": [
-        42.9777885,
-        47.5146913
-      ],
-      "Mahackala": [
-        42.97,
-        47.5
-      ]
-    },
-    "other_names": [
-      "Mahackala",
-      "Tarki",
-      "Samander"
-    ]
   },
   "Malappuram (KER)-India": {
     "name": "Malappuram (KER)",
@@ -695479,33 +697226,6 @@
     "longitude": 9.0041618,
     "original_names": [
       "michelstadt"
-    ],
-    "type": "chandler_modelski"
-  },
-  "Michurinsk-Russia": {
-    "name": "Michurinsk",
-    "country": "Russia",
-    "key": "Michurinsk-Russia",
-    "is_interpolated": false,
-    "links": [
-      1750,
-      1800,
-      1850
-    ],
-    "population": {
-      "1750": 7000,
-      "1800": 12000,
-      "1850": 21000,
-      "1900": 41000
-    },
-    "coords": [
-      52.8930342,
-      40.4980963
-    ],
-    "latitude": 52.8930342,
-    "longitude": 40.4980963,
-    "original_names": [
-      "michurinsk"
     ],
     "type": "chandler_modelski"
   },
@@ -696805,47 +698525,6 @@
       "mons arimannorum"
     ]
   },
-  "Morshansk-Russia": {
-    "name": "Morshansk",
-    "country": "Russia",
-    "key": "Morshansk-Russia",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850
-    ],
-    "population": {
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 2000,
-      "1750": 3000,
-      "1800": 5000,
-      "1850": 12000,
-      "1900": 22000,
-      "1950": 41000,
-      "2000": 44000
-    },
-    "coords": [
-      53.43,
-      41.8
-    ],
-    "latitude": 53.444776,
-    "longitude": 41.819164,
-    "original_names": [
-      "morshansk"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Morshansk": 44000
-    },
-    "name_coords": {
-      "Morshansk": [
-        53.43,
-        41.8
-      ]
-    },
-    "other_names": []
-  },
   "Moura-Portugal": {
     "name": "Moura",
     "country": "Portugal",
@@ -696935,16 +698614,25 @@
       1850
     ],
     "population": {
+      "1100": 1000,
+      "1200": 1000,
+      "1300": 1000,
       "1400": 1000,
+      "1500": 1000,
+      "1550": 2000,
       "1600": 2000,
-      "1800": 10000,
+      "1650": 2000,
+      "1700": 3000,
+      "1750": 4000,
+      "1800": 7071.067811865475,
       "1850": 10000,
-      "1900": 766000,
+      "1900": 170610.6678962368,
       "1914": 1800000,
       "1925": 3400000,
-      "1950": 4900000,
+      "1950": 857321.4099741123,
       "1970": 5450000,
-      "1975": 5500000
+      "1975": 5500000,
+      "2000": 173000
     },
     "coords": [
       51.4185682,
@@ -696955,7 +698643,27 @@
     "original_names": [
       "ruhr"
     ],
-    "type": "chandler_modelski"
+    "type": "buringh",
+    "name_peaks": {
+      "Ruhr": 5500000,
+      "Muelheim an der Ruhr": 173000
+    },
+    "name_coords": {
+      "Ruhr": [
+        51.4185682,
+        6.884522599999999
+      ],
+      "Muelheim an der Ruhr": [
+        51.41848323850704,
+        6.884194565388507
+      ]
+    },
+    "other_names": [
+      "Muelheim an der Ruhr",
+      "Mülheim an der Ruhr",
+      "Mulinhem",
+      "Mölm"
+    ]
   },
   "Murshidabad-India": {
     "name": "Murshidabad",
@@ -697786,64 +699494,6 @@
     },
     "other_names": [
       "Nizhny Lomov"
-    ]
-  },
-  "Nizhyn-Ukraine": {
-    "name": "Nizhyn",
-    "country": "Ukraine",
-    "key": "Nizhyn-Ukraine",
-    "is_interpolated": false,
-    "links": [
-      1900,
-      1950,
-      2000
-    ],
-    "population": {
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 2000,
-      "1550": 3000,
-      "1600": 4000,
-      "1650": 5000,
-      "1700": 6000,
-      "1750": 10000,
-      "1800": 12000,
-      "1850": 16000,
-      "1900": 30142.163160596156,
-      "1950": 45497.2526643093,
-      "2000": 78421.93570679061
-    },
-    "coords": [
-      51.0377956,
-      31.8880995
-    ],
-    "latitude": 51.0377956,
-    "longitude": 31.8880995,
-    "original_names": [
-      "nizhyn"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Nizhyn": 82000,
-      "Nezin": 75000
-    },
-    "name_coords": {
-      "Nizhyn": [
-        51.0377956,
-        31.8880995
-      ],
-      "Nezin": [
-        51.05,
-        31.9
-      ]
-    },
-    "other_names": [
-      "Nezin",
-      "Nejin",
-      "Nezhin",
-      "Nieshin",
-      "Nyezhin",
-      "njezjin"
     ]
   },
   "Nogent le Rotrou-France": {
@@ -699001,8 +700651,8 @@
       "2000": 5000
     },
     "coords": [
-      38.35,
-      13.32
+      45.90536513980399,
+      13.309867296153453
     ],
     "latitude": 45.9067948,
     "longitude": 13.3100707,
@@ -699015,8 +700665,8 @@
     },
     "name_coords": {
       "Palmanova": [
-        38.35,
-        13.32
+        45.90536513980399,
+        13.309867296153453
       ]
     },
     "other_names": []
@@ -700548,8 +702198,8 @@
       "2000": 28000
     },
     "coords": [
-      40.5,
-      17.13
+      40.849182340282894,
+      17.122798114464405
     ],
     "latitude": 40.85450489999999,
     "longitude": 17.1204066,
@@ -700562,8 +702212,8 @@
     },
     "name_coords": {
       "Putignano": [
-        40.5,
-        17.13
+        40.849182340282894,
+        17.122798114464405
       ]
     },
     "other_names": []
@@ -701733,55 +703383,6 @@
       "Rylsk": [
         51.58,
         34.65
-      ]
-    },
-    "other_names": []
-  },
-  "Rzhev-Russia": {
-    "name": "Rzhev",
-    "country": "Russia",
-    "key": "Rzhev-Russia",
-    "is_interpolated": false,
-    "links": [
-      1750,
-      1800,
-      1850
-    ],
-    "population": {
-      "1000": 1000,
-      "1100": 1000,
-      "1200": 2000,
-      "1300": 2000,
-      "1400": 1000,
-      "1500": 2000,
-      "1550": 2000,
-      "1600": 3000,
-      "1650": 3000,
-      "1700": 4000,
-      "1750": 5000,
-      "1800": 9000,
-      "1850": 14000,
-      "1900": 21000,
-      "1950": 50000,
-      "2000": 64000
-    },
-    "coords": [
-      56.27,
-      34.33
-    ],
-    "latitude": 56.2583967,
-    "longitude": 34.3283487,
-    "original_names": [
-      "rzhev"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Rzhev": 64000
-    },
-    "name_coords": {
-      "Rzhev": [
-        56.27,
-        34.33
       ]
     },
     "other_names": []
@@ -704458,6 +706059,62 @@
     ],
     "type": "chandler_modelski"
   },
+  "Sudak-Ukraine": {
+    "name": "Sudak",
+    "country": "Ukraine",
+    "key": "Sudak-Ukraine",
+    "is_interpolated": false,
+    "links": [
+      1300,
+      1400,
+      1800,
+      2000
+    ],
+    "population": {
+      "700": 2000,
+      "800": 3000,
+      "900": 5000,
+      "1000": 7000,
+      "1100": 10000,
+      "1200": 15000,
+      "1300": 18973.665961010276,
+      "1400": 17320.508075688773,
+      "1500": 1000,
+      "1550": 1000,
+      "1600": 1000,
+      "1650": 1000,
+      "1700": 1000,
+      "1750": 1000,
+      "1800": 1000,
+      "1850": 1000,
+      "1900": 2000,
+      "1950": 5000,
+      "2000": 14899.66442575134
+    },
+    "coords": [
+      44.85056218362535,
+      34.97615247921127
+    ],
+    "latitude": 48.379433,
+    "longitude": 31.16558,
+    "original_names": [
+      "sudak"
+    ],
+    "type": "buringh",
+    "name_peaks": {
+      "Sudak": 30000
+    },
+    "name_coords": {
+      "Sudak": [
+        44.85056218362535,
+        34.97615247921127
+      ]
+    },
+    "other_names": [
+      "Soldaia",
+      "Soudak"
+    ]
+  },
   "Sulechow-Poland": {
     "name": "Sulechow",
     "country": "Poland",
@@ -705683,56 +707340,6 @@
     },
     "other_names": []
   },
-  "Torzhok-Russia": {
-    "name": "Torzhok",
-    "country": "Russia",
-    "key": "Torzhok-Russia",
-    "is_interpolated": false,
-    "links": [
-      1750,
-      1800,
-      1850
-    ],
-    "population": {
-      "1100": 1000,
-      "1200": 1000,
-      "1300": 2000,
-      "1400": 2000,
-      "1500": 3000,
-      "1550": 3000,
-      "1600": 4000,
-      "1650": 4000,
-      "1700": 5000,
-      "1750": 7000,
-      "1800": 10000,
-      "1850": 11000,
-      "1900": 13000,
-      "1950": 35000,
-      "2000": 50000
-    },
-    "coords": [
-      57.05,
-      34.97
-    ],
-    "latitude": 57.0359338,
-    "longitude": 34.9690756,
-    "original_names": [
-      "torzhok"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Torzhok": 50000
-    },
-    "name_coords": {
-      "Torzhok": [
-        57.05,
-        34.97
-      ]
-    },
-    "other_names": [
-      "Torzok"
-    ]
-  },
   "Tournus-France": {
     "name": "Tournus",
     "country": "France",
@@ -706027,58 +707634,6 @@
       "tzintzuntzan"
     ],
     "type": "chandler_modelski"
-  },
-  "Uglich-Russia": {
-    "name": "Uglich",
-    "country": "Russia",
-    "key": "Uglich-Russia",
-    "is_interpolated": false,
-    "links": [
-      1750,
-      1800,
-      1850
-    ],
-    "population": {
-      "900": 1000,
-      "1000": 1000,
-      "1100": 2000,
-      "1200": 2000,
-      "1300": 2000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 2000,
-      "1750": 4000,
-      "1800": 7000,
-      "1850": 9000,
-      "1900": 16000,
-      "1950": 29000,
-      "2000": 38000
-    },
-    "coords": [
-      57.5,
-      38.33
-    ],
-    "latitude": 57.52392979999999,
-    "longitude": 38.3219031,
-    "original_names": [
-      "uglich"
-    ],
-    "type": "buringh",
-    "name_peaks": {
-      "Uglich": 38000
-    },
-    "name_coords": {
-      "Uglich": [
-        57.5,
-        38.33
-      ]
-    },
-    "other_names": [
-      "Ugliche Pole"
-    ]
   },
   "Ulcinj-Montenegro": {
     "name": "Ulcinj",
@@ -706607,8 +708162,8 @@
       "-499": 0
     },
     "coords": [
-      44.84881679999999,
-      9.5070148
+      42.023333,
+      12.389722
     ],
     "latitude": 44.84881679999999,
     "longitude": 9.5070148,
@@ -706793,8 +708348,8 @@
       "2000": 25000
     },
     "coords": [
-      43.78,
-      7.62
+      43.79116424530389,
+      7.607821626256117
     ],
     "latitude": 43.7912366,
     "longitude": 7.6075864,
@@ -706808,12 +708363,12 @@
     },
     "name_coords": {
       "Ventimiglia": [
-        43.7912366,
-        7.6075864
+        43.79132796727767,
+        7.607539156769697
       ],
       "Ventigmiglia": [
-        43.78,
-        7.62
+        43.79116424530389,
+        7.607821626256117
       ]
     },
     "other_names": [
@@ -709079,29 +710634,6 @@
     ],
     "type": "buringh"
   },
-  "Balashikha-Russia": {
-    "name": "Balashikha",
-    "coords": [
-      55.82,
-      37.97
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Balashikha-Russia",
-    "population": {
-      "1800": 1000,
-      "1850": 2000,
-      "1900": 11000,
-      "1950": 58000,
-      "2000": 148000
-    },
-    "original_names": [
-      "balashikha"
-    ],
-    "type": "buringh"
-  },
   "Balta-Ukraine": {
     "name": "Balta",
     "coords": [
@@ -709319,8 +710851,8 @@
   "Burscheid-Germany": {
     "name": "Burscheid",
     "coords": [
-      50.78,
-      6.08
+      51.08501063305291,
+      7.111007735889526
     ],
     "country": "Germany",
     "other_names": [
@@ -709703,34 +711235,6 @@
     "type": "buringh",
     "is_agglomeration_of": "london"
   },
-  "Dzerzhinsk-Russia": {
-    "name": "Dzerzhinsk",
-    "coords": [
-      56.23,
-      43.45
-    ],
-    "country": "Russia",
-    "other_names": [
-      "Rastyapino"
-    ],
-    "key": "Dzerzhinsk-Russia",
-    "population": {
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 2000,
-      "1800": 2000,
-      "1850": 3000,
-      "1900": 3000,
-      "1950": 164000,
-      "2000": 261000
-    },
-    "original_names": [
-      "dzerzhinsk",
-      "rastyapino"
-    ],
-    "type": "buringh"
-  },
   "Ejsk-Lithuania": {
     "name": "Ejsk",
     "coords": [
@@ -709813,40 +711317,6 @@
     },
     "original_names": [
       "ellesmere"
-    ],
-    "type": "buringh"
-  },
-  "Figuiera da Foz-Portugal": {
-    "name": "Figuiera da Foz",
-    "coords": [
-      40.15213824462043,
-      -8.85738384642249
-    ],
-    "country": "Portugal",
-    "other_names": [
-      "Figueira",
-      ""
-    ],
-    "key": "Figuiera da Foz-Portugal",
-    "population": {
-      "1200": 1000,
-      "1300": 2000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 2000,
-      "1600": 3000,
-      "1650": 4000,
-      "1700": 5000,
-      "1750": 7000,
-      "1800": 10000,
-      "1850": 8000,
-      "1900": 43000,
-      "1950": 58000,
-      "2000": 63000
-    },
-    "original_names": [
-      "figuiera da foz",
-      "figueira"
     ],
     "type": "buringh"
   },
@@ -710234,33 +711704,6 @@
     ],
     "type": "buringh"
   },
-  "Lyubertsy-Russia": {
-    "name": "Lyubertsy",
-    "coords": [
-      55.68,
-      37.88
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Lyubertsy-Russia",
-    "population": {
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 2000,
-      "1750": 4000,
-      "1800": 9000,
-      "1850": 20000,
-      "1900": 43000,
-      "1950": 93000,
-      "2000": 157000
-    },
-    "original_names": [
-      "lyubertsy"
-    ],
-    "type": "buringh"
-  },
   "Maladsetschna-Belarus": {
     "name": "Maladsetschna",
     "coords": [
@@ -710290,126 +711733,6 @@
     "original_names": [
       "maladsetschna",
       "maladzyechna"
-    ],
-    "type": "buringh"
-  },
-  "Mazzara-Italy": {
-    "name": "Mazzara",
-    "coords": [
-      38.2,
-      15.12
-    ],
-    "country": "Italy",
-    "other_names": [
-      "Mazara del Vallo",
-      "Mazar",
-      ""
-    ],
-    "key": "Mazzara-Italy",
-    "population": {
-      "700": 2000,
-      "800": 2000,
-      "900": 2000,
-      "1000": 2000,
-      "1100": 3000,
-      "1200": 3000,
-      "1300": 4000,
-      "1400": 1000,
-      "1500": 3000,
-      "1550": 5000,
-      "1600": 7000,
-      "1650": 7000,
-      "1700": 7000,
-      "1750": 8000,
-      "1800": 8000,
-      "1850": 11000,
-      "1900": 2000,
-      "1950": 2000,
-      "2000": 2000
-    },
-    "original_names": [
-      "mazzara",
-      "mazara del vallo",
-      "mazar"
-    ],
-    "type": "buringh"
-  },
-  "Micurinsk-Russia": {
-    "name": "Micurinsk",
-    "coords": [
-      49.55,
-      25.33
-    ],
-    "country": "Russia",
-    "other_names": [
-      "Koslov",
-      "Kolov",
-      "Kozlov",
-      "Michurinsk",
-      "Mitsjoerinsk"
-    ],
-    "key": "Micurinsk-Russia",
-    "population": {
-      "1650": 1000,
-      "1700": 3000,
-      "1750": 7000,
-      "1800": 12000,
-      "1850": 21000,
-      "1900": 40000,
-      "1950": 90000,
-      "2000": 96000
-    },
-    "original_names": [
-      "micurinsk",
-      "koslov",
-      "kolov",
-      "kozlov",
-      "michurinsk",
-      "mitsjoerinsk"
-    ],
-    "type": "buringh"
-  },
-  "Moenchengladbach-Germany": {
-    "name": "Moenchengladbach",
-    "coords": [
-      50.18,
-      6.45
-    ],
-    "country": "Germany",
-    "other_names": [
-      "Moenchengladbach",
-      "Gladebach",
-      "Monichgladebach",
-      "Moenchsgladbach",
-      "Monnike Gladbeeck",
-      "Munneke Glebbek"
-    ],
-    "key": "Moenchengladbach-Germany",
-    "population": {
-      "1000": 1000,
-      "1100": 1000,
-      "1200": 1000,
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 1000,
-      "1800": 1000,
-      "1850": 4000,
-      "1900": 58000,
-      "1950": 125000,
-      "2000": 263000
-    },
-    "original_names": [
-      "moenchengladbach",
-      "gladebach",
-      "monichgladebach",
-      "moenchsgladbach",
-      "monnike gladbeeck",
-      "munneke glebbek"
     ],
     "type": "buringh"
   },
@@ -710553,111 +711876,6 @@
     ],
     "type": "buringh"
   },
-  "Montesarchio-Italy": {
-    "name": "Montesarchio",
-    "coords": [
-      41.07,
-      14.63
-    ],
-    "country": "Italy",
-    "other_names": [
-      ""
-    ],
-    "key": "Montesarchio-Italy",
-    "population": {
-      "700": 1000,
-      "800": 2000,
-      "900": 2000,
-      "1000": 2000,
-      "1100": 3000,
-      "1200": 3000,
-      "1300": 3000,
-      "1400": 2000,
-      "1500": 3000,
-      "1550": 3000,
-      "1600": 4000,
-      "1650": 4000,
-      "1700": 4000,
-      "1750": 5000,
-      "1800": 6000,
-      "1850": 7000,
-      "1900": 7000,
-      "1950": 11000,
-      "2000": 14000
-    },
-    "original_names": [
-      "montesarchio"
-    ],
-    "type": "buringh"
-  },
-  "Muelheim an der Ruhr-Germany": {
-    "name": "Muelheim an der Ruhr",
-    "coords": [
-      51.42,
-      6.83
-    ],
-    "country": "Germany",
-    "other_names": [
-      "Mülheim an der Ruhr",
-      "Mulinhem",
-      "Mölm"
-    ],
-    "key": "Muelheim an der Ruhr-Germany",
-    "population": {
-      "1100": 1000,
-      "1200": 1000,
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 2000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 3000,
-      "1750": 4000,
-      "1800": 5000,
-      "1850": 10000,
-      "1900": 38000,
-      "1950": 150000,
-      "2000": 173000
-    },
-    "original_names": [
-      "muelheim an der ruhr",
-      "mülheim an der ruhr",
-      "mulinhem",
-      "mölm"
-    ],
-    "type": "buringh"
-  },
-  "Mytishchi-Russia": {
-    "name": "Mytishchi",
-    "coords": [
-      55.93,
-      37.73
-    ],
-    "country": "Russia",
-    "other_names": [
-      "Bolshiye Mytishchi"
-    ],
-    "key": "Mytishchi-Russia",
-    "population": {
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 1000,
-      "1800": 1000,
-      "1850": 1000,
-      "1900": 1000,
-      "1950": 99000,
-      "2000": 160000
-    },
-    "original_names": [
-      "mytishchi",
-      "bolshiye mytishchi"
-    ],
-    "type": "buringh"
-  },
   "Nagykoeroes-Hungary": {
     "name": "Nagykoeroes",
     "coords": [
@@ -710785,8 +712003,8 @@
   "Novocheboksarsk-Russia": {
     "name": "Novocheboksarsk",
     "coords": [
-      56.12,
-      47.5
+      56.10279539344352,
+      47.50500150389409
     ],
     "country": "Russia",
     "other_names": [
@@ -710799,27 +712017,6 @@
     },
     "original_names": [
       "novocheboksarsk"
-    ],
-    "type": "buringh"
-  },
-  "Novoshakhtinsk-Russia": {
-    "name": "Novoshakhtinsk",
-    "coords": [
-      47.77,
-      39.92
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Novoshakhtinsk-Russia",
-    "population": {
-      "1900": 1000,
-      "1950": 103000,
-      "2000": 101000
-    },
-    "original_names": [
-      "novoshakhtinsk"
     ],
     "type": "buringh"
   },
@@ -710859,38 +712056,6 @@
     "original_names": [
       "oldenburg",
       "aldenburg"
-    ],
-    "type": "buringh"
-  },
-  "Orekhovo-Zuyevo-Russia": {
-    "name": "Orekhovo-Zuyevo",
-    "coords": [
-      55.8,
-      28.97
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Orekhovo-Zuyevo-Russia",
-    "population": {
-      "1200": 1000,
-      "1300": 1000,
-      "1400": 1000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 2000,
-      "1650": 2000,
-      "1700": 3000,
-      "1750": 3000,
-      "1800": 4000,
-      "1850": 9000,
-      "1900": 22000,
-      "1950": 108000,
-      "2000": 122000
-    },
-    "original_names": [
-      "orekhovo-zuyevo"
     ],
     "type": "buringh"
   },
@@ -711448,46 +712613,6 @@
     ],
     "type": "buringh"
   },
-  "Sudak-Ukraine": {
-    "name": "Sudak",
-    "coords": [
-      44.87,
-      34.95
-    ],
-    "country": "Ukraine",
-    "other_names": [
-      "Soldaia",
-      "Soudak"
-    ],
-    "key": "Sudak-Ukraine",
-    "population": {
-      "700": 2000,
-      "800": 3000,
-      "900": 5000,
-      "1000": 7000,
-      "1100": 10000,
-      "1200": 15000,
-      "1300": 12000,
-      "1400": 10000,
-      "1500": 1000,
-      "1550": 1000,
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 1000,
-      "1800": 1000,
-      "1850": 1000,
-      "1900": 2000,
-      "1950": 5000,
-      "2000": 15000
-    },
-    "original_names": [
-      "sudak",
-      "soldaia",
-      "soudak"
-    ],
-    "type": "buringh"
-  },
   "Sudza-Russia": {
     "name": "Sudza",
     "coords": [
@@ -711659,26 +712784,6 @@
     ],
     "type": "buringh"
   },
-  "Volzhsky-Russia": {
-    "name": "Volzhsky",
-    "coords": [
-      48.78,
-      44.77
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Volzhsky-Russia",
-    "population": {
-      "1950": 67000,
-      "2000": 287000
-    },
-    "original_names": [
-      "volzhsky"
-    ],
-    "type": "buringh"
-  },
   "Voskopoje-Albania": {
     "name": "Voskopoje",
     "coords": [
@@ -711825,57 +712930,6 @@
     "original_names": [
       "yniesta",
       "iniesta"
-    ],
-    "type": "buringh"
-  },
-  "Yoshkar-Ola-Russia": {
-    "name": "Yoshkar-Ola",
-    "coords": [
-      56.63,
-      47.87
-    ],
-    "country": "Russia",
-    "other_names": [
-      "Tsaryovokokshaysk",
-      "Krasnokokshaysk"
-    ],
-    "key": "Yoshkar-Ola-Russia",
-    "population": {
-      "1600": 1000,
-      "1650": 1000,
-      "1700": 1000,
-      "1750": 1000,
-      "1800": 1000,
-      "1850": 2000,
-      "1900": 2000,
-      "1950": 88000,
-      "2000": 257000
-    },
-    "original_names": [
-      "yoshkar-ola",
-      "tsaryovokokshaysk",
-      "krasnokokshaysk"
-    ],
-    "type": "buringh"
-  },
-  "Zheleznoorozhny-Russia": {
-    "name": "Zheleznoorozhny",
-    "coords": [
-      55.75,
-      38.02
-    ],
-    "country": "Russia",
-    "other_names": [
-      ""
-    ],
-    "key": "Zheleznoorozhny-Russia",
-    "population": {
-      "1900": 1000,
-      "1950": 40000,
-      "2000": 104000
-    },
-    "original_names": [
-      "zheleznoorozhny"
     ],
     "type": "buringh"
   },
