@@ -253,7 +253,7 @@
 		console.log(` - Urban Population: ${parseNumber(getImageSum(output_file_path))}`);
 	};
 	
-	global.generateStadesterRasters = function () {
+	global.generateOriginalStadesterRasters = function () {
 		//Declare local instance variables
 		var hyde_years = config.uud.processing.hyde_years.concat([2024, 2025]);
 		var stadester_buffering_obj = getStadesterBufferingObject();

@@ -104,10 +104,12 @@
 				
 				processCitiesAreas();
 				cacheRadialBuffers();
-				generateStadesterRasters();
-				processStadester();
-				getStadesterGHSLObject();
 			}
+			
+			//Generate base rasters
+			generateOriginalStadesterRasters();
+			processStadester();
+			getStadesterGHSLObject();
 			
 			//Generate post-addendum rasters
 			generateStadesterUrbanRasters();
@@ -129,7 +131,7 @@
 			
 			processCitiesAreas();
 			cacheRadialBuffers();
-			generateStadesterRasters();
+			generateOriginalStadesterRasters();
 			processStadester();
 			getStadesterGHSLObject();
 			
