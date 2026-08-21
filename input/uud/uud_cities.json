@@ -676229,11 +676229,10 @@
     "type": "populstat"
   },
   "Bava-Sudan": {
-    "name": "Meroe",
+    "name": "Napata",
     "population": {
-      "0": 36500,
       "1955": 6021.627686929839,
-      "-500": 46412.83227729159
+      "-500": 45833
     },
     "coords": [
       12.862807,
@@ -676247,32 +676246,26 @@
     "type": "populstat",
     "name_peaks": {
       "Bava": 4900,
-      "Meroe": 47000,
-      "Suki": 7400,
-      "Napata": 45833
+      "Napata": 45833,
+      "Suki": 7400
     },
     "name_coords": {
       "Bava": [
         12.862807,
         30.217636
       ],
-      "Meroe": [
+      "Napata": [
         12.862807,
         30.217636
       ],
       "Suki": [
         12.862807,
         30.217636
-      ],
-      "Napata": [
-        12.862807,
-        30.217636
       ]
     },
     "other_names": [
       "Bava",
-      "Suki",
-      "Napata"
+      "Suki"
     ]
   },
   "Berber-Sudan": {
@@ -699263,6 +699256,30 @@
     "longitude": 32.7453101,
     "original_names": [
       "mengo"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Meroe-Sudan": {
+    "name": "Meroe",
+    "country": "Sudan",
+    "key": "Meroe-Sudan",
+    "is_interpolated": false,
+    "links": [
+      -500,
+      0
+    ],
+    "population": {
+      "0": 36500,
+      "-500": 47000
+    },
+    "coords": [
+      16.933333,
+      33.726389
+    ],
+    "latitude": 12.862807,
+    "longitude": 30.217636,
+    "original_names": [
+      "meroe"
     ],
     "type": "chandler_modelski"
   },
