@@ -28,39 +28,23 @@
     "type": "populstat"
   },
   "Âqcê-Afghanistan": {
-    "name": "Sharikar",
+    "name": "Terîn Kôt",
     "province": "JW",
     "elevation": 332,
     "other_names": [
       "Aktscha. Aqchah",
-      "Narang",
-      "Qala-i-Hazâr Qadam",
-      "Hazâr Qadam",
-      "Ôrûzgân",
       "Âqcê",
-      "Qala-i-Nau",
-      "Qala Nau",
-      "Kalainow",
-      "Qaleh-yeNow",
-      "Qal'a-ye Nau",
-      "Charikar",
-      "`Cârîkâr",
-      "Mundigak",
-      "Terîn Kôt",
       "Tareenkoot",
       "Tarin Kowt",
       "Tirin Kot",
       "Terincot"
     ],
     "population": {
-      "1950": 30638.87062800407,
-      "1966": 83700,
-      "1975": 69530.18718654876,
+      "1950": 45000,
+      "1975": 49000,
       "1979": 15000,
-      "1980": 5869.412236331676,
-      "1982": 7894.232825523009,
-      "1988": 26500,
-      "-2000": 10000
+      "1980": 6500,
+      "1982": 3500
     },
     "coords": [
       33.93911,
@@ -75,35 +59,10 @@
     "type": "populstat",
     "name_peaks": {
       "Âqcê": 45000,
-      "Narang": 30000,
-      "Qala-i-Hazâr Qadam": 20000,
-      "Qal'a-ye Nau": 70000,
-      "Sharikar": 98000,
-      "Mundigak": 10000,
       "Terîn Kôt": 49000
     },
     "name_coords": {
       "Âqcê": [
-        33.93911,
-        67.709953
-      ],
-      "Narang": [
-        33.93911,
-        67.709953
-      ],
-      "Qala-i-Hazâr Qadam": [
-        33.93911,
-        67.709953
-      ],
-      "Qal'a-ye Nau": [
-        33.93911,
-        67.709953
-      ],
-      "Sharikar": [
-        33.93911,
-        67.709953
-      ],
-      "Mundigak": [
         33.93911,
         67.709953
       ],
@@ -976,7 +935,7 @@
       "1980": 122600,
       "1982": 110400,
       "1988": 130600,
-      "1997": 2500000
+      "1997": 250000
     },
     "coords": [
       36.69261669999999,
@@ -1032,6 +991,23 @@
       "mukur",
       "moqor",
       "muqur"
+    ],
+    "type": "populstat"
+  },
+  "Narang-Afghanistan": {
+    "name": "Narang",
+    "province": "KO",
+    "population": {
+      "1950": 30000
+    },
+    "coords": [
+      34.76009,
+      71.04738
+    ],
+    "country": "Afghanistan",
+    "key": "Narang-Afghanistan",
+    "original_names": [
+      "narang"
     ],
     "type": "populstat"
   },
@@ -1115,6 +1091,59 @@
       "bust",
       "kala bist",
       "qala-i-bist"
+    ],
+    "type": "populstat"
+  },
+  "Qala-i-Hazâr Qadam-Afghanistan": {
+    "name": "Qala-i-Hazâr Qadam",
+    "province": "OR",
+    "other_names": [
+      "Hazâr Qadam",
+      "Ôrûzgân"
+    ],
+    "population": {
+      "1950": 20000
+    },
+    "coords": [
+      32.93017064032708,
+      66.63448023496046
+    ],
+    "country": "Afghanistan",
+    "key": "Qala-i-Hazâr Qadam-Afghanistan",
+    "original_names": [
+      "qala-i-hazâr qadam",
+      "hazâr qadam",
+      "ôrûzgân"
+    ],
+    "type": "populstat"
+  },
+  "Qal'a-ye Nau-Afghanistan": {
+    "name": "Qal'a-ye Nau",
+    "province": "BG*",
+    "other_names": [
+      "Qala-i-Nau",
+      "Qala Nau",
+      "Kalainow",
+      "Qaleh-yeNow"
+    ],
+    "population": {
+      "1950": 20000,
+      "1975": 70000,
+      "1980": 5300,
+      "1982": 5600
+    },
+    "coords": [
+      34.9863651173047,
+      63.12599975878188
+    ],
+    "country": "Afghanistan",
+    "key": "Qal'a-ye Nau-Afghanistan",
+    "original_names": [
+      "qal'a-ye nau",
+      "qala-i-nau",
+      "qala nau",
+      "kalainow",
+      "qaleh-yenow"
     ],
     "type": "populstat"
   },
@@ -1247,6 +1276,34 @@
     "original_names": [
       "sar-e pol",
       "sar-i pul"
+    ],
+    "type": "populstat"
+  },
+  "Sharikar-Afghanistan": {
+    "name": "Sharikar",
+    "province": "PR*",
+    "elevation": 1615,
+    "other_names": [
+      "Charikar",
+      "`Cârîkâr"
+    ],
+    "population": {
+      "1950": 50000,
+      "1966": 83700,
+      "1975": 98000,
+      "1982": 25100,
+      "1988": 26500
+    },
+    "coords": [
+      35.010617760005,
+      69.16395621609978
+    ],
+    "country": "Afghanistan",
+    "key": "Sharikar-Afghanistan",
+    "original_names": [
+      "sharikar",
+      "charikar",
+      "`cârîkâr"
     ],
     "type": "populstat"
   },
@@ -6316,8 +6373,8 @@
       "1987": 16000
     },
     "coords": [
-      12.4651824,
-      103.8911999
+      12.538613153853781,
+      103.90615987834943
     ],
     "country": "Cambodia",
     "key": "Pouthisat-Cambodia",
@@ -6470,78 +6527,18 @@
     "type": "populstat"
   },
   "Abagnar Qi-China": {
-    "name": "Boyang",
+    "name": "Abagnar Qi",
     "prov.": "NM",
     "position": 435811604,
     "other_names": [
-      "Xilinhot",
-      "Abagnar Qi",
-      "Po-hsing",
-      "Hsuchow (SC-China)",
-      "Boxing",
-      "Po-yang",
-      "Poyang",
-      "Tainan (SD-China)",
-      "Yenhsiatu",
-      "Butha Qi",
-      "Zalantun",
-      "Da'an",
-      "Dalai",
-      "Ta-an",
-      "Ta-lai",
-      "Daxian",
-      "Da Xian",
-      "Dachuan",
-      "Ta-hsien",
-      "Dukou",
-      "Tukou",
-      "Tu-k'ou",
-      "Panzhihua",
-      "Huaide",
-      "Hwaite",
-      "Huide",
-      "Gongzhuling",
-      "Jiawang",
-      "N'aizishen",
-      "Nai-tzu-shan",
-      "Orogen-Zizhiqi",
-      "Alihe",
-      "Oroqen Zizhiqi",
-      "Quanwan",
-      "Tsuen wan",
-      "Sha Tin",
-      "Tia Po",
-      "Dabu",
-      "Tuen Mun",
-      "Tunmen",
-      "Xuguit Qi",
-      "Yakeshi",
-      "Ya-k' o-shih",
-      "Hsi-kuei-t' u-ch'i",
-      "Zouxian",
-      "Zoucheng",
-      "Tsou-hsien",
-      "Ye"
+      "Xilinhot"
     ],
     "population": {
-      "400": 110000,
-      "600": 97000,
-      "1900": 45000,
-      "1958": 60000,
-      "1970": 267700,
-      "1975": 65842.9137552466,
-      "1981": 610500,
-      "1983": 310205.65758863906,
-      "1984": 355549.96891649213,
-      "1985": 155062.45103975057,
-      "1990": 715127.5830227778,
-      "1994": 565931.7720459815,
-      "2000": 750000,
-      "-500": 183636
+      "1985": 100700
     },
     "coords": [
-      35.86166,
-      104.195397
+      43.932936441155775,
+      116.085243598346
     ],
     "country": "China",
     "key": "Abagnar Qi-China",
@@ -6549,117 +6546,7 @@
       "abagnar qi",
       "xilinhot"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Abagnar Qi": 100700,
-      "Boxing": 444200,
-      "Hsuchow (SC-China)": 45000,
-      "Boyang": 1151300,
-      "Tainan (SD-China)": 750000,
-      "Yenhsiatu": 183636,
-      "Butha Qi": 389500,
-      "Da'an": 413400,
-      "Daxian": 336500,
-      "Dukou": 584800,
-      "Huaide": 997700,
-      "Jiawang": 50000,
-      "N'aizishen": 52000,
-      "Orogen-Zizhiqi": 48000,
-      "Quanwan": 610500,
-      "Sha Tin": 500000,
-      "Tia Po": 119700,
-      "Tuen Mun": 262500,
-      "Xuguit Qi": 425600,
-      "Zouxian": 1076500,
-      "Ye": 110000
-    },
-    "name_coords": {
-      "Abagnar Qi": [
-        35.86166,
-        104.195397
-      ],
-      "Boxing": [
-        35.86166,
-        104.195397
-      ],
-      "Hsuchow (SC-China)": [
-        35.86166,
-        104.195397
-      ],
-      "Boyang": [
-        35.86166,
-        104.195397
-      ],
-      "Tainan (SD-China)": [
-        35.86166,
-        104.195397
-      ],
-      "Yenhsiatu": [
-        35.86166,
-        104.195397
-      ],
-      "Butha Qi": [
-        35.86166,
-        104.195397
-      ],
-      "Da'an": [
-        35.86166,
-        104.195397
-      ],
-      "Daxian": [
-        35.86166,
-        104.195397
-      ],
-      "Dukou": [
-        35.86166,
-        104.195397
-      ],
-      "Huaide": [
-        35.86166,
-        104.195397
-      ],
-      "Jiawang": [
-        35.86166,
-        104.195397
-      ],
-      "N'aizishen": [
-        35.86166,
-        104.195397
-      ],
-      "Orogen-Zizhiqi": [
-        35.86166,
-        104.195397
-      ],
-      "Quanwan": [
-        35.86166,
-        104.195397
-      ],
-      "Sha Tin": [
-        35.86166,
-        104.195397
-      ],
-      "Tia Po": [
-        35.86166,
-        104.195397
-      ],
-      "Tuen Mun": [
-        35.86166,
-        104.195397
-      ],
-      "Xuguit Qi": [
-        35.86166,
-        104.195397
-      ],
-      "Zouxian": [
-        35.86166,
-        104.195397
-      ],
-      "Ye": [
-        35.86166,
-        104.195397
-      ]
-    },
-    "is_agglomeration_of": "xianggang"
+    "type": "populstat"
   },
   "Acheng-China": {
     "name": "Acheng",
@@ -7700,6 +7587,78 @@
     ],
     "type": "populstat"
   },
+  "Boxing-China": {
+    "name": "Boxing",
+    "prov.": "SD",
+    "position": 370811805,
+    "other_names": [
+      "Po-hsing"
+    ],
+    "population": {
+      "1985": 57600,
+      "1990": 444200
+    },
+    "coords": [
+      37.152815021546694,
+      118.11044006548276
+    ],
+    "country": "China",
+    "key": "Boxing-China",
+    "original_names": [
+      "boxing",
+      "po-hsing"
+    ],
+    "type": "populstat"
+  },
+  "Boyang-China": {
+    "name": "Boyang",
+    "prov.": "JX",
+    "position": 285911640,
+    "other_names": [
+      "Po-yang",
+      "Poyang"
+    ],
+    "population": {
+      "1985": 60700,
+      "1990": 1151300
+    },
+    "coords": [
+      29.00601866263771,
+      116.70464537830325
+    ],
+    "country": "China",
+    "key": "Boyang-China",
+    "original_names": [
+      "boyang",
+      "po-yang",
+      "poyang"
+    ],
+    "type": "populstat"
+  },
+  "Butha Qi-China": {
+    "name": "Butha Qi",
+    "prov.": "NM",
+    "position": 480212243,
+    "other_names": [
+      "Zalantun"
+    ],
+    "population": {
+      "1975": 55000,
+      "1984": 389400,
+      "1985": 389500
+    },
+    "coords": [
+      48.01351974325168,
+      122.73696565565426
+    ],
+    "country": "China",
+    "key": "Butha Qi-China",
+    "original_names": [
+      "butha qi",
+      "zalantun"
+    ],
+    "type": "populstat"
+  },
   "Cangshan-China": {
     "name": "Cangshan",
     "prov.": "ZJ",
@@ -8564,6 +8523,33 @@
     ],
     "type": "populstat"
   },
+  "Da'an-China": {
+    "name": "Da'an",
+    "prov.": "JL",
+    "position": 484711659,
+    "other_names": [
+      "Dalai",
+      "Ta-an",
+      "Ta-lai"
+    ],
+    "population": {
+      "1985": 70600,
+      "1994": 413400
+    },
+    "coords": [
+      45.5,
+      124.283333
+    ],
+    "country": "China",
+    "key": "Da'an-China",
+    "original_names": [
+      "da'an",
+      "dalai",
+      "ta-an",
+      "ta-lai"
+    ],
+    "type": "populstat"
+  },
   "Dachangzhen-China": {
     "name": "Dachangzhen",
     "prov.": "JS",
@@ -8841,6 +8827,35 @@
     "key": "Dawa-China",
     "original_names": [
       "dawa"
+    ],
+    "type": "populstat"
+  },
+  "Daxian-China": {
+    "name": "Daxian",
+    "prov.": "SC",
+    "position": 311610731,
+    "other_names": [
+      "Da Xian",
+      "Dachuan",
+      "Ta-hsien"
+    ],
+    "population": {
+      "1983": 193500,
+      "1984": 200400,
+      "1985": 209400,
+      "1994": 336500
+    },
+    "coords": [
+      31.2,
+      107.516667
+    ],
+    "country": "China",
+    "key": "Daxian-China",
+    "original_names": [
+      "daxian",
+      "da xian",
+      "dachuan",
+      "ta-hsien"
     ],
     "type": "populstat"
   },
@@ -9158,6 +9173,52 @@
       "Dongying (SD-China)": [
         37.4336499,
         118.67466
+      ]
+    }
+  },
+  "Dukou-China": {
+    "name": "Panzhihua",
+    "prov.": "SC",
+    "position": 263310144,
+    "other_names": [
+      "Tukou",
+      "Tu-k'ou",
+      "Panzhihua",
+      "Dukou"
+    ],
+    "population": {
+      "1975": 120000,
+      "1983": 497300,
+      "1984": 528900,
+      "1985": 551200,
+      "1994": 584800,
+      "2000": 770000
+    },
+    "coords": [
+      26.5822799,
+      101.71872
+    ],
+    "country": "China",
+    "key": "Dukou-China",
+    "original_names": [
+      "dukou",
+      "tukou",
+      "tu-k'ou",
+      "panzhihua"
+    ],
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Dukou": 584800,
+      "Panzhihua": 770000
+    },
+    "name_coords": {
+      "Dukou": [
+        26.5824,
+        101.7184
+      ],
+      "Panzhihua": [
+        26.5822799,
+        101.71872
       ]
     }
   },
@@ -9530,8 +9591,8 @@
       "1985": 960700
     },
     "coords": [
-      35.9877899,
-      109.37976
+      39.693210677404124,
+      121.79725906051563
     ],
     "country": "China",
     "key": "Fuxian-China",
@@ -11421,6 +11482,54 @@
       ]
     }
   },
+  "Huaide-China": {
+    "name": "Huaide",
+    "prov.": "JL",
+    "position": 433012448,
+    "other_names": [
+      "Hwaite",
+      "Huide",
+      "Gongzhuling",
+      "Quanwan",
+      "Tsuen wan"
+    ],
+    "population": {
+      "1958": 60000,
+      "1970": 267700,
+      "1975": 75000,
+      "1981": 610500,
+      "1985": 680052.556792488,
+      "1994": 997700
+    },
+    "coords": [
+      35.86166,
+      104.195397
+    ],
+    "country": "China",
+    "key": "Huaide-China",
+    "original_names": [
+      "huaide",
+      "hwaite",
+      "huide",
+      "gongzhuling"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Huaide": 997700,
+      "Quanwan": 610500
+    },
+    "name_coords": {
+      "Huaide": [
+        35.86166,
+        104.195397
+      ],
+      "Quanwan": [
+        35.86166,
+        104.195397
+      ]
+    },
+    "is_agglomeration_of": "xianggang"
+  },
   "Huaihua-China": {
     "name": "Huaihua",
     "prov.": "HN",
@@ -12168,6 +12277,25 @@
         113.24201
       ]
     }
+  },
+  "Jiawang-China": {
+    "name": "Jiawang",
+    "prov.": "JS",
+    "position": 343011726,
+    "population": {
+      "1975": 50000,
+      "1985": 50000
+    },
+    "coords": [
+      34.4184,
+      117.5033
+    ],
+    "country": "China",
+    "key": "Jiawang-China",
+    "original_names": [
+      "jiawang"
+    ],
+    "type": "populstat"
   },
   "Jiaxing-China": {
     "name": "Jiaxing",
@@ -14910,6 +15038,28 @@
     ],
     "type": "populstat"
   },
+  "N'aizishen-China": {
+    "name": "N'aizishen",
+    "prov.": "JL",
+    "position": 434312726,
+    "other_names": [
+      "Nai-tzu-shan"
+    ],
+    "population": {
+      "1985": 52000
+    },
+    "coords": [
+      47.5169,
+      122.8878
+    ],
+    "country": "China",
+    "key": "N'aizishen-China",
+    "original_names": [
+      "n'aizishen",
+      "nai-tzu-shan"
+    ],
+    "type": "populstat"
+  },
   "Nancha-China": {
     "name": "Nancha",
     "prov.": "HL",
@@ -15464,6 +15614,30 @@
     "original_names": [
       "nunjiang",
       "nenjiang"
+    ],
+    "type": "populstat"
+  },
+  "Orogen-Zizhiqi-China": {
+    "name": "Orogen-Zizhiqi",
+    "prov.": "NM",
+    "position": 503412340,
+    "other_names": [
+      "Alihe",
+      "Oroqen Zizhiqi"
+    ],
+    "population": {
+      "1985": 48000
+    },
+    "coords": [
+      50.42241428677463,
+      124.1011261364162
+    ],
+    "country": "China",
+    "key": "Orogen-Zizhiqi-China",
+    "original_names": [
+      "orogen-zizhiqi",
+      "alihe",
+      "oroqen zizhiqi"
     ],
     "type": "populstat"
   },
@@ -17005,6 +17179,46 @@
       ]
     }
   },
+  "Sha Tin-China": {
+    "name": "Sha Tin",
+    "prov.": "XG",
+    "particulars": "agglomeration of Xianggang/Hong Kong",
+    "position": 222311411,
+    "population": {
+      "1985": 355800,
+      "1991": 355800,
+      "1994": 500000
+    },
+    "coords": [
+      22.3870701026079,
+      114.1953671644058
+    ],
+    "is_agglomeration_of": "xianggang",
+    "country": "China",
+    "key": "Sha Tin-China",
+    "is_agglomeration": false,
+    "original_names": [
+      "sha tin"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Sha Tin": 500000,
+      "Shatian": 355800
+    },
+    "name_coords": {
+      "Sha Tin": [
+        22.3870701026079,
+        114.1953671644058
+      ],
+      "Shatian": [
+        22.386408,
+        114.2093287
+      ]
+    },
+    "other_names": [
+      "Shatian"
+    ]
+  },
   "Shenxian-China": {
     "name": "Shenxian",
     "prov.": "SD",
@@ -17806,7 +18020,8 @@
     "position": 361511710,
     "other_names": [
       "T'ai-an",
-      "Taian"
+      "Taian",
+      "Tainan (SD-China)"
     ],
     "population": {
       "1800": 35000,
@@ -17818,7 +18033,7 @@
       "1985": 1325400,
       "1994": 1443100,
       "1995": 1460000,
-      "2000": 1325400
+      "2000": 997020.561473032
     },
     "coords": [
       36.1999399,
@@ -17834,7 +18049,8 @@
     "type": "chandler_modelski",
     "name_peaks": {
       "Tai'an": 1460000,
-      "Taian": 1325400
+      "Taian": 1325400,
+      "Tainan (SD-China)": 750000
     },
     "name_coords": {
       "Tai'an": [
@@ -17844,6 +18060,10 @@
       "Taian": [
         36.1999399,
         117.0884
+      ],
+      "Tainan (SD-China)": [
+        36.19858734232717,
+        117.08884459312755
       ]
     }
   },
@@ -18181,6 +18401,29 @@
       ]
     }
   },
+  "Tia Po-China": {
+    "name": "Tia Po",
+    "prov.": "XG",
+    "particulars": "Taipo (a typo in source IA?)",
+    "position": 222711409,
+    "other_names": [
+      "Dabu"
+    ],
+    "population": {
+      "1985": 119700
+    },
+    "coords": [
+      22.442125455670983,
+      114.16678078763144
+    ],
+    "country": "China",
+    "key": "Tia Po-China",
+    "original_names": [
+      "tia po",
+      "dabu"
+    ],
+    "type": "populstat"
+  },
   "Tiefa-China": {
     "name": "Tiefa",
     "prov.": "LN",
@@ -18434,6 +18677,31 @@
     "other_names": [
       "Tongxiang"
     ]
+  },
+  "Tuen Mun-China": {
+    "name": "Tuen Mun",
+    "prov.": "XG",
+    "particulars": "agglomeration of Xianggang/Hong Kong",
+    "position": 222411358,
+    "other_names": [
+      "Tunmen"
+    ],
+    "population": {
+      "1985": 262500
+    },
+    "coords": [
+      22.39021824188756,
+      113.97260029169745
+    ],
+    "is_agglomeration_of": "xianggang",
+    "country": "China",
+    "key": "Tuen Mun-China",
+    "is_agglomeration": false,
+    "original_names": [
+      "tuen mun",
+      "tunmen"
+    ],
+    "type": "populstat"
   },
   "Tumen-China": {
     "name": "Tumen",
@@ -19566,31 +19834,50 @@
     }
   },
   "Xianggang-China": {
-    "name": "Xianggang",
+    "name": "Hong Kong",
     "prov.": "XG",
     "particulars": 1997,
     "position": 221711409,
     "other_names": [
-      "Hong Kong"
+      "Hong Kong",
+      "Xianggang",
+      "Victoria",
+      "Hsiang Kang"
     ],
     "population": {
+      "1850": 66500,
       "1879": 111000,
+      "1881": 102000,
       "1890": 171000,
-      "1900": 210000,
+      "1891": 171000,
+      "1900": 200798.40636817814,
+      "1901": 168300,
       "1911": 255000,
       "1920": 342000,
+      "1921": 342000,
+      "1925": 751116,
       "1930": 358000,
+      "1931": 358400,
       "1936": 378000,
+      "1950": 2106250,
+      "1951": 365000,
       "1958": 633000,
-      "1970": 521600,
-      "1981": 1100000,
+      "1961": 633000,
+      "1966": 694500,
+      "1970": 1478108.6076469482,
+      "1971": 521600,
+      "1975": 4856304,
+      "1976": 501700,
+      "1981": 806151.3505539763,
       "1983": 1183600,
       "1985": 4770000,
-      "1994": 1251000
+      "1994": 1251000,
+      "1997": 260000,
+      "2000": 5801000
     },
     "coords": [
-      23.386525,
-      112.828483
+      22.279973633399635,
+      114.1588267879502
     ],
     "country": "China",
     "key": "Xianggang-China",
@@ -19598,7 +19885,22 @@
       "xianggang",
       "hong kong"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Xianggang": 4770000,
+      "Hong Kong": 5801000
+    },
+    "name_coords": {
+      "Xianggang": [
+        22.279973633399635,
+        114.1588267879502
+      ],
+      "Hong Kong": [
+        22.279973633399635,
+        114.1588267879502
+      ]
+    },
+    "is_agglomeration_of": "jiulong"
   },
   "Xiangtan-China": {
     "name": "Xiangtan",
@@ -20310,6 +20612,35 @@
       ]
     }
   },
+  "Xuguit Qi-China": {
+    "name": "Xuguit Qi",
+    "prov.": "NM",
+    "position": 491712048,
+    "other_names": [
+      "Yakeshi",
+      "Ya-k' o-shih",
+      "Hsi-kuei-t' u-ch'i"
+    ],
+    "population": {
+      "1975": 50000,
+      "1984": 387200,
+      "1985": 390000,
+      "1994": 425600
+    },
+    "coords": [
+      49.285572390507774,
+      120.7129947544432
+    ],
+    "country": "China",
+    "key": "Xuguit Qi-China",
+    "original_names": [
+      "xuguit qi",
+      "yakeshi",
+      "ya-k' o-shih",
+      "hsi-kuei-t' u-ch'i"
+    ],
+    "type": "populstat"
+  },
   "Xuzhou-China": {
     "name": "Xuzhou",
     "prov.": "JS",
@@ -20321,7 +20652,8 @@
       "Suchowfu",
       "Suchou",
       "Tongshan",
-      "T'ung-shan"
+      "T'ung-shan",
+      "Hsuchow (SC-China)"
     ],
     "population": {
       "1400": 43333,
@@ -20331,6 +20663,7 @@
       "1750": 75000,
       "1800": 75000,
       "1850": 75000,
+      "1900": 45000,
       "1936": 205000,
       "1948": 340000,
       "1950": 339500,
@@ -20364,12 +20697,17 @@
     ],
     "type": "chandler_modelski",
     "name_peaks": {
-      "Xuzhou": 1500000
+      "Xuzhou": 1500000,
+      "Hsuchow (SC-China)": 45000
     },
     "name_coords": {
       "Xuzhou": [
         34.2043999,
         117.28577
+      ],
+      "Hsuchow (SC-China)": [
+        34.20232349136909,
+        117.28885053361866
       ]
     }
   },
@@ -22507,6 +22845,31 @@
     ],
     "type": "populstat"
   },
+  "Zouxian-China": {
+    "name": "Zouxian",
+    "prov.": "SD",
+    "position": 352411656,
+    "other_names": [
+      "Zoucheng",
+      "Tsou-hsien"
+    ],
+    "population": {
+      "1985": 61600,
+      "1994": 1076500
+    },
+    "coords": [
+      35.405629636160405,
+      116.98568630307904
+    ],
+    "country": "China",
+    "key": "Zouxian-China",
+    "original_names": [
+      "zouxian",
+      "zoucheng",
+      "tsou-hsien"
+    ],
+    "type": "populstat"
+  },
   "Zunyi-China": {
     "name": "Zunyi",
     "prov.": "GZ",
@@ -24060,50 +24423,27 @@
     "is_agglomeration_of": "jiulong"
   },
   "Jiulong-Hong Kong": {
-    "name": "Hong Kong",
+    "name": "Jiulong",
     "particulars": "name means: nine dragons",
     "other_names": [
       "Kowloon",
       "Kaulun",
       "Kaulung",
-      "Chiu-lung",
-      "Tunmen",
-      "Tuen Mun",
-      "Xianggang",
-      "Victoria",
-      "Hsiang Kang",
-      "Jiulong",
-      "New Kowloon",
-      "Xinjiulong"
+      "Chiu-lung"
     ],
     "population": {
-      "1850": 66500,
-      "1881": 102000,
-      "1891": 171000,
-      "1900": 192000,
-      "1901": 168300,
-      "1911": 255000,
-      "1921": 342000,
-      "1925": 751116,
-      "1931": 354326.85475419444,
-      "1936": 316317.24581502035,
-      "1950": 2106250,
-      "1951": 365000,
-      "1961": 633000,
-      "1966": 693649.4792040141,
-      "1970": 4188660,
-      "1971": 820333.9981925193,
-      "1975": 4856304,
-      "1976": 807627.5650180911,
-      "1981": 920114.455671952,
-      "1986": 1087677.3970254231,
-      "1991": 262500,
-      "1997": 313496.4114627151,
-      "2000": 5801000
+      "1931": 350300,
+      "1936": 264700,
+      "1966": 692800,
+      "1971": 715400,
+      "1976": 1500000,
+      "1981": 799100,
+      "1986": 774800,
+      "1997": 378000
     },
     "coords": [
-      22.3193039,
-      114.1693611
+      22.318484819192744,
+      114.1796110963457
     ],
     "country": "Hong Kong",
     "key": "Jiulong-Hong Kong",
@@ -24115,81 +24455,29 @@
       "chiu-lung"
     ],
     "type": "populstat",
-    "is_agglomeration_of": "jiulong",
-    "name_peaks": {
-      "Jiulong": 1500000,
-      "Tunmen": 262500,
-      "Xianggang": 694500,
-      "Hong Kong": 5801000,
-      "Xinjiulong": 1650000
-    },
-    "name_coords": {
-      "Jiulong": [
-        22.3193039,
-        114.1693611
-      ],
-      "Tunmen": [
-        22.3193039,
-        114.1693611
-      ],
-      "Xianggang": [
-        22.3193292,
-        114.1694229
-      ],
-      "Hong Kong": [
-        22.3193039,
-        114.1693611
-      ],
-      "Xinjiulong": [
-        22.3193039,
-        114.1693611
-      ]
-    }
+    "is_agglomeration_of": "jiulong"
   },
   "Jiulong (agglomeration)-Hong Kong": {
     "name": "Jiulong (agglomeration)",
     "population": {
-      "1881": 111000,
-      "1901": 466900,
-      "1928": 396000,
-      "1931": 447800,
-      "1936": 410900,
-      "1951": 438000,
-      "1966": 1401641.89435105,
-      "1976": 1483239.6974191326,
-      "1981": 1100000,
-      "1986": 1702955.2900766362,
-      "1991": 1571973.377637166
+      "1928": 264000,
+      "1966": 1900000,
+      "1976": 2200000,
+      "1986": 2450200,
+      "1991": 1975300
     },
     "coords": [
-      22.3193039,
-      114.1693611
+      22.318484819192744,
+      114.1796110963457
     ],
     "country": "Hong Kong",
     "key": "Jiulong (agglomeration)-Hong Kong",
     "is_agglomeration": true,
-    "is_agglomeration_of": "xianggang",
+    "is_agglomeration_of": "jiulong",
     "original_names": [
       "jiulong"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Jiulong (agglomeration)": 2450200,
-      "Xianggang (agglomeration)": 1251000
-    },
-    "name_coords": {
-      "Jiulong (agglomeration)": [
-        22.3193039,
-        114.1693611
-      ],
-      "Xianggang (agglomeration)": [
-        22.3193292,
-        114.1694229
-      ]
-    },
-    "other_names": [
-      "Xianggang (agglomeration)"
-    ]
+    "type": "populstat"
   },
   "Quanwan-Hong Kong": {
     "name": "Quanwan",
@@ -24218,27 +24506,6 @@
     "type": "populstat",
     "is_agglomeration_of": "jiulong"
   },
-  "Shatian-Hong Kong": {
-    "name": "Shatian",
-    "other_names": [
-      "Sha Tin"
-    ],
-    "population": {
-      "1991": 355800
-    },
-    "coords": [
-      22.386408,
-      114.2093287
-    ],
-    "country": "Hong Kong",
-    "key": "Shatian-Hong Kong",
-    "original_names": [
-      "shatian",
-      "sha tin"
-    ],
-    "type": "populstat",
-    "is_agglomeration_of": "jiulong"
-  },
   "Tai Wan Tsun-Hong Kong": {
     "name": "Tai Wan Tsun",
     "other_names": [
@@ -24259,6 +24526,76 @@
     ],
     "type": "populstat",
     "is_agglomeration_of": "jiulong"
+  },
+  "Tunmen-Hong Kong": {
+    "name": "Xinjiulong",
+    "other_names": [
+      "Tuen Mun",
+      "Tunmen",
+      "New Kowloon"
+    ],
+    "population": {
+      "1971": 1479400,
+      "1976": 700000,
+      "1981": 1650000,
+      "1986": 1526900,
+      "1991": 262500
+    },
+    "coords": [
+      22.319913749106192,
+      114.1626899027096
+    ],
+    "country": "Hong Kong",
+    "key": "Tunmen-Hong Kong",
+    "original_names": [
+      "tunmen",
+      "tuen mun"
+    ],
+    "type": "populstat",
+    "is_agglomeration_of": "jiulong",
+    "name_peaks": {
+      "Tunmen": 262500,
+      "Xinjiulong": 1650000
+    },
+    "name_coords": {
+      "Tunmen": [
+        22.3193039,
+        114.1693611
+      ],
+      "Xinjiulong": [
+        22.319913749106192,
+        114.1626899027096
+      ]
+    }
+  },
+  "Xianggang (agglomeration)-Hong Kong": {
+    "name": "Xianggang (agglomeration)",
+    "particulars": "whether it is meant for the city, its agglomeration, or the whole colony",
+    "population": {
+      "1881": 111000,
+      "1901": 466900,
+      "1928": 594000,
+      "1931": 447800,
+      "1936": 410900,
+      "1951": 438000,
+      "1966": 1034000,
+      "1976": 1000000,
+      "1981": 1100000,
+      "1986": 1183600,
+      "1991": 1251000
+    },
+    "coords": [
+      22.279973633399635,
+      114.1588267879502
+    ],
+    "country": "Hong Kong",
+    "key": "Xianggang (agglomeration)-Hong Kong",
+    "is_agglomeration": true,
+    "is_agglomeration_of": "xianggang",
+    "original_names": [
+      "xianggang"
+    ],
+    "type": "populstat"
   },
   "Xianggangzai-Hong Kong": {
     "name": "Xianggangzai",
@@ -29865,102 +30202,24 @@
     "type": "populstat"
   },
   "China Gadila-India": {
-    "name": "Ulubâria",
+    "name": "China Gadila",
     "state": "AD",
     "particulars": "agglomeration of Vishâkhapatnam",
     "population": {
-      "0": 51000,
-      "200": 42796.027853061314,
-      "400": 55000,
-      "600": 45000,
-      "1891": 30927.98085876283,
-      "1911": 45000,
-      "1921": 46000,
-      "1941": 56070.3130007315,
-      "1951": 49056.15331158689,
-      "1961": 86723.69918309528,
-      "1968": 152300,
-      "1971": 99290.98649927898,
-      "1981": 72706.40981884183,
-      "1991": 74536.04520099086
+      "1991": 47300
     },
     "coords": [
       20.593684,
       78.96288
     ],
-    "is_agglomeration_of": "calcutta",
+    "is_agglomeration_of": "vish",
     "country": "India",
     "key": "China Gadila-India",
     "is_agglomeration": false,
     "original_names": [
       "china gadila"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "China Gadila": 47300,
-      "Goklapur": 49200,
-      "Iddappadi": 41200,
-      "Mandamerri": 44400,
-      "Mango": 108100,
-      "Pîlhîbhît": 106600,
-      "Ulubâria": 191400,
-      "Kavery": 55500,
-      "Tosali": 51000
-    },
-    "name_coords": {
-      "China Gadila": [
-        20.593684,
-        78.96288
-      ],
-      "Goklapur": [
-        20.593684,
-        78.96288
-      ],
-      "Iddappadi": [
-        20.593684,
-        78.96288
-      ],
-      "Mandamerri": [
-        20.593684,
-        78.96288
-      ],
-      "Mango": [
-        20.593684,
-        78.96288
-      ],
-      "Pîlhîbhît": [
-        20.593684,
-        78.96288
-      ],
-      "Ulubâria": [
-        20.593684,
-        78.96288
-      ],
-      "Kavery": [
-        20.593684,
-        78.96288
-      ],
-      "Tosali": [
-        20.593684,
-        78.96288
-      ]
-    },
-    "other_names": [
-      "China Gadila",
-      "Iddappadi",
-      "Edapadi",
-      "Edapapdi",
-      "Mandamerri",
-      "Goklapur",
-      "Pîlhîbhît",
-      "Pillibheet",
-      "Pîlîbhît",
-      "Mango",
-      "Garden Reach (?)",
-      "Uluberia",
-      "Kavery",
-      "Tosali"
-    ]
+    "type": "populstat"
   },
   "Chingleput-India": {
     "name": "Chingleput",
@@ -30971,8 +31230,8 @@
       "2000": 15165800
     },
     "coords": [
-      28.7040592,
-      77.10249019999999
+      28.656434011733342,
+      77.23210417097403
     ],
     "country": "India",
     "key": "Delhi-India",
@@ -30987,8 +31246,8 @@
     },
     "name_coords": {
       "Delhi": [
-        28.7040592,
-        77.10249019999999
+        28.656434011733342,
+        77.23210417097403
       ]
     }
   },
@@ -32784,6 +33043,23 @@
     ],
     "type": "populstat"
   },
+  "Goklapur-India": {
+    "name": "Goklapur",
+    "state": "DL",
+    "population": {
+      "1991": 49200
+    },
+    "coords": [
+      28.71,
+      77.28
+    ],
+    "country": "India",
+    "key": "Goklapur-India",
+    "original_names": [
+      "goklapur"
+    ],
+    "type": "populstat"
+  },
   "Gonda-India": {
     "name": "Gonda",
     "state": "UP",
@@ -34110,6 +34386,31 @@
     "original_names": [
       "ichalkaranji",
       "ichaikaronji"
+    ],
+    "type": "populstat"
+  },
+  "Iddappadi-India": {
+    "name": "Iddappadi",
+    "state": "TN",
+    "other_names": [
+      "Edapadi",
+      "Edapapdi"
+    ],
+    "population": {
+      "1951": 23400,
+      "1981": 40200,
+      "1991": 41200
+    },
+    "coords": [
+      11.584557453067733,
+      77.83759007658492
+    ],
+    "country": "India",
+    "key": "Iddappadi-India",
+    "original_names": [
+      "iddappadi",
+      "edapadi",
+      "edapapdi"
     ],
     "type": "populstat"
   },
@@ -38371,6 +38672,23 @@
     ],
     "type": "populstat"
   },
+  "Mandamerri-India": {
+    "name": "Mandamerri",
+    "state": "AD",
+    "population": {
+      "1981": 44400
+    },
+    "coords": [
+      18.98218254074187,
+      79.48560078773552
+    ],
+    "country": "India",
+    "key": "Mandamerri-India",
+    "original_names": [
+      "mandamerri"
+    ],
+    "type": "populstat"
+  },
   "Mandsaur-India": {
     "name": "Mandsaur",
     "state": "MP",
@@ -38491,6 +38809,27 @@
         74.8388112
       ]
     }
+  },
+  "Mango-India": {
+    "name": "Mango",
+    "state": "BH",
+    "particulars": "agglomeration of Jamshedpur",
+    "population": {
+      "1981": 67200,
+      "1991": 108100
+    },
+    "coords": [
+      22.8275,
+      86.216389
+    ],
+    "is_agglomeration_of": "jamshedpur",
+    "country": "India",
+    "key": "Mango-India",
+    "is_agglomeration": false,
+    "original_names": [
+      "mango"
+    ],
+    "type": "populstat"
   },
   "Manicktola-India": {
     "name": "Manicktola",
@@ -41734,6 +42073,53 @@
       "phusro"
     ],
     "type": "populstat"
+  },
+  "Pîlhîbhît-India": {
+    "name": "Pîlhîbhît",
+    "state": "UP",
+    "other_names": [
+      "Pillibheet",
+      "Pîlîbhît",
+      "Pilibhit"
+    ],
+    "population": {
+      "1800": 30000,
+      "1850": 25000,
+      "1891": 33800,
+      "1900": 33000,
+      "1941": 36900,
+      "1951": 46200,
+      "1961": 57500,
+      "1971": 63400,
+      "1981": 88500,
+      "1991": 106600
+    },
+    "coords": [
+      28.624924619277536,
+      79.8075364691729
+    ],
+    "country": "India",
+    "key": "Pîlhîbhît-India",
+    "original_names": [
+      "pîlhîbhît",
+      "pillibheet",
+      "pîlîbhît"
+    ],
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Pîlhîbhît": 106600,
+      "Pilibhit": 33000
+    },
+    "name_coords": {
+      "Pîlhîbhît": [
+        28.624924619277536,
+        79.8075364691729
+      ],
+      "Pilibhit": [
+        28.62494,
+        79.8075272
+      ]
+    }
   },
   "Pilkhua-India": {
     "name": "Pilkhua",
@@ -46595,6 +46981,41 @@
     ],
     "type": "populstat"
   },
+  "Ulubâria-India": {
+    "name": "Ulubâria",
+    "state": "WB",
+    "particulars": "agglomeration of Calcutta (Kalikata)",
+    "other_names": [
+      "Garden Reach (?)",
+      "Uluberia"
+    ],
+    "population": {
+      "1891": 28300,
+      "1911": 45000,
+      "1921": 46000,
+      "1941": 85200,
+      "1951": 109200,
+      "1961": 130800.00000000001,
+      "1968": 152300,
+      "1971": 155500,
+      "1981": 191400,
+      "1991": 155200
+    },
+    "coords": [
+      22.470668340728583,
+      88.05766684378943
+    ],
+    "is_agglomeration_of": "calcutta",
+    "country": "India",
+    "key": "Ulubâria-India",
+    "is_agglomeration": false,
+    "original_names": [
+      "ulubâria",
+      "garden reach",
+      "uluberia"
+    ],
+    "type": "populstat"
+  },
   "Unjha-India": {
     "name": "Unjha",
     "state": "GJ",
@@ -47267,17 +47688,20 @@
     "type": "populstat"
   },
   "Vishâkhapatnam-India": {
-    "name": "Vishâkhapatnam",
+    "name": "Visakhapatnam (AP)",
     "state": "AD",
     "other_names": [
       "Vishâkapatnam",
       "Vizagabatam",
-      "Vizagapatam"
+      "Vizagapatam",
+      "Vishâkhapatnam"
     ],
     "population": {
+      "1850": 22000,
       "1871": 32000,
       "1881": 30000,
       "1891": 34500,
+      "1900": 40000,
       "1901": 41000,
       "1911": 43000,
       "1921": 45000,
@@ -47288,11 +47712,12 @@
       "1968": 285800,
       "1971": 362300,
       "1981": 594300,
-      "1991": 1057100
+      "1991": 1057100,
+      "2000": 1768000
     },
     "coords": [
-      17.6868159,
-      83.2184815
+      17.7343219,
+      83.3129841
     ],
     "country": "India",
     "key": "Vishâkhapatnam-India",
@@ -47302,7 +47727,21 @@
       "vizagabatam",
       "vizagapatam"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Vishâkhapatnam": 1057100,
+      "Visakhapatnam (AP)": 1768000
+    },
+    "name_coords": {
+      "Vishâkhapatnam": [
+        17.7343219,
+        83.3129841
+      ],
+      "Visakhapatnam (AP)": [
+        17.7343219,
+        83.3129841
+      ]
+    }
   },
   "Visnagar-India": {
     "name": "Visnagar",
@@ -47805,64 +48244,22 @@
     "other_names": []
   },
   "Balung-Indonesia": {
-    "name": "Klangenang",
+    "name": "Balung",
     "province": "JT",
     "population": {
-      "1930": 9600,
-      "1964": 32000,
-      "1980": 34500,
-      "1990": 91208.51027333454,
-      "2002": 61710.81940197296
+      "1990": 42500,
+      "2002": 45100
     },
     "coords": [
-      -0.789275,
-      113.921327
+      -8.282036199965967,
+      113.54419711473507
     ],
     "country": "Indonesia",
     "key": "Balung-Indonesia",
     "original_names": [
       "balung"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Balung": 45100,
-      "Klangenang": 1035599.9999999999,
-      "Padangpanjan": 36300,
-      "Peterukan": 67600,
-      "Sewon": 69700
-    },
-    "name_coords": {
-      "Balung": [
-        -0.789275,
-        113.921327
-      ],
-      "Klangenang": [
-        -0.789275,
-        113.921327
-      ],
-      "Padangpanjan": [
-        -0.789275,
-        113.921327
-      ],
-      "Peterukan": [
-        -0.789275,
-        113.921327
-      ],
-      "Sewon": [
-        -0.789275,
-        113.921327
-      ]
-    },
-    "other_names": [
-      "Balung",
-      "Weru",
-      "Padangpanjan",
-      "Padangpandjang",
-      "Padang Panjang",
-      "Peterukan",
-      "Sewon"
-    ],
-    "is_agglomeration_of": "yogyakarta"
+    "type": "populstat"
   },
   "Banda-Aceh-Indonesia": {
     "name": "Banda Aceh",
@@ -50584,6 +50981,63 @@
       "kisaran"
     ],
     "type": "populstat"
+  },
+  "Klangenang-Indonesia": {
+    "name": "Klangenang",
+    "province": "JB",
+    "particulars": "agglomeration of Cirebon",
+    "other_names": [
+      "Weru",
+      "Padangpanjan",
+      "Padangpandjang",
+      "Padang Panjang",
+      "Peterukan",
+      "Sewon"
+    ],
+    "population": {
+      "1930": 9600,
+      "1964": 32000,
+      "1980": 34500,
+      "1990": 110394.38145460762,
+      "2002": 66743.27389031384
+    },
+    "coords": [
+      -0.789275,
+      113.921327
+    ],
+    "is_agglomeration_of": "yogyakarta",
+    "country": "Indonesia",
+    "key": "Klangenang-Indonesia",
+    "is_agglomeration": false,
+    "original_names": [
+      "klangenang",
+      "weru"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Klangenang": 1035599.9999999999,
+      "Padangpanjan": 36300,
+      "Peterukan": 67600,
+      "Sewon": 69700
+    },
+    "name_coords": {
+      "Klangenang": [
+        -0.789275,
+        113.921327
+      ],
+      "Padangpanjan": [
+        -0.789275,
+        113.921327
+      ],
+      "Peterukan": [
+        -0.789275,
+        113.921327
+      ],
+      "Sewon": [
+        -0.789275,
+        113.921327
+      ]
+    }
   },
   "Klaten-Indonesia": {
     "name": "Klaten",
@@ -59899,59 +60353,20 @@
     "type": "populstat"
   },
   "Ana-Iraq": {
-    "name": "Nimrud",
+    "name": "Ana",
     "province": "AN",
     "other_names": [
       "'Anah",
-      "Anna",
-      "Ana",
-      "Al Hay",
-      "Al Hayy",
-      "Kut al Hai",
-      "Adab (Iraq)",
-      "Hai",
-      "Akshak",
-      "Assur",
-      "Bad-tibira",
-      "Eridu",
-      "Eshnunna",
-      "Akkad",
-      "Zabala",
-      "Halabeha",
-      "Halabja",
-      "Sírwán",
-      "Alabja",
-      "Mendili",
-      "Mandali",
-      "Mendeli",
-      "Mendali",
-      "Mugdadiya",
-      "Muqdadiyah",
-      "Al Miqdadiyah",
-      "Namaniya",
-      "Na'amiya",
-      "An Na'amiya",
-      "Refa'i",
-      "Ar Rifai",
-      "Sa'diya",
-      "Shamiya",
-      "Ash Shamiya",
-      "Al Shamiya"
+      "Anna"
     ],
     "population": {
-      "1947": 10200,
-      "1957": 10602.325347208982,
-      "1965": 10175.806360252067,
-      "1985": 6200,
-      "2000": 0,
-      "-2000": 12264.056617612106,
-      "-1000": 22434.075643984088,
-      "-500": 10944.74759873429,
-      "-1999": 0
+      "1957": 10100,
+      "1965": 6900,
+      "1985": 6200
     },
     "coords": [
-      33.223191,
-      43.679291
+      34.37328006155034,
+      41.98611771595826
     ],
     "country": "Iraq",
     "key": "Ana-Iraq",
@@ -59960,101 +60375,7 @@
       "'anah",
       "anna"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Ana": 10100,
-      "Nimrud": 42833,
-      "Hai": 17000,
-      "Adab (Iraq)": 12272,
-      "Akkad": 32500,
-      "Akshak": 15000,
-      "Assur": 11750,
-      "Bad-tibira": 12500,
-      "Eridu": 7830,
-      "Eshnunna": 9500,
-      "Zabala": 10000,
-      "Halabeha": 11200,
-      "Mendili": 11300,
-      "Mugdadiya": 12200,
-      "Namaniya": 11900,
-      "Refa'i": 7700,
-      "Sa'diya": 5300,
-      "Shamiya": 13300
-    },
-    "name_coords": {
-      "Ana": [
-        33.223191,
-        43.679291
-      ],
-      "Nimrud": [
-        33.223191,
-        43.679291
-      ],
-      "Hai": [
-        33.223191,
-        43.679291
-      ],
-      "Adab (Iraq)": [
-        33.223191,
-        43.679291
-      ],
-      "Akkad": [
-        33.223191,
-        43.679291
-      ],
-      "Akshak": [
-        33.223191,
-        43.679291
-      ],
-      "Assur": [
-        33.223191,
-        43.679291
-      ],
-      "Bad-tibira": [
-        33.223191,
-        43.679291
-      ],
-      "Eridu": [
-        33.223191,
-        43.679291
-      ],
-      "Eshnunna": [
-        33.223191,
-        43.679291
-      ],
-      "Zabala": [
-        33.223191,
-        43.679291
-      ],
-      "Halabeha": [
-        33.223191,
-        43.679291
-      ],
-      "Mendili": [
-        33.223191,
-        43.679291
-      ],
-      "Mugdadiya": [
-        33.223191,
-        43.679291
-      ],
-      "Namaniya": [
-        33.223191,
-        43.679291
-      ],
-      "Refa'i": [
-        33.223191,
-        43.679291
-      ],
-      "Sa'diya": [
-        33.223191,
-        43.679291
-      ],
-      "Shamiya": [
-        33.223191,
-        43.679291
-      ]
-    }
+    "type": "populstat"
   },
   "'Aqra-Iraq": {
     "name": "'Aqra",
@@ -60190,7 +60511,8 @@
     "other_names": [
       "Bagdad",
       "Baghdâd",
-      "Baghdád"
+      "Baghdád",
+      "Sumer"
     ],
     "population": {
       "400": 220000,
@@ -60239,7 +60561,7 @@
       "1970": 2061694.1334737313,
       "1975": 4572515,
       "2000": 5260000,
-      "-2000": 12000,
+      "-2000": 10954.451150103323,
       "-1000": 27666
     },
     "coords": [
@@ -60256,7 +60578,8 @@
     "type": "chandler_modelski",
     "name_peaks": {
       "Baghdád": 1300000,
-      "Baghdad": 5260000
+      "Baghdad": 5260000,
+      "Sumer": 10000
     },
     "name_coords": {
       "Baghdád": [
@@ -60266,6 +60589,10 @@
       "Baghdad": [
         33.315241,
         44.3660671
+      ],
+      "Sumer": [
+        33.4010291,
+        44.3966322
       ]
     },
     "is_agglomeration_of": "baghdád"
@@ -60593,6 +60920,58 @@
     "original_names": [
       "haditha",
       "al hadíthah"
+    ],
+    "type": "populstat"
+  },
+  "Hai-Iraq": {
+    "name": "Hai",
+    "province": "WA",
+    "other_names": [
+      "Al Hay",
+      "Al Hayy",
+      "Kut al Hai"
+    ],
+    "population": {
+      "1947": 10200,
+      "1957": 11800,
+      "1965": 17000
+    },
+    "coords": [
+      32.16806789506224,
+      46.04508634869981
+    ],
+    "country": "Iraq",
+    "key": "Hai-Iraq",
+    "original_names": [
+      "hai",
+      "al hay",
+      "al hayy",
+      "kut al hai"
+    ],
+    "type": "populstat"
+  },
+  "Halabeha-Iraq": {
+    "name": "Halabeha",
+    "province": "AS",
+    "other_names": [
+      "Halabja",
+      "Sírwán",
+      "Alabja"
+    ],
+    "population": {
+      "1965": 11200
+    },
+    "coords": [
+      35.17706357353885,
+      45.98572241349721
+    ],
+    "country": "Iraq",
+    "key": "Halabeha-Iraq",
+    "original_names": [
+      "halabeha",
+      "halabja",
+      "sírwán",
+      "alabja"
     ],
     "type": "populstat"
   },
@@ -61018,6 +61397,31 @@
     ],
     "type": "populstat"
   },
+  "Mendili-Iraq": {
+    "name": "Mendili",
+    "province": "DI",
+    "other_names": [
+      "Mandali",
+      "Mendeli",
+      "Mendali"
+    ],
+    "population": {
+      "1965": 11300
+    },
+    "coords": [
+      33.9792501925516,
+      44.9409480509453
+    ],
+    "country": "Iraq",
+    "key": "Mendili-Iraq",
+    "original_names": [
+      "mendili",
+      "mandali",
+      "mendeli",
+      "mendali"
+    ],
+    "type": "populstat"
+  },
   "Mosul-Iraq": {
     "name": "Mosul",
     "province": "NI*",
@@ -61110,6 +61514,55 @@
       "mosul"
     ],
     "type": "populstat"
+  },
+  "Mugdadiya-Iraq": {
+    "name": "Shamiya",
+    "province": "DI",
+    "other_names": [
+      "Muqdadiyah",
+      "Al Miqdadiyah",
+      "Namaniya",
+      "Na'amiya",
+      "An Na'amiya",
+      "Mugdadiya",
+      "Ash Shamiya",
+      "Al Shamiya"
+    ],
+    "population": {
+      "1957": 10000,
+      "1965": 12452.392781068178
+    },
+    "coords": [
+      33.223191,
+      43.679291
+    ],
+    "country": "Iraq",
+    "key": "Mugdadiya-Iraq",
+    "original_names": [
+      "mugdadiya",
+      "muqdadiyah",
+      "al miqdadiyah"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Mugdadiya": 12200,
+      "Namaniya": 11900,
+      "Shamiya": 13300
+    },
+    "name_coords": {
+      "Mugdadiya": [
+        33.223191,
+        43.679291
+      ],
+      "Namaniya": [
+        33.223191,
+        43.679291
+      ],
+      "Shamiya": [
+        33.223191,
+        43.679291
+      ]
+    }
   },
   "Mussayab-Iraq": {
     "name": "Mussayab",
@@ -61301,6 +61754,27 @@
     ],
     "type": "populstat"
   },
+  "Refa'i-Iraq": {
+    "name": "Refa'i",
+    "province": "QA",
+    "other_names": [
+      "Ar Rifai"
+    ],
+    "population": {
+      "1965": 7700
+    },
+    "coords": [
+      31.720556,
+      46.107778
+    ],
+    "country": "Iraq",
+    "key": "Refa'i-Iraq",
+    "original_names": [
+      "refa'i",
+      "ar rifai"
+    ],
+    "type": "populstat"
+  },
   "Rumaitha-Iraq": {
     "name": "Rumaitha",
     "province": "MU",
@@ -61363,6 +61837,23 @@
       "rawanduz",
       "rowandiz",
       "ruwanduz"
+    ],
+    "type": "populstat"
+  },
+  "Sa'diya-Iraq": {
+    "name": "Sa'diya",
+    "province": "DI",
+    "population": {
+      "1965": 5300
+    },
+    "coords": [
+      34.190556,
+      45.120778
+    ],
+    "country": "Iraq",
+    "key": "Sa'diya-Iraq",
+    "original_names": [
+      "sa'diya"
     ],
     "type": "populstat"
   },
@@ -87284,7 +87775,7 @@
     "type": "populstat"
   },
   "Aq-Meshet-Kazakhstan": {
-    "name": "Qiziliar",
+    "name": "Aq-Meshet",
     "elevation": 129,
     "foundation year; or": 1853,
     "other_names": [
@@ -87292,55 +87783,34 @@
       "Kyzyl-Orda",
       "Qyzylorda",
       "Perovsk",
-      "Akmecet",
-      "Canaözen",
-      "Novyj Uzen'",
-      "Zhannaözen",
-      "Dzetygara",
-      "Dzhetygara",
-      "Aq-Meshet",
-      "Petropavlovsk",
-      "Petropavl",
-      "Sachtinsk",
-      "Shakhtinsk",
-      "`Sahti",
-      "Shakhti",
-      "Scucinsk",
-      "Schuchinsk",
-      "Shchochinsk",
-      "Shchoche,`Sçuçe",
-      "Shçuçe"
+      "Akmecet"
     ],
     "population": {
-      "1897": 10121.264743103997,
-      "1908": 37900,
-      "1910": 21314.31443889294,
-      "1920": 36400,
-      "1926": 31521.421287752873,
-      "1933": 44429.71978304612,
-      "1939": 65509.99923675774,
-      "1956": 118000,
-      "1959": 36536.484224960055,
-      "1964": 156000,
-      "1965": 114516.37437502114,
-      "1967": 122906.46850349252,
-      "1969": 129541.4991421668,
-      "1970": 75938.66823506112,
-      "1972": 152381.10119040354,
-      "1973": 155846.07791022526,
-      "1979": 86040.0511506031,
-      "1981": 121574.4377246514,
-      "1989": 91280.01875528335,
-      "1991": 93179.13043716774,
-      "1993": 201673.0026552885,
-      "1996": 196768.89998167902,
-      "1997": 186855.960568562,
-      "1999": 89844.77653555515,
-      "2002": 87633.98111634747
+      "1897": 5200,
+      "1910": 11800,
+      "1926": 23000,
+      "1933": 30000,
+      "1939": 46800,
+      "1959": 64599.99999999999,
+      "1965": 83000,
+      "1967": 91000,
+      "1969": 97000,
+      "1970": 122000,
+      "1972": 129000,
+      "1973": 132000,
+      "1979": 152600,
+      "1981": 163000,
+      "1989": 150400,
+      "1991": 158200,
+      "1993": 164000,
+      "1996": 162000,
+      "1997": 156500,
+      "1999": 157400,
+      "2002": 152100
     },
     "coords": [
-      48.019573,
-      66.923684
+      44.84874481680077,
+      65.48032985666802
     ],
     "country": "Kazakhstan",
     "key": "Aq-Meshet-Kazakhstan",
@@ -87352,41 +87822,7 @@
       "perovsk",
       "akmecet"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Aq-Meshet": 164000,
-      "Canaözen": 48900,
-      "Dzetygara": 48900,
-      "Qiziliar": 248300,
-      "Sachtinsk": 65600,
-      "Scucinsk": 56000
-    },
-    "name_coords": {
-      "Aq-Meshet": [
-        48.019573,
-        66.923684
-      ],
-      "Canaözen": [
-        48.019573,
-        66.923684
-      ],
-      "Dzetygara": [
-        48.019573,
-        66.923684
-      ],
-      "Qiziliar": [
-        48.019573,
-        66.923684
-      ],
-      "Sachtinsk": [
-        48.019573,
-        66.923684
-      ],
-      "Scucinsk": [
-        48.019573,
-        66.923684
-      ]
-    }
+    "type": "populstat"
   },
   "Aqsu-Kazakhstan": {
     "name": "Aqsu",
@@ -87694,6 +88130,53 @@
         63.3218314
       ]
     }
+  },
+  "Canaözen-Kazakhstan": {
+    "name": "Canaözen",
+    "foundation year; or": 1968,
+    "other_names": [
+      "Novyj Uzen'",
+      "Zhannaözen"
+    ],
+    "population": {
+      "1979": 34000,
+      "1989": 48300,
+      "1999": 48900
+    },
+    "coords": [
+      43.334916375997466,
+      52.85434742711089
+    ],
+    "country": "Kazakhstan",
+    "key": "Canaözen-Kazakhstan",
+    "original_names": [
+      "canaözen",
+      "novyj uzen'",
+      "zhannaözen"
+    ],
+    "type": "populstat"
+  },
+  "Dzetygara-Kazakhstan": {
+    "name": "Dzetygara",
+    "other_names": [
+      "Dzhetygara"
+    ],
+    "population": {
+      "1959": 32200.000000000004,
+      "1970": 39000,
+      "1991": 48900
+    },
+    "coords": [
+      52.18435195961731,
+      61.25118113635652
+    ],
+    "country": "Kazakhstan",
+    "key": "Dzetygara-Kazakhstan",
+    "original_names": [
+      "dzetygara",
+      "dzhetygara"
+    ],
+    "type": "populstat"
   },
   "Ekibastuz-Kazakhstan": {
     "name": "Ekibastuz",
@@ -88174,6 +88657,54 @@
     ],
     "type": "populstat"
   },
+  "Qiziliar-Kazakhstan": {
+    "name": "Qiziliar",
+    "elevation": 86,
+    "foundation year; or": 1807,
+    "other_names": [
+      "Petropavlovsk",
+      "Petropavl"
+    ],
+    "population": {
+      "1897": 19700,
+      "1908": 37900,
+      "1910": 38500,
+      "1920": 36400,
+      "1926": 43200,
+      "1933": 65800,
+      "1939": 91700,
+      "1956": 118000,
+      "1959": 129800.00000000001,
+      "1964": 156000,
+      "1965": 158000,
+      "1967": 166000,
+      "1969": 173000,
+      "1970": 173000,
+      "1972": 180000,
+      "1973": 184000,
+      "1979": 206300,
+      "1981": 212000,
+      "1989": 239600,
+      "1991": 248300,
+      "1993": 248000,
+      "1996": 239000,
+      "1997": 223100,
+      "1999": 203500,
+      "2002": 202600
+    },
+    "coords": [
+      54.87208714735106,
+      69.15083397885122
+    ],
+    "country": "Kazakhstan",
+    "key": "Qiziliar-Kazakhstan",
+    "original_names": [
+      "qiziliar",
+      "petropavlovsk",
+      "petropavl"
+    ],
+    "type": "populstat"
+  },
   "Qostanay-Kazakhstan": {
     "name": "Qostanay",
     "foundation year; or": 1883,
@@ -88284,6 +88815,37 @@
     ],
     "type": "populstat"
   },
+  "Sachtinsk-Kazakhstan": {
+    "name": "Sachtinsk",
+    "foundation year; or": 1961,
+    "other_names": [
+      "Shakhtinsk",
+      "`Sahti",
+      "Shakhti"
+    ],
+    "population": {
+      "1959": 6600,
+      "1979": 51200,
+      "1981": 52000,
+      "1989": 65600,
+      "1991": 65300,
+      "1999": 41600,
+      "2002": 39300
+    },
+    "coords": [
+      49.71064635058793,
+      72.58877553521164
+    ],
+    "country": "Kazakhstan",
+    "key": "Sachtinsk-Kazakhstan",
+    "original_names": [
+      "sachtinsk",
+      "shakhtinsk",
+      "`sahti",
+      "shakhti"
+    ],
+    "type": "populstat"
+  },
   "Saran'-Kazakhstan": {
     "name": "Saran'",
     "foundation year; or": 1954,
@@ -88342,6 +88904,35 @@
       "shatpayev",
       "`satpajev",
       "nikol'skij"
+    ],
+    "type": "populstat"
+  },
+  "Scucinsk-Kazakhstan": {
+    "name": "Scucinsk",
+    "other_names": [
+      "Schuchinsk",
+      "Shchochinsk",
+      "Shchoche,`Sçuçe",
+      "Shçuçe"
+    ],
+    "population": {
+      "1970": 40400,
+      "1989": 55500,
+      "1991": 56000,
+      "2002": 48700
+    },
+    "coords": [
+      52.933266008409056,
+      70.2004682637502
+    ],
+    "country": "Kazakhstan",
+    "key": "Scucinsk-Kazakhstan",
+    "original_names": [
+      "scucinsk",
+      "schuchinsk",
+      "shchochinsk",
+      "shchoche,`sçuçe",
+      "shçuçe"
     ],
     "type": "populstat"
   },
@@ -89802,26 +90393,17 @@
     "type": "populstat"
   },
   "Kalininskoje-Kyrgyzstan": {
-    "name": "Balasaghun",
+    "name": "Kalininskoje",
     "province": "CH",
     "other_names": [
-      "Kalininskoye",
-      "Khaydarken",
-      "Chajdarken",
-      "Haidarkan",
-      "Kalininskoje",
-      "Kosh Tegirmen"
+      "Kalininskoye"
     ],
     "population": {
-      "1000": 43000,
-      "1100": 45000,
-      "1200": 47000,
-      "1997": 10900,
-      "2002": 21399.766353864707
+      "2002": 21300
     },
     "coords": [
-      41.20438,
-      74.766098
+      42.84122049825808,
+      74.0248670722782
     ],
     "country": "Kyrgyzstan",
     "key": "Kalininskoje-Kyrgyzstan",
@@ -89829,31 +90411,7 @@
       "kalininskoje",
       "kalininskoye"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Kalininskoje": 21300,
-      "Khaydarken": 10900,
-      "Balasaghun": 47000,
-      "Kosh Tegirmen": 21500
-    },
-    "name_coords": {
-      "Kalininskoje": [
-        41.20438,
-        74.766098
-      ],
-      "Khaydarken": [
-        41.20438,
-        74.766098
-      ],
-      "Balasaghun": [
-        41.20438,
-        74.766098
-      ],
-      "Kosh Tegirmen": [
-        41.20438,
-        74.766098
-      ]
-    }
+    "type": "populstat"
   },
   "Kant-Kyrgyzstan": {
     "name": "Kant",
@@ -90022,6 +90580,29 @@
     ],
     "type": "populstat"
   },
+  "Khaydarken-Kyrgyzstan": {
+    "name": "Khaydarken",
+    "province": "OS",
+    "other_names": [
+      "Chajdarken",
+      "Haidarkan"
+    ],
+    "population": {
+      "1997": 10900
+    },
+    "coords": [
+      39.93694475968504,
+      71.34105167649805
+    ],
+    "country": "Kyrgyzstan",
+    "key": "Khaydarken-Kyrgyzstan",
+    "original_names": [
+      "khaydarken",
+      "chajdarken",
+      "haidarkan"
+    ],
+    "type": "populstat"
+  },
   "Kök-Janggak-Kyrgyzstan": {
     "name": "Kök-Janggak",
     "province": "DA",
@@ -90042,6 +90623,23 @@
     "original_names": [
       "kök-janggak",
       "kok-jangak"
+    ],
+    "type": "populstat"
+  },
+  "Kosh Tegirmen-Kyrgyzstan": {
+    "name": "Kosh Tegirmen",
+    "province": "CH",
+    "population": {
+      "2002": 21500
+    },
+    "coords": [
+      41.20438,
+      74.766098
+    ],
+    "country": "Kyrgyzstan",
+    "key": "Kosh Tegirmen-Kyrgyzstan",
+    "original_names": [
+      "kosh tegirmen"
     ],
     "type": "populstat"
   },
@@ -102335,8 +102933,8 @@
       "1998": 51700
     },
     "coords": [
-      30.375321,
-      69.34511599999999
+      30.466236877994504,
+      73.66758387634492
     ],
     "country": "Pakistan",
     "key": "Haveli-Pakistan",
@@ -106948,8 +107546,8 @@
       "1968": 43600
     },
     "coords": [
-      9.9325808,
-      123.5504076
+      9.880872896060987,
+      123.6044672628225
     ],
     "country": "Philippines",
     "key": "Argao-Philippines",
@@ -107231,6 +107829,7 @@
     "name": "Batangas",
     "province": "BTG",
     "population": {
+      "1878": 29100,
       "1966": 43000
     },
     "coords": [
@@ -107676,76 +108275,6 @@
     ],
     "type": "populstat"
   },
-  "Cabecera-Philippines": {
-    "name": "San Juan del Monte",
-    "population": {
-      "1878": 24455.882843865904,
-      "1903": 39000,
-      "1960": 40410.765892271826,
-      "1968": 46892.536719610296,
-      "1970": 90700,
-      "1980": 129900,
-      "1990": 126700
-    },
-    "coords": [
-      12.879721,
-      121.774017
-    ],
-    "country": "Philippines",
-    "key": "Cabecera-Philippines",
-    "original_names": [
-      "cabecera"
-    ],
-    "type": "populstat",
-    "name_peaks": {
-      "Cabecera": 29100,
-      "Canclon": 20600,
-      "Jordan": 28300,
-      "Salong": 28700,
-      "San Juan del Monte": 129900,
-      "Tambolong": 24400,
-      "Tondé": 39000
-    },
-    "name_coords": {
-      "Cabecera": [
-        12.879721,
-        121.774017
-      ],
-      "Canclon": [
-        12.879721,
-        121.774017
-      ],
-      "Jordan": [
-        12.879721,
-        121.774017
-      ],
-      "Salong": [
-        12.879721,
-        121.774017
-      ],
-      "San Juan del Monte": [
-        12.879721,
-        121.774017
-      ],
-      "Tambolong": [
-        12.879721,
-        121.774017
-      ],
-      "Tondé": [
-        12.879721,
-        121.774017
-      ]
-    },
-    "other_names": [
-      "Canclon",
-      "Jordan",
-      "Salong",
-      "Cabecera",
-      "Tambolong",
-      "Tondé"
-    ],
-    "is_agglomeration_of": "manila"
-  },
   "Cadiz-Philippines": {
     "name": "Cadiz",
     "population": {
@@ -108004,6 +108533,22 @@
     "key": "Calumpit-Philippines",
     "original_names": [
       "calumpit"
+    ],
+    "type": "populstat"
+  },
+  "Candon-Philippines": {
+    "name": "Candon",
+    "population": {
+      "1878": 20600
+    },
+    "coords": [
+      17.186979539845943,
+      120.44640861354718
+    ],
+    "country": "Philippines",
+    "key": "Candon-Philippines",
+    "original_names": [
+      "candon"
     ],
     "type": "populstat"
   },
@@ -108913,8 +109458,8 @@
       "1968": 63900
     },
     "coords": [
-      10.9987667,
-      122.424074
+      10.94774247492369,
+      122.50289463053312
     ],
     "country": "Philippines",
     "key": "Janiuay-Philippines",
@@ -108959,6 +109504,23 @@
     "key": "Jolo-Philippines",
     "original_names": [
       "jolo"
+    ],
+    "type": "populstat"
+  },
+  "Jordan-Philippines": {
+    "name": "Jordan",
+    "province": "GU",
+    "population": {
+      "1968": 28300
+    },
+    "coords": [
+      10.660325564059846,
+      122.59035625021207
+    ],
+    "country": "Philippines",
+    "key": "Jordan-Philippines",
+    "original_names": [
+      "jordan"
     ],
     "type": "populstat"
   },
@@ -110700,6 +111262,22 @@
     ],
     "type": "populstat"
   },
+  "Salong-Philippines": {
+    "name": "Salong",
+    "population": {
+      "1960": 28700
+    },
+    "coords": [
+      9.927310611739076,
+      122.76928433121793
+    ],
+    "country": "Philippines",
+    "key": "Salong-Philippines",
+    "original_names": [
+      "salong"
+    ],
+    "type": "populstat"
+  },
   "San Antonio-Philippines": {
     "name": "San Antonio",
     "province": "NUE",
@@ -110731,16 +111309,15 @@
       "1980": 101200
     },
     "coords": [
-      10.483439,
-      123.3037143
+      10.48266633612905,
+      123.41946572217486
     ],
     "country": "Philippines",
     "key": "San Carlos-Philippines",
     "original_names": [
       "san carlos"
     ],
-    "type": "populstat",
-    "is_agglomeration_of": "san carlos"
+    "type": "populstat"
   },
   "San Carlos (agglomeration)-Philippines": {
     "name": "San Carlos (agglomeration)",
@@ -110847,6 +111424,29 @@
     ],
     "type": "populstat"
   },
+  "San Juan del Monte-Philippines": {
+    "name": "San Juan del Monte",
+    "particulars": "agglomeration of Manila",
+    "population": {
+      "1960": 56900,
+      "1968": 77700,
+      "1970": 90700,
+      "1980": 129900,
+      "1990": 126700
+    },
+    "coords": [
+      14.59815810290386,
+      121.0305259512568
+    ],
+    "is_agglomeration_of": "manila",
+    "country": "Philippines",
+    "key": "San Juan del Monte-Philippines",
+    "is_agglomeration": false,
+    "original_names": [
+      "san juan del monte"
+    ],
+    "type": "populstat"
+  },
   "San Miguel-Philippines": {
     "name": "San Miguel",
     "province": "BUL",
@@ -110855,8 +111455,8 @@
       "1968": 58900
     },
     "coords": [
-      8.888691399999999,
-      125.958777
+      15.140945717381078,
+      120.97533336501978
     ],
     "country": "Philippines",
     "key": "San Miguel-Philippines",
@@ -111171,8 +111771,8 @@
       "1968": 31400
     },
     "coords": [
-      13.9750341,
-      121.0220422
+      13.878301115993889,
+      120.92517278438915
     ],
     "country": "Philippines",
     "key": "Taal-Philippines",
@@ -111189,8 +111789,8 @@
       "1968": 63800
     },
     "coords": [
-      13.3259923,
-      123.6735151
+      13.361266510892959,
+      123.7285520503502
     ],
     "country": "Philippines",
     "key": "Tabaco-Philippines",
@@ -111364,6 +111964,22 @@
     ],
     "type": "populstat"
   },
+  "Tambolong-Philippines": {
+    "name": "Tambolong",
+    "population": {
+      "1878": 24400
+    },
+    "coords": [
+      12.879721,
+      121.774017
+    ],
+    "country": "Philippines",
+    "key": "Tambolong-Philippines",
+    "original_names": [
+      "tambolong"
+    ],
+    "type": "populstat"
+  },
   "Tanauan-Philippines": {
     "name": "Tanauan",
     "other_names": [
@@ -111526,6 +112142,23 @@
       "toledo"
     ],
     "type": "populstat"
+  },
+  "Tondé-Philippines": {
+    "name": "Tondé",
+    "population": {
+      "1903": 39000
+    },
+    "coords": [
+      14.620262132120457,
+      120.96589910101514
+    ],
+    "country": "Philippines",
+    "key": "Tondé-Philippines",
+    "original_names": [
+      "tondé"
+    ],
+    "type": "populstat",
+    "is_agglomeration_of": "manila"
   },
   "Trece Martires-Philippines": {
     "name": "Trece Martires",
@@ -117530,7 +118163,8 @@
       "1960": 2200,
       "1966": 7560.101834722991,
       "1970": 5995.891379798907,
-      "1981": 18100
+      "1981": 18100,
+      "-2000": 7000
     },
     "coords": [
       34.80207499999999,
@@ -117550,7 +118184,8 @@
       "Fik": 2200,
       "Jarablos": 8600,
       "Misbaf": 8700,
-      "Tudmuriyah": 18100
+      "Tudmuriyah": 18100,
+      "Habuba Kabira": 7000
     },
     "name_coords": {
       "Al Kurdaha": [
@@ -117584,6 +118219,10 @@
       "Tudmuriyah": [
         34.80207499999999,
         38.996815
+      ],
+      "Habuba Kabira": [
+        34.80207499999999,
+        38.996815
       ]
     },
     "other_names": [
@@ -117600,7 +118239,8 @@
       "Masyaf (?)",
       "Misbaf",
       "Palmyra",
-      "Tadmor"
+      "Tadmor",
+      "Habuba Kabira"
     ]
   },
   "Al Kuseir-Syria": {
@@ -118794,81 +119434,20 @@
     "type": "populstat"
   },
   "Jacubar-Syria": {
-    "name": "Kâbir al-Sit",
+    "name": "Jacubar",
     "population": {
-      "1960": 18074.84439767048,
-      "1970": 16900,
-      "1981": 28487.19010362377,
-      "2000": 0,
-      "-2000": 748.8872387218504,
-      "-1000": 20000,
-      "-1999": 0
+      "1960": 27000
     },
     "coords": [
-      34.80207499999999,
-      38.996815
+      33.531,
+      36.337111
     ],
     "country": "Syria",
     "key": "Jacubar-Syria",
     "original_names": [
       "jacubar"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Jacubar": 27000,
-      "Habuba Kabira": 7000,
-      "Kâbir al-Sit": 31700,
-      "Abu Hureyra": 600,
-      "Dura Europos": 20000,
-      "Washukanni": 20000,
-      "Mo'aret-Nu'man": 25600,
-      "Mureybet": 100
-    },
-    "name_coords": {
-      "Jacubar": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Habuba Kabira": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Kâbir al-Sit": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Abu Hureyra": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Dura Europos": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Washukanni": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Mo'aret-Nu'man": [
-        34.80207499999999,
-        38.996815
-      ],
-      "Mureybet": [
-        34.80207499999999,
-        38.996815
-      ]
-    },
-    "other_names": [
-      "Habuba Kabira",
-      "Jacubar",
-      "Abu Hureyra",
-      "Dura Europos",
-      "Washukanni",
-      "Mo'aret-Nu'man",
-      "Ma'arrat an-Nû'mân",
-      "Ma'arret-en-Na'mân",
-      "Mureybet"
-    ],
+    "type": "populstat",
     "is_agglomeration_of": "dimashq"
   },
   "Jaramânâh-Syria": {
@@ -118936,6 +119515,26 @@
     ],
     "type": "populstat"
   },
+  "Kâbir al-Sit-Syria": {
+    "name": "Kâbir al-Sit",
+    "province": "DI",
+    "particulars": "agglomeration of Dimashq",
+    "population": {
+      "1981": 31700
+    },
+    "coords": [
+      33.441111,
+      36.336389
+    ],
+    "is_agglomeration_of": "dimashq",
+    "country": "Syria",
+    "key": "Kâbir al-Sit-Syria",
+    "is_agglomeration": false,
+    "original_names": [
+      "kâbir al-sit"
+    ],
+    "type": "populstat"
+  },
   "Manbej-Syria": {
     "name": "Manbej",
     "province": "HL",
@@ -118966,6 +119565,32 @@
       "membij",
       "menbij",
       "hieropolis"
+    ],
+    "type": "populstat"
+  },
+  "Mo'aret-Nu'man-Syria": {
+    "name": "Mo'aret-Nu'man",
+    "province": "ID",
+    "elevation": 580,
+    "other_names": [
+      "Ma'arrat an-Nû'mân",
+      "Ma'arret-en-Na'mân"
+    ],
+    "population": {
+      "1960": 12100,
+      "1970": 16900,
+      "1981": 25600
+    },
+    "coords": [
+      35.633333,
+      36.666667
+    ],
+    "country": "Syria",
+    "key": "Mo'aret-Nu'man-Syria",
+    "original_names": [
+      "mo'aret-nu'man",
+      "ma'arrat an-nû'mân",
+      "ma'arret-en-na'mân"
     ],
     "type": "populstat"
   },
@@ -126015,42 +126640,22 @@
     "other_names": [
       "Agri",
       "Bayasid",
-      "Dogubeyazit",
-      "Carchemish",
-      "Sardis",
-      "Titris Hoyuk",
-      "Troy (TR)",
-      "Bogaziliyan",
-      "Bogazlayan",
-      "Boghazlayan",
-      "Bogazlyan",
-      "Bogaslajan",
-      "Charput",
-      "Mamuret-ul-Aziz",
-      "Harput",
-      "Kharput"
+      "Dogubeyazit"
     ],
     "population": {
-      "600": 18500,
-      "1884": 25000,
-      "1890": 20000,
-      "1901": 16733.20053068151,
-      "1910": 20000,
+      "1850": 30000,
       "1927": 3900,
-      "1935": 3275.732602263879,
-      "1950": 4560.701700396552,
-      "1965": 5286.353882740282,
-      "1980": 15931.101656822104,
+      "1935": 1900,
+      "1950": 4000,
+      "1965": 8500,
+      "1980": 23500,
       "1985": 31100,
-      "1990": 24390.161951081835,
-      "1997": 36065.77324833061,
-      "-1000": 9746.794344808965,
-      "-2000": 12247.44871391589,
-      "-500": 42500
+      "1990": 35200,
+      "1997": 48900
     },
     "coords": [
-      38.963745,
-      35.243322
+      39.54648638535598,
+      44.06871315401313
     ],
     "country": "Turkey",
     "key": "Bayesid-Turkey",
@@ -126063,41 +126668,16 @@
     "type": "chandler_modelski",
     "name_peaks": {
       "Bayesid": 48900,
-      "Carchemish": 15000,
-      "Sardis": 42500,
-      "Titris Hoyuk": 10000,
-      "Troy (TR)": 10000,
-      "Bogaziliyan": 26600,
-      "Charput": 35000
+      "Dogubeyazit": 30000
     },
     "name_coords": {
       "Bayesid": [
-        38.963745,
-        35.243322
+        39.54648638535598,
+        44.06871315401313
       ],
-      "Carchemish": [
-        38.963745,
-        35.243322
-      ],
-      "Sardis": [
-        38.963745,
-        35.243322
-      ],
-      "Titris Hoyuk": [
-        38.963745,
-        35.243322
-      ],
-      "Troy (TR)": [
-        38.963745,
-        35.243322
-      ],
-      "Bogaziliyan": [
-        38.963745,
-        35.243322
-      ],
-      "Charput": [
-        38.963745,
-        35.243322
+      "Dogubeyazit": [
+        39.54648638535598,
+        44.06871315401313
       ]
     }
   },
@@ -126584,6 +127164,39 @@
       "bodurum",
       "budrum",
       "halicarnassus"
+    ],
+    "type": "populstat"
+  },
+  "Bogaziliyan-Turkey": {
+    "name": "Bogaziliyan",
+    "vilayet": "YZ",
+    "other_names": [
+      "Bogazlayan",
+      "Boghazlayan",
+      "Bogazlyan",
+      "Bogaslajan"
+    ],
+    "population": {
+      "1901": 8000,
+      "1935": 3700,
+      "1950": 5200,
+      "1965": 7900,
+      "1980": 10800,
+      "1990": 16900,
+      "1997": 26600
+    },
+    "coords": [
+      39.19330111220315,
+      35.2463713716645
+    ],
+    "country": "Turkey",
+    "key": "Bogaziliyan-Turkey",
+    "original_names": [
+      "bogaziliyan",
+      "bogazlayan",
+      "boghazlayan",
+      "bogazlyan",
+      "bogaslajan"
     ],
     "type": "populstat"
   },
@@ -127364,6 +127977,38 @@
     "original_names": [
       "ceylanpinar",
       "resülayn"
+    ],
+    "type": "populstat"
+  },
+  "Charput-Turkey": {
+    "name": "Charput",
+    "vilayet": "EG",
+    "particulars": "absorbed by Elazig",
+    "elevation": 1280,
+    "other_names": [
+      "Mamuret-ul-Aziz",
+      "Harput",
+      "Kharput"
+    ],
+    "population": {
+      "1884": 25000,
+      "1890": 20000,
+      "1901": 35000,
+      "1910": 20000,
+      "1935": 5000,
+      "1965": 2200
+    },
+    "coords": [
+      38.70505925544062,
+      39.24937159325051
+    ],
+    "country": "Turkey",
+    "key": "Charput-Turkey",
+    "original_names": [
+      "charput",
+      "mamuret-ul-aziz",
+      "harput",
+      "kharput"
     ],
     "type": "populstat"
   },
@@ -131889,8 +132534,8 @@
       "2000": 49700
     },
     "coords": [
-      37.0696439,
-      41.213997
+      37.069406236304424,
+      41.213810783442135
     ],
     "country": "Turkey",
     "key": "Nusaybin-Turkey",
@@ -131905,8 +132550,8 @@
     },
     "name_coords": {
       "Nusaybin": [
-        37.0696439,
-        41.213997
+        37.069406236304424,
+        41.213810783442135
       ]
     },
     "is_agglomeration_of": "al kamishli"
@@ -134753,8 +135398,8 @@
       "1991": 166400
     },
     "coords": [
-      38.969719,
-      59.556278
+      39.088188819834045,
+      63.57277505910172
     ],
     "country": "Turkmenistan",
     "key": "Chärjev-Turkmenistan",
@@ -135512,94 +136157,23 @@
     "type": "populstat"
   },
   "Aktas-Uzbekistan": {
-    "name": "Urganc",
+    "name": "Aktas",
     "province": "SA",
     "other_names": [
       "Aktash",
       "Aqtash",
       "Okhtosh",
       "Oqto`s",
-      "Oktos",
-      "Carkurgon",
-      "Karkhurghon",
-      "Karqurghon",
-      "Chavast",
-      "Khavast",
-      "Ursatjevskaja",
-      "Ursatyevskaya",
-      "Aktas",
-      "Khodzhelyi",
-      "Khodzheili",
-      "Khujayli",
-      "Khojayli",
-      "Chu`zajli",
-      "Hücayli",
-      "Cimbaj",
-      "Chimbay",
-      "Çimboy",
-      "`Cimboj",
-      "Çinoz",
-      "`Cinoz",
-      "Honko",
-      "Chonka",
-      "Ilji`cevsk",
-      "Ilyichevsk",
-      "Karabagis",
-      "Ri`ston",
-      "Rishton",
-      "Ri`stan",
-      "Rishtan",
-      "Sachrichan",
-      "Sahrihan",
-      "Shahrikhan",
-      "`Sachrichon",
-      "Serobod",
-      "`Serabad",
-      "Sherabad",
-      "`Serobod",
-      "Tachiatas",
-      "Takhiatash",
-      "Tachiato`s",
-      "Chodzejli",
-      "Urgen`c",
-      "Urgench",
-      "Urgan`c",
-      "Jarkutan",
-      "Yaniobod",
-      "Yangiabad",
-      "Jangiobod",
-      "Yaniyer",
-      "Yangiyer",
-      "Jangier",
-      "Zaraf`son",
-      "Zerafshan"
+      "Oktos"
     ],
     "population": {
-      "1900": 20300,
-      "1920": 3000,
-      "1926": 5000,
-      "1933": 6300,
-      "1939": 22000,
-      "1959": 44000,
-      "1964": 58000,
-      "1965": 58000,
-      "1967": 65000,
-      "1969": 69000,
-      "1970": 37964.8798321173,
-      "1972": 81000,
-      "1973": 84000,
-      "1979": 43474.130238568316,
-      "1981": 105000,
-      "1989": 31005.905337650696,
-      "1991": 49363.79471377883,
-      "1993": 135000,
-      "1999": 139100,
-      "2002": 39285.7042645252,
-      "-1000": 20000
+      "1989": 30000,
+      "1991": 30000,
+      "2002": 37000
     },
     "coords": [
-      41.377491,
-      64.585262
+      39.922010720649105,
+      65.92500675659554
     ],
     "country": "Uzbekistan",
     "key": "Aktas-Uzbekistan",
@@ -135611,102 +136185,7 @@
       "oqto`s",
       "oktos"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Aktas": 37000,
-      "Carkurgon": 25000,
-      "Chavast": 26000,
-      "Chodzejli": 80600,
-      "Cimbaj": 34300,
-      "Çinoz": 24300,
-      "Honko": 38400,
-      "Ilji`cevsk": 24700,
-      "Karabagis": 31300,
-      "Ri`ston": 29100,
-      "Sachrichan": 57300,
-      "Serobod": 24000,
-      "Tachiatas": 55500,
-      "Urganc": 168900,
-      "Jarkutan": 20000,
-      "Yaniobod": 23800,
-      "Yaniyer": 32200.000000000004,
-      "Zaraf`son": 60700
-    },
-    "name_coords": {
-      "Aktas": [
-        41.377491,
-        64.585262
-      ],
-      "Carkurgon": [
-        41.377491,
-        64.585262
-      ],
-      "Chavast": [
-        41.377491,
-        64.585262
-      ],
-      "Chodzejli": [
-        41.377491,
-        64.585262
-      ],
-      "Cimbaj": [
-        41.377491,
-        64.585262
-      ],
-      "Çinoz": [
-        41.377491,
-        64.585262
-      ],
-      "Honko": [
-        41.377491,
-        64.585262
-      ],
-      "Ilji`cevsk": [
-        41.377491,
-        64.585262
-      ],
-      "Karabagis": [
-        41.377491,
-        64.585262
-      ],
-      "Ri`ston": [
-        41.377491,
-        64.585262
-      ],
-      "Sachrichan": [
-        41.377491,
-        64.585262
-      ],
-      "Serobod": [
-        41.377491,
-        64.585262
-      ],
-      "Tachiatas": [
-        41.377491,
-        64.585262
-      ],
-      "Urganc": [
-        41.377491,
-        64.585262
-      ],
-      "Jarkutan": [
-        41.377491,
-        64.585262
-      ],
-      "Yaniobod": [
-        41.377491,
-        64.585262
-      ],
-      "Yaniyer": [
-        41.377491,
-        64.585262
-      ],
-      "Zaraf`son": [
-        41.377491,
-        64.585262
-      ]
-    },
-    "is_agglomeration_of": "andijon"
+    "type": "populstat"
   },
   "Andijon-Uzbekistan": {
     "name": "Andijon",
@@ -136073,6 +136552,30 @@
     ],
     "type": "populstat"
   },
+  "Carkurgon-Uzbekistan": {
+    "name": "Carkurgon",
+    "province": "SU",
+    "other_names": [
+      "Karkhurghon",
+      "Karqurghon"
+    ],
+    "population": {
+      "1989": 17700,
+      "2002": 25000
+    },
+    "coords": [
+      37.50912559107663,
+      67.42144333324202
+    ],
+    "country": "Uzbekistan",
+    "key": "Carkurgon-Uzbekistan",
+    "original_names": [
+      "carkurgon",
+      "karkhurghon",
+      "karqurghon"
+    ],
+    "type": "populstat"
+  },
   "Çartak-Uzbekistan": {
     "name": "Çartak",
     "province": "NG",
@@ -136099,6 +136602,59 @@
       "`cortok"
     ],
     "type": "populstat"
+  },
+  "Chavast-Uzbekistan": {
+    "name": "Sachrichan",
+    "province": "TO",
+    "other_names": [
+      "Khavast",
+      "Ursatjevskaja",
+      "Ursatyevskaya",
+      "Ilji`cevsk",
+      "Ilyichevsk",
+      "Chavast",
+      "Sahrihan",
+      "Shahrikhan",
+      "`Sachrichon"
+    ],
+    "population": {
+      "1989": 29688.381565858384,
+      "1991": 35179.53950807202,
+      "2002": 37620.6060557243
+    },
+    "coords": [
+      41.377491,
+      64.585262
+    ],
+    "country": "Uzbekistan",
+    "key": "Chavast-Uzbekistan",
+    "original_names": [
+      "chavast",
+      "khavast",
+      "ursatjevskaja",
+      "ursatyevskaya"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Chavast": 26000,
+      "Ilji`cevsk": 24700,
+      "Sachrichan": 57300
+    },
+    "name_coords": {
+      "Chavast": [
+        41.377491,
+        64.585262
+      ],
+      "Ilji`cevsk": [
+        41.377491,
+        64.585262
+      ],
+      "Sachrichan": [
+        41.377491,
+        64.585262
+      ]
+    },
+    "is_agglomeration_of": "andijon"
   },
   "Chirchiq-Uzbekistan": {
     "name": "Chirchiq",
@@ -136137,6 +136693,92 @@
       "circik",
       "çirçik",
       "`cir`ciq"
+    ],
+    "type": "populstat"
+  },
+  "Chodzejli-Uzbekistan": {
+    "name": "Chodzejli",
+    "province": "QP",
+    "other_names": [
+      "Khodzhelyi",
+      "Khodzheili",
+      "Khujayli",
+      "Khojayli",
+      "Chu`zajli",
+      "Hücayli"
+    ],
+    "population": {
+      "1970": 36000,
+      "1989": 59500,
+      "1991": 61200,
+      "2002": 80600
+    },
+    "coords": [
+      42.41785468180904,
+      59.4423842985433
+    ],
+    "country": "Uzbekistan",
+    "key": "Chodzejli-Uzbekistan",
+    "original_names": [
+      "chodzejli",
+      "khodzhelyi",
+      "khodzheili",
+      "khujayli",
+      "khojayli",
+      "chu`zajli",
+      "hücayli"
+    ],
+    "type": "populstat"
+  },
+  "Cimbaj-Uzbekistan": {
+    "name": "Cimbaj",
+    "province": "QP",
+    "other_names": [
+      "Chimbay",
+      "Çimboy",
+      "`Cimboj"
+    ],
+    "population": {
+      "1926": 5000,
+      "1933": 6300,
+      "1970": 20000,
+      "1979": 18900,
+      "1989": 27400,
+      "2002": 34300
+    },
+    "coords": [
+      42.93594220546417,
+      59.76647978553733
+    ],
+    "country": "Uzbekistan",
+    "key": "Cimbaj-Uzbekistan",
+    "original_names": [
+      "cimbaj",
+      "chimbay",
+      "çimboy",
+      "`cimboj"
+    ],
+    "type": "populstat"
+  },
+  "Çinoz-Uzbekistan": {
+    "name": "Çinoz",
+    "province": "TO",
+    "other_names": [
+      "`Cinoz"
+    ],
+    "population": {
+      "1989": 21500,
+      "2002": 24300
+    },
+    "coords": [
+      40.945618261615,
+      68.7509817922404
+    ],
+    "country": "Uzbekistan",
+    "key": "Çinoz-Uzbekistan",
+    "original_names": [
+      "çinoz",
+      "`cinoz"
     ],
     "type": "populstat"
   },
@@ -136456,6 +137098,28 @@
     ],
     "type": "populstat"
   },
+  "Honko-Uzbekistan": {
+    "name": "Honko",
+    "province": "KH",
+    "other_names": [
+      "Chonka"
+    ],
+    "population": {
+      "1989": 29000,
+      "2002": 38400
+    },
+    "coords": [
+      41.4743474587983,
+      60.78194566690961
+    ],
+    "country": "Uzbekistan",
+    "key": "Honko-Uzbekistan",
+    "original_names": [
+      "honko",
+      "chonka"
+    ],
+    "type": "populstat"
+  },
   "Hovos-Uzbekistan": {
     "name": "Hovos",
     "province": "SI",
@@ -136597,6 +137261,24 @@
     "original_names": [
       "kamasi",
       "qamashi"
+    ],
+    "type": "populstat"
+  },
+  "Karabagis-Uzbekistan": {
+    "name": "Karabagis",
+    "province": "AN",
+    "population": {
+      "1989": 24700,
+      "2002": 31300
+    },
+    "coords": [
+      40.812689,
+      72.973139
+    ],
+    "country": "Uzbekistan",
+    "key": "Karabagis-Uzbekistan",
+    "original_names": [
+      "karabagis"
     ],
     "type": "populstat"
   },
@@ -137497,6 +138179,32 @@
       ]
     }
   },
+  "Ri`ston-Uzbekistan": {
+    "name": "Ri`ston",
+    "province": "FA",
+    "other_names": [
+      "Rishton",
+      "Ri`stan",
+      "Rishtan"
+    ],
+    "population": {
+      "1989": 23700,
+      "2002": 29100
+    },
+    "coords": [
+      40.35909734859261,
+      71.27878147890391
+    ],
+    "country": "Uzbekistan",
+    "key": "Ri`ston-Uzbekistan",
+    "original_names": [
+      "ri`ston",
+      "rishton",
+      "ri`stan",
+      "rishtan"
+    ],
+    "type": "populstat"
+  },
   "Sachrisabz-Uzbekistan": {
     "name": "Sachrisabz",
     "province": "QA",
@@ -137628,6 +138336,32 @@
       ]
     }
   },
+  "Serobod-Uzbekistan": {
+    "name": "Serobod",
+    "province": "SU",
+    "other_names": [
+      "`Serabad",
+      "Sherabad",
+      "`Serobod"
+    ],
+    "population": {
+      "1989": 17000,
+      "2002": 24000
+    },
+    "coords": [
+      37.671398613896216,
+      67.01226702029795
+    ],
+    "country": "Uzbekistan",
+    "key": "Serobod-Uzbekistan",
+    "original_names": [
+      "serobod",
+      "`serabad",
+      "sherabad",
+      "`serobod"
+    ],
+    "type": "populstat"
+  },
   "Sirdare-Uzbekistan": {
     "name": "Sirdare",
     "province": "SI",
@@ -137695,6 +138429,30 @@
       "sürçi",
       "shorchi",
       "`sûr`ci"
+    ],
+    "type": "populstat"
+  },
+  "Tachiatas-Uzbekistan": {
+    "name": "Tachiatas",
+    "province": "QP",
+    "other_names": [
+      "Takhiatash",
+      "Tachiato`s"
+    ],
+    "population": {
+      "1989": 43000,
+      "2002": 55500
+    },
+    "coords": [
+      42.33946632022762,
+      59.57705013881523
+    ],
+    "country": "Uzbekistan",
+    "key": "Tachiatas-Uzbekistan",
+    "original_names": [
+      "tachiatas",
+      "takhiatash",
+      "tachiato`s"
     ],
     "type": "populstat"
   },
@@ -137908,6 +138666,48 @@
     ],
     "type": "populstat"
   },
+  "Urganc-Uzbekistan": {
+    "name": "Urganc",
+    "province": "KH",
+    "other_names": [
+      "Urgen`c",
+      "Urgench",
+      "Urgan`c"
+    ],
+    "population": {
+      "1900": 20300,
+      "1920": 3000,
+      "1939": 22000,
+      "1959": 44000,
+      "1964": 58000,
+      "1965": 58000,
+      "1967": 65000,
+      "1969": 69000,
+      "1970": 76000,
+      "1972": 81000,
+      "1973": 84000,
+      "1979": 100000,
+      "1981": 105000,
+      "1989": 128000,
+      "1991": 129000,
+      "1993": 135000,
+      "1999": 139100,
+      "2002": 168900
+    },
+    "coords": [
+      41.53400098482703,
+      60.62427480442188
+    ],
+    "country": "Uzbekistan",
+    "key": "Urganc-Uzbekistan",
+    "original_names": [
+      "urganc",
+      "urgen`c",
+      "urgench",
+      "urgan`c"
+    ],
+    "type": "populstat"
+  },
   "Urgut-Uzbekistan": {
     "name": "Urgut",
     "province": "SA",
@@ -137949,6 +138749,76 @@
       "yakkabog",
       "yakkabagh",
       "jakkabogh"
+    ],
+    "type": "populstat"
+  },
+  "Yaniobod-Uzbekistan": {
+    "name": "Yaniobod",
+    "province": "TO",
+    "other_names": [
+      "Yangiabad",
+      "Jangiobod"
+    ],
+    "population": {
+      "1989": 21100,
+      "2002": 23800
+    },
+    "coords": [
+      41.11550462106851,
+      70.1041030252032
+    ],
+    "country": "Uzbekistan",
+    "key": "Yaniobod-Uzbekistan",
+    "original_names": [
+      "yaniobod",
+      "yangiabad",
+      "jangiobod"
+    ],
+    "type": "populstat"
+  },
+  "Yaniyer-Uzbekistan": {
+    "name": "Yaniyer",
+    "province": "SI",
+    "other_names": [
+      "Yangiyer",
+      "Jangier"
+    ],
+    "population": {
+      "1989": 28600,
+      "2002": 32200.000000000004
+    },
+    "coords": [
+      40.28020721780771,
+      68.82257989907264
+    ],
+    "country": "Uzbekistan",
+    "key": "Yaniyer-Uzbekistan",
+    "original_names": [
+      "yaniyer",
+      "yangiyer",
+      "jangier"
+    ],
+    "type": "populstat"
+  },
+  "Zaraf`son-Uzbekistan": {
+    "name": "Zaraf`son",
+    "province": "NW",
+    "other_names": [
+      "Zerafshan"
+    ],
+    "population": {
+      "1989": 46400,
+      "2002": 60700
+    },
+    "coords": [
+      41.608056,
+      64.226389
+    ],
+    "country": "Uzbekistan",
+    "key": "Zaraf`son-Uzbekistan",
+    "original_names": [
+      "zaraf`son",
+      "zerafshan"
     ],
     "type": "populstat"
   },
@@ -349517,30 +350387,45 @@
     "type": "populstat"
   },
   "Viseu-Portugal": {
-    "name": "Viseu",
+    "name": "Vizeu",
     "province": "VS*",
     "elevation": 451,
     "other_names": [
       "Vizeu",
-      "Viseo"
+      "Viseo",
+      "Viseu",
+      "Bazu"
     ],
     "population": {
+      "700": 1000,
+      "800": 1000,
+      "900": 1000,
+      "1000": 2000,
+      "1100": 2000,
+      "1200": 2000,
       "1300": 3000,
+      "1400": 2000,
+      "1500": 3000,
+      "1550": 4000,
+      "1600": 4000,
+      "1650": 4000,
+      "1700": 4000,
       "1750": 4000,
       "1800": 9000,
-      "1850": 6000,
-      "1900": 8100,
+      "1850": 10392.304845413264,
+      "1900": 17773.57589231835,
       "1920": 8300,
       "1931": 9500,
-      "1950": 12600,
+      "1950": 32338.83114770848,
       "1960": 17000,
       "1970": 16100.000000000002,
       "1991": 83000,
+      "2000": 94000,
       "2001": 93500
     },
     "coords": [
-      40.6565861,
-      -7.9124712
+      40.6563408403,
+      -7.910645624710445
     ],
     "country": "Portugal",
     "key": "Viseu-Portugal",
@@ -349549,14 +350434,19 @@
       "vizeu",
       "viseo"
     ],
-    "type": "chandler_modelski",
+    "type": "buringh",
     "name_peaks": {
-      "Viseu": 93500
+      "Viseu": 93500,
+      "Vizeu": 94000
     },
     "name_coords": {
       "Viseu": [
         40.6565861,
         -7.9124712
+      ],
+      "Vizeu": [
+        40.6563408403,
+        -7.910645624710445
       ]
     }
   },
@@ -366687,8 +367577,8 @@
       "1996": 33300
     },
     "coords": [
-      75.63220199999999,
-      138.8649531
+      58.30438633006799,
+      48.34779315015939
     ],
     "country": "Russia",
     "key": "Kotelni`'c-Russia",
@@ -490715,6 +491605,8 @@
     ],
     "population": {
       "1000": 15000,
+      "1400": 0,
+      "1600": 0,
       "1800": 925,
       "1830": 5000,
       "1840": 16500,
@@ -533283,7 +534175,7 @@
     "estado": "CE",
     "particulars": "agglomeration of Fortaleza",
     "population": {
-      "1991": 1765800
+      "1991": 47300
     },
     "coords": [
       -3.8327352,
@@ -534509,8 +535401,8 @@
       "1991": 1313100
     },
     "coords": [
-      -9.9755805,
-      -55.1777747
+      -25.489555649960753,
+      -49.294604671650326
     ],
     "is_agglomeration_of": "curitiba",
     "country": "Brazil",
@@ -535296,7 +536188,7 @@
     "population": {
       "1950": 24500,
       "1960": 42500,
-      "1991": 1765800
+      "1991": 37900
     },
     "coords": [
       -3.7771358,
@@ -619815,112 +620707,20 @@
     "type": "populstat"
   },
   "´Ayn Fakrûn-Algeria": {
-    "name": "Sîdî ban al-'Abbâs",
+    "name": "´Ayn Fakrûn",
     "province": "OB",
     "elevation": 951,
     "position": 35980687,
     "other_names": [
-      "Aïn-Fakroun",
-      "´Ayn Fakrûn",
-      "Aïn-M'lila",
-      "´Ayn Tûtah",
-      "Aïn-Touta",
-      "´Ayn Wilman",
-      "Aïn-Oulmene",
-      "´Azzâbah",
-      "Jemappes",
-      "´Ayn Malîlah",
-      "Banî Marâd",
-      "Beni Mered",
-      "Ben Mehieddine",
-      "Bi´r-al-´Itir",
-      "Bir-El-Ater",
-      "Birhadam",
-      "Birkhadam",
-      "Birkhadem",
-      "Budwâwû",
-      "Darîyan",
-      "Dréan",
-      "Bachedjarah",
-      "Blida",
-      "al-Boulaida",
-      "Blîdah",
-      "El-Miliyya",
-      "El Milia",
-      "Al-Mîlîyah",
-      "El-Wad",
-      "El-Oued",
-      "Al-Oued",
-      "El Ouadi",
-      "Al-Wâd",
-      "Hamma Bû Ziyan",
-      "Hamma Bouziane",
-      "Khamîs-al-Khashnah",
-      "Khemis El Khechna",
-      "Khurub, Al -",
-      "al-Hurub",
-      "El-Khroub",
-      "Qasr Shillalah",
-      "Ksar Chellala",
-      "Qull´ah, Al -",
-      "El Kala",
-      "El Calle",
-      "Ramsh",
-      "Remchi",
-      "Saniyah, As -",
-      "Es Senia",
-      "Sharîyah",
-      "Chéria",
-      "Shattîyah, Ash -",
-      "Shiragha",
-      "Cheraga",
-      "Sîdî ´Aysâ",
-      "Sidi-Aïssa",
-      "EI-Boulaïda",
-      "Sidi-bel-Abbès",
-      "Siq",
-      "Saint-Dénis-du-Sig",
-      "Sig",
-      "Sûghar",
-      "Songueur",
-      "Sougueur",
-      "Tûljâ",
-      "Tolga",
-      "Wâdî Râhîyu",
-      "Oued Rhiou",
-      "Walad Ghalal",
-      "Ouled-Djellal",
-      "Wed-Zénati",
-      "Oued-Zénati",
-      "Wâdî Zinâti",
-      "Winzah",
-      "Ouenza"
+      "Aïn-Fakroun"
     ],
     "population": {
-      "1882": 12716.131487209464,
-      "1886": 20637.82934322309,
-      "1892": 21880.12797037531,
-      "1896": 24279.415149463548,
-      "1899": 25991.152340748573,
-      "1901": 18400.126866733885,
-      "1906": 31129.246698241834,
-      "1911": 33120.235506409066,
-      "1921": 37093.395638576956,
-      "1926": 32693.730285790272,
-      "1931": 42525.99205192043,
-      "1936": 27364.557153312537,
-      "1948": 43500.9986118573,
-      "1954": 35830.07161216577,
-      "1960": 98818.01455200363,
-      "1966": 27057.79121183427,
-      "1974": 154950.9277158417,
-      "1977": 89850.35213335835,
-      "1987": 36990.08202713274,
-      "1998": 43680.41032890296
+      "1987": 25400,
+      "1998": 40700
     },
     "coords": [
-      28.033886,
-      1.659626
+      35.970172503974126,
+      6.868195915058068
     ],
     "country": "Algeria",
     "key": "´Ayn Fakrûn-Algeria",
@@ -619928,182 +620728,80 @@
       "´ayn fakrûn",
       "aïn-fakroun"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "´Ayn Fakrûn": 40700,
-      "´Ayn Malîlah": 71700,
-      "´Ayn Tûtah": 44900,
-      "´Ayn Wilman": 39000,
-      "´Azzâbah": 31500,
-      "Bachedjarah": 101100,
-      "Banî Marâd": 43700,
-      "Ben Mehieddine": 34300,
-      "Bi´r-al-´Itir": 53200,
-      "Birhadam": 55100,
-      "Budwâwû": 42500,
-      "Darîyan": 24800,
-      "EI-Boulaïda": 170900,
-      "El-Miliyya": 96600,
-      "El-Wad": 105200,
-      "Hamma Bû Ziyan": 36400,
-      "Khamîs-al-Khashnah": 33200,
-      "Khurub, Al -": 65200,
-      "Qasr Shillalah": 39300,
-      "Qull´ah, Al -": 21300,
-      "Ramsh": 54600,
-      "Saniyah, As -": 31100,
-      "Sharîyah": 53600,
-      "Shattîyah, Ash -": 49100,
-      "Shiragha": 31500,
-      "Sîdî ´Aysâ": 53100,
-      "Sîdî ban al-'Abbâs": 183900,
-      "Siq": 53900,
-      "Sûghar": 57800,
-      "Tûljâ": 39800,
-      "Wâdî Râhîyu": 42600,
-      "Walad Ghalal": 46400,
-      "Wed-Zénati": 22900,
-      "Winzah": 39200
+    "type": "populstat"
+  },
+  "´Ayn Malîlah-Algeria": {
+    "name": "´Ayn Malîlah",
+    "province": "OB",
+    "elevation": 775,
+    "position": 36040657,
+    "other_names": [
+      "Aïn-M'lila"
+    ],
+    "population": {
+      "1954": 71700,
+      "1987": 37700,
+      "1998": 50700
     },
-    "name_coords": {
-      "´Ayn Fakrûn": [
-        28.033886,
-        1.659626
-      ],
-      "´Ayn Malîlah": [
-        28.033886,
-        1.659626
-      ],
-      "´Ayn Tûtah": [
-        28.033886,
-        1.659626
-      ],
-      "´Ayn Wilman": [
-        28.033886,
-        1.659626
-      ],
-      "´Azzâbah": [
-        28.033886,
-        1.659626
-      ],
-      "Bachedjarah": [
-        28.033886,
-        1.659626
-      ],
-      "Banî Marâd": [
-        28.033886,
-        1.659626
-      ],
-      "Ben Mehieddine": [
-        28.033886,
-        1.659626
-      ],
-      "Bi´r-al-´Itir": [
-        28.033886,
-        1.659626
-      ],
-      "Birhadam": [
-        28.033886,
-        1.659626
-      ],
-      "Budwâwû": [
-        28.033886,
-        1.659626
-      ],
-      "Darîyan": [
-        28.033886,
-        1.659626
-      ],
-      "EI-Boulaïda": [
-        28.033886,
-        1.659626
-      ],
-      "El-Miliyya": [
-        28.033886,
-        1.659626
-      ],
-      "El-Wad": [
-        28.033886,
-        1.659626
-      ],
-      "Hamma Bû Ziyan": [
-        28.033886,
-        1.659626
-      ],
-      "Khamîs-al-Khashnah": [
-        28.033886,
-        1.659626
-      ],
-      "Khurub, Al -": [
-        28.033886,
-        1.659626
-      ],
-      "Qasr Shillalah": [
-        28.033886,
-        1.659626
-      ],
-      "Qull´ah, Al -": [
-        28.033886,
-        1.659626
-      ],
-      "Ramsh": [
-        28.033886,
-        1.659626
-      ],
-      "Saniyah, As -": [
-        28.033886,
-        1.659626
-      ],
-      "Sharîyah": [
-        28.033886,
-        1.659626
-      ],
-      "Shattîyah, Ash -": [
-        28.033886,
-        1.659626
-      ],
-      "Shiragha": [
-        28.033886,
-        1.659626
-      ],
-      "Sîdî ´Aysâ": [
-        28.033886,
-        1.659626
-      ],
-      "Sîdî ban al-'Abbâs": [
-        28.033886,
-        1.659626
-      ],
-      "Siq": [
-        28.033886,
-        1.659626
-      ],
-      "Sûghar": [
-        28.033886,
-        1.659626
-      ],
-      "Tûljâ": [
-        28.033886,
-        1.659626
-      ],
-      "Wâdî Râhîyu": [
-        28.033886,
-        1.659626
-      ],
-      "Walad Ghalal": [
-        28.033886,
-        1.659626
-      ],
-      "Wed-Zénati": [
-        28.033886,
-        1.659626
-      ],
-      "Winzah": [
-        28.033886,
-        1.659626
-      ]
+    "coords": [
+      36.036111,
+      6.570833
+    ],
+    "country": "Algeria",
+    "key": "´Ayn Malîlah-Algeria",
+    "original_names": [
+      "´ayn malîlah",
+      "aïn-m'lila"
+    ],
+    "type": "populstat"
+  },
+  "´Ayn Tûtah-Algeria": {
+    "name": "´Ayn Tûtah",
+    "province": "BT",
+    "elevation": 950,
+    "position": 35390589,
+    "other_names": [
+      "Aïn-Touta"
+    ],
+    "population": {
+      "1954": 38600,
+      "1987": 29600,
+      "1998": 44900
     },
-    "is_agglomeration_of": "el"
+    "coords": [
+      35.380125749034235,
+      5.901040554576588
+    ],
+    "country": "Algeria",
+    "key": "´Ayn Tûtah-Algeria",
+    "original_names": [
+      "´ayn tûtah",
+      "aïn-touta"
+    ],
+    "type": "populstat"
+  },
+  "´Ayn Wilman-Algeria": {
+    "name": "´Ayn Wilman",
+    "province": "SF",
+    "position": 35930530,
+    "other_names": [
+      "Aïn-Oulmene"
+    ],
+    "population": {
+      "1987": 25900,
+      "1998": 39000
+    },
+    "coords": [
+      35.92215412812417,
+      5.296114432807089
+    ],
+    "country": "Algeria",
+    "key": "´Ayn Wilman-Algeria",
+    "original_names": [
+      "´ayn wilman",
+      "aïn-oulmene"
+    ],
+    "type": "populstat"
   },
   "Azazga-Algeria": {
     "name": "Azazga",
@@ -620122,6 +620820,29 @@
     "key": "Azazga-Algeria",
     "original_names": [
       "azazga"
+    ],
+    "type": "populstat"
+  },
+  "´Azzâbah-Algeria": {
+    "name": "´Azzâbah",
+    "province": "SK",
+    "position": 36750710,
+    "other_names": [
+      "Jemappes"
+    ],
+    "population": {
+      "1987": 31500,
+      "1998": 29300
+    },
+    "coords": [
+      36.7394444,
+      7.1052778
+    ],
+    "country": "Algeria",
+    "key": "´Azzâbah-Algeria",
+    "original_names": [
+      "´azzâbah",
+      "jemappes"
     ],
     "type": "populstat"
   },
@@ -620171,6 +620892,74 @@
       "bab-ezzouar",
       "bab azwâr",
       "bab ez zouar"
+    ],
+    "type": "populstat"
+  },
+  "Bachedjarah-Algeria": {
+    "name": "Bachedjarah",
+    "province": "AL",
+    "particulars": "agglomeration of El-Djazaïr; quarter of the commune",
+    "population": {
+      "1987": 62120.05674089791,
+      "1998": 59718.48445649687
+    },
+    "coords": [
+      36.723337973905174,
+      3.11123279756959
+    ],
+    "is_agglomeration_of": "el",
+    "country": "Algeria",
+    "key": "Bachedjarah-Algeria",
+    "is_agglomeration": false,
+    "original_names": [
+      "bachedjarah"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Bachedjarah": 101100,
+      "Bourouba": 79300,
+      "El Magharia": 30500
+    },
+    "name_coords": {
+      "Bachedjarah": [
+        36.723337973905174,
+        3.11123279756959
+      ],
+      "Bourouba": [
+        36.7138959,
+        3.1125413
+      ],
+      "El Magharia": [
+        36.7304225,
+        3.1100238
+      ]
+    },
+    "other_names": [
+      "Bourouba",
+      "El Magharia"
+    ]
+  },
+  "Banî Marâd-Algeria": {
+    "name": "Banî Marâd",
+    "province": "BL",
+    "position": 36540287,
+    "other_names": [
+      "Beni Mered"
+    ],
+    "population": {
+      "1954": 1000,
+      "1987": 43700,
+      "1998": 18800
+    },
+    "coords": [
+      36.517299182206365,
+      2.8473126861657563
+    ],
+    "country": "Algeria",
+    "key": "Banî Marâd-Algeria",
+    "original_names": [
+      "banî marâd",
+      "beni mered"
     ],
     "type": "populstat"
   },
@@ -620369,6 +621158,24 @@
       ]
     }
   },
+  "Ben Mehieddine-Algeria": {
+    "name": "Ben Mehieddine",
+    "province": "MC",
+    "population": {
+      "1987": 21500,
+      "1998": 34300
+    },
+    "coords": [
+      36.77046,
+      7.90531
+    ],
+    "country": "Algeria",
+    "key": "Ben Mehieddine-Algeria",
+    "original_names": [
+      "ben mehieddine"
+    ],
+    "type": "populstat"
+  },
   "Beni Saf-Algeria": {
     "name": "Beni Saf",
     "province": "AT",
@@ -620511,6 +621318,57 @@
     "key": "Bir El Djir-Algeria",
     "original_names": [
       "bir el djir"
+    ],
+    "type": "populstat"
+  },
+  "Bi´r-al-´Itir-Algeria": {
+    "name": "Bi´r-al-´Itir",
+    "province": "TB",
+    "position": 34570805,
+    "other_names": [
+      "Bir-El-Ater"
+    ],
+    "population": {
+      "1987": 33600,
+      "1998": 53200
+    },
+    "coords": [
+      34.75031658828418,
+      8.056982418807328
+    ],
+    "country": "Algeria",
+    "key": "Bi´r-al-´Itir-Algeria",
+    "original_names": [
+      "bi´r-al-´itir",
+      "bir-el-ater"
+    ],
+    "type": "populstat"
+  },
+  "Birhadam-Algeria": {
+    "name": "Birhadam",
+    "province": "AL",
+    "particulars": "agglomeration of El-Djazaïr",
+    "position": 36720303,
+    "other_names": [
+      "Birkhadam",
+      "Birkhadem"
+    ],
+    "population": {
+      "1987": 32299.999999999996,
+      "1998": 55100
+    },
+    "coords": [
+      36.715951471559904,
+      3.0492611509447483
+    ],
+    "is_agglomeration_of": "el",
+    "country": "Algeria",
+    "key": "Birhadam-Algeria",
+    "is_agglomeration": false,
+    "original_names": [
+      "birhadam",
+      "birkhadam",
+      "birkhadem"
     ],
     "type": "populstat"
   },
@@ -620827,27 +621685,6 @@
     ],
     "type": "populstat"
   },
-  "Bourouba-Algeria": {
-    "name": "Bourouba",
-    "province": "AL",
-    "particulars": "agglomeration of El-Djazaïr; quarter of the commune",
-    "population": {
-      "1987": 79300,
-      "1998": 77500
-    },
-    "coords": [
-      36.7138959,
-      3.1125413
-    ],
-    "is_agglomeration_of": "el",
-    "country": "Algeria",
-    "key": "Bourouba-Algeria",
-    "is_agglomeration": false,
-    "original_names": [
-      "bourouba"
-    ],
-    "type": "populstat"
-  },
   "Bou-Saâda-Algeria": {
     "name": "Bou-Saâda",
     "province": "MS",
@@ -620898,6 +621735,25 @@
     "is_agglomeration": false,
     "original_names": [
       "bouzareah"
+    ],
+    "type": "populstat"
+  },
+  "Budwâwû-Algeria": {
+    "name": "Budwâwû",
+    "province": "BM",
+    "position": 36720341,
+    "population": {
+      "1987": 32500,
+      "1998": 42500
+    },
+    "coords": [
+      36.72727386795982,
+      3.407082098716127
+    ],
+    "country": "Algeria",
+    "key": "Budwâwû-Algeria",
+    "original_names": [
+      "budwâwû"
     ],
     "type": "populstat"
   },
@@ -621101,6 +621957,29 @@
     "is_agglomeration": false,
     "original_names": [
       "dar el beida"
+    ],
+    "type": "populstat"
+  },
+  "Darîyan-Algeria": {
+    "name": "Darîyan",
+    "province": "ET",
+    "position": 36690775,
+    "other_names": [
+      "Dréan"
+    ],
+    "population": {
+      "1987": 24800,
+      "1998": 17500
+    },
+    "coords": [
+      36.6841756158975,
+      7.74863663745867
+    ],
+    "country": "Algeria",
+    "key": "Darîyan-Algeria",
+    "original_names": [
+      "darîyan",
+      "dréan"
     ],
     "type": "populstat"
   },
@@ -621455,6 +622334,54 @@
     ],
     "type": "populstat"
   },
+  "EI-Boulaïda-Algeria": {
+    "name": "EI-Boulaïda",
+    "province": "BL",
+    "particulars": 18251867,
+    "elevation": 240,
+    "found.yr": 16,
+    "position": 36300250,
+    "other_names": [
+      "Blida",
+      "al-Boulaida",
+      "Blîdah"
+    ],
+    "population": {
+      "1882": 11000,
+      "1886": 24200,
+      "1892": 23700,
+      "1896": 25300,
+      "1899": 27800,
+      "1901": 29100,
+      "1906": 33300,
+      "1911": 35500,
+      "1921": 36400,
+      "1926": 24800,
+      "1931": 39400,
+      "1936": 40100,
+      "1948": 61600,
+      "1954": 67900,
+      "1960": 93000,
+      "1966": 99200,
+      "1974": 158900,
+      "1977": 136000,
+      "1987": 170900,
+      "1998": 137900
+    },
+    "coords": [
+      36.47405339426376,
+      2.831431388060709
+    ],
+    "country": "Algeria",
+    "key": "EI-Boulaïda-Algeria",
+    "original_names": [
+      "ei-boulaïda",
+      "blida",
+      "al-boulaida",
+      "blîdah"
+    ],
+    "type": "populstat"
+  },
   "El-Buni-Algeria": {
     "name": "El-Buni",
     "province": "AN",
@@ -621759,27 +622686,6 @@
     ],
     "type": "populstat"
   },
-  "El Magharia-Algeria": {
-    "name": "El Magharia",
-    "province": "AL",
-    "particulars": "agglomeration of El-Djazaïr; quarter of the commune",
-    "population": {
-      "1987": 29900,
-      "1998": 30500
-    },
-    "coords": [
-      36.7304225,
-      3.1100238
-    ],
-    "is_agglomeration_of": "el",
-    "country": "Algeria",
-    "key": "El Magharia-Algeria",
-    "is_agglomeration": false,
-    "original_names": [
-      "el magharia"
-    ],
-    "type": "populstat"
-  },
   "El Mahmel-Algeria": {
     "name": "El Mahmel",
     "province": "KH",
@@ -621820,6 +622726,33 @@
       "el-meghaïer",
       "al-mighâîr",
       "el m'ghair"
+    ],
+    "type": "populstat"
+  },
+  "El-Miliyya-Algeria": {
+    "name": "El-Miliyya",
+    "province": "JJ",
+    "elevation": 70,
+    "position": 36480614,
+    "other_names": [
+      "El Milia",
+      "Al-Mîlîyah"
+    ],
+    "population": {
+      "1954": 96600,
+      "1987": 55000,
+      "1998": 39200
+    },
+    "coords": [
+      36.75276592770358,
+      6.268153587390299
+    ],
+    "country": "Algeria",
+    "key": "El-Miliyya-Algeria",
+    "original_names": [
+      "el-miliyya",
+      "el milia",
+      "al-mîlîyah"
     ],
     "type": "populstat"
   },
@@ -621894,6 +622827,57 @@
       "el mouradia"
     ],
     "type": "populstat"
+  },
+  "El-Wad-Algeria": {
+    "name": "El-Wad",
+    "province": "EO",
+    "particulars": "place name means: The river [- but there is none]",
+    "elevation": 80,
+    "position": 33220652,
+    "other_names": [
+      "El-Oued",
+      "Al-Oued",
+      "El Ouadi",
+      "Al-Wâd",
+      "Râ's-al-Wâd",
+      "Ras El-Oued"
+    ],
+    "population": {
+      "1936": 10000,
+      "1954": 86100,
+      "1966": 11400,
+      "1977": 47200,
+      "1987": 42527.40293034598,
+      "1998": 59894.240123738105
+    },
+    "coords": [
+      33.36749845188475,
+      6.85132821145198
+    ],
+    "country": "Algeria",
+    "key": "El-Wad-Algeria",
+    "original_names": [
+      "el-wad",
+      "el-oued",
+      "al-oued",
+      "el ouadi",
+      "al-wâd"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "El-Wad": 105200,
+      "Râ's-al-Wâd": 34100
+    },
+    "name_coords": {
+      "El-Wad": [
+        33.36749845188475,
+        6.85132821145198
+      ],
+      "Râ's-al-Wâd": [
+        33.367811,
+        6.8516511
+      ]
+    }
   },
   "En Nedjma-Algeria": {
     "name": "En Nedjma",
@@ -622195,6 +623179,29 @@
     ],
     "type": "populstat"
   },
+  "Hamma Bû Ziyan-Algeria": {
+    "name": "Hamma Bû Ziyan",
+    "province": "CO",
+    "position": 36420660,
+    "other_names": [
+      "Hamma Bouziane"
+    ],
+    "population": {
+      "1987": 34100,
+      "1998": 36400
+    },
+    "coords": [
+      36.417803569486374,
+      6.597340169617948
+    ],
+    "country": "Algeria",
+    "key": "Hamma Bû Ziyan-Algeria",
+    "original_names": [
+      "hamma bû ziyan",
+      "hamma bouziane"
+    ],
+    "type": "populstat"
+  },
   "Hammam Bouhadjar-Algeria": {
     "name": "Hammam Bouhadjar",
     "province": "AT",
@@ -622430,6 +623437,32 @@
     ],
     "type": "populstat"
   },
+  "Khamîs-al-Khashnah-Algeria": {
+    "name": "Khamîs-al-Khashnah",
+    "province": "BM",
+    "particulars": "agglomeration of El-Djazaïr",
+    "position": 36650333,
+    "other_names": [
+      "Khemis El Khechna"
+    ],
+    "population": {
+      "1987": 33200,
+      "1998": 32000
+    },
+    "coords": [
+      36.64393309995221,
+      3.3191339851596693
+    ],
+    "is_agglomeration_of": "el",
+    "country": "Algeria",
+    "key": "Khamîs-al-Khashnah-Algeria",
+    "is_agglomeration": false,
+    "original_names": [
+      "khamîs-al-khashnah",
+      "khemis el khechna"
+    ],
+    "type": "populstat"
+  },
   "Khemis-Algeria": {
     "name": "Khemis",
     "province": "AD",
@@ -622493,6 +623526,31 @@
       "khanshala",
       "khenchella",
       "mascula"
+    ],
+    "type": "populstat"
+  },
+  "Khurub, Al --Algeria": {
+    "name": "Khurub, Al -",
+    "province": "CO",
+    "position": 36270669,
+    "other_names": [
+      "al-Hurub",
+      "El-Khroub"
+    ],
+    "population": {
+      "1987": 42300,
+      "1998": 65200
+    },
+    "coords": [
+      36.259343989467894,
+      6.693182765459758
+    ],
+    "country": "Algeria",
+    "key": "Khurub, Al --Algeria",
+    "original_names": [
+      "khurub, al -",
+      "al-hurub",
+      "el-khroub"
     ],
     "type": "populstat"
   },
@@ -623434,6 +624492,55 @@
       ]
     }
   },
+  "Qasr Shillalah-Algeria": {
+    "name": "Qasr Shillalah",
+    "province": "TR",
+    "elevation": 854,
+    "position": 35210230,
+    "other_names": [
+      "Ksar Chellala"
+    ],
+    "population": {
+      "1987": 27100,
+      "1998": 39300
+    },
+    "coords": [
+      35.21946802428586,
+      2.3144987584298695
+    ],
+    "country": "Algeria",
+    "key": "Qasr Shillalah-Algeria",
+    "original_names": [
+      "qasr shillalah",
+      "ksar chellala"
+    ],
+    "type": "populstat"
+  },
+  "Qull´ah, Al --Algeria": {
+    "name": "Qull´ah, Al -",
+    "province": "ET",
+    "position": 36500830,
+    "other_names": [
+      "El Kala",
+      "El Calle"
+    ],
+    "population": {
+      "1987": 16300,
+      "1998": 21300
+    },
+    "coords": [
+      36.88526777206823,
+      8.441360698643242
+    ],
+    "country": "Algeria",
+    "key": "Qull´ah, Al --Algeria",
+    "original_names": [
+      "qull´ah, al -",
+      "el kala",
+      "el calle"
+    ],
+    "type": "populstat"
+  },
   "Raghayah-Algeria": {
     "name": "Raghayah",
     "province": "BM",
@@ -623483,27 +624590,27 @@
     ],
     "type": "populstat"
   },
-  "Râ's-al-Wâd-Algeria": {
-    "name": "Râ's-al-Wâd",
-    "province": "BB",
-    "elevation": 1080,
-    "position": 35950504,
+  "Ramsh-Algeria": {
+    "name": "Ramsh",
+    "province": "TL",
+    "position": 35070144,
     "other_names": [
-      "Ras El-Oued"
+      "Remchi"
     ],
     "population": {
-      "1987": 25800,
-      "1998": 34100
+      "1954": 54600,
+      "1987": 27100,
+      "1998": 25900
     },
     "coords": [
-      33.367811,
-      6.8516511
+      35.06549271497737,
+      -1.4261101787230854
     ],
     "country": "Algeria",
-    "key": "Râ's-al-Wâd-Algeria",
+    "key": "Ramsh-Algeria",
     "original_names": [
-      "râ's-al-wâd",
-      "ras el-oued"
+      "ramsh",
+      "remchi"
     ],
     "type": "populstat"
   },
@@ -623582,6 +624689,29 @@
     ],
     "type": "populstat"
   },
+  "Saniyah, As --Algeria": {
+    "name": "Saniyah, As -",
+    "province": "OG",
+    "position": 35650063,
+    "other_names": [
+      "Es Senia"
+    ],
+    "population": {
+      "1987": 31100,
+      "1998": 29800
+    },
+    "coords": [
+      35.64794585959008,
+      -0.6232962558307565
+    ],
+    "country": "Algeria",
+    "key": "Saniyah, As --Algeria",
+    "original_names": [
+      "saniyah, as -",
+      "es senia"
+    ],
+    "type": "populstat"
+  },
   "Sebdou-Algeria": {
     "name": "Sebdou",
     "province": "TL",
@@ -623652,6 +624782,74 @@
     ],
     "type": "populstat"
   },
+  "Sharîyah-Algeria": {
+    "name": "Sharîyah",
+    "province": "TB",
+    "position": 35280775,
+    "other_names": [
+      "Chéria"
+    ],
+    "population": {
+      "1987": 33600,
+      "1998": 53600
+    },
+    "coords": [
+      35.77453065675998,
+      -0.284573613342885
+    ],
+    "country": "Algeria",
+    "key": "Sharîyah-Algeria",
+    "original_names": [
+      "sharîyah",
+      "chéria"
+    ],
+    "type": "populstat"
+  },
+  "Shattîyah, Ash --Algeria": {
+    "name": "Shattîyah, Ash -",
+    "province": "CH",
+    "position": 36180125,
+    "population": {
+      "1987": 46400,
+      "1998": 49100
+    },
+    "coords": [
+      36.194277607995474,
+      1.2568671409338497
+    ],
+    "country": "Algeria",
+    "key": "Shattîyah, Ash --Algeria",
+    "original_names": [
+      "shattîyah, ash -"
+    ],
+    "type": "populstat"
+  },
+  "Shiragha-Algeria": {
+    "name": "Shiragha",
+    "province": "TP",
+    "particulars": "agglomeration of El-Djazaïr",
+    "position": 36770297,
+    "other_names": [
+      "Cheraga"
+    ],
+    "population": {
+      "1987": 26900,
+      "1998": 31500
+    },
+    "coords": [
+      36.76674935018958,
+      2.960189703771222
+    ],
+    "is_agglomeration_of": "el",
+    "country": "Algeria",
+    "key": "Shiragha-Algeria",
+    "is_agglomeration": false,
+    "original_names": [
+      "shiragha",
+      "cheraga"
+    ],
+    "type": "populstat"
+  },
   "Sîdî Amar-Algeria": {
     "name": "Sîdî Amar",
     "province": "AN",
@@ -623667,6 +624865,73 @@
     "key": "Sîdî Amar-Algeria",
     "original_names": [
       "sîdî amar"
+    ],
+    "type": "populstat"
+  },
+  "Sîdî ´Aysâ-Algeria": {
+    "name": "Sîdî ´Aysâ",
+    "province": "MS",
+    "elevation": 658,
+    "position": 35900377,
+    "other_names": [
+      "Sidi-Aïssa"
+    ],
+    "population": {
+      "1954": 36900,
+      "1987": 31500,
+      "1998": 53100
+    },
+    "coords": [
+      35.88410283274117,
+      3.775080924455237
+    ],
+    "country": "Algeria",
+    "key": "Sîdî ´Aysâ-Algeria",
+    "original_names": [
+      "sîdî ´aysâ",
+      "sidi-aïssa"
+    ],
+    "type": "populstat"
+  },
+  "Sîdî ban al-'Abbâs-Algeria": {
+    "name": "Sîdî ban al-'Abbâs",
+    "province": "SB",
+    "elevation": 470,
+    "position": 35150039,
+    "other_names": [
+      "Sidi-bel-Abbès"
+    ],
+    "population": {
+      "1882": 14700,
+      "1886": 17600,
+      "1892": 20200,
+      "1896": 23300,
+      "1899": 24300,
+      "1901": 25700,
+      "1906": 29100,
+      "1911": 30900,
+      "1921": 37800,
+      "1926": 43100,
+      "1931": 45900,
+      "1936": 51100,
+      "1948": 61300,
+      "1954": 80600,
+      "1960": 105000,
+      "1966": 91500,
+      "1974": 151100,
+      "1977": 113000,
+      "1987": 152800,
+      "1998": 183900
+    },
+    "coords": [
+      35.21016624171742,
+      -0.6298464132381746
+    ],
+    "country": "Algeria",
+    "key": "Sîdî ban al-'Abbâs-Algeria",
+    "original_names": [
+      "sîdî ban al-'abbâs",
+      "sidi-bel-abbès"
     ],
     "type": "populstat"
   },
@@ -623778,6 +625043,34 @@
     "is_agglomeration": false,
     "original_names": [
       "sidi salem"
+    ],
+    "type": "populstat"
+  },
+  "Siq-Algeria": {
+    "name": "Siq",
+    "province": "MC",
+    "elevation": 54,
+    "position": 35310011,
+    "other_names": [
+      "Saint-Dénis-du-Sig",
+      "Sig"
+    ],
+    "population": {
+      "1901": 11700,
+      "1954": 16600,
+      "1987": 48600,
+      "1998": 53900
+    },
+    "coords": [
+      35.53272872724284,
+      -0.1907181859824321
+    ],
+    "country": "Algeria",
+    "key": "Siq-Algeria",
+    "original_names": [
+      "siq",
+      "saint-dénis-du-sig",
+      "sig"
     ],
     "type": "populstat"
   },
@@ -623982,6 +625275,32 @@
       "sétif",
       "satîf",
       "sitifis"
+    ],
+    "type": "populstat"
+  },
+  "Sûghar-Algeria": {
+    "name": "Sûghar",
+    "province": "TR",
+    "elevation": 1026,
+    "position": 35200150,
+    "other_names": [
+      "Songueur",
+      "Sougueur"
+    ],
+    "population": {
+      "1987": 39200,
+      "1998": 57800
+    },
+    "coords": [
+      35.18360080345947,
+      1.4945231849859586
+    ],
+    "country": "Algeria",
+    "key": "Sûghar-Algeria",
+    "original_names": [
+      "sûghar",
+      "songueur",
+      "sougueur"
     ],
     "type": "populstat"
   },
@@ -624507,6 +625826,53 @@
     ],
     "type": "populstat"
   },
+  "Tûljâ-Algeria": {
+    "name": "Tûljâ",
+    "province": "BS",
+    "position": 34730538,
+    "other_names": [
+      "Tolga"
+    ],
+    "population": {
+      "1987": 27400,
+      "1998": 39800
+    },
+    "coords": [
+      34.726849258960875,
+      5.38036912416939
+    ],
+    "country": "Algeria",
+    "key": "Tûljâ-Algeria",
+    "original_names": [
+      "tûljâ",
+      "tolga"
+    ],
+    "type": "populstat"
+  },
+  "Wâdî Râhîyu-Algeria": {
+    "name": "Wâdî Râhîyu",
+    "province": "RE",
+    "elevation": 97,
+    "position": 35970092,
+    "other_names": [
+      "Oued Rhiou"
+    ],
+    "population": {
+      "1987": 30900,
+      "1998": 42600
+    },
+    "coords": [
+      35.96029497659704,
+      0.9156242997084868
+    ],
+    "country": "Algeria",
+    "key": "Wâdî Râhîyu-Algeria",
+    "original_names": [
+      "wâdî râhîyu",
+      "oued rhiou"
+    ],
+    "type": "populstat"
+  },
   "Wahrân-Algeria": {
     "name": "Oran",
     "province": "OR",
@@ -624576,6 +625942,32 @@
       ]
     }
   },
+  "Walad Ghalal-Algeria": {
+    "name": "Walad Ghalal",
+    "province": "BS",
+    "elevation": 196,
+    "position": 34250502,
+    "other_names": [
+      "Ouled-Djellal"
+    ],
+    "population": {
+      "1954": 46400,
+      "1966": 14600,
+      "1987": 33300,
+      "1998": 41700
+    },
+    "coords": [
+      34.42911900733894,
+      5.060592617491401
+    ],
+    "country": "Algeria",
+    "key": "Walad Ghalal-Algeria",
+    "original_names": [
+      "walad ghalal",
+      "ouled-djellal"
+    ],
+    "type": "populstat"
+  },
   "Wargla-Algeria": {
     "name": "Wargla",
     "province": "OG",
@@ -624605,6 +625997,60 @@
       "wargla",
       "ouargla",
       "warqla"
+    ],
+    "type": "populstat"
+  },
+  "Wed-Zénati-Algeria": {
+    "name": "Wed-Zénati",
+    "province": "GL",
+    "elevation": 636,
+    "position": 36190710,
+    "other_names": [
+      "Oued-Zénati",
+      "Wâdî Zinâti"
+    ],
+    "population": {
+      "1901": 13100,
+      "1948": 21800,
+      "1954": 22900,
+      "1966": 9600,
+      "1987": 22500,
+      "1998": 22500
+    },
+    "coords": [
+      36.30975230994505,
+      7.165748921784725
+    ],
+    "country": "Algeria",
+    "key": "Wed-Zénati-Algeria",
+    "original_names": [
+      "wed-zénati",
+      "oued-zénati",
+      "wâdî zinâti"
+    ],
+    "type": "populstat"
+  },
+  "Winzah-Algeria": {
+    "name": "Winzah",
+    "province": "TB",
+    "elevation": 654,
+    "position": 35960812,
+    "other_names": [
+      "Ouenza"
+    ],
+    "population": {
+      "1987": 37500,
+      "1998": 39200
+    },
+    "coords": [
+      35.95106395365989,
+      8.132920412903562
+    ],
+    "country": "Algeria",
+    "key": "Winzah-Algeria",
+    "original_names": [
+      "winzah",
+      "ouenza"
     ],
     "type": "populstat"
   },
@@ -625196,8 +626642,8 @@
       "2001": 2819000
     },
     "coords": [
-      -10.283333,
-      21.2333329
+      -8.815085634519786,
+      13.230002955738545
     ],
     "country": "Angola",
     "key": "Luanda-Angola",
@@ -625212,10 +626658,11 @@
     },
     "name_coords": {
       "Luanda": [
-        -10.283333,
-        21.2333329
+        -8.815085634519786,
+        13.230002955738545
       ]
-    }
+    },
+    "is_agglomeration_of": "luanda"
   },
   "Luanda (agglomeration)-Angola": {
     "name": "Luanda (agglomeration)",
@@ -625230,8 +626677,8 @@
       "1987": 1459900
     },
     "coords": [
-      -8.8146556,
-      13.2301756
+      -8.815085634519786,
+      13.230002955738545
     ],
     "country": "Angola",
     "key": "Luanda (agglomeration)-Angola",
@@ -632170,18 +633617,29 @@
       "1992": 937600,
       "1996": 856400,
       "1997": 950000,
+      "2000": 1642000,
       "2002": 1133800
     },
     "coords": [
-      -4.2744405,
-      15.2812803
+      -4.273895876277873,
+      15.280435173549602
     ],
     "country": "Republic of the Congo",
     "key": "Brazzaville-Republic of the Congo",
     "original_names": [
       "brazzaville"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Brazzaville": 1642000
+    },
+    "name_coords": {
+      "Brazzaville": [
+        -4.273895876277873,
+        15.280435173549602
+      ]
+    },
+    "other_names": []
   },
   "Djambala-Republic of the Congo": {
     "name": "Djambala",
@@ -635943,81 +637401,18 @@
     "type": "populstat"
   },
   "Anayim, Al--Egypt": {
-    "name": "Sinbillâwayn, Al-",
+    "name": "Anayim, Al-",
     "province": "MY",
     "other_names": [
-      "al-Anayim",
-      "Anayim, Al-",
-      "al-Ashir mir-Ramadan",
-      "Madinat al-Ashir min-Ramadan",
-      "Ashir, Al-, mir-Ramadan",
-      "Hierakonpolis",
-      "Ghurdaqah, Al-",
-      "Al-Ghurdaqah",
-      "El-Gurdaqa",
-      "El-Ghardaqa",
-      "Hurghada",
-      "Al-Ghardaqah",
-      "Hârîga, Al-",
-      "Al-Hârîga",
-      "El-Khârga",
-      "Al-Khârija",
-      "Al-Khârga",
-      "Al-Khârijah",
-      "Ityây-al-Bârûd",
-      "Ityai El Bârúd",
-      "Teh el Barud",
-      "Jamâlîyah, Al-",
-      "Al-Jamâlîyah",
-      "Manshâh, Al-",
-      "Al-Manshah",
-      "El-Mansha",
-      "Minsha",
-      "Menshiye",
-      "Manzilah, Al-",
-      "Al-Manzilah",
-      "El-Manzala",
-      "Menzale",
-      "Minyât-al-Qamh",
-      "Minya al-Qamb",
-      "Minyet El Qamh",
-      "Bûsh",
-      "Qanâyat, Al-",
-      "Al-Qanâyat",
-      "Sâqiyat Makkî",
-      "Sakiet Mekki",
-      "Nâsir",
-      "As-Sinbillâwayn",
-      "Al-Sinbillâwayn",
-      "El-Simbillâwein",
-      "Sinbelauin",
-      "Amarna",
-      "Avaris",
-      "Nekhen",
-      "Oxyrhyncus",
-      "Sais",
-      "Tûr, Al-",
-      "At-Tûr",
-      "El-Tur",
-      "El-Tor"
+      "al-Anayim"
     ],
     "population": {
-      "200": 34000,
-      "1897": 8130.392017590384,
-      "1937": 5400,
-      "1947": 16104.056183139546,
-      "1966": 10700,
-      "1970": 16800,
-      "1986": 35582.67011462341,
-      "1996": 47429.97078266539,
-      "2002": 52896.5077795092,
-      "-2000": 21737.065119284158,
-      "-500": 48000,
-      "-1000": 36449.087780080314
+      "1996": 39100,
+      "2002": 44800
     },
     "coords": [
-      26.820553,
-      30.802498
+      26.873614105598282,
+      31.32597885822088
     ],
     "country": "Egypt",
     "key": "Anayim, Al--Egypt",
@@ -636025,116 +637420,7 @@
       "anayim, al-",
       "al-anayim"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Anayim, Al-": 44800,
-      "Ashir, Al-, mir-Ramadan": 54700,
-      "Bûsh": 70500,
-      "Hierakonpolis": 7500,
-      "Ghurdaqah, Al-": 68700,
-      "Hârîga, Al-": 56600,
-      "Ityây-al-Bârûd": 40600,
-      "Jamâlîyah, Al-": 67100,
-      "Manshâh, Al-": 57200,
-      "Manzilah, Al-": 70300,
-      "Minyât-al-Qamh": 63700,
-      "Nâsir": 80700,
-      "Qanâyat, Al-": 41200,
-      "Sâqiyat Makkî": 51100,
-      "Sinbillâwayn, Al-": 83200,
-      "Amarna": 21428,
-      "Avaris": 63000,
-      "Nekhen": 0,
-      "Oxyrhyncus": 34000,
-      "Sais": 48000,
-      "Tûr, Al-": 13800
-    },
-    "name_coords": {
-      "Anayim, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Ashir, Al-, mir-Ramadan": [
-        26.820553,
-        30.802498
-      ],
-      "Bûsh": [
-        26.820553,
-        30.802498
-      ],
-      "Hierakonpolis": [
-        26.820553,
-        30.802498
-      ],
-      "Ghurdaqah, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Hârîga, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Ityây-al-Bârûd": [
-        26.820553,
-        30.802498
-      ],
-      "Jamâlîyah, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Manshâh, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Manzilah, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Minyât-al-Qamh": [
-        26.820553,
-        30.802498
-      ],
-      "Nâsir": [
-        26.820553,
-        30.802498
-      ],
-      "Qanâyat, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Sâqiyat Makkî": [
-        26.820553,
-        30.802498
-      ],
-      "Sinbillâwayn, Al-": [
-        26.820553,
-        30.802498
-      ],
-      "Amarna": [
-        26.820553,
-        30.802498
-      ],
-      "Avaris": [
-        26.820553,
-        30.802498
-      ],
-      "Nekhen": [
-        26.820553,
-        30.802498
-      ],
-      "Oxyrhyncus": [
-        26.820553,
-        30.802498
-      ],
-      "Sais": [
-        26.820553,
-        30.802498
-      ],
-      "Tûr, Al-": [
-        26.820553,
-        30.802498
-      ]
-    }
+    "type": "populstat"
   },
   "'Arîsh, Al--Egypt": {
     "name": "'Arîsh, Al-",
@@ -636196,6 +637482,64 @@
       "erment"
     ],
     "type": "populstat"
+  },
+  "Ashir, Al-, mir-Ramadan-Egypt": {
+    "name": "Jamâlîyah, Al-",
+    "province": "SQ",
+    "found.yr": 1978,
+    "other_names": [
+      "al-Ashir mir-Ramadan",
+      "Madinat al-Ashir min-Ramadan",
+      "Ashir, Al-, mir-Ramadan",
+      "Al-Hârîga",
+      "El-Khârga",
+      "Al-Khârija",
+      "Al-Khârga",
+      "Al-Khârijah",
+      "Hârîga, Al-",
+      "Al-Jamâlîyah"
+    ],
+    "population": {
+      "1897": 4300,
+      "1937": 5400,
+      "1947": 12400,
+      "1966": 10700,
+      "1970": 16800,
+      "1986": 41715.7044768514,
+      "1996": 51787.35523162166,
+      "2002": 59225.503187216724
+    },
+    "coords": [
+      26.820553,
+      30.802498
+    ],
+    "country": "Egypt",
+    "key": "Ashir, Al-, mir-Ramadan-Egypt",
+    "original_names": [
+      "ashir, al-, mir-ramadan",
+      "al-ashir mir-ramadan",
+      "madinat al-ashir min-ramadan"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Ashir, Al-, mir-Ramadan": 54700,
+      "Hârîga, Al-": 56600,
+      "Jamâlîyah, Al-": 67100
+    },
+    "name_coords": {
+      "Ashir, Al-, mir-Ramadan": [
+        26.820553,
+        30.802498
+      ],
+      "Hârîga, Al-": [
+        26.820553,
+        30.802498
+      ],
+      "Jamâlîyah, Al-": [
+        26.820553,
+        30.802498
+      ]
+    }
   },
   "Ashmûn-Egypt": {
     "name": "Ashmûn",
@@ -636826,6 +638170,44 @@
       ]
     }
   },
+  "Bûsh-Egypt": {
+    "name": "Nâsir",
+    "province": "BS",
+    "population": {
+      "1897": 9700,
+      "1947": 15600,
+      "1986": 54700,
+      "1996": 70500,
+      "2002": 80700
+    },
+    "coords": [
+      29.1494185513054,
+      31.12936929529669
+    ],
+    "country": "Egypt",
+    "key": "Bûsh-Egypt",
+    "original_names": [
+      "bûsh"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Bûsh": 70500,
+      "Nâsir": 80700
+    },
+    "name_coords": {
+      "Bûsh": [
+        29.1494185513054,
+        31.12936929529669
+      ],
+      "Nâsir": [
+        29.1494185513054,
+        31.12936929529669
+      ]
+    },
+    "other_names": [
+      "Bûsh"
+    ]
+  },
   "Damanhûr-Egypt": {
     "name": "Damanhûr",
     "province": "BH*",
@@ -637248,6 +638630,38 @@
     "original_names": [
       "fuwah",
       "fuwa"
+    ],
+    "type": "populstat"
+  },
+  "Ghurdaqah, Al--Egypt": {
+    "name": "Ghurdaqah, Al-",
+    "province": "BA*",
+    "particulars": "booming tourist resort on the Red Sea",
+    "other_names": [
+      "Al-Ghurdaqah",
+      "El-Gurdaqa",
+      "El-Ghardaqa",
+      "Hurghada",
+      "Al-Ghardaqah"
+    ],
+    "population": {
+      "1986": 22800,
+      "1996": 56100,
+      "2002": 68700
+    },
+    "coords": [
+      27.25651866851731,
+      33.81122799605434
+    ],
+    "country": "Egypt",
+    "key": "Ghurdaqah, Al--Egypt",
+    "original_names": [
+      "ghurdaqah, al-",
+      "al-ghurdaqah",
+      "el-gurdaqa",
+      "el-ghardaqa",
+      "hurghada",
+      "al-ghardaqah"
     ],
     "type": "populstat"
   },
@@ -637733,6 +639147,31 @@
     ],
     "type": "populstat"
   },
+  "Ityây-al-Bârûd-Egypt": {
+    "name": "Ityây-al-Bârûd",
+    "province": "BH",
+    "other_names": [
+      "Ityai El Bârúd",
+      "Teh el Barud"
+    ],
+    "population": {
+      "1947": 7300,
+      "1996": 35500,
+      "2002": 40600
+    },
+    "coords": [
+      30.885954907195483,
+      30.666476135825466
+    ],
+    "country": "Egypt",
+    "key": "Ityây-al-Bârûd-Egypt",
+    "original_names": [
+      "ityây-al-bârûd",
+      "ityai el bârúd",
+      "teh el barud"
+    ],
+    "type": "populstat"
+  },
   "Jirjâ-Egypt": {
     "name": "Jirjâ",
     "province": "SH",
@@ -637802,8 +639241,8 @@
       "2002": 2541000
     },
     "coords": [
-      28.7666216,
-      29.2320784
+      30.013065838387064,
+      31.20852540754892
     ],
     "country": "Egypt",
     "key": "Jîzah, Al--Egypt",
@@ -637833,8 +639272,8 @@
       "1966": 571200
     },
     "coords": [
-      28.7666216,
-      29.2320784
+      30.013065838387064,
+      31.20852540754892
     ],
     "country": "Egypt",
     "key": "Jîzah, Al- (agglomeration)-Egypt",
@@ -638181,6 +639620,37 @@
     ],
     "type": "populstat"
   },
+  "Manshâh, Al--Egypt": {
+    "name": "Manshâh, Al-",
+    "province": "SH",
+    "other_names": [
+      "Al-Manshah",
+      "El-Mansha",
+      "Minsha",
+      "Menshiye"
+    ],
+    "population": {
+      "1897": 10500,
+      "1947": 20500,
+      "1986": 37800,
+      "1996": 50000,
+      "2002": 57200
+    },
+    "coords": [
+      26.479029914248265,
+      31.802127464727278
+    ],
+    "country": "Egypt",
+    "key": "Manshâh, Al--Egypt",
+    "original_names": [
+      "manshâh, al-",
+      "al-manshah",
+      "el-mansha",
+      "minsha",
+      "menshiye"
+    ],
+    "type": "populstat"
+  },
   "Mansûrah, Al--Egypt": {
     "name": "Mansûrah, Al-",
     "province": "DQ*",
@@ -638241,6 +639711,35 @@
         31.3784704
       ]
     }
+  },
+  "Manzilah, Al--Egypt": {
+    "name": "Manzilah, Al-",
+    "province": "DQ",
+    "other_names": [
+      "Al-Manzilah",
+      "El-Manzala",
+      "Menzale"
+    ],
+    "population": {
+      "1897": 10400,
+      "1947": 23900,
+      "1986": 54900,
+      "1996": 61500,
+      "2002": 70300
+    },
+    "coords": [
+      31.157525233531317,
+      31.937173129453228
+    ],
+    "country": "Egypt",
+    "key": "Manzilah, Al--Egypt",
+    "original_names": [
+      "manzilah, al-",
+      "al-manzilah",
+      "el-manzala",
+      "menzale"
+    ],
+    "type": "populstat"
   },
   "Marsâ Matrûh-Egypt": {
     "name": "Marsâ Matrûh",
@@ -638424,6 +639923,31 @@
     ],
     "type": "populstat"
   },
+  "Minyât-al-Qamh-Egypt": {
+    "name": "Minyât-al-Qamh",
+    "province": "SQ",
+    "other_names": [
+      "Minya al-Qamb",
+      "Minyet El Qamh"
+    ],
+    "population": {
+      "1947": 14500,
+      "1996": 55700,
+      "2002": 63700
+    },
+    "coords": [
+      30.51347618659181,
+      31.345932325608146
+    ],
+    "country": "Egypt",
+    "key": "Minyât-al-Qamh-Egypt",
+    "original_names": [
+      "minyât-al-qamh",
+      "minya al-qamb",
+      "minyet el qamh"
+    ],
+    "type": "populstat"
+  },
   "Minyât-an-Nasr-Egypt": {
     "name": "Minyât-an-Nasr",
     "province": "DQ",
@@ -638603,7 +640127,7 @@
         31.2357116
       ]
     },
-    "is_agglomeration_of": "qâhirah, al-"
+    "is_agglomeration_of": "jîzah, al-"
   },
   "Qâhirah, Al- (agglomeration)-Egypt": {
     "name": "Qâhirah, Al- (agglomeration)",
@@ -638720,6 +640244,28 @@
       ]
     },
     "is_agglomeration_of": "al"
+  },
+  "Qanâyat, Al--Egypt": {
+    "name": "Qanâyat, Al-",
+    "province": "SQ",
+    "other_names": [
+      "Al-Qanâyat"
+    ],
+    "population": {
+      "1996": 36000,
+      "2002": 41200
+    },
+    "coords": [
+      30.617469249821447,
+      31.460026610198057
+    ],
+    "country": "Egypt",
+    "key": "Qanâyat, Al--Egypt",
+    "original_names": [
+      "qanâyat, al-",
+      "al-qanâyat"
+    ],
+    "type": "populstat"
   },
   "Qinâ-Egypt": {
     "name": "Qinâ",
@@ -639009,6 +640555,28 @@
     ],
     "type": "populstat"
   },
+  "Sâqiyat Makkî-Egypt": {
+    "name": "Sâqiyat Makkî",
+    "province": "JZ",
+    "other_names": [
+      "Sakiet Mekki"
+    ],
+    "population": {
+      "1986": 51100
+    },
+    "coords": [
+      29.995473260948305,
+      31.208693067408593
+    ],
+    "country": "Egypt",
+    "key": "Sâqiyat Makkî-Egypt",
+    "original_names": [
+      "sâqiyat makkî",
+      "sakiet mekki"
+    ],
+    "type": "populstat",
+    "is_agglomeration_of": "jîzah, al-"
+  },
   "Sawhâj-Egypt": {
     "name": "Sawhâj",
     "province": "SH*",
@@ -639183,6 +640751,37 @@
     "key": "Sîdî Sâlim-Egypt",
     "original_names": [
       "sîdî sâlim"
+    ],
+    "type": "populstat"
+  },
+  "Sinbillâwayn, Al--Egypt": {
+    "name": "Sinbillâwayn, Al-",
+    "province": "DQ",
+    "other_names": [
+      "As-Sinbillâwayn",
+      "Al-Sinbillâwayn",
+      "El-Simbillâwein",
+      "Sinbelauin"
+    ],
+    "population": {
+      "1897": 7800,
+      "1947": 28000,
+      "1986": 60200,
+      "1996": 72700,
+      "2002": 83200
+    },
+    "coords": [
+      30.88329424038837,
+      31.459609743072974
+    ],
+    "country": "Egypt",
+    "key": "Sinbillâwayn, Al--Egypt",
+    "original_names": [
+      "sinbillâwayn, al-",
+      "as-sinbillâwayn",
+      "al-sinbillâwayn",
+      "el-simbillâwein",
+      "sinbelauin"
     ],
     "type": "populstat"
   },
@@ -639508,6 +641107,33 @@
     "is_agglomeration": false,
     "original_names": [
       "tûkh"
+    ],
+    "type": "populstat"
+  },
+  "Tûr, Al--Egypt": {
+    "name": "Tûr, Al-",
+    "province": "JS*",
+    "other_names": [
+      "At-Tûr",
+      "El-Tur",
+      "El-Tor"
+    ],
+    "population": {
+      "1986": 6600,
+      "1996": 12100,
+      "2002": 13800
+    },
+    "coords": [
+      28.240857591368908,
+      33.62393414748476
+    ],
+    "country": "Egypt",
+    "key": "Tûr, Al--Egypt",
+    "original_names": [
+      "tûr, al-",
+      "at-tûr",
+      "el-tur",
+      "el-tor"
     ],
     "type": "populstat"
   },
@@ -640689,30 +642315,18 @@
     "position": 14153928,
     "other_names": [
       "Addi Grat",
-      "Adigrat",
-      "Chonga",
-      "Tegulat",
-      "Adis Alam",
-      "Adis Alem",
-      "Chagne",
-      "Chagni",
-      "Hâgere Hiywet",
-      "Hagere Hiywot",
-      "Ambo"
+      "Adigrat"
     ],
     "population": {
-      "1300": 20000,
-      "1500": 20000,
-      "1968": 7800,
       "1970": 9100,
-      "1972": 7190.27120489902,
-      "1984": 13330.230666954485,
-      "1994": 19267.0616708246,
-      "2002": 33420.24541397676
+      "1972": 9400,
+      "1984": 16300,
+      "1994": 37400,
+      "2002": 47400
     },
     "coords": [
-      9.145000000000001,
-      40.489673
+      14.27764400524504,
+      39.46112033070299
     ],
     "country": "Ethiopia",
     "key": "Âddîgrat-Ethiopia",
@@ -640721,41 +642335,7 @@
       "addi grat",
       "adigrat"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Âddîgrat": 47400,
-      "Chonga": 20000,
-      "Tegulat": 20000,
-      "Adis Alam": 7800,
-      "Chagne": 22500,
-      "Hâgere Hiywet": 35000
-    },
-    "name_coords": {
-      "Âddîgrat": [
-        9.145000000000001,
-        40.489673
-      ],
-      "Chonga": [
-        9.145000000000001,
-        40.489673
-      ],
-      "Tegulat": [
-        9.145000000000001,
-        40.489673
-      ],
-      "Adis Alam": [
-        9.145000000000001,
-        40.489673
-      ],
-      "Chagne": [
-        9.145000000000001,
-        40.489673
-      ],
-      "Hâgere Hiywet": [
-        9.145000000000001,
-        40.489673
-      ]
-    }
+    "type": "populstat"
   },
   "Âdêt-Ethiopia": {
     "name": "Âdêt",
@@ -640861,6 +642441,31 @@
     "is_agglomeration_of": "adis abeba",
     "original_names": [
       "adis abeba"
+    ],
+    "type": "populstat"
+  },
+  "Adis Alam-Ethiopia": {
+    "name": "Adis Alam",
+    "province": "SH",
+    "found.yr": 1900,
+    "position": 9023824,
+    "other_names": [
+      "Adis Alem"
+    ],
+    "population": {
+      "1968": 7800,
+      "1972": 5500,
+      "1994": 7500
+    },
+    "coords": [
+      9.046453398752265,
+      38.40590709120923
+    ],
+    "country": "Ethiopia",
+    "key": "Adis Alam-Ethiopia",
+    "original_names": [
+      "adis alam",
+      "adis alem"
     ],
     "type": "populstat"
   },
@@ -641491,6 +643096,30 @@
     "original_names": [
       "butajira",
       "butajîra"
+    ],
+    "type": "populstat"
+  },
+  "Chagne-Ethiopia": {
+    "name": "Chagne",
+    "province": "am",
+    "position": 10.9536,
+    "other_names": [
+      "Chagni"
+    ],
+    "population": {
+      "1984": 8400,
+      "1994": 17800,
+      "2002": 22500
+    },
+    "coords": [
+      10.955896154977717,
+      36.50430681172159
+    ],
+    "country": "Ethiopia",
+    "key": "Chagne-Ethiopia",
+    "original_names": [
+      "chagne",
+      "chagni"
     ],
     "type": "populstat"
   },
@@ -642175,6 +643804,32 @@
     "key": "Gore-Ethiopia",
     "original_names": [
       "gore"
+    ],
+    "type": "populstat"
+  },
+  "Hâgere Hiywet-Ethiopia": {
+    "name": "Hâgere Hiywet",
+    "province": "SH",
+    "position": 8593751,
+    "other_names": [
+      "Hagere Hiywot",
+      "Ambo"
+    ],
+    "population": {
+      "1984": 17300,
+      "1994": 27600,
+      "2002": 35000
+    },
+    "coords": [
+      8.981983405506096,
+      37.85847893556641
+    ],
+    "country": "Ethiopia",
+    "key": "Hâgere Hiywet-Ethiopia",
+    "original_names": [
+      "hâgere hiywet",
+      "hagere hiywot",
+      "ambo"
     ],
     "type": "populstat"
   },
@@ -652904,9 +654559,12 @@
     "name": "Mahanjanga",
     "province": "MA*",
     "other_names": [
-      "Majunga"
+      "Majunga",
+      "Mouzangaye"
     ],
     "population": {
+      "1750": 30000,
+      "1800": 25000,
       "1890": 14000,
       "1904": 5000,
       "1907": 4600,
@@ -652931,8 +654589,8 @@
       "1993": 100800
     },
     "coords": [
-      -16.523883,
-      46.516262
+      -15.718156756772073,
+      46.317841078074224
     ],
     "country": "Madagascar",
     "key": "Mahanjanga-Madagascar",
@@ -652940,7 +654598,21 @@
       "mahanjanga",
       "majunga"
     ],
-    "type": "populstat"
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Mahanjanga": 200000,
+      "Mouzangaye": 30000
+    },
+    "name_coords": {
+      "Mahanjanga": [
+        -15.718156756772073,
+        46.317841078074224
+      ],
+      "Mouzangaye": [
+        -15.718156756772073,
+        46.317841078074224
+      ]
+    }
   },
   "Manakambahiny-Madagascar": {
     "name": "Manakambahiny",
@@ -653142,15 +654814,12 @@
     "type": "populstat"
   },
   "Sosumav-Madagascar": {
-    "name": "Mouzangaye",
+    "name": "Sosumav",
     "province": "AS",
     "other_names": [
-      "Sosumav-Mahavavy",
-      "Sosumav"
+      "Sosumav-Mahavavy"
     ],
     "population": {
-      "1750": 30000,
-      "1800": 25000,
       "1959": 6600,
       "1971": 10900
     },
@@ -653164,21 +654833,7 @@
       "sosumav",
       "sosumav-mahavavy"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Sosumav": 10900,
-      "Mouzangaye": 30000
-    },
-    "name_coords": {
-      "Sosumav": [
-        -18.766947,
-        46.869107
-      ],
-      "Mouzangaye": [
-        -18.766947,
-        46.869107
-      ]
-    }
+    "type": "populstat"
   },
   "Taolanaro-Madagascar": {
     "name": "Taolanaro",
@@ -654098,8 +655753,8 @@
       "1998": 29700
     },
     "coords": [
-      21.0526706,
-      -3.743509
+      16.770195,
+      -3.0082533
     ],
     "country": "Mali",
     "key": "Timbouctou-Mali",
@@ -654524,20 +656179,18 @@
     "type": "populstat"
   },
   "Timbréda-Mauritania": {
-    "name": "Aoudaghost",
+    "name": "Timbréda",
     "province": "HC",
     "other_names": [
-      "Timbadgah (?)",
-      "Timbréda"
+      "Timbadgah (?)"
     ],
     "population": {
-      "800": 25000,
       "1965": 1200,
       "1977": 5300
     },
     "coords": [
-      21.00789,
-      -10.940835
+      16.25,
+      -8.166667
     ],
     "country": "Mauritania",
     "key": "Timbréda-Mauritania",
@@ -654545,21 +656198,7 @@
       "timbréda",
       "timbadgah"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Timbréda": 5300,
-      "Aoudaghost": 25000
-    },
-    "name_coords": {
-      "Timbréda": [
-        21.00789,
-        -10.940835
-      ],
-      "Aoudaghost": [
-        21.00789,
-        -10.940835
-      ]
-    }
+    "type": "populstat"
   },
   "Zouïrât-Mauritania": {
     "name": "Zouïrât",
@@ -656294,123 +657933,20 @@
     "type": "populstat"
   },
   "Arba du Khattazakane-Morocco": {
-    "name": "Tagust",
+    "name": "Arba du Khattazakane",
     "population": {
-      "1500": 28284.2712474619,
-      "1600": 30000,
-      "1960": 22500.970962226856
+      "1960": 20800
     },
     "coords": [
-      31.791702,
-      -7.092619999999999
+      32.231464071371,
+      -9.137241099415972
     ],
     "country": "Morocco",
     "key": "Arba du Khattazakane-Morocco",
     "original_names": [
       "arba du khattazakane"
     ],
-    "type": "populstat",
-    "name_peaks": {
-      "Arba du Khattazakane": 20800,
-      "Béni Amir du Centre": 25800,
-      "Berkine": 20800,
-      "Had Bkhati": 20400,
-      "Jemaâ des Haoufate": 23400,
-      "Kenichet": 24900,
-      "Khemis-Mtouh": 20400,
-      "Khemis-Nga": 22500,
-      "Madarh": 21000,
-      "Mzefroum": 20200,
-      "Saada Dar el Arja": 25000,
-      "Tagust": 40000,
-      "Sebt des Oulad Hassine": 28100,
-      "Tedsi": 20000,
-      "Sidi Tiji": 20700,
-      "Tleta-Henchane": 22700
-    },
-    "name_coords": {
-      "Arba du Khattazakane": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Béni Amir du Centre": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Berkine": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Had Bkhati": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Jemaâ des Haoufate": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Kenichet": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Khemis-Mtouh": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Khemis-Nga": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Madarh": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Mzefroum": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Saada Dar el Arja": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Tagust": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Sebt des Oulad Hassine": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Tedsi": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Sidi Tiji": [
-        31.791702,
-        -7.092619999999999
-      ],
-      "Tleta-Henchane": [
-        31.791702,
-        -7.092619999999999
-      ]
-    },
-    "other_names": [
-      "Arba du Khattazakane",
-      "Berkine",
-      "Had Bkhati",
-      "Jemaâ des Haoufate",
-      "Kenichet",
-      "Khemis-Mtouh",
-      "Khemis-Nga",
-      "Madarh",
-      "Mzefroum",
-      "Saada Dar el Arja",
-      "Béni Amir du Centre",
-      "Sebt des Oulad Hassine",
-      "Tedsi",
-      "Sidi Tiji",
-      "Tleta-Henchane"
-    ]
+    "type": "populstat"
   },
   "Asilah-Morocco": {
     "name": "Asilah",
@@ -656601,6 +658137,41 @@
     ],
     "type": "populstat"
   },
+  "Béni Amir du Centre-Morocco": {
+    "name": "Fkih Ben Salah",
+    "population": {
+      "1950": 6700,
+      "1960": 25800,
+      "1971": 26900
+    },
+    "coords": [
+      32.5009216,
+      -6.6905458
+    ],
+    "country": "Morocco",
+    "key": "Béni Amir du Centre-Morocco",
+    "original_names": [
+      "béni amir du centre"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Béni Amir du Centre": 25800,
+      "Fkih Ben Salah": 26900
+    },
+    "name_coords": {
+      "Béni Amir du Centre": [
+        32.50233915068921,
+        -6.6909314368273325
+      ],
+      "Fkih Ben Salah": [
+        32.5009216,
+        -6.6905458
+      ]
+    },
+    "other_names": [
+      "Béni Amir du Centre"
+    ]
+  },
   "Béni Mellal-Morocco": {
     "name": "Béni Mellal",
     "elevation": 580,
@@ -656660,6 +658231,22 @@
     "key": "Berkane-Morocco",
     "original_names": [
       "berkane"
+    ],
+    "type": "populstat"
+  },
+  "Berkine-Morocco": {
+    "name": "Berkine",
+    "population": {
+      "1960": 20800
+    },
+    "coords": [
+      33.76630038417769,
+      -3.844909061567741
+    ],
+    "country": "Morocco",
+    "key": "Berkine-Morocco",
+    "original_names": [
+      "berkine"
     ],
     "type": "populstat"
   },
@@ -657265,23 +658852,6 @@
     ],
     "type": "populstat"
   },
-  "Fkih Ben Salah-Morocco": {
-    "name": "Fkih Ben Salah",
-    "population": {
-      "1950": 6700,
-      "1971": 26900
-    },
-    "coords": [
-      32.5009216,
-      -6.6905458
-    ],
-    "country": "Morocco",
-    "key": "Fkih Ben Salah-Morocco",
-    "original_names": [
-      "fkih ben salah"
-    ],
-    "type": "populstat"
-  },
   "Fnidek-Morocco": {
     "name": "Fnidek",
     "population": {
@@ -657363,6 +658933,22 @@
     ],
     "type": "populstat"
   },
+  "Had Bkhati-Morocco": {
+    "name": "Had Bkhati",
+    "population": {
+      "1960": 20400
+    },
+    "coords": [
+      32.43428748174887,
+      -8.649474981295873
+    ],
+    "country": "Morocco",
+    "key": "Had Bkhati-Morocco",
+    "original_names": [
+      "had bkhati"
+    ],
+    "type": "populstat"
+  },
   "Ifni-Morocco": {
     "name": "Ifni",
     "other_names": [
@@ -657438,6 +659024,22 @@
     "type": "populstat",
     "is_agglomeration_of": "agadir"
   },
+  "Jemaâ des Haoufate-Morocco": {
+    "name": "Jemaâ des Haoufate",
+    "population": {
+      "1960": 23400
+    },
+    "coords": [
+      34.40037308933873,
+      -6.002935929961354
+    ],
+    "country": "Morocco",
+    "key": "Jemaâ des Haoufate-Morocco",
+    "original_names": [
+      "jemaâ des haoufate"
+    ],
+    "type": "populstat"
+  },
   "Jerada-Morocco": {
     "name": "Jerada",
     "other_names": [
@@ -657490,6 +659092,22 @@
     "key": "Kasba Tadla-Morocco",
     "original_names": [
       "kasba tadla"
+    ],
+    "type": "populstat"
+  },
+  "Kenichet-Morocco": {
+    "name": "Kenichet",
+    "population": {
+      "1960": 24900
+    },
+    "coords": [
+      34.438822357589224,
+      -5.685725240436234
+    ],
+    "country": "Morocco",
+    "key": "Kenichet-Morocco",
+    "original_names": [
+      "kenichet"
     ],
     "type": "populstat"
   },
@@ -657564,6 +659182,38 @@
     "key": "Khemis des Zemamra-Morocco",
     "original_names": [
       "khemis des zemamra"
+    ],
+    "type": "populstat"
+  },
+  "Khemis-Mtouh-Morocco": {
+    "name": "Khemis-Mtouh",
+    "population": {
+      "1960": 20400
+    },
+    "coords": [
+      32.879925723223096,
+      -8.173504780814401
+    ],
+    "country": "Morocco",
+    "key": "Khemis-Mtouh-Morocco",
+    "original_names": [
+      "khemis-mtouh"
+    ],
+    "type": "populstat"
+  },
+  "Khemis-Nga-Morocco": {
+    "name": "Khemis-Nga",
+    "population": {
+      "1960": 22500
+    },
+    "coords": [
+      31.99745514977602,
+      -9.035360085308678
+    ],
+    "country": "Morocco",
+    "key": "Khemis-Nga-Morocco",
+    "original_names": [
+      "khemis-nga"
     ],
     "type": "populstat"
   },
@@ -657697,6 +659347,22 @@
       "el arâïch",
       "al-arâ'i`s",
       "lixus"
+    ],
+    "type": "populstat"
+  },
+  "Madarh-Morocco": {
+    "name": "Madarh",
+    "population": {
+      "1960": 21000
+    },
+    "coords": [
+      35.01342816508402,
+      -2.3393296839486935
+    ],
+    "country": "Morocco",
+    "key": "Madarh-Morocco",
+    "original_names": [
+      "madarh"
     ],
     "type": "populstat"
   },
@@ -657989,6 +659655,22 @@
     ],
     "type": "populstat"
   },
+  "Mzefroum-Morocco": {
+    "name": "Mzefroum",
+    "population": {
+      "1960": 20200
+    },
+    "coords": [
+      34.83451857664319,
+      -5.748844823579759
+    ],
+    "country": "Morocco",
+    "key": "Mzefroum-Morocco",
+    "original_names": [
+      "mzefroum"
+    ],
+    "type": "populstat"
+  },
   "Nador-Morocco": {
     "name": "Nador",
     "other_names": [
@@ -658278,6 +659960,22 @@
     ],
     "type": "populstat"
   },
+  "Saada Dar el Arja-Morocco": {
+    "name": "Saada Dar el Arja",
+    "population": {
+      "1960": 25000
+    },
+    "coords": [
+      31.55490588149343,
+      -8.125118998458603
+    ],
+    "country": "Morocco",
+    "key": "Saada Dar el Arja-Morocco",
+    "original_names": [
+      "saada dar el arja"
+    ],
+    "type": "populstat"
+  },
   "Safi-Morocco": {
     "name": "Safi",
     "other_names": [
@@ -658385,6 +660083,22 @@
     "key": "Sebt des Beni-Frassen-Morocco",
     "original_names": [
       "sebt des beni-frassen"
+    ],
+    "type": "populstat"
+  },
+  "Sebt des Oulad Hassine-Morocco": {
+    "name": "Sebt des Oulad Hassine",
+    "population": {
+      "1960": 28100
+    },
+    "coords": [
+      31.791702,
+      -7.092619999999999
+    ],
+    "country": "Morocco",
+    "key": "Sebt des Oulad Hassine-Morocco",
+    "original_names": [
+      "sebt des oulad hassine"
     ],
     "type": "populstat"
   },
@@ -658590,6 +660304,22 @@
     "key": "Sidi Slimane-Morocco",
     "original_names": [
       "sidi slimane"
+    ],
+    "type": "populstat"
+  },
+  "Sidi Tiji-Morocco": {
+    "name": "Sidi Tiji",
+    "population": {
+      "1960": 20700
+    },
+    "coords": [
+      32.1711420911337,
+      -8.868710603957373
+    ],
+    "country": "Morocco",
+    "key": "Sidi Tiji-Morocco",
+    "original_names": [
+      "sidi tiji"
     ],
     "type": "populstat"
   },
@@ -659033,6 +660763,22 @@
     "key": "Tiznit-Morocco",
     "original_names": [
       "tiznit"
+    ],
+    "type": "populstat"
+  },
+  "Tleta-Henchane-Morocco": {
+    "name": "Tleta-Henchane",
+    "population": {
+      "1960": 22700
+    },
+    "coords": [
+      31.519477347109905,
+      -9.43650629886598
+    ],
+    "country": "Morocco",
+    "key": "Tleta-Henchane-Morocco",
+    "original_names": [
+      "tleta-henchane"
     ],
     "type": "populstat"
   },
@@ -662812,12 +664558,11 @@
     "type": "populstat"
   },
   "Hadejia-Nigeria": {
-    "name": "Hadeja",
+    "name": "Hadejia",
     "state": "JIG",
     "population": {
       "1963": 23500,
-      "1991": 66000,
-      "2000": 105628
+      "1991": 66000
     },
     "coords": [
       12.4572315,
@@ -662828,24 +664573,7 @@
     "original_names": [
       "hadejia"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Hadejia": 66000,
-      "Hadeja": 105628
-    },
-    "name_coords": {
-      "Hadejia": [
-        12.4572315,
-        10.040849
-      ],
-      "Hadeja": [
-        12.4572315,
-        10.040849
-      ]
-    },
-    "other_names": [
-      "Hadejia"
-    ]
+    "type": "populstat"
   },
   "Ibadan-Nigeria": {
     "name": "Ibadan",
@@ -670787,12 +672515,11 @@
       "1891": 10700,
       "1904": 9400,
       "1911": 14300,
-      "1921": 21600,
-      "1991": 13600
+      "1921": 21600
     },
     "coords": [
-      -30.559482,
-      22.937506
+      -28.759230264846465,
+      24.780772503220515
     ],
     "country": "South Africa",
     "key": "Beaconsfield-South Africa",
@@ -670800,24 +672527,7 @@
       "beaconsfield"
     ],
     "type": "populstat",
-    "name_peaks": {
-      "Beaconsfield": 21600,
-      "Kwa Makuta": 13600
-    },
-    "name_coords": {
-      "Beaconsfield": [
-        -30.559482,
-        22.937506
-      ],
-      "Kwa Makuta": [
-        -30.559482,
-        22.937506
-      ]
-    },
-    "other_names": [
-      "Kwa Makuta"
-    ],
-    "is_agglomeration_of": "durban"
+    "is_agglomeration_of": "kimberley"
   },
   "Beaufort West-South Africa": {
     "name": "Beaufort West",
@@ -672261,6 +673971,26 @@
     "is_agglomeration": false,
     "original_names": [
       "krugersdorp"
+    ],
+    "type": "populstat"
+  },
+  "Kwa Makuta-South Africa": {
+    "name": "Kwa Makuta",
+    "province": "NT",
+    "particulars": "agglomeration of Durban",
+    "population": {
+      "1991": 13600
+    },
+    "coords": [
+      -30.559482,
+      22.937506
+    ],
+    "is_agglomeration_of": "durban",
+    "country": "South Africa",
+    "key": "Kwa Makuta-South Africa",
+    "is_agglomeration": false,
+    "original_names": [
+      "kwa makuta"
     ],
     "type": "populstat"
   },
@@ -674344,22 +676074,16 @@
   "Al-Jinena-Sudan": {
     "name": "Al-Jinena",
     "other_names": [
-      "El-Geneina",
-      "Meroe",
-      "Napata",
-      "Bava",
-      "Suki"
+      "El-Geneina"
     ],
     "population": {
-      "0": 36500,
-      "1955": 7535.347222213904,
+      "1955": 11800,
       "1973": 33000,
-      "1983": 56000,
-      "-500": 46412.83227729159
+      "1983": 56000
     },
     "coords": [
-      12.862807,
-      30.217636
+      13.433852449353441,
+      22.435241752575603
     ],
     "country": "Sudan",
     "key": "Al-Jinena-Sudan",
@@ -674367,36 +676091,7 @@
       "al-jinena",
       "el-geneina"
     ],
-    "type": "chandler_modelski",
-    "name_peaks": {
-      "Al-Jinena": 56000,
-      "Meroe": 47000,
-      "Napata": 45833,
-      "Bava": 4900,
-      "Suki": 7400
-    },
-    "name_coords": {
-      "Al-Jinena": [
-        12.862807,
-        30.217636
-      ],
-      "Meroe": [
-        12.862807,
-        30.217636
-      ],
-      "Napata": [
-        12.862807,
-        30.217636
-      ],
-      "Bava": [
-        12.862807,
-        30.217636
-      ],
-      "Suki": [
-        12.862807,
-        30.217636
-      ]
-    }
+    "type": "populstat"
   },
   "Al-Qadarîf-Sudan": {
     "name": "Al-Qadarîf",
@@ -674530,6 +676225,53 @@
       "aweil"
     ],
     "type": "populstat"
+  },
+  "Bava-Sudan": {
+    "name": "Meroe",
+    "population": {
+      "0": 36500,
+      "1955": 6021.627686929839,
+      "-500": 46412.83227729159
+    },
+    "coords": [
+      12.862807,
+      30.217636
+    ],
+    "country": "Sudan",
+    "key": "Bava-Sudan",
+    "original_names": [
+      "bava"
+    ],
+    "type": "populstat",
+    "name_peaks": {
+      "Bava": 4900,
+      "Meroe": 47000,
+      "Suki": 7400,
+      "Napata": 45833
+    },
+    "name_coords": {
+      "Bava": [
+        12.862807,
+        30.217636
+      ],
+      "Meroe": [
+        12.862807,
+        30.217636
+      ],
+      "Suki": [
+        12.862807,
+        30.217636
+      ],
+      "Napata": [
+        12.862807,
+        30.217636
+      ]
+    },
+    "other_names": [
+      "Bava",
+      "Suki",
+      "Napata"
+    ]
   },
   "Berber-Sudan": {
     "name": "Berber",
@@ -675125,8 +676867,8 @@
     },
     "name_coords": {
       "Sinnar": [
-        13.567469,
-        33.5672045
+        13.566942676883754,
+        33.571008139850086
       ],
       "Sennar": [
         13.0317108,
@@ -681227,6 +682969,30 @@
     ],
     "type": "populstat"
   },
+  "Abu Hureyra-Syria": {
+    "name": "Abu Hureyra",
+    "country": "Syria",
+    "key": "Abu Hureyra-Syria",
+    "is_interpolated": true,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "2000": 0,
+      "-2000": 600,
+      "-1999": 0
+    },
+    "coords": [
+      35.866,
+      38.4
+    ],
+    "latitude": 34.80207499999999,
+    "longitude": 38.996815,
+    "original_names": [
+      "abu hureyra"
+    ],
+    "type": "chandler_modelski"
+  },
   "Acqui Terme-Italy": {
     "name": "Acqui Terme",
     "country": "Italy",
@@ -681280,6 +683046,30 @@
       "Aquae Statiellae",
       "Aquae Statiellorum"
     ]
+  },
+  "Adab (Iraq)-Iraq": {
+    "name": "Adab (Iraq)",
+    "country": "Iraq",
+    "key": "Adab (Iraq)-Iraq",
+    "is_interpolated": true,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "2000": 0,
+      "-2000": 12272,
+      "-1999": 0
+    },
+    "coords": [
+      31.94725,
+      45.62625
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "adab"
+    ],
+    "type": "chandler_modelski"
   },
   "Ado Ekiti-Nigeria": {
     "name": "Ado Ekiti",
@@ -681524,6 +683314,50 @@
       "Aire-sur-l'Adour",
       "Atura"
     ]
+  },
+  "Akkad-Iraq": {
+    "name": "Akkad",
+    "country": "Iraq",
+    "key": "Akkad-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 32500
+    },
+    "coords": [
+      32.5,
+      44.5
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "akkad"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Akshak-Iraq": {
+    "name": "Akshak",
+    "country": "Iraq",
+    "key": "Akshak-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 15000
+    },
+    "coords": [
+      33.094444,
+      44.522222
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "akshak"
+    ],
+    "type": "chandler_modelski"
   },
   "Al Hudaydah-Yemen": {
     "name": "Al Hudaydah",
@@ -682199,6 +684033,28 @@
     },
     "other_names": []
   },
+  "Amarna-Egypt": {
+    "name": "Amarna",
+    "country": "Egypt",
+    "key": "Amarna-Egypt",
+    "is_interpolated": false,
+    "links": [
+      -1000
+    ],
+    "population": {
+      "-1000": 21428
+    },
+    "coords": [
+      27.644473798624087,
+      30.898616939291838
+    ],
+    "latitude": 26.820553,
+    "longitude": 30.802498,
+    "original_names": [
+      "amarna"
+    ],
+    "type": "chandler_modelski"
+  },
   "Ambert-France": {
     "name": "Ambert",
     "country": "France",
@@ -682597,6 +684453,28 @@
     "longitude": 47.5211293,
     "original_names": [
       "antananarivo"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Aoudaghost-Mauritania": {
+    "name": "Aoudaghost",
+    "country": "Mauritania",
+    "key": "Aoudaghost-Mauritania",
+    "is_interpolated": false,
+    "links": [
+      800
+    ],
+    "population": {
+      "800": 25000
+    },
+    "coords": [
+      17.424417610362052,
+      -10.408612530896637
+    ],
+    "latitude": 21.00789,
+    "longitude": -10.940835,
+    "original_names": [
+      "aoudaghost"
     ],
     "type": "chandler_modelski"
   },
@@ -683247,6 +685125,32 @@
     ],
     "type": "chandler_modelski"
   },
+  "Assur-Iraq": {
+    "name": "Assur",
+    "country": "Iraq",
+    "key": "Assur-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000,
+      -1000,
+      -500
+    ],
+    "population": {
+      "-2000": 9200,
+      "-1000": 11750,
+      "-500": 6250
+    },
+    "coords": [
+      35.456667,
+      43.2625
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "assur"
+    ],
+    "type": "chandler_modelski"
+  },
   "Asuka-Japan": {
     "name": "Asuka",
     "country": "Japan",
@@ -683510,6 +685414,30 @@
     "other_names": [
       "Aballo"
     ]
+  },
+  "Avaris-Egypt": {
+    "name": "Avaris",
+    "country": "Egypt",
+    "key": "Avaris-Egypt",
+    "is_interpolated": false,
+    "links": [
+      -2000,
+      -1000
+    ],
+    "population": {
+      "-2000": 63000,
+      "-1000": 62000
+    },
+    "coords": [
+      30.787417,
+      31.821361
+    ],
+    "latitude": 26.820553,
+    "longitude": 30.802498,
+    "original_names": [
+      "avaris"
+    ],
+    "type": "chandler_modelski"
   },
   "Avigliano-Italy": {
     "name": "Avigliano",
@@ -683805,6 +685733,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Bad-tibira-Iraq": {
+    "name": "Bad-tibira",
+    "country": "Iraq",
+    "key": "Bad-tibira-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 12500
+    },
+    "coords": [
+      31.379722,
+      45.999722
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "bad-tibira"
+    ],
+    "type": "chandler_modelski"
+  },
   "Bagnara Calabra-Italy": {
     "name": "Palmi",
     "country": "Italy",
@@ -684068,6 +686018,32 @@
       "Palace of the Garden",
       "Chufut-Kale"
     ]
+  },
+  "Balasaghun-Kyrgyzstan": {
+    "name": "Balasaghun",
+    "country": "Kyrgyzstan",
+    "key": "Balasaghun-Kyrgyzstan",
+    "is_interpolated": false,
+    "links": [
+      1000,
+      1100,
+      1200
+    ],
+    "population": {
+      "1000": 43000,
+      "1100": 45000,
+      "1200": 47000
+    },
+    "coords": [
+      42.746944,
+      75.248611
+    ],
+    "latitude": 41.20438,
+    "longitude": 74.766098,
+    "original_names": [
+      "balasaghun"
+    ],
+    "type": "chandler_modelski"
   },
   "Baltay (SAR-RUS)-Russia": {
     "name": "Baltay (SAR-RUS)",
@@ -685548,28 +687524,6 @@
       "Braunsberg in Ostpreußen"
     ]
   },
-  "Brazzaville-Congo": {
-    "name": "Brazzaville",
-    "country": "Congo",
-    "key": "Brazzaville-Congo",
-    "is_interpolated": false,
-    "links": [
-      2000
-    ],
-    "population": {
-      "2000": 1642000
-    },
-    "coords": [
-      -0.228021,
-      15.827659
-    ],
-    "latitude": -0.228021,
-    "longitude": 15.827659,
-    "original_names": [
-      "brazzaville"
-    ],
-    "type": "chandler_modelski"
-  },
   "Breisach-Germany": {
     "name": "Breisach am Rhein",
     "country": "Germany",
@@ -686745,6 +688699,30 @@
       "Cadralius",
       "Quadralius"
     ]
+  },
+  "Carchemish-Turkey": {
+    "name": "Carchemish",
+    "country": "Turkey",
+    "key": "Carchemish-Turkey",
+    "is_interpolated": false,
+    "links": [
+      -2000,
+      -1000
+    ],
+    "population": {
+      "-2000": 15000,
+      "-1000": 9500
+    },
+    "coords": [
+      36.82957578495527,
+      38.016420510798454
+    ],
+    "latitude": 38.963745,
+    "longitude": 35.243322,
+    "original_names": [
+      "carchemish"
+    ],
+    "type": "chandler_modelski"
   },
   "Carignano-Italy": {
     "name": "Carmagnola",
@@ -688273,6 +690251,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Chonga-Ethiopia": {
+    "name": "Chonga",
+    "country": "Ethiopia",
+    "key": "Chonga-Ethiopia",
+    "is_interpolated": false,
+    "links": [
+      1500
+    ],
+    "population": {
+      "1500": 20000
+    },
+    "coords": [
+      12.165346416153367,
+      37.6360921545508
+    ],
+    "latitude": 9.145000000000001,
+    "longitude": 40.489673,
+    "original_names": [
+      "chonga"
+    ],
+    "type": "chandler_modelski"
+  },
   "Chunar-India": {
     "name": "Chunar",
     "country": "India",
@@ -689755,28 +691755,6 @@
     },
     "other_names": []
   },
-  "Dogubeyazit-Turkey": {
-    "name": "Dogubeyazit",
-    "country": "Turkey",
-    "key": "Dogubeyazit-Turkey",
-    "is_interpolated": false,
-    "links": [
-      1850
-    ],
-    "population": {
-      "1850": 30000
-    },
-    "coords": [
-      39.54707399999999,
-      44.06877799999999
-    ],
-    "latitude": 39.54707399999999,
-    "longitude": 44.06877799999999,
-    "original_names": [
-      "dogubeyazit"
-    ],
-    "type": "chandler_modelski"
-  },
   "Dongo-Angola": {
     "name": "Dongo",
     "country": "Angola",
@@ -689957,6 +691935,28 @@
       ]
     },
     "other_names": []
+  },
+  "Dura Europos-Syria": {
+    "name": "Dura Europos",
+    "country": "Syria",
+    "key": "Dura Europos-Syria",
+    "is_interpolated": false,
+    "links": [
+      -1000
+    ],
+    "population": {
+      "-1000": 20000
+    },
+    "coords": [
+      34.747,
+      40.73
+    ],
+    "latitude": 34.80207499999999,
+    "longitude": 38.996815,
+    "original_names": [
+      "dura europos"
+    ],
+    "type": "chandler_modelski"
   },
   "Durbi-Nigeria": {
     "name": "Durbi",
@@ -690425,6 +692425,50 @@
       "Erica",
       "Eryx"
     ]
+  },
+  "Eridu-Iraq": {
+    "name": "Eridu",
+    "country": "Iraq",
+    "key": "Eridu-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 7830
+    },
+    "coords": [
+      30.815833,
+      45.996111
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "eridu"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Eshnunna-Iraq": {
+    "name": "Eshnunna",
+    "country": "Iraq",
+    "key": "Eshnunna-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 9500
+    },
+    "coords": [
+      33.484167,
+      44.728333
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "eshnunna"
+    ],
+    "type": "chandler_modelski"
   },
   "Essouk-Mali": {
     "name": "Essouk",
@@ -692243,6 +694287,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Hadeja-Nigeria": {
+    "name": "Hadeja",
+    "country": "Nigeria",
+    "key": "Hadeja-Nigeria",
+    "is_interpolated": true,
+    "links": [
+      2000
+    ],
+    "population": {
+      "2000": 105628
+    },
+    "coords": [
+      36.15137116467916,
+      38.062012484240675
+    ],
+    "latitude": 12.4572315,
+    "longitude": 10.040849,
+    "original_names": [
+      "hadeja"
+    ],
+    "type": "chandler_modelski"
+  },
   "Haifa-Holy Land": {
     "name": "Haifa",
     "country": "Holy Land",
@@ -692694,6 +694760,45 @@
       "hesdin"
     ],
     "type": "chandler_modelski"
+  },
+  "Hierakonpolis-Egypt": {
+    "name": "Hierakonpolis",
+    "country": "Egypt",
+    "key": "Hierakonpolis-Egypt",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 7500
+    },
+    "coords": [
+      25.097222,
+      32.779444
+    ],
+    "latitude": 26.820553,
+    "longitude": 30.802498,
+    "original_names": [
+      "hierakonpolis"
+    ],
+    "type": "chandler_modelski",
+    "name_peaks": {
+      "Hierakonpolis": 7500,
+      "Nekhen": 0
+    },
+    "name_coords": {
+      "Hierakonpolis": [
+        25.097222,
+        32.779444
+      ],
+      "Nekhen": [
+        25.097222,
+        32.779444
+      ]
+    },
+    "other_names": [
+      "Nekhen"
+    ]
   },
   "Hiraizumi-Japan": {
     "name": "Hiraizumi",
@@ -693282,6 +695387,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Jarkutan-Uzbekistan": {
+    "name": "Jarkutan",
+    "country": "Uzbekistan",
+    "key": "Jarkutan-Uzbekistan",
+    "is_interpolated": false,
+    "links": [
+      -1000
+    ],
+    "population": {
+      "-1000": 20000
+    },
+    "coords": [
+      37.632625511419754,
+      66.9606111392973
+    ],
+    "latitude": 41.377491,
+    "longitude": 64.585262,
+    "original_names": [
+      "jarkutan"
+    ],
+    "type": "chandler_modelski"
+  },
   "Jeypore-India": {
     "name": "Jeypore",
     "country": "India",
@@ -693642,6 +695769,32 @@
     "other_names": [
       "Patan (Nepal)"
     ]
+  },
+  "Kavery-India": {
+    "name": "Kavery",
+    "country": "India",
+    "key": "Kavery-India",
+    "is_interpolated": false,
+    "links": [
+      200,
+      400,
+      600
+    ],
+    "population": {
+      "200": 55500,
+      "400": 55000,
+      "600": 45000
+    },
+    "coords": [
+      11.144,
+      79.855
+    ],
+    "latitude": 20.593684,
+    "longitude": 78.96288,
+    "original_names": [
+      "kavery"
+    ],
+    "type": "chandler_modelski"
   },
   "Kawkaban-Yemen": {
     "name": "Kawkaban",
@@ -698665,6 +700818,52 @@
       "Mölm"
     ]
   },
+  "Mundigak-Afghanistan": {
+    "name": "Mundigak",
+    "country": "Afghanistan",
+    "key": "Mundigak-Afghanistan",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 10000
+    },
+    "coords": [
+      31.9039,
+      65.5246
+    ],
+    "latitude": 33.93911,
+    "longitude": 67.709953,
+    "original_names": [
+      "mundigak"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Mureybet-Syria": {
+    "name": "Mureybet",
+    "country": "Syria",
+    "key": "Mureybet-Syria",
+    "is_interpolated": true,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "2000": 0,
+      "-2000": 100,
+      "-1999": 0
+    },
+    "coords": [
+      36.0434,
+      38.1287
+    ],
+    "latitude": 34.80207499999999,
+    "longitude": 38.996815,
+    "original_names": [
+      "mureybet"
+    ],
+    "type": "chandler_modelski"
+  },
   "Murshidabad-India": {
     "name": "Murshidabad",
     "country": "India",
@@ -699448,6 +701647,30 @@
       "Nicosia (ITA)",
       "Engynum"
     ]
+  },
+  "Nimrud-Iraq": {
+    "name": "Nimrud",
+    "country": "Iraq",
+    "key": "Nimrud-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -1000,
+      -500
+    ],
+    "population": {
+      "-1000": 42833,
+      "-500": 19166
+    },
+    "coords": [
+      36.098056,
+      43.328889
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "nimrud"
+    ],
+    "type": "chandler_modelski"
   },
   "Nizhny Lomov-Russia": {
     "name": "Niznij-Lomov",
@@ -700481,6 +702704,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Oxyrhyncus-Egypt": {
+    "name": "Oxyrhyncus",
+    "country": "Egypt",
+    "key": "Oxyrhyncus-Egypt",
+    "is_interpolated": false,
+    "links": [
+      200
+    ],
+    "population": {
+      "200": 34000
+    },
+    "coords": [
+      28.531,
+      30.647
+    ],
+    "latitude": 26.820553,
+    "longitude": 30.802498,
+    "original_names": [
+      "oxyrhyncus"
+    ],
+    "type": "chandler_modelski"
+  },
   "Pagan-Myanmar": {
     "name": "Pagan",
     "country": "Myanmar",
@@ -700688,28 +702933,6 @@
     "longitude": 88.2788636,
     "original_names": [
       "pandua"
-    ],
-    "type": "chandler_modelski"
-  },
-  "Panzhihua-China": {
-    "name": "Panzhihua",
-    "country": "China",
-    "key": "Panzhihua-China",
-    "is_interpolated": false,
-    "links": [
-      2000
-    ],
-    "population": {
-      "2000": 770000
-    },
-    "coords": [
-      26.5822799,
-      101.71872
-    ],
-    "latitude": 26.5822799,
-    "longitude": 101.71872,
-    "original_names": [
-      "panzhihua"
     ],
     "type": "chandler_modelski"
   },
@@ -701535,32 +703758,6 @@
       ]
     },
     "other_names": []
-  },
-  "Pilibhit-India": {
-    "name": "Pilibhit",
-    "country": "India",
-    "key": "Pilibhit-India",
-    "is_interpolated": false,
-    "links": [
-      1800,
-      1850,
-      1900
-    ],
-    "population": {
-      "1800": 30000,
-      "1850": 25000,
-      "1900": 33000
-    },
-    "coords": [
-      28.62494,
-      79.8075272
-    ],
-    "latitude": 28.62494,
-    "longitude": 79.8075272,
-    "original_names": [
-      "pilibhit"
-    ],
-    "type": "chandler_modelski"
   },
   "Pisticci-Italy": {
     "name": "Pisticci",
@@ -703509,6 +705706,28 @@
     ],
     "type": "chandler_modelski"
   },
+  "Sais-Egypt": {
+    "name": "Sais",
+    "country": "Egypt",
+    "key": "Sais-Egypt",
+    "is_interpolated": false,
+    "links": [
+      -500
+    ],
+    "population": {
+      "-500": 48000
+    },
+    "coords": [
+      30.964722,
+      30.768333
+    ],
+    "latitude": 26.820553,
+    "longitude": 30.802498,
+    "original_names": [
+      "sais"
+    ],
+    "type": "chandler_modelski"
+  },
   "Salemi-Italy": {
     "name": "Salemi",
     "country": "Italy",
@@ -704096,14 +706315,15 @@
       "2000": 1715000
     },
     "coords": [
-      -14.65203,
-      -68.5901109
+      -17.798072,
+      -63.1925079
     ],
     "latitude": -14.65203,
     "longitude": -68.5901109,
     "original_names": [
       "santa cruz"
     ],
+    "is_agglomeration_of": "santa cruz",
     "type": "chandler_modelski"
   },
   "Santiago Tilantongo-Mexico": {
@@ -704306,6 +706526,30 @@
     "longitude": -82.5310117,
     "original_names": [
       "sarasota"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Sardis-Turkey": {
+    "name": "Sardis",
+    "country": "Turkey",
+    "key": "Sardis-Turkey",
+    "is_interpolated": false,
+    "links": [
+      -500,
+      600
+    ],
+    "population": {
+      "600": 18500,
+      "-500": 42500
+    },
+    "coords": [
+      38.48841695393274,
+      28.040168312433586
+    ],
+    "latitude": 38.963745,
+    "longitude": 35.243322,
+    "original_names": [
+      "sardis"
     ],
     "type": "chandler_modelski"
   },
@@ -706247,29 +708491,6 @@
     ],
     "type": "chandler_modelski"
   },
-  "Sumer-Iraq": {
-    "name": "Sumer",
-    "country": "Iraq",
-    "key": "Sumer-Iraq",
-    "is_interpolated": false,
-    "links": [
-      -2000
-    ],
-    "population": {
-      "-2000": 500000
-    },
-    "coords": [
-      33.4010291,
-      44.3966322
-    ],
-    "latitude": 33.4010291,
-    "longitude": 44.3966322,
-    "original_names": [
-      "sumer"
-    ],
-    "is_agglomeration_of": "baghdád",
-    "type": "chandler_modelski"
-  },
   "Surame-Nigeria": {
     "name": "Surame",
     "country": "Nigeria",
@@ -706410,6 +708631,30 @@
     "longitude": 120.58319,
     "original_names": [
       "suzhou"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Tagust-Morocco": {
+    "name": "Tagust",
+    "country": "Morocco",
+    "key": "Tagust-Morocco",
+    "is_interpolated": false,
+    "links": [
+      1500,
+      1600
+    ],
+    "population": {
+      "1500": 40000,
+      "1600": 30000
+    },
+    "coords": [
+      28.950287094686434,
+      -10.016329820241422
+    ],
+    "latitude": 31.791702,
+    "longitude": -7.092619999999999,
+    "original_names": [
+      "tagust"
     ],
     "type": "chandler_modelski"
   },
@@ -706600,6 +708845,50 @@
     "longitude": 69.2385223,
     "original_names": [
       "tashkent"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Tedsi-Morocco": {
+    "name": "Tedsi",
+    "country": "Morocco",
+    "key": "Tedsi-Morocco",
+    "is_interpolated": false,
+    "links": [
+      1500
+    ],
+    "population": {
+      "1500": 20000
+    },
+    "coords": [
+      30.44996297850448,
+      -8.833278544181757
+    ],
+    "latitude": 31.791702,
+    "longitude": -7.092619999999999,
+    "original_names": [
+      "tedsi"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Tegulat-Ethiopia": {
+    "name": "Tegulat",
+    "country": "Ethiopia",
+    "key": "Tegulat-Ethiopia",
+    "is_interpolated": false,
+    "links": [
+      1300
+    ],
+    "population": {
+      "1300": 20000
+    },
+    "coords": [
+      9.847387781102242,
+      39.61549617536818
+    ],
+    "latitude": 9.145000000000001,
+    "longitude": 40.489673,
+    "original_names": [
+      "tegulat"
     ],
     "type": "chandler_modelski"
   },
@@ -706948,6 +709237,28 @@
     "longitude": 32.2294444,
     "original_names": [
       "tinnis"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Titris Hoyuk-Turkey": {
+    "name": "Titris Hoyuk",
+    "country": "Turkey",
+    "key": "Titris Hoyuk-Turkey",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 10000
+    },
+    "coords": [
+      37.476111,
+      38.677222
+    ],
+    "latitude": 38.963745,
+    "longitude": 35.243322,
+    "original_names": [
+      "titris hoyuk"
     ],
     "type": "chandler_modelski"
   },
@@ -707340,6 +709651,30 @@
     },
     "other_names": []
   },
+  "Tosali-India": {
+    "name": "Tosali",
+    "country": "India",
+    "key": "Tosali-India",
+    "is_interpolated": false,
+    "links": [
+      0,
+      200
+    ],
+    "population": {
+      "0": 51000,
+      "200": 33000
+    },
+    "coords": [
+      20.22812643737976,
+      85.84804843532524
+    ],
+    "latitude": 20.593684,
+    "longitude": 78.96288,
+    "original_names": [
+      "tosali"
+    ],
+    "type": "chandler_modelski"
+  },
   "Tournus-France": {
     "name": "Tournus",
     "country": "France",
@@ -707578,6 +709913,28 @@
       "Trayna",
       "Troyna"
     ]
+  },
+  "Troy (TR)-Turkey": {
+    "name": "Troy (TR)",
+    "country": "Turkey",
+    "key": "Troy (TR)-Turkey",
+    "is_interpolated": false,
+    "links": [
+      -1000
+    ],
+    "population": {
+      "-1000": 10000
+    },
+    "coords": [
+      37.941905104503086,
+      27.432852947774055
+    ],
+    "latitude": 38.963745,
+    "longitude": 35.243322,
+    "original_names": [
+      "troy"
+    ],
+    "type": "chandler_modelski"
   },
   "Trujillo (Peru)-Peru": {
     "name": "Trujillo (Peru)",
@@ -708975,32 +711332,6 @@
       "Villefranche"
     ]
   },
-  "Visakhapatnam (AP)-India": {
-    "name": "Visakhapatnam (AP)",
-    "country": "India",
-    "key": "Visakhapatnam (AP)-India",
-    "is_interpolated": false,
-    "links": [
-      1850,
-      1900,
-      2000
-    ],
-    "population": {
-      "1850": 22000,
-      "1900": 40000,
-      "2000": 1768000
-    },
-    "coords": [
-      17.7343219,
-      83.3129841
-    ],
-    "latitude": 17.7343219,
-    "longitude": 83.3129841,
-    "original_names": [
-      "visakhapatnam"
-    ],
-    "type": "chandler_modelski"
-  },
   "Vizzini-Italy": {
     "name": "Vizzini",
     "country": "Italy",
@@ -709270,6 +711601,28 @@
       "Worgemynstre",
       "Guerminstre"
     ]
+  },
+  "Washukanni-Syria": {
+    "name": "Washukanni",
+    "country": "Syria",
+    "key": "Washukanni-Syria",
+    "is_interpolated": false,
+    "links": [
+      -1000
+    ],
+    "population": {
+      "-1000": 20000
+    },
+    "coords": [
+      36.84,
+      40.068611
+    ],
+    "latitude": 34.80207499999999,
+    "longitude": 38.996815,
+    "original_names": [
+      "washukanni"
+    ],
+    "type": "chandler_modelski"
   },
   "Wasit-Iraq": {
     "name": "Wasit",
@@ -709778,6 +712131,30 @@
     ],
     "type": "chandler_modelski"
   },
+  "Ye-China": {
+    "name": "Ye",
+    "country": "China",
+    "key": "Ye-China",
+    "is_interpolated": false,
+    "links": [
+      400,
+      600
+    ],
+    "population": {
+      "400": 110000,
+      "600": 97000
+    },
+    "coords": [
+      36.27455215421809,
+      114.40656618847811
+    ],
+    "latitude": 35.86166,
+    "longitude": 104.195397,
+    "original_names": [
+      "ye"
+    ],
+    "type": "chandler_modelski"
+  },
   "Yeha-Ethiopia": {
     "name": "Yeha",
     "country": "Ethiopia",
@@ -709793,6 +712170,28 @@
     "longitude": 39.0163556,
     "original_names": [
       "yeha"
+    ],
+    "type": "chandler_modelski"
+  },
+  "Yenhsiatu-China": {
+    "name": "Yenhsiatu",
+    "country": "China",
+    "key": "Yenhsiatu-China",
+    "is_interpolated": false,
+    "links": [
+      -500
+    ],
+    "population": {
+      "-500": 183636
+    },
+    "coords": [
+      39.306475556871696,
+      115.5313005386574
+    ],
+    "latitude": 35.86166,
+    "longitude": 104.195397,
+    "original_names": [
+      "yenhsiatu"
     ],
     "type": "chandler_modelski"
   },
@@ -709955,6 +712354,28 @@
     "other_names": [
       "Ivetoht"
     ]
+  },
+  "Zabala-Iraq": {
+    "name": "Zabala",
+    "country": "Iraq",
+    "key": "Zabala-Iraq",
+    "is_interpolated": false,
+    "links": [
+      -2000
+    ],
+    "population": {
+      "-2000": 10000
+    },
+    "coords": [
+      31.743333,
+      45.876667
+    ],
+    "latitude": 33.223191,
+    "longitude": 43.679291,
+    "original_names": [
+      "zabala"
+    ],
+    "type": "chandler_modelski"
   },
   "Zafar-Yemen": {
     "name": "Zafar",
@@ -712740,47 +715161,6 @@
       "vigon",
       "vigone",
       "vicus guidonis"
-    ],
-    "type": "buringh"
-  },
-  "Vizeu-Portugal": {
-    "name": "Vizeu",
-    "coords": [
-      440.6563408403,
-      -7.910645624710445
-    ],
-    "country": "Portugal",
-    "other_names": [
-      "Viseu",
-      "Bazu",
-      ""
-    ],
-    "key": "Vizeu-Portugal",
-    "population": {
-      "700": 1000,
-      "800": 1000,
-      "900": 1000,
-      "1000": 2000,
-      "1100": 2000,
-      "1200": 2000,
-      "1300": 3000,
-      "1400": 2000,
-      "1500": 3000,
-      "1550": 4000,
-      "1600": 4000,
-      "1650": 4000,
-      "1700": 4000,
-      "1750": 4000,
-      "1800": 9000,
-      "1850": 18000,
-      "1900": 39000,
-      "1950": 83000,
-      "2000": 94000
-    },
-    "original_names": [
-      "vizeu",
-      "viseu",
-      "bazu"
     ],
     "type": "buringh"
   },
