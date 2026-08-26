@@ -212,7 +212,7 @@ add_shared_layers <- function(p, show_text = TRUE) {
       linewidth = 0.4
     ) +
     geom_vline(
-      xintercept = map_years_to_axis(1975),
+      xintercept = map_years_to_axis(1974),
       linetype = "dashed",
       color = adjustcolor("white", alpha.f = 0.6),
       linewidth = 0.7
@@ -228,7 +228,7 @@ add_shared_layers <- function(p, show_text = TRUE) {
     p <- p +
       annotate(
         "text",
-        x = map_years_to_axis(1975),
+        x = map_years_to_axis(1974),
         y = 0.5,
         label = "Pre-Satellite Data",
         color = "white",
@@ -240,7 +240,7 @@ add_shared_layers <- function(p, show_text = TRUE) {
       ) +
       annotate(
         "text",
-        x = map_years_to_axis(1975),
+        x = map_years_to_axis(1974),
         y = 0.5,
         label = "Modern Satellite Data",
         color = "white",
@@ -337,7 +337,7 @@ p3 <- ggplot(df_rural, aes(x = Scaled_X, y = Percentage, fill = Region_Key)) +
     expand = c(0, 0)
   ) +
   shared_fill_scale +
-  labs(title = "Rural Population", x = "Year", y = NULL) +
+  labs(title = "Rural & Periurban Population", x = "Year", y = NULL) +
   theme_pop_share()
 
 p3 <- add_shared_layers(p3, show_text = TRUE)
@@ -346,9 +346,14 @@ p3 <- add_shared_layers(p3, show_text = TRUE)
 final_composite <- p1 / (p2 | p3) +
   plot_layout(guides = "collect") +
   plot_annotation(
-    caption = "Urban data starts at -3000. Interval scales: 1000y (-10k to 0), 100y (0 to 1700), 10y (1700 to 1950), 1y (1950 to 2023).",
+    caption = "Urban data starts at -3000. Interval scales: 1000y (-10k to 0), 100y (0 to 1700), 10y (1700 to 1950), 1y (1950 to 2023).\nDefinitions of urban population after 1975 based on DEGURBA.",
     theme = theme(
-      plot.caption = element_text(hjust = 1, size = 9, color = "grey30")
+      plot.caption = element_text(
+        hjust = 1, 
+        size = 9, 
+        color = "grey30",
+        lineheight = 1.25
+      )
     )
   ) &
   theme(

@@ -86,14 +86,14 @@ ggplot(df_long, aes(
     yintercept = tick_positions,
     color = "grey80",
     linetype = "solid",
-    size = 0.3
+    linewidth = 0.3
   ) +
   # Add a distinct horizontal line for the maximum Y value
   geom_hline(
     yintercept = max_y,
     color = "grey80",
     linetype = "solid",
-    size = 0.8
+    linewidth = 0.8
   ) +
   # Add a label for the maximum Y value at the rightmost year
   annotate(
