@@ -15,7 +15,7 @@ library(magick) # For GIF creation
 # Configuration
 # -----------------------------------------------------------------------------
 # Set the path to the directory containing your raster images
-raster_dir <- "./6.results/stadester_urban_rasters/"
+raster_dir <- "../stadester_urban_rasters/"
 
 # Set the output directory for plots
 output_dir <- "./7.transformed_individual_plots/"
@@ -185,7 +185,11 @@ for (file_path in files_to_process) {
       name = "Population",
       limits = scale_limits,
       breaks = scale_breaks,
-      labels = label_number(scale_cut = cut_si(""), accuracy = .1) 
+      labels = label_number(scale_cut = cut_si(""), accuracy = .1),
+      guide = guide_colorbar(
+        barheight = unit(120, "pt"),
+        barwidth = unit(10, "pt")
+      )
     ) +
     
     coord_sf(crs = equal_earth_crs, expand = FALSE) +

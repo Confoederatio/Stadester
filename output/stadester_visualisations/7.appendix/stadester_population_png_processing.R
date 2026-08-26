@@ -15,7 +15,7 @@ library(magick) # For GIF creation
 # Configuration
 # -----------------------------------------------------------------------------
 # Set the path to the directory containing your raster images
-raster_dir <- "./6.results/stadester_population_rasters/"
+raster_dir <- "../stadester_population_rasters/"
 
 # Set the output directory for plots
 output_dir <- "./7.transformed_individual_plots/"
@@ -145,19 +145,22 @@ for (file_path in files_to_process) {
   pixel_data <- extract_and_transform_pixels(numeric_matrix)
   
   # Logic to control the scale
-  positive_vals_original <- numeric_matrix[numeric_matrix > 0]
-  scale_limits <- NULL
-  scale_breaks <- waiver()
+  # positive_vals_original <- numeric_matrix[numeric_matrix > 0]
+  # scale_limits <- NULL
+  # scale_breaks <- waiver()
   
-  if (length(positive_vals_original) > 1) {
-    min_val <- min(positive_vals_original)
-    max_val <- max(positive_vals_original)
-    if (min_val < max_val) {
-      scale_limits <- c(min_val, max_val)
-      standard_log_breaks <- scales::breaks_log()(c(min_val, max_val))
-      scale_breaks <- sort(unique(c(min_val, standard_log_breaks, max_val)))
-    }
-  }
+  # if (length(positive_vals_original) > 1) {
+  #  min_val <- min(positive_vals_original)
+  #  max_val <- max(positive_vals_original)
+  #  if (min_val < max_val) {
+  #    scale_limits <- c(min_val, max_val)
+  #    standard_log_breaks <- scales::breaks_log()(c(min_val, max_val))
+  #    scale_breaks <- sort(unique(c(min_val, standard_log_breaks, max_val)))
+  #  }
+  #}
+  # Fixed log breaks for all plots
+  scale_breaks <- c(1, 10, 100, 1e3, 1e4, 1e5, 1e6, 5e6)
+  scale_limits <- c(1, 5e6)
   
   # 3. Create the plot
   p <- ggplot() +
@@ -185,7 +188,11 @@ for (file_path in files_to_process) {
       name = "Population",
       limits = scale_limits,
       breaks = scale_breaks,
-      labels = label_number(scale_cut = cut_si(""), accuracy = .1) 
+      labels = label_number(scale_cut = cut_si(""), accuracy = .1),
+      guide = guide_colorbar(
+        barheight = unit(120, "pt"),
+        barwidth = unit(10, "pt")
+      )
     ) +
     
     coord_sf(crs = equal_earth_crs, expand = FALSE) +

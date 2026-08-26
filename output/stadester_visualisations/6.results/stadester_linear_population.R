@@ -91,7 +91,7 @@ x_tick_years <- c(
   1950,
   1975,
   2000,
-  2023
+  2025
 )
 x_tick_scaled <- map_years_to_axis(x_tick_years)
 
@@ -107,10 +107,6 @@ minor_x_tick_years <- sort(
   )
 )
 minor_x_tick_scaled <- map_years_to_axis(minor_x_tick_years)
-
-# Logarithmic Y-axis breaks (1k to 10G)
-major_breaks <- 10^(3:10)
-minor_breaks <- as.vector(sapply(3:10, function(p) (2:9) * 10^p))
 
 # Key threshold values
 x_1975 <- map_years_to_axis(1974)
@@ -144,11 +140,11 @@ final_plot <- ggplot(
   # Lines and Points
   geom_line(linewidth = 0.45, alpha = 0.85) +
   geom_point(size = 1.1, alpha = 0.85) +
-  # Text Annotations around 1975 line
+  # Text Annotations around 1975 line (centered vertically for linear scale)
   annotate(
     "text",
     x = x_1975,
-    y = 3e5,
+    y = 4e9,
     label = "Modern Satellite Data",
     angle = 90,
     vjust = 1.3,
@@ -159,7 +155,7 @@ final_plot <- ggplot(
   annotate(
     "text",
     x = x_1975,
-    y = 3e5,
+    y = 4e9,
     label = "Pre-Satellite Data",
     angle = 90,
     vjust = -0.5,
@@ -174,10 +170,10 @@ final_plot <- ggplot(
     labels = x_tick_years,
     expand = c(0.01, 0.01)
   ) +
-  scale_y_log10(
+  scale_y_continuous(
     labels = label_number(scale_cut = cut_si("")),
-    breaks = major_breaks,
-    minor_breaks = minor_breaks
+    limits = c(0, NA),
+    expand = expansion(mult = c(0, 0.05))
   ) +
   # Manual Aesthetic Scales
   scale_color_manual(
@@ -212,8 +208,8 @@ final_plot <- ggplot(
   ) +
   labs(
     x = "Year",
-    y = "Population, Logarithmic",
-    caption = "1000-year intervals (-10000-0), 100-year intervals (0-1700), 10-year intervals (1700-1950), yearly since (1950-2023).\nDefinitions of urban population after 1975 based on DEGURBA."
+    y = "Population",
+    caption = "1000-year intervals (-10000-0), 100-year intervals (0-1700), 10-year intervals (1700-1950), yearly since (1950-2023).\nDefinitions of urban vs. periurban population after 1975 based on DEGURBA."
   ) +
   theme_minimal() +
   theme(
@@ -250,7 +246,7 @@ final_plot <- ggplot(
 print(final_plot)
 
 ggsave(
-  "./6.results/global_population_log.png",
+  "./6.results/global_population_linear.png",
   bg = "white",
   plot = final_plot,
   width = 14,
