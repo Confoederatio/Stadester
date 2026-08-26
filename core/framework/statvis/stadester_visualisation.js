@@ -107,8 +107,10 @@
 			}
 			
 			//Generate base rasters
-			generateOriginalStadesterRasters();
-			processStadester();
+			if (!options.exclude.includes("urban_buffering")) {
+				generateOriginalStadesterRasters();
+				processStadester();
+			}
 			getStadesterGHSLObject();
 			
 			//Generate post-addendum rasters
@@ -118,6 +120,7 @@
 			generateStadesterPopulationRasters();
 			
 			//Generate visualisations
+			getRasterPopulationObject();
 			getStadesterRegionalUrbanObject();
 			getStadesterRegionalTotalPopulationObject();
 		};
